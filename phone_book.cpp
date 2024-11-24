@@ -77,8 +77,8 @@ int main()
             int i;
             using namespace std;
             std::cout << "enter contact index:";
-            std::getline(cin, i);
-            break;
+            std::cin >> i;
+            // std::getline(cin, i);
             if (i > 7 || i < 0)
                 break;
             phonebook.search(i);
