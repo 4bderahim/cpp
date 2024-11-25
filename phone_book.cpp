@@ -24,8 +24,8 @@ void print_info(std::string str)
            }
         i++;
     }
-    
 }
+
 class Phonebook
 {
     public:
@@ -59,8 +59,8 @@ std::string new_entry(std::string order)
     getline(cin, new_);
     return (new_);
 }
-
 using namespace std;
+
 int main()
 {
     std::vector<std::string> alo;
@@ -76,12 +76,14 @@ int main()
         {
             int i;
             using namespace std;
-            std::cout << "enter contact index:";
-            std::cin >> i;
-            // std::getline(cin, i);
-            if (i > 7 || i < 0)
-                break;
-            phonebook.search(i);
+            while(1)
+            {
+                std::cout << "enter contact index(0~7):";
+                std::cin >> i;
+                if (i > 7 || i < 0)
+                    break;
+                phonebook.search(i);
+            }
         }
         if (!cmd.compare("ADD"))
         {
