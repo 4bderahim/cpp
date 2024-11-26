@@ -45,10 +45,8 @@ public:
 	int				_nbDeposits;
 	int				_nbWithdrawals;
 	public:
-		Account( void );
+	Account( void );
 };
-
-
 
 // ************************************************************************** //
 // vim: set ts=4 sw=4 tw=80 noexpandtab:                                      //
