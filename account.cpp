@@ -2,26 +2,30 @@
 #include <iostream>
 #include "Account.hpp"
 
+
+
+int _totalAmount = 0;
+
 int Account::checkAmount() const
 {
-    return (_totalAmount);
+    return (Account::_totalAmount);
 }
 
 // void Account::makeDeposit(int deposit)
 // {
-//     _totalNbDeposits++;
-//     std::cout << "deposit has been made successfuly!\n";
+//      Account::_totalNbDeposits++;
+//     std::cout << "deposit has been made successfully!\n";
 // }
 
 // bool Account::makeWithdrawal(int withdrawal)
 // {
-//     _totalNbWithdrawals--;
+//     Account::_totalNbWithdrawals--;
 //     return (true);
 // }
 
 // Account::Account(int initial_deposit)
 // {
-//     _nbDeposits = 0;
+//     Account::_nbDeposits = 0;
 // }
 
 int main()
