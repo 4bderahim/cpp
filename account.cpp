@@ -22,7 +22,6 @@ Account::Account(int initial_deposit)
     Account::_totalAmount += initial_deposit;
     Account::_nbWithdrawals = 0; 
     Account::_accountIndex = _nbAccounts;
-
     Account::_displayTimestamp();
     std::cout << "index:" << Account::_accountIndex << ";";
     std::cout << "amount:" << Account::_totalAmount << ";" << "created";
@@ -46,7 +45,7 @@ void 	Account::_displayTimestamp()
     std::cout << "[" << 1900+ltm->tm_year << 1+ltm->tm_mon << ltm->tm_mday << "_" << ltm->tm_hour << ltm->tm_min << ltm->tm_sec << "]";
 }
 
-void Account::displayAccountsInfos()   
+void Account::displayAccountsInfos()
 {
     std::time_t now;
     now = time(0);
