@@ -74,13 +74,27 @@ void Account::displayAccountsInfos()
     tm *ltm =  localtime(&now);
     Account::_displayTimestamp();
     std::cout << "accounts:" << Account::_nbAccounts << ";total:" << Account::_totalAmount << ";deposits:" << Account::_totalNbDeposits << ";withdrawals:" << Account::_totalNbWithdrawals;
-
 }
 
 bool Account::makeWithdrawal(int withdrawal)
 {
-    Account::_totalNbWithdrawals--;
+    if (Account::_amount < withdrawal)
+        {
+            Account::_displayTimestamp();
+            std::cout << "index:" << Account::_accountIndex << ";p_amount:" << withdrawal << ";withrawal:refused"; 
+            return (false);
+        }
+    Account::_amount -=  withdrawal;
+    Account::_nbWithdrawals++;
+    Account::_totalNbWithdrawals++;
+    std::cout << "index:" << Account::_accountIndex << ";p_amount:" << withdrawal << ";withrawal:refused"; 
     return (true);
+}
+void Account::makeDeposit(int deposit)
+{
+    Account::_nbDeposits ++;
+    Account::_amount += deposit;
+    Account::_totalAmount += deposit;
 }
 
 int main()
