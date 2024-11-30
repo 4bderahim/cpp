@@ -20,12 +20,29 @@ Account::Account(int initial_deposit)
     Account::_nbAccounts++;
     Account::_nbDeposits++;
     Account::_totalAmount += initial_deposit;
-    Account::_nbWithdrawals = 0; 
+    Account::_nbWithdrawals = 0;
     Account::_accountIndex = _nbAccounts;
     Account::_displayTimestamp();
     std::cout << "index:" << Account::_accountIndex << ";";
     std::cout << "amount:" << Account::_totalAmount << ";" << "created";
 }
+int Account::getNbAccounts()
+{
+    return (Account::_nbAccounts);
+}
+int Account::getTotalAmount()
+{
+    return (Account::_totalAmount);
+}
+int Account::getNbDeposits()
+{
+    return (Account::_totalNbDeposits);
+}
+int Account::getNbWithdrawals()
+{
+    return (Account::_totalNbWithdrawals);
+}
+
 
 int Account::checkAmount() const
 {
@@ -37,6 +54,11 @@ void Account::makeDeposit(int deposit)
     Account::_totalNbDeposits++;
 }
 
+void Account::displayStatus() const
+{
+    Account::_displayTimestamp();
+    std::cout << "index:" << Account::_accountIndex << ";p_amount:" << Account::_amount << ";deposits:" << Account::_nbDeposits << ";withdrawals:" << Account::_nbWithdrawals;
+}
 void 	Account::_displayTimestamp()
 {
     std::time_t now;
@@ -51,6 +73,8 @@ void Account::displayAccountsInfos()
     now = time(0);
     tm *ltm =  localtime(&now);
     Account::_displayTimestamp();
+    std::cout << "accounts:" << Account::_nbAccounts << ";total:" << Account::_totalAmount << ";deposits:" << Account::_totalNbDeposits << ";withdrawals:" << Account::_totalNbWithdrawals;
+
 }
 
 bool Account::makeWithdrawal(int withdrawal)

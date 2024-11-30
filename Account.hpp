@@ -34,9 +34,8 @@ public:
 	bool	makeWithdrawal( int withdrawal );
 	int		checkAmount( void ) const;
 	void	displayStatus( void ) const;
-
+	
 private:
-
 	static int	_nbAccounts;
 	static int	_totalAmount;
 	static int	_totalNbDeposits;
