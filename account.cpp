@@ -47,7 +47,7 @@ int Account::getNbWithdrawals()
 
 int Account::checkAmount() const
 {
-    return (Account::_totalAmount);
+    return (Account::_amount);
 }
 
 void Account::displayStatus() const
@@ -106,6 +106,8 @@ int main()
     d.makeDeposit(50);
     d.makeWithdrawal(5000);
     f.makeWithdrawal(50);
+    f.makeWithdrawal(3);
+
     // acc[0].displayAccountsInfos();
     // acc[0].makeWithdrawal(1);
     // acc[1].makeDeposit(300);
