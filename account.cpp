@@ -20,12 +20,12 @@ Account::Account(int initial_deposit)
     Account::_nbAccounts++;
     Account::_nbDeposits = 0;
     Account::_amount = initial_deposit;
-    Account::_totalAmount = initial_deposit;
+    Account::_totalAmount += initial_deposit;
     Account::_nbWithdrawals = 0;
     Account::_accountIndex = _nbAccounts;
     Account::_displayTimestamp();
     std::cout << " index:" << Account::_accountIndex << ";";
-    std::cout << "amount:" << Account::_totalAmount << ";" << "created" << std::endl;
+    std::cout << "amount:" << Account::_amount << ";" << "created" << std::endl;
 }
 
 int Account::getNbAccounts()
@@ -98,22 +98,22 @@ void Account::makeDeposit(int deposit)
     std::cout << " index:" << Account::_accountIndex << ";p_amount:" << Account::_amount-deposit << ";deposite:" << deposit << ";amount:" << Account::_amount << ";nb_deposits:" << Account::_nbDeposits << std::endl;
 }
 
-int main()
-{
-    Account f(1000);
-    Account d(55000);
-    f.makeDeposit(50);
-    d.makeDeposit(50);
-    d.makeWithdrawal(5000);
-    f.makeWithdrawal(50);
-    f.makeWithdrawal(3);
+// int main()
+// {
+//     Account f(1000);
+//     Account d(55000);
+//     f.makeDeposit(50);
+//     d.makeDeposit(50);
+//     d.makeWithdrawal(5000);
+//     f.makeWithdrawal(50);
+//     f.makeWithdrawal(3);
 
-    // acc[0].displayAccountsInfos();
-    // acc[0].makeWithdrawal(1);
-    // acc[1].makeDeposit(300);
+//     // acc[0].displayAccountsInfos();
+//     // acc[0].makeWithdrawal(1);
+//     // acc[1].makeDeposit(300);
 
-    f.displayAccountsInfos();
-    d.displayAccountsInfos();
-    // acc[1].makeWithdrawal(60);
-    return (0);
-}
+//     f.displayAccountsInfos();
+//     d.displayAccountsInfos();
+//     // acc[1].makeWithdrawal(60);
+//     return (0);
+// }

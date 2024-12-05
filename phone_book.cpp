@@ -25,6 +25,9 @@ void print_info(std::string str)
         i++;
     }
 }
+// !empty || spaces 
+// before search display status,, !only nums
+// search displays infos separated by \n
 
 class Phonebook
 {
@@ -80,6 +83,7 @@ int main()
             {
                 std::cout << "enter contact index(0~7):";
                 std::cin >> i;
+                //get line
                 if (i > 7 || i < 0)
                     break;
                 phonebook.search(i);
