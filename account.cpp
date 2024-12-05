@@ -22,7 +22,7 @@ Account::Account(int initial_deposit)
     Account::_amount = initial_deposit;
     Account::_totalAmount += initial_deposit;
     Account::_nbWithdrawals = 0;
-    Account::_accountIndex = _nbAccounts;
+    Account::_accountIndex = _nbAccounts-1;
     Account::_displayTimestamp();
     std::cout << " index:" << Account::_accountIndex << ";";
     std::cout << "amount:" << Account::_amount << ";" << "created" << std::endl;
