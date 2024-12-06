@@ -60,6 +60,8 @@ std::string new_entry(std::string order)
     using namespace std;
     std::cout << "enter " << order << ":";
     getline(cin, new_);
+    if (cin.eof() || cin.fail())
+        exit(1);
     return (new_);
 }
 using namespace std;
@@ -75,6 +77,8 @@ int main()
         std::string cmd;
         std::cout << "|>";
         std::getline(cin, cmd);
+        if (cin.eof() || cin.fail())
+            exit(1);
         if (!cmd.compare("SEARCH"))
         {
             int i;
