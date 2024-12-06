@@ -66,6 +66,15 @@ std::string new_entry(std::string order)
 }
 using namespace std;
 
+void display_stat(Phonebook  phone)
+{
+    for (int i = 0; i < 8;i++)
+    {
+     std::cout <<  phone.contacts[i].contact_name  << std::endl;
+    }
+     
+
+}
 int main()
 {
     std::vector<std::string> alo;
@@ -89,7 +98,10 @@ int main()
                 std::cin >> i;
                 //get line
                 if (i > 7 || i < 0)
-                    break;
+                    {
+                        std::cout << "index are from 0 to 7" << std::endl;
+                        break;
+                    }
                 phonebook.search(i);
             }
         }
@@ -102,6 +114,8 @@ int main()
             phonebook.contacts[index_count].contact_darkest_sec = new_entry("contact_darkest_sec");
             index_count++;
         }
+        if (index_count == 8)
+            index_count = 0;
         if (!cmd.compare("EXIT"))
             break;
     }
