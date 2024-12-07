@@ -51,8 +51,11 @@ std::string new_entry(std::string order)
     using namespace std;
     std::cout << "enter " << order << ":::";
     getline(cin, new_);
-    if (cin.eof() || cin.fail())
-        exit(1);
+    if (cin.eof() || cin.fail() || cin.bad())
+        {
+            std::cout << "error eof";
+            exit(1);
+        }
     return (new_);
 }
 using namespace std;
