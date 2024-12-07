@@ -49,7 +49,7 @@ std::string new_entry(std::string order)
 {
     std::string new_;
     using namespace std;
-    std::cout << "enter " << order << ":";
+    std::cout << "enter " << order << ":::";
     getline(cin, new_);
     if (cin.eof() || cin.fail())
         exit(1);
@@ -60,10 +60,21 @@ using namespace std;
 void display_stat(Phonebook  phone, int count )
 {
     std::cout << "\n\n";
-    for (int i = 0; i < count ;i++) 
+    for (int i = 0; i <= count ;i++) 
         phone.search(i);
     std::cout << "\n";
     // std::cout <<  phone.contacts[i].contact_name << "|" << phone.contacts[i].contact_last_name << "|" << phone.contacts[i].contact_nickname << "|" << phone.contacts[i].contact_darkest_sec std::endl;
+}
+
+std::string check_num(std::string str)
+{
+    for (int i = 0; i < std::strlen(str.c_str()); i++)
+    {
+        std::cout << str[i] << "<<<" ;
+        if (isalpha(str[i]))
+            return ("");
+    }
+    return (str);
 }
 int main()
 {
@@ -100,13 +111,16 @@ int main()
         if (!cmd.compare("ADD"))
         {
             std::string contact_name ,contact_last_name, contact_nickname, contact_darkest_sec;
-            phonebook.contacts[index_count].phone_num = new_entry("contact_name");
-
-            phonebook.contacts[index_count].contact_name = new_entry("contact_name");
+            phonebook.contacts[index_count].phone_num = check_num(new_entry("phone_number"));
+            phonebook.contacts[index_count].contact_name = new_entry("contact_00name");
             phonebook.contacts[index_count].contact_last_name = new_entry("contact_last_name");
             phonebook.contacts[index_count].contact_nickname = new_entry("contact_nickname");
             phonebook.contacts[index_count].contact_darkest_sec = new_entry("contact_darkest_sec");
-            if (phonebook.contacts[index_count].contact_name == "" || phonebook.contacts[index_count].contact_last_name == "" || phonebook.contacts[index_count].contact_nickname == "" || phonebook.contacts[index_count].contact_darkest_sec == "")
+            if (phonebook.contacts[index_count].phone_num == "" || phonebook.contacts[index_count].contact_name == "" || phonebook.contacts[index_count].contact_last_name == "" || phonebook.contacts[index_count].contact_nickname == "" || phonebook.contacts[index_count].contact_darkest_sec == "")
+                {
+                    std::cout << "failed to add the new contact\n";
+                    continue;
+                }
             index_count++;
             contacts_count++;
         }
