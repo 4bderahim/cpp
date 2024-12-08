@@ -3,7 +3,7 @@
 #include "phone_book.hpp"
 
 
-void print_info(std::string str)
+void Phonebook::print_info(std::string str)
 {
     int i;
     i =0;
@@ -20,10 +20,6 @@ void print_info(std::string str)
         i++;
     }
 }
-// !empty || spaces 
-// before search display status,, !only nums
-// search displays infos separated by \n
-
 void Phonebook::search(int index)
 {
     std::cout << index;
@@ -35,12 +31,14 @@ void Phonebook::search(int index)
     print_info(contacts[index].contact_nickname);
     std::cout << "\n";
 }
-void display_infos(int index)
+
+void Phonebook::display_infos(int index)
 {
-    std::cout << "first name :" << contacts[index].contact_name << std::endl;
-    // complete filling /
-
-
+    std::cout << "\nphone number        :" << contacts[index].phone_num << std::endl;
+    std::cout << "first name          :" << contacts[index].contact_name << std::endl;
+    std::cout << "last name           :" << contacts[index].contact_last_name << std::endl;
+    std::cout << "nickname            :" << contacts[index].contact_nickname << std::endl;
+    std::cout << "contact_darkest_sec :" << contacts[index].contact_name << std::endl;
 }
 std::string new_entry(std::string order)
 {
@@ -60,17 +58,15 @@ std::string new_entry(std::string order)
 void display_stat(Phonebook  phone, int count )
 {
     std::cout << "\n\n";
-    for (int i = 0; i <= count ;i++) 
+    for (int i = 0; i < count ;i++)
         phone.search(i);
     std::cout << "\n";
-    // std::cout <<  phone.contacts[i].contact_name << "|" << phone.contacts[i].contact_last_name << "|" << phone.contacts[i].contact_nickname << "|" << phone.contacts[i].contact_darkest_sec std::endl;
 }
 
 std::string check_num(std::string str)
 {
     for (int i = 0; i < std::strlen(str.c_str()); i++)
     {
-        std::cout << str[i] << "<<<" ;
         if (isalpha(str[i]))
             return ("");
     }
@@ -106,10 +102,13 @@ int main()
                 std::sscanf(search_.c_str(), "%d", &i);
                 if (i > 7 || i < 0)
                     {
-                        std::cout << "index are from 0 to 7" << std::endl;
+                        std::cout << "indexes are from 0 to 7" << std::endl;
                         break;
                     }
-                phonebook.search(i);
+                if (i > contacts_count)
+                    std::cout << "no contact at index " << i << std::endl;
+                else
+                    phonebook.display_infos(i);
             }
         }
         if (!cmd.compare("ADD"))
