@@ -9,5 +9,7 @@ class Phonebook
     void add_contact(std::string contact_name,std::string contact_last_name,std::string contact_nickname, std::string contact_darkest_sec, int index);
     // public:
     void search(int index);
+    void display_infos(int index);
+
 };
 #endif

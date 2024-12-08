@@ -24,15 +24,6 @@ void print_info(std::string str)
 // before search display status,, !only nums
 // search displays infos separated by \n
 
-
-// void Phonebook::add_contact(std::string contact_name,std::string contact_last_name,std::string contact_nickname, std::string contact_darkest_sec, int index)
-// {
-//     contacts[index].contact_name = contact_name;
-//     contacts[index].contact_last_name = contact_last_name;
-//     contacts[index].contact_nickname = contact_nickname;
-//     contacts[index].contact_darkest_sec = contact_darkest_sec;
-// }
-    
 void Phonebook::search(int index)
 {
     std::cout << index;
@@ -44,7 +35,13 @@ void Phonebook::search(int index)
     print_info(contacts[index].contact_nickname);
     std::cout << "\n";
 }
+void display_infos(int index)
+{
+    std::cout << "first name :" << contacts[index].contact_name << std::endl;
+    // complete filling /
 
+
+}
 std::string new_entry(std::string order)
 {
     std::string new_;
