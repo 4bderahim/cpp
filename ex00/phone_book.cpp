@@ -53,8 +53,6 @@ std::string new_entry(std::string order)
         }
     return (new_);
 }
-// using namespace std;
-
 void display_stat(Phonebook  phone, int count )
 {
     std::cout << "\n\n";
@@ -75,7 +73,7 @@ std::string check_num(std::string str)
 int main()
 {
     std::vector<std::string> alo;
-    using namespace std;
+    // using namespace std;
     int index_count , contacts_count;
     index_count = 0;
     contacts_count = 0;
@@ -83,6 +81,7 @@ int main()
     while (1)
     {
         std::string cmd;
+        using namespace std;
         std::cout << "|>";
         std::getline(cin, cmd);
         if (cin.eof() || cin.fail())
@@ -90,7 +89,6 @@ int main()
         if (!cmd.compare("SEARCH"))
         {
             std::string search_;
-            using namespace std;
             display_stat(phonebook, contacts_count);
             while(1)
             {
@@ -105,10 +103,12 @@ int main()
                         std::cout << "indexes are from 0 to 7" << std::endl;
                         break;
                     }
-                if (i > contacts_count)
-                    std::cout << "no contact at index " << i << std::endl;
-                else
-                    phonebook.display_infos(i);
+                if (i+1 > contacts_count)
+                    {
+                        std::cout << "no contact at index " << i << std::endl;
+                        break;
+                    }
+                phonebook.display_infos(i);
             }
         }
         if (!cmd.compare("ADD"))
