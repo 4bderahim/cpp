@@ -2,7 +2,6 @@
 #include "contacts.hpp"
 #include "phone_book.hpp"
 
-
 void Phonebook::print_info(std::string str)
 {
     int i;
@@ -20,6 +19,7 @@ void Phonebook::print_info(std::string str)
         i++;
     }
 }
+
 void Phonebook::search(int index)
 {
     std::cout << index;
@@ -70,6 +70,7 @@ std::string check_num(std::string str)
     }
     return (str);
 }
+
 int main()
 {
     std::vector<std::string> alo;
