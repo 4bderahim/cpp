@@ -25,13 +25,13 @@ void print_info(std::string str)
 // search displays infos separated by \n
 
 
-void Phonebook::add_contact(std::string contact_name,std::string contact_last_name,std::string contact_nickname, std::string contact_darkest_sec, int index)
-{
-    contacts[index].contact_name = contact_name;
-    contacts[index].contact_last_name = contact_last_name;
-    contacts[index].contact_nickname = contact_nickname;
-    contacts[index].contact_darkest_sec = contact_darkest_sec;
-}
+// void Phonebook::add_contact(std::string contact_name,std::string contact_last_name,std::string contact_nickname, std::string contact_darkest_sec, int index)
+// {
+//     contacts[index].contact_name = contact_name;
+//     contacts[index].contact_last_name = contact_last_name;
+//     contacts[index].contact_nickname = contact_nickname;
+//     contacts[index].contact_darkest_sec = contact_darkest_sec;
+// }
     
 void Phonebook::search(int index)
 {
@@ -58,7 +58,7 @@ std::string new_entry(std::string order)
         }
     return (new_);
 }
-using namespace std;
+// using namespace std;
 
 void display_stat(Phonebook  phone, int count )
 {
@@ -82,6 +82,7 @@ std::string check_num(std::string str)
 int main()
 {
     std::vector<std::string> alo;
+    using namespace std;
     int index_count , contacts_count;
     index_count = 0;
     contacts_count = 0;
@@ -95,14 +96,17 @@ int main()
             exit(1);
         if (!cmd.compare("SEARCH"))
         {
-            int i;
+            std::string search_;
             using namespace std;
             display_stat(phonebook, contacts_count);
             while(1)
             {
                 std::cout << "enter contact index(0~7):";
-                std::cin >> i;
-                //get line
+                std::getline(cin , search_);
+                int i;
+                if (cin.eof() || cin.fail() || cin.bad() || check_num(search_) == "")
+                    exit(1);
+                std::sscanf(search_.c_str(), "%d", &i);
                 if (i > 7 || i < 0)
                     {
                         std::cout << "index are from 0 to 7" << std::endl;

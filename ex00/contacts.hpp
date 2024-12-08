@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string.h>
+#include <sstream>      
 #include <iomanip>
 
 #ifndef __CONTACT_H__
