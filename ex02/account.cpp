@@ -1,6 +1,6 @@
 #include <fstream>
 #include <iostream>
-#include "Account.hpp"
+#include "account.hpp"
 #include <ctime>
 
 int Account::_totalNbWithdrawals = 0;
@@ -66,9 +66,6 @@ void 	Account::_displayTimestamp()
 
 void Account::displayAccountsInfos()
 {
-    std::time_t now;
-    now = time(0);
-    tm *ltm =  localtime(&now); 
     Account::_displayTimestamp();
     std::cout << " accounts:" << Account::_nbAccounts << ";total:" << Account::_totalAmount << ";deposits:" << Account::_totalNbDeposits << ";withdrawals:" << Account::_totalNbWithdrawals  << std::endl;
 }
