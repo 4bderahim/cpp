@@ -34,7 +34,7 @@ void Phonebook::search(int index)
 
 void Phonebook::display_infos(int index)
 {
-    std::cout << "\nphone number        :" << contacts[index].phone_num << std::endl;
+    std::cout << "\nphone number      :" << contacts[index].phone_num << std::endl;
     std::cout << "first name          :" << contacts[index].contact_name << std::endl;
     std::cout << "last name           :" << contacts[index].contact_last_name << std::endl;
     std::cout << "nickname            :" << contacts[index].contact_nickname << std::endl;
@@ -53,6 +53,7 @@ std::string new_entry(std::string order)
         }
     return (new_);
 }
+
 void display_stat(Phonebook  phone, int count )
 {
     std::cout << "\n\n";
@@ -63,7 +64,7 @@ void display_stat(Phonebook  phone, int count )
 
 std::string check_num(std::string str)
 {
-    for (int i = 0; i < std::strlen(str.c_str()); i++)
+    for (size_t i = 0; i < std::strlen(str.c_str()); i++)
     {
         if (isalpha(str[i]))
             return ("");

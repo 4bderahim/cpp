@@ -1,9 +1,10 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror
-NAME = account
 
-CPPFILES = tests.cpp account.cpp
-OFILES = $(CPPFILES:.cpp=.o)
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
+NAME	= megaphone
+
+CPPFILES	= megaphone.cpp
+OFILES		= $(CPPFILES:.cpp=.o)
 
 all : $(NAME)
 
