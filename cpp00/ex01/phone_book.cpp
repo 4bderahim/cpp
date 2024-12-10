@@ -25,11 +25,11 @@ void Phonebook::search(int index)
 {
     std::cout << index;
     std::setw(10);
-    std::cout.width(55); std::cout << "|" << std::right;
+    std::cout << "|" << std::setw(10);
     print_info(contacts[index].contact_name);
     std::cout << "|" << std::setw(10);
     print_info(contacts[index].contact_last_name);
-    std::cout << "|";
+    std::cout << "|" << std::setw(10);
     print_info(contacts[index].contact_nickname);
     std::cout << "\n";
     // std::string strng;
@@ -58,12 +58,18 @@ std::string new_entry(std::string order)
     return (new_);
 }
 
-void display_stat(Phonebook  phone, int count )
+int display_stat(Phonebook  phone, int count )
 {
+    if (count == 0)
+        {
+            std::cout << "[!] no contacts yet, try to ADD one" << std::endl;
+            return (0);
+        }
     std::cout << "\n\n";
     for (int i = 0; i < count ;i++)
         phone.search(i);
     std::cout << "\n";
+    return (1);
 }
 
 std::string check_num(std::string str)
@@ -96,7 +102,8 @@ int main()
         if (!cmd.compare("SEARCH"))
         {
             std::string search_;
-            display_stat(phonebook, contacts_count);
+            if (!display_stat(phonebook, contacts_count))
+                continue;
             while(1)
             {
                 std::cout << "enter contact index(0~7):";
@@ -112,9 +119,9 @@ int main()
                     {
                         std::cout << "[-] indexes are from 0 to 7" << std::endl;
                         continue;
-                    }
+                    }       
                 if (i > contacts_count-1)
-                    std::cout << "not contact at index " << i << std::endl;
+                    std::cout << "[!] no contact at index " << i << std::endl;
                 else
                     phonebook.display_infos(i);    
             }
@@ -129,7 +136,7 @@ int main()
             phonebook.contacts[index_count].contact_darkest_sec = new_entry("contact_darkest_sec");
             if (phonebook.contacts[index_count].phone_num == "" || phonebook.contacts[index_count].contact_name == "" || phonebook.contacts[index_count].contact_last_name == "" || phonebook.contacts[index_count].contact_nickname == "" || phonebook.contacts[index_count].contact_darkest_sec == "")
                 {
-                    std::cout << "failed to add the new contact\n";
+                    std::cout << "[-] failed to add the new contact\n";
                     continue;
                 }
             index_count++;
