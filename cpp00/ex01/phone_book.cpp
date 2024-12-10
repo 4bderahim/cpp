@@ -27,18 +27,17 @@ void Phonebook::search(int index)
     std::setw(10);
     std::cout.width(55); std::cout << "|" << std::right;
     print_info(contacts[index].contact_name);
-    std::cout << "|";
+    std::cout << "|" << std::setw(10);
     print_info(contacts[index].contact_last_name);
     std::cout << "|";
     print_info(contacts[index].contact_nickname);
     std::cout << "\n";
-    std::string strng;
-    strng
+    // std::string strng;
 }
 
 void Phonebook::display_infos(int index)
 {
-    std::cout << "\nphone number      :" << contacts[index].phone_num << std::endl;
+    std::cout << "\nphone number       :" << contacts[index].phone_num << std::endl;
     std::cout << "first name          :" << contacts[index].contact_name << std::endl;
     std::cout << "last name           :" << contacts[index].contact_last_name << std::endl;
     std::cout << "nickname            :" << contacts[index].contact_nickname << std::endl;
@@ -107,12 +106,14 @@ int main()
                 if (cin.eof() || cin.bad() || cin.fail())
                     break;
                 std::sscanf(search_.c_str(), "%d", &i);
+                if (!search_.compare("EXIT"))
+                    break;
                 if (check_num(search_) == "" || !(i <= 7 && i >= 0))
                     {
                         std::cout << "[-] indexes are from 0 to 7" << std::endl;
                         continue;
                     }
-                if (i > contacts_count)
+                if (i > contacts_count-1)
                     std::cout << "not contact at index " << i << std::endl;
                 else
                     phonebook.display_infos(i);    
@@ -122,7 +123,7 @@ int main()
         {
             std::string contact_name ,contact_last_name, contact_nickname, contact_darkest_sec;
             phonebook.contacts[index_count].phone_num = check_num(new_entry("phone_number"));
-            phonebook.contacts[index_count].contact_name = new_entry("contact_00name");
+            phonebook.contacts[index_count].contact_name = new_entry("contact_name");
             phonebook.contacts[index_count].contact_last_name = new_entry("contact_last_name");
             phonebook.contacts[index_count].contact_nickname = new_entry("contact_nickname");
             phonebook.contacts[index_count].contact_darkest_sec = new_entry("contact_darkest_sec");
@@ -132,7 +133,8 @@ int main()
                     continue;
                 }
             index_count++;
-            contacts_count++;
+            if (contacts_count < 8)
+                contacts_count++;
         }
         if (index_count == 8)
             index_count = 0;
