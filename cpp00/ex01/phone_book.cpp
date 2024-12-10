@@ -1,4 +1,5 @@
 // #include "cpp.h"
+                            
 #include "contacts.hpp"
 #include "phone_book.hpp"
 
@@ -23,6 +24,7 @@ void Phonebook::print_info(std::string str)
 void Phonebook::search(int index)
 {
     std::cout << index;
+    std::setw(10);
     std::cout.width(55); std::cout << "|" << std::right;
     print_info(contacts[index].contact_name);
     std::cout << "|";
@@ -30,6 +32,8 @@ void Phonebook::search(int index)
     std::cout << "|";
     print_info(contacts[index].contact_nickname);
     std::cout << "\n";
+    std::string strng;
+    strng
 }
 
 void Phonebook::display_infos(int index)
@@ -40,6 +44,7 @@ void Phonebook::display_infos(int index)
     std::cout << "nickname            :" << contacts[index].contact_nickname << std::endl;
     std::cout << "contact_darkest_sec :" << contacts[index].contact_name << std::endl;
 }
+
 std::string new_entry(std::string order)
 {
     std::string new_;
