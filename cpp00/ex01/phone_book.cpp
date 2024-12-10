@@ -23,13 +23,13 @@ void Phonebook::print_info(std::string str)
 
 void Phonebook::search(int index)
 {
+    
     std::cout << index;
-    std::setw(10);
-    std::cout << "|" << std::setw(10);
+    std::cout << std::setw(9) << "|" << std::setw(10-contacts[index].contact_name.length());
     print_info(contacts[index].contact_name);
-    std::cout << "|" << std::setw(10);
+    std::cout << "|" << std::setw(10-contacts[index].contact_last_name.length());
     print_info(contacts[index].contact_last_name);
-    std::cout << "|" << std::setw(10);
+    std::cout << "|" << std::setw(10-contacts[index].contact_nickname.length());
     print_info(contacts[index].contact_nickname);
     std::cout << "\n";
     // std::string strng;
@@ -67,7 +67,11 @@ int display_stat(Phonebook  phone, int count )
         }
     std::cout << "\n\n";
     for (int i = 0; i < count ;i++)
-        phone.search(i);
+        {
+                        std::cout << "INDEX    |" <<  "     NAME|" << "LAST NAME|" << "  NICKNAME\n";
+
+            phone.search(i);
+        }
     std::cout << "\n";
     return (1);
 }
