@@ -12,7 +12,7 @@ void Phonebook::print_info(std::string str)
         char c = str[i];
         std::cout << c;
         if (i == 8)
-           { 
+        { 
             std::cout << ".";
             break;
            }
@@ -80,11 +80,12 @@ int main()
     index_count = 0;
     contacts_count = 0;
     Phonebook phonebook;
+    std::cout << "\nADD     : add new contact\nSEARCH  : search for an existing contact\nEXIT    : exit prompt\n\n\n" << std::endl; 
     while (1)
     {
         std::string cmd;
         using namespace std;
-        std::cout << "|>";
+        std::cout << "type command >>";
         std::getline(cin, cmd);
         if (cin.eof() || cin.fail())
             exit(1);
@@ -98,9 +99,9 @@ int main()
                 std::getline(cin , search_);
                 int i;
                 if (cin.eof() || cin.fail() || cin.bad() || check_num(search_) == "")
-                    exit(1);
+                    break;
                 std::sscanf(search_.c_str(), "%d", &i);
-                if (i > 7 || i < 0)
+                if ((i > 7 && i < 0))
                     {
                         std::cout << "indexes are from 0 to 7" << std::endl;
                         break;
