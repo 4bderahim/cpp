@@ -98,20 +98,19 @@ int main()
                 std::cout << "enter contact index(0~7):";
                 std::getline(cin , search_);
                 int i;
-                if (cin.eof() || cin.fail() || cin.bad() || check_num(search_) == "")
+                i = 0;
+                if (cin.eof() || cin.bad() || cin.fail())
                     break;
                 std::sscanf(search_.c_str(), "%d", &i);
-                if ((i > 7 && i < 0))
+                if (check_num(search_) == "" || !(i <= 7 && i >= 0))
                     {
-                        std::cout << "indexes are from 0 to 7" << std::endl;
-                        break;
+                        std::cout << "[-] indexes are from 0 to 7" << std::endl;
+                        continue;
                     }
-                if (i+1 > contacts_count)
-                    {
-                        std::cout << "no contact at index " << i << std::endl;
-                        break;
-                    }
-                phonebook.display_infos(i);
+                if (i > contacts_count)
+                    std::cout << "not contact at index " << i << std::endl;
+                else
+                    phonebook.display_infos(i);    
             }
         }
         if (!cmd.compare("ADD"))
