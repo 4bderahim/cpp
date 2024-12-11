@@ -11,12 +11,12 @@ void Phonebook::print_info(std::string str)
     while (str[i])
     {
         char c = str[i];
-        std::cout << c;
         if (i == 9)
-        { 
+        {
             std::cout << ".";
             break;
-           }
+        }
+        std::cout << c;
         i++;
     }
 }
@@ -79,7 +79,7 @@ std::string check_num(std::string str)
 {
     for (size_t i = 0; i < std::strlen(str.c_str()); i++)
     {
-        if (isalpha(str[i]))
+        if (!isdigit(str[i]))
             return ("");
     }
     return (str);
