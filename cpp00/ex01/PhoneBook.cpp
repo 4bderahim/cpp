@@ -68,9 +68,7 @@ int display_stat(Phonebook  phone, int count )
     std::cout << "\n\n";
     std::cout << "    INDEX|" <<  "      NAME|" << " LAST NAME|" << "  NICKNAME\n";
     for (int i = 0; i < count ;i++)
-        {
-            phone.search(i);
-        }
+        phone.search(i);
     std::cout << "\n";
     return (1);
 }

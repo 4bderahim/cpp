@@ -4,6 +4,7 @@
 #include <string.h>
 #include <sstream>    
 #include <cctype>  
+#include <cstdlib>
 #include <iomanip>
 
 #ifndef __CONTACT_H__
