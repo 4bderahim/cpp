@@ -1,7 +1,6 @@
-#include <fstream>
-#include <iostream>
-#include "account.hpp"
-#include <ctime>
+// #include <fstream>
+
+#include "Account.hpp"
 
 int Account::_totalNbWithdrawals = 0;
 int Account::_totalNbDeposits = 0;
@@ -95,23 +94,3 @@ void Account::makeDeposit(int deposit)
     Account::_displayTimestamp();
     std::cout << " index:" << Account::_accountIndex << ";p_amount:" << Account::_amount-deposit << ";deposit:" << deposit << ";amount:" << Account::_amount << ";nb_deposits:" << Account::_nbDeposits << std::endl;
 }
-
-// int main()
-// {
-//     Account f(1000);
-//     Account d(55000);
-//     f.makeDeposit(50);
-//     d.makeDeposit(50);
-//     d.makeWithdrawal(5000);
-//     f.makeWithdrawal(50);
-//     f.makeWithdrawal(3);
-
-//     // acc[0].displayAccountsInfos();
-//     // acc[0].makeWithdrawal(1);
-//     // acc[1].makeDeposit(300);
-
-//     f.displayAccountsInfos();
-//     d.displayAccountsInfos();
-//     // acc[1].makeWithdrawal(60);
-//     return (0);
-// }

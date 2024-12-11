@@ -2,7 +2,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror
 NAME = account
 
-CPPFILES = tests.cpp account.cpp
+CPPFILES = Tests.cpp Account.cpp
 OFILES = $(CPPFILES:.cpp=.o)
 
 all : $(NAME)

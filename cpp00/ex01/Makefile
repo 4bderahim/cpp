@@ -3,11 +3,10 @@ CC = c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= phone_book
 
-CPPFILES	= phone_book.cpp
+CPPFILES	= PhoneBook.cpp
 OFILES		= $(CPPFILES:.cpp=.o)
 
 all : $(NAME)
-
 $(NAME) : $(OFILES)
 	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
 %.o : %.cpp 
