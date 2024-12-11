@@ -12,7 +12,7 @@ void Phonebook::print_info(std::string str)
     {
         char c = str[i];
         std::cout << c;
-        if (i == 8)
+        if (i == 9)
         { 
             std::cout << ".";
             break;
@@ -23,13 +23,13 @@ void Phonebook::print_info(std::string str)
 
 void Phonebook::search(int index)
 {
-    
+    std::cout << std::setw(9);
     std::cout << index;
-    std::cout << std::setw(9) << "|" << std::setw(10-contacts[index].contact_name.length());
+    std::cout << "|" << std::setw(10-contacts[index].contact_name.length()+1);
     print_info(contacts[index].contact_name);
-    std::cout << "|" << std::setw(10-contacts[index].contact_last_name.length());
+    std::cout << "|" << std::setw(10-contacts[index].contact_last_name.length()+1);
     print_info(contacts[index].contact_last_name);
-    std::cout << "|" << std::setw(10-contacts[index].contact_nickname.length());
+    std::cout << "|" << std::setw(10-contacts[index].contact_nickname.length()+1);
     print_info(contacts[index].contact_nickname);
     std::cout << "\n";
     // std::string strng;
@@ -66,10 +66,9 @@ int display_stat(Phonebook  phone, int count )
             return (0);
         }
     std::cout << "\n\n";
+    std::cout << "    INDEX|" <<  "      NAME|" << " LAST NAME|" << "  NICKNAME\n";
     for (int i = 0; i < count ;i++)
         {
-                        std::cout << "INDEX    |" <<  "     NAME|" << "LAST NAME|" << "  NICKNAME\n";
-
             phone.search(i);
         }
     std::cout << "\n";
