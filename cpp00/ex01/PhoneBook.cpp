@@ -1,13 +1,13 @@
 // #include "cpp.h"
                             
-#include "contacts.hpp"
+#include "Contacts.hpp"
 #include "PhoneBook.hpp"
 
 void Phonebook::print_info(std::string str)
 {
     int i;
     i =0;
-
+    
     while (str[i])
     {
         char c = str[i];
@@ -35,13 +35,18 @@ void Phonebook::search(int index)
     // std::string strng;
 }
 
-void Phonebook::display_all_contact_info(int index)
+std::string Contact::get_phone_num(Contact contacts)
 {
-    std::cout << "\nphone number       :" << contacts[index].phone_num << std::endl;
+    return (contacts.phone_num);
+}
+
+void Contact::display_all_contact_info(int index)
+{
+    std::cout << "\nphone number       :" << contacts[index] get_phone_num(Phonebook::contacts[index] ) << std::endl;
     std::cout << "first name          :" << contacts[index].contact_name << std::endl;
     std::cout << "last name           :" << contacts[index].contact_last_name << std::endl;
     std::cout << "nickname            :" << contacts[index].contact_nickname << std::endl;
-    std::cout << "contact_darkest_sec :" << contacts[index].contact_name << std::endl;
+    std::cout << "contact_darkest_sec :" << contacts[index].contact_ << std::endl;
 }
 
 std::string new_entry(std::string order)
