@@ -32,21 +32,21 @@ void Phonebook::search(int index)
     std::cout << "|" << std::setw(10-contacts[index].contact_nickname.length()+1);
     print_info(contacts[index].contact_nickname);
     std::cout << "\n";
-    // std::string strng;
 }
 
-std::string Contact::get_phone_num(Contact contacts)
+Contact Contact::get_phone_num(Phonebook phone,  int index)
 {
-    return (contacts.phone_num);
+    return (phone.contacts[index]);
 }
 
-void Contact::display_all_contact_info(int index)
+void Contact::display_all_contact_info(Phonebook phone, int index)
 {
-    std::cout << "\nphone number       :" << contacts[index] get_phone_num(Phonebook::contacts[index] ) << std::endl;
-    std::cout << "first name          :" << contacts[index].contact_name << std::endl;
-    std::cout << "last name           :" << contacts[index].contact_last_name << std::endl;
-    std::cout << "nickname            :" << contacts[index].contact_nickname << std::endl;
-    std::cout << "contact_darkest_sec :" << contacts[index].contact_ << std::endl;
+    // get_phone_num(&Phonebook::contacts[index]);
+    std::cout << "\nphone number       :"  << get_phone_num(phone, index).phone_num << std::endl;
+    std::cout << "first name          :"  << contacts[index].contact_name << std::endl;
+    std::cout << "last name           :"  << contacts[index].contact_last_name << std::endl;
+    std::cout << "nickname            :"  << contacts[index].contact_nickname << std::endl;
+    std::cout << "contact_darkest_sec :"  << contacts[index].contact_ << std::endl;
 }
 
 std::string new_entry(std::string order)
@@ -129,7 +129,7 @@ int main()
                 if (i > contacts_count-1)
                     std::cout << "[!] no contact at index " << i << std::endl;
                 else
-                    phonebook.display_all_contact_info(i);    
+                    phonebook.display_all_contact_info(phonebook ,i);    
             }
         }
         if (!cmd.compare("ADD"))
