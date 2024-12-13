@@ -19,8 +19,8 @@ class Contact
         // void get_contact_lastname(Contact contact, int  cmd);
         // void get_contact_nickname(Contact contact, int  cmd);
         // void get_contact_darksec(Contact contact, int  cmd);
-
     public:
+        void    fill_attr(Phonebook phonebook, int index_count);
         Contact get_phone_num(Phonebook phone, int index);
         Contact get_contact_name(Phonebook phone,  int index);
         Contact get_contact_last_name(Phonebook phone,  int index);

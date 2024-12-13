@@ -109,7 +109,14 @@ std::string check_num(std::string str)
     }
     return (str);
 }
-
+void Contact::fill_attr(Phonebook phonebook, int index_count);
+{
+    get_phone_num(phonebook , index_count).phone_num     = check_num(new_entry("phone_number"));
+    get_phone_num(phonebook, index_count).contact_name      = new_entry("contact_name");
+    get_phone_num(phonebook, index_count).contact_last_name      = new_entry("contact_last_name");
+    get_phone_num(phonebook,index_count).contact_nickname      = new_entry("contact_nickname");
+    get_phone_num(phonebook, index_count).contact_darkest_sec      = new_entry("contact_darkest_sec");
+}
 int main()
 {
     std::vector<std::string> alo;
@@ -158,11 +165,12 @@ int main()
         if (!cmd.compare("ADD"))
         {
             std::string contact_name ,contact_last_name, contact_nickname, contact_darkest_sec;
-            contact.get_phone_num(phonebook , index_count);// get_phone_num(phonebook, index).phone_num     = check_num(new_entry("phone_number"));
-            contact.get_phone_num(phonebook, index_count).contact_name      = new_entry("contact_name");
-            contact.get_phone_num(phonebook, index_count).contact_last_name      = new_entry("contact_last_name");
-            contact.get_phone_num(phonebook,index_count).contact_nickname      = new_entry("contact_nickname");
-            contact.get_phone_num(phonebook, index_count).contact_darkest_sec      = new_entry("contact_darkest_sec");
+            contact.fill_attr(phonebook, index_count);
+            // contact.get_phone_num(phonebook , index_count);// get_phone_num(phonebook, index).phone_num     = check_num(new_entry("phone_number"));
+            // contact.get_phone_num(phonebook, index_count).contact_name      = new_entry("contact_name");
+            // contact.get_phone_num(phonebook, index_count).contact_last_name      = new_entry("contact_last_name");
+            // contact.get_phone_num(phonebook,index_count).contact_nickname      = new_entry("contact_nickname");
+            // contact.get_phone_num(phonebook, index_count).contact_darkest_sec      = new_entry("contact_darkest_sec");
             if (phonebook.contacts[index_count].phone_num == "" || phonebook.contacts[index_count].contact_name == "" || phonebook.contacts[index_count].contact_last_name == "" || phonebook.contacts[index_count].contact_nickname == "" || phonebook.contacts[index_count].contact_darkest_sec == "")
                 {
                     std::cout << "[-] failed to add the new contact\n";
