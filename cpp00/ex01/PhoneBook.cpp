@@ -21,7 +21,7 @@ void Phonebook::print_info(std::string str)
     }
 }
 
-void Phonebook::search(int index)
+void Contact::search(int index)
 {
     std::cout << std::setw(9);
     std::cout << index;
