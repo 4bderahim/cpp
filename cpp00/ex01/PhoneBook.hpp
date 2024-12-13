@@ -1,11 +1,20 @@
 #include "Contacts.hpp"
+
+
+#pragma once
 #ifndef ___PHONE___
 #define ___PHONE___
+
 class Phonebook
 {
-    public:
+    private:
         Contact contacts[8];
         void print_info(std::string str);
+    public:
+        int     fill_attr(Phonebook phonebook, int index_count);
+        Contact get_contact(Phonebook phone, int index);
+        
+        void display_all_contact_info(Phonebook phone, int index);
 };
 
 #endif
