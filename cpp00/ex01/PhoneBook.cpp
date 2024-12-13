@@ -109,7 +109,7 @@ std::string check_num(std::string str)
     }
     return (str);
 }
-void Contact::fill_attr(Phonebook phonebook, int index_count);
+void Contact::fill_attr(Phonebook phonebook, int index_count)
 {
     get_phone_num(phonebook , index_count).phone_num     = check_num(new_entry("phone_number"));
     get_phone_num(phonebook, index_count).contact_name      = new_entry("contact_name");
