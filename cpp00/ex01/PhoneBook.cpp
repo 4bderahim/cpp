@@ -21,23 +21,24 @@ void Phonebook::print_info(std::string str)
     }
 }
 
-void Contact::search(Contact contact,Phonebook phone,  int index)
+void Phonebook::search(Phonebook phone,  int index)
 {
     std::cout << std::setw(9);
     std::cout << index;
-    std::cout << "|" << std::setw(10 - contact.get_contact_name(phone, index).contact_name.length()+1);
-    phone.print_info(contact.get_contact_name(phone, index).contact_name);
-    std::cout << "|" << std::setw(10-contact.get_contact_name(phone, index).contact_last_name.length()+1);
-    phone.print_info(contact.get_contact_name(phone, index).contact_last_name );
-    phone.print_info(contact.get_contact_name(phone, index).contact_last_name);
-    std::cout << "|" << std::setw(10-contact.get_contact_name(phone, index).contact_nickname.length()+1);
-    phone.print_info(contact.get_contact_name(phone, index).contact_nickname);
+    std::cout << "|" << std::setw(10 - phone.contacts->get_contact_name(get_contact(phone, index)).length() +1);
+    phone.print_info(phone.contacts->get_contact_last_name(contacts[index]));// get_contact(phone, index)));
+    std::cout << "|" << std::setw(10 - phone.contacts->get_contact_last_name(phone.get_contact(phone, index)).length() +1);
+    phone.print_info(phone.contacts->get_contact_nickname(get_contact(phone, index)));
+    //phone.print_info(contact.get_contact_name(phone, index).contact_last_name);
+    std::cout << "|" << std::setw(10 - phone.contacts->get_contact_nickname(phone.get_contact(phone, index)).length() +1);
+    phone.print_info(phone.contacts->get_contact_nickname(get_contact(phone, index)));
     std::cout << "\n";
 }
 
 Contact Phonebook::get_contact(Phonebook phone, int index)
 {
-    return (phone.contacts[index]);
+    (void)phone;
+    return (phone.contacts[index%8]);
 }
 
 std::string Contact::get_contact_phone_num(Contact contact)
@@ -88,7 +89,7 @@ std::string new_entry(std::string order)
     return (new_);
 }
 
-int display_stat(Contact  contact, int count )
+int Phonebook::display_stat(Phonebook  phonebook , int count )
 {
     if (count == 0)
     {
@@ -98,7 +99,7 @@ int display_stat(Contact  contact, int count )
     std::cout << "\n\n";
     std::cout << "    INDEX|" <<  "      NAME|" << " LAST NAME|" << "  NICKNAME\n";
     for (int i = 0; i < count ;i++)
-        contact.search(i);
+        phonebook.search(phonebook, i);
     std::cout << "\n";
     return (1);
 }
@@ -117,7 +118,7 @@ int Contact::fill(Contact contact)
 {
     contact.phone_num     = check_num(new_entry("phone_number"));
     contact.contact_name      = new_entry("contact_name");
-    contact.contact_last_name      = new_entry("contact_last_name");
+    contact.contact_last_name       = new_entry("contact_last_name");
     contact.contact_nickname      = new_entry("contact_nickname");
     contact.contact_darkest_sec      = new_entry("contact_darkest_sec");
     if (contact.phone_num == "" || contact.contact_name == "" || contact.contact_last_name == "" || contact.contact_nickname == "" || contact.contact_darkest_sec == "")
@@ -127,10 +128,11 @@ int Contact::fill(Contact contact)
     }
     return (1);
 }
-int Phonebook::fill_attr(Phonebook phonebook, int index_count)
+
+int Phonebook::fill_attr(Phonebook *phonebook, int index_count)
 {
     int res;
-    res = phonebook.contacts->fill(get_phone_num(phonebook , index_count));
+    res = phonebook->contacts->fill(get_contact(*phonebook, index_count) ); 
     if (res == 0)
         return (0);
     // get_phone_num(phonebook, index_count).contact_name      = new_entry("contact_name");
@@ -165,7 +167,7 @@ int main()
         if (!cmd.compare("SEARCH"))
         {
             std::string search_;
-            if (!display_stat(phonebook, contacts_count))
+            if (!phonebook.display_stat(phonebook, contacts_count))
                 continue;
             while(1)
             {
@@ -186,13 +188,13 @@ int main()
                 if (i > contacts_count-1)
                     std::cout << "[!] no contact at index " << i << std::endl;
                 else
-                    contact.display_all_contact_info(phonebook ,i);    
+                    phonebook.display_all_contact_info(phonebook ,i);    
             }
         }
         if (!cmd.compare("ADD"))
         {
             std::string contact_name ,contact_last_name, contact_nickname, contact_darkest_sec;
-            int t = contact.fill_attr(phonebook, index_count);
+            int t = phonebook.fill_attr(&phonebook, index_count);
             // contact.get_phone_num(phonebook , index_count);// get_phone_num(phonebook, index).phone_num     = check_num(new_entry("phone_number"));
             // contact.get_phone_num(phonebook, index_count).contact_name      = new_entry("contact_name");
             // contact.get_phone_num(phonebook, index_count).contact_last_name      = new_entry("contact_last_name");
