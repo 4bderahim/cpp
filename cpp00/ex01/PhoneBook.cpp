@@ -195,11 +195,6 @@ int main()
         {
             std::string contact_name ,contact_last_name, contact_nickname, contact_darkest_sec;
             int t = phonebook.fill_attr(&phonebook, index_count);
-            // contact.get_phone_num(phonebook , index_count);// get_phone_num(phonebook, index).phone_num     = check_num(new_entry("phone_number"));
-            // contact.get_phone_num(phonebook, index_count).contact_name      = new_entry("contact_name");
-            // contact.get_phone_num(phonebook, index_count).contact_last_name      = new_entry("contact_last_name");
-            // contact.get_phone_num(phonebook,index_count).contact_nickname      = new_entry("contact_nickname");
-            // contact.get_phone_num(phonebook, index_count).contact_darkest_sec      = new_entry("contact_darkest_sec");
             if (t == 0)
                 continue;
             index_count++;

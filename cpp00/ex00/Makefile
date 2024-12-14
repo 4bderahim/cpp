@@ -3,7 +3,7 @@ CC = c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= megaphone
 
-CPPFILES	= megaphone.cpp
+CPPFILES	= MegaPhone.cpp
 OFILES		= $(CPPFILES:.cpp=.o)
 
 all : $(NAME)
