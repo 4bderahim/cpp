@@ -21,6 +21,13 @@ class Contact
     public:
         
         int fill(Contact contact);
+        void set_contact_phone_num(std::string str);
+        void set_contact_name(std::string str);
+        void set_contact_last_name(std::string str);
+        void set_contact__nickname(std::string str);
+        void set_contact_darkest_sec(std::string str);
+
+
         std::string get_contact_phone_num(Contact contact);
         std::string get_contact_name(Contact contact);
         std::string get_contact_last_name(Contact contact);

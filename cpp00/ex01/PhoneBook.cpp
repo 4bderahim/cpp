@@ -116,12 +116,13 @@ std::string check_num(std::string str)
 
 int Contact::fill(Contact contact)
 {
-    contact.phone_num     = check_num(new_entry("phone_number"));
-    contact.contact_name      = new_entry("contact_name");
-    contact.contact_last_name       = new_entry("contact_last_name");
-    contact.contact_nickname      = new_entry("contact_nickname");
-    contact.contact_darkest_sec      = new_entry("contact_darkest_sec");
-    if (contact.phone_num == "" || contact.contact_name == "" || contact.contact_last_name == "" || contact.contact_nickname == "" || contact.contact_darkest_sec == "")
+    (void)contact;
+    this->phone_num                = check_num(new_entry("phone_number"));
+    this->contact_name             = new_entry("contact_name");
+    this->contact_last_name        = new_entry("contact_last_name");
+    this->contact_nickname         = new_entry("contact_nickname");
+    this->contact_darkest_sec      = new_entry("contact_darkest_sec");
+    if (this->phone_num == "" || this->contact_name == "" || this->contact_last_name == "" || this->contact_nickname == "" || this->contact_darkest_sec == "")
     {
         std::cout << "[-] failed to add the new contact\n";
         return (0);
@@ -132,7 +133,7 @@ int Contact::fill(Contact contact)
 int Phonebook::fill_attr(Phonebook *phonebook, int index_count)
 {
     int res;
-    res = phonebook->contacts->fill(get_contact(*phonebook, index_count) ); 
+    res = phonebook->contacts[index_count].fill(get_contact(*phonebook, index_count) ); 
     if (res == 0)
         return (0);
     // get_phone_num(phonebook, index_count).contact_name      = new_entry("contact_name");
