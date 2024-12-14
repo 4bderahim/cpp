@@ -117,7 +117,7 @@ std::string check_num(std::string str)
 int Contact::fill(Contact contact)
 {
     (void)contact;
-    this->phone_num                = check_num(new_entry("phone_number"));
+    this->phone_num = check_num(new_entry("phone_number"));
     this->contact_name             = new_entry("contact_name");
     this->contact_last_name        = new_entry("contact_last_name");
     this->contact_nickname         = new_entry("contact_nickname");
@@ -147,6 +147,7 @@ int Phonebook::fill_attr(Phonebook *phonebook, int index_count)
     // }
     return (1);
 }
+
 int main()
 {
     std::vector<std::string> alo;
