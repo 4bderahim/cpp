@@ -1,6 +1,4 @@
-// #include "cpp.h"
-                            
-#include "Contacts.hpp"
+
 #include "PhoneBook.hpp"
 
 void Phonebook::print_info(std::string str)
@@ -148,7 +146,7 @@ int Phonebook::fill_attr(Phonebook *phonebook, int index_count)
 
 int main()
 {
-    std::vector<std::string> alo;
+    // std::vector<std::string> alo;
     // using namespace std;
     int index_count , contacts_count;
     index_count = 0;

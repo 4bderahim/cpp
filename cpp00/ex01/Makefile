@@ -9,7 +9,7 @@ OFILES		= $(CPPFILES:.cpp=.o)
 all : $(NAME)
 $(NAME) : $(OFILES)
 	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
-%.o : %.cpp 
+%.o : %.cpp PhoneBook.hpp Contacts.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OFILES)

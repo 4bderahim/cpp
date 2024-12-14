@@ -9,7 +9,7 @@ all : $(NAME)
 
 $(NAME) : $(OFILES)
 	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
-%.o : %.cpp 
+%.o : %.cpp Account.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OFILES)
