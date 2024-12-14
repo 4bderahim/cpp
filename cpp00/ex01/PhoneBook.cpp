@@ -26,10 +26,9 @@ void Phonebook::search(Phonebook phone,  int index)
     std::cout << std::setw(9);
     std::cout << index;
     std::cout << "|" << std::setw(10 - phone.contacts->get_contact_name(get_contact(phone, index)).length() +1);
-    phone.print_info(phone.contacts->get_contact_last_name(contacts[index]));// get_contact(phone, index)));
+    phone.print_info(phone.contacts->get_contact_name(contacts[index]));
     std::cout << "|" << std::setw(10 - phone.contacts->get_contact_last_name(phone.get_contact(phone, index)).length() +1);
-    phone.print_info(phone.contacts->get_contact_nickname(get_contact(phone, index)));
-    //phone.print_info(contact.get_contact_name(phone, index).contact_last_name);
+    phone.print_info(phone.contacts->get_contact_last_name(get_contact(phone, index)));
     std::cout << "|" << std::setw(10 - phone.contacts->get_contact_nickname(phone.get_contact(phone, index)).length() +1);
     phone.print_info(phone.contacts->get_contact_nickname(get_contact(phone, index)));
     std::cout << "\n";
@@ -64,7 +63,6 @@ std::string Contact::get_contact_darkest_sec(Contact contact)
 {
     return (contact.contact_darkest_sec);
 }
-
 
 void Phonebook:: display_all_contact_info(Phonebook phone, int index)
 {
@@ -190,7 +188,7 @@ int main()
                 if (i > contacts_count-1)
                     std::cout << "[!] no contact at index " << i << std::endl;
                 else
-                    phonebook.display_all_contact_info(phonebook ,i);    
+                    phonebook.display_all_contact_info(phonebook, i);    
             }
         }
         if (!cmd.compare("ADD"))
