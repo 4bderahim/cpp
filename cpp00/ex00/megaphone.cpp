@@ -2,9 +2,9 @@
 
 int main(int argc, char **argv)
 {
-    int i;
-    int j;
-    char c;
+    int     i;
+    int     j;
+    char    c;
     if (argc < 2)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" ;
     i = 1;

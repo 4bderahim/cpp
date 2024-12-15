@@ -9,7 +9,6 @@ void Zombie::announce()
 void Zombie::set_name(Zombie *zz,  std::string new_name)
 {
     zz->name = new_name;
-    // (std::string )strdup((const char *)new_name);
 }
 
 Zombie *newZombie( std::string name)
