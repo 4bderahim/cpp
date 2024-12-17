@@ -1,9 +1,6 @@
 #include <iostream>
 
 
-
-
-
 class Weapon
 {
     private:
@@ -11,5 +8,4 @@ class Weapon
     
     const std::string& getType();
     void setType(std::string new_);
-
 };
