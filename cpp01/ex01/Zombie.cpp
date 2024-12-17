@@ -15,13 +15,6 @@ void Zombie::set_name(Zombie *zz,  std::string new_name)
     zz->name = new_name;
 }
 
-// Zombie *newZombie( std::string name)
-// {
-//     Zombie *zz;
-//     zz->set_name(zz, name.c_str());
-//     return zz;
-// }
-
 Zombie* zombieHorde( int N, std::string name)
 {
     
