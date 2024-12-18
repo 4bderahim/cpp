@@ -5,13 +5,12 @@
 HumanB::HumanB(std::string name)
 {
     HumanB::name = name;
-    this->weapon = NULL;
+    HumanB::weapon = NULL;
 }
-
 
 void HumanB::setWeapon(Weapon weapon)
 {
-    this->weapon = &weapon;
+    HumanB::weapon = &weapon;
 }
 
 void HumanB::attack()

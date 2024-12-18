@@ -1,11 +1,10 @@
 
 #pragma once
-
 #ifndef __HUMANA_H__
 #define __HUMANA_H__
 #include <iostream>
 #include "Weapon.hpp"
-class Weapon;
+// class Weapon;
 class HumanA
 {
     public:
@@ -13,7 +12,6 @@ class HumanA
         void attack();
     private:
         std::string name;
-        Weapon weapon;
+        Weapon *weapon;
 };
-
 #endif

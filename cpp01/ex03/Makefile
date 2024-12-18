@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS	= -std=c++98
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= violence
 
 CPPFILES	= Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
@@ -10,7 +10,7 @@ all : $(NAME)
 
 $(NAME) : $(OFILES)
 	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
-%.o : %.cpp 
+%.o : %.cpp HumanB.hpp Weapon.hpp HumanA.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OFILES)
