@@ -4,7 +4,7 @@
 #define __HUMANA_H__
 #include <iostream>
 #include "Weapon.hpp"
-// class Weapon;
+
 class HumanA
 {
     public:
