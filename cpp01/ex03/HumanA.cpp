@@ -2,15 +2,12 @@
 #include "HumanA.hpp"
 
 
+// Weapon::Weapon(std::string type_)
+// {
+//     this->type = type_;
+// }
 
-
-Weapon::Weapon(std::string type)
-{
-    this->type = type;
-}
-
-
-HumanA::HumanA(std::string name, Weapon weapon)
+HumanA::HumanA(std::string name, Weapon &weapon)
 {
     this->weapon = weapon;
     this->name = name;

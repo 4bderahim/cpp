@@ -74,10 +74,10 @@ void Phonebook:: display_all_contact_info(Phonebook phone, int index)
 std::string new_entry(std::string order)
 {
     std::string new_;
-    using namespace std;
+    // using namespace std;
     std::cout << "enter " << order << ":::";
-    getline(cin, new_);
-    if (cin.eof() || cin.fail() || cin.bad())
+    std::getline(std::cin, new_);
+    if (std::cin.eof() || std::cin.fail() || std::cin.bad())
         {
             std::cout << "error eof";
             exit(1);
@@ -132,15 +132,6 @@ int Phonebook::fill_attr(Phonebook *phonebook, int index_count)
     res = phonebook->contacts[index_count].fill(get_contact(*phonebook, index_count) ); 
     if (res == 0)
         return (0);
-    // get_phone_num(phonebook, index_count).contact_name      = new_entry("contact_name");
-    // get_phone_num(phonebook, index_count).contact_last_name      = new_entry("contact_last_name");
-    // get_phone_num(phonebook,index_count).contact_nickname      = new_entry("contact_nickname");
-    // get_phone_num(phonebook, index_count).contact_darkest_sec      = new_entry("contact_darkest_sec");
-    // if (phonebook.contacts[index_count].phone_num == "" || phonebook.contacts[index_count].contact_name == "" || phonebook.contacts[index_count].contact_last_name == "" || phonebook.contacts[index_count].contact_nickname == "" || phonebook.contacts[index_count].contact_darkest_sec == "")
-    // {
-    //     std::cout << "[-] failed to add the new contact\n";
-    //     return (0);
-    // }
     return (1);
 }
 
@@ -157,10 +148,10 @@ int main()
     while (1)
     {
         std::string cmd;
-        using namespace std;
+        // using namespace std;
         std::cout << "type command >>";
-        std::getline(cin, cmd);
-        if (cin.eof() || cin.fail())
+        std::getline(std::cin, cmd);
+        if (std::cin.eof() || std::cin.fail())
             exit(1);
         if (!cmd.compare("SEARCH"))
         {
@@ -170,10 +161,10 @@ int main()
             while(1)
             {
                 std::cout << "enter contact index(0~7):";
-                std::getline(cin , search_);
+                std::getline(std::cin , search_);
                 int i;
                 i = 0;
-                if (cin.eof() || cin.fail())
+                if (std::cin.eof() || std::cin.fail())
                     break;
                 std::sscanf(search_.c_str(), "%d", &i);
                 if (!search_.compare("EXIT"))
