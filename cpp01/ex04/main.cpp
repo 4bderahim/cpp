@@ -15,5 +15,5 @@ int main(int argc, char **argv)
         file >> hello;
     }
 
-    std::cout << ">>" << hello >> "<<";
+    std::cout << ">>" << hello << "<<";
 }
