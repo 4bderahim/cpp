@@ -13,17 +13,17 @@ int replace_(std::string old_fileName,std::string content, std::string to_be_rep
         return (0);
     while (1)
     {
-        int index = content.find(to_be_replaced, i+1);
+        int index = content.find(to_be_replaced, i);
         if (index == -1)
         {
-            file << content.substr(i , (content.length()-1));
+            file << content.substr(i , (content.length()));
             break;
         }
         else
         {
             file << content.substr(i , index);
             file << string;
-            i = index+to_be_replaced.length();
+            i = index+to_be_replaced.length()-1;
         }
     }
     file.close();
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 {
     std::string hello;
     std::string content;
-    if (argc < 4)
+    if (argc < 4 || !argv[1][0] || !argv[2][0]|| !argv[2][0] || !argv[3][0])
     {
         std::cout << "arguments error!!" << std::endl;
         return (1);
