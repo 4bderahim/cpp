@@ -141,8 +141,6 @@ int Phonebook::fill_attr(Phonebook *phonebook, int index_count)
 
 int main()
 {
-    // std::vector<std::string> alo;
-    // using namespace std;
     int index_count , contacts_count;
     index_count = 0;
     contacts_count = 0;
@@ -152,7 +150,6 @@ int main()
     while (1)
     {
         std::string cmd;
-        // using namespace std;
         std::cout << "type command >>";
         std::getline(std::cin, cmd);
         if (std::cin.eof() || std::cin.fail())
