@@ -23,19 +23,18 @@ void Phonebook::search(Phonebook phone,  int index)
 {
     std::cout << std::setw(9);
     std::cout << index;
-    std::cout << "|" << std::setw(10 - phone.contacts->get_contact_name(get_contact(phone, index)).length() +1);
+    std::cout << "|" << std::setw(10 - phone.contacts->get_contact_name(get_contact( index)).length() +1);
     phone.print_info(phone.contacts->get_contact_name(contacts[index]));
-    std::cout << "|" << std::setw(10 - phone.contacts->get_contact_last_name(phone.get_contact(phone, index)).length() +1);
-    phone.print_info(phone.contacts->get_contact_last_name(get_contact(phone, index)));
-    std::cout << "|" << std::setw(10 - phone.contacts->get_contact_nickname(phone.get_contact(phone, index)).length() +1);
-    phone.print_info(phone.contacts->get_contact_nickname(get_contact(phone, index)));
+    std::cout << "|" << std::setw(10 - phone.contacts->get_contact_last_name(phone.get_contact( index)).length() +1);
+    phone.print_info(phone.contacts->get_contact_last_name(get_contact( index)));
+    std::cout << "|" << std::setw(10 - phone.contacts->get_contact_nickname(phone.get_contact( index)).length() +1);
+    phone.print_info(phone.contacts->get_contact_nickname(get_contact( index)));
     std::cout << "\n";
 }
-
-Contact Phonebook::get_contact(Phonebook phone, int index)
+//-------
+Contact Phonebook::get_contact(  int index)
 {
-    (void)phone;
-    return (phone.contacts[index%8]);
+    return (this->contacts[index]);
 }
 
 std::string Contact::get_contact_phone_num(Contact contact)
@@ -64,17 +63,16 @@ std::string Contact::get_contact_darkest_sec(Contact contact)
 
 void Phonebook:: display_all_contact_info(Phonebook phone, int index)
 {
-    std::cout << "\nphone number       :"  << phone.contacts->get_contact_phone_num(phone.get_contact(phone, index)) << std::endl;
-    std::cout << "first name          :"  << phone.contacts->get_contact_name(phone.get_contact(phone, index)) << std::endl;
-    std::cout << "last name           :"  << phone.contacts->get_contact_last_name(phone.get_contact(phone, index)) << std::endl;
-    std::cout << "nickname            :"  << phone.contacts->get_contact_nickname(phone.get_contact(phone, index)) << std::endl;
-    std::cout << "contact_darkest_sec :"  << phone.contacts->get_contact_darkest_sec(phone.get_contact(phone, index)) << std::endl;
+    std::cout << "\nphone number       :"  << phone.contacts->get_contact_phone_num(phone.get_contact( index)) << std::endl;
+    std::cout << "first name          :"  << phone.contacts->get_contact_name(phone.get_contact( index)) << std::endl;
+    std::cout << "last name           :"  << phone.contacts->get_contact_last_name(phone.get_contact( index)) << std::endl;
+    std::cout << "nickname            :"  << phone.contacts->get_contact_nickname(phone.get_contact( index)) << std::endl;
+    std::cout << "contact_darkest_sec :"  << phone.contacts->get_contact_darkest_sec(phone.get_contact( index)) << std::endl;
 }
 
 std::string new_entry(std::string order)
 {
     std::string new_;
-    // using namespace std;
     std::cout << "enter " << order << ":::";
     std::getline(std::cin, new_);
     if (std::cin.eof() || std::cin.fail() || std::cin.bad())
@@ -114,7 +112,6 @@ std::string check_num(std::string str)
 int Contact::fill()
 {
     Contact contact;
-    // contact.
     contact.phone_num                = check_num(new_entry("phone_number"));
     contact.contact_name             = new_entry("contact_name");
     contact.contact_last_name        = new_entry("contact_last_name");

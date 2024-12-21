@@ -3,7 +3,7 @@
 #ifndef __CONTACT_H__
 #define __CONTACT_H__
 #include <iostream>
-#include <string.h>
+#include <string>
 #include <iomanip>
 
 class Contact

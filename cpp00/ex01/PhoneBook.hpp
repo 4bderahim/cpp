@@ -1,9 +1,8 @@
-#include "Contacts.hpp"
 
 #pragma once
 #ifndef ___PHONE___
 #define ___PHONE___
-
+#include "Contacts.hpp"
 class Phonebook
 {
     private:
@@ -12,7 +11,7 @@ class Phonebook
         void print_info(std::string str);
     public:
         int fill_attr(Phonebook *phonebook, int index_count);
-        Contact get_contact(Phonebook phone, int index);
+        Contact get_contact(int index);
         int display_stat(Phonebook  phonebook , int count );
         void display_all_contact_info(Phonebook phone, int index);
 };
