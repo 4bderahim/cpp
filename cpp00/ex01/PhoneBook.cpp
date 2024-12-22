@@ -168,7 +168,7 @@ int main()
                 i = 0;
                 if (std::cin.eof() || std::cin.fail())
                     break;
-                std::sscanf(search_.c_str(), "%d", &i);
+                // std::sscanf(search_.c_str(), "%d", &i);
                 if (!search_.compare("EXIT"))
                     break;
                 if (check_num(search_) == "" || !(convert >> i))

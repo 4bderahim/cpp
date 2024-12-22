@@ -1,5 +1,3 @@
-// #include <fstream>
-
 #include "Account.hpp"
 
 int Account::_totalNbWithdrawals = 0;
