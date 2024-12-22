@@ -5,7 +5,6 @@ void Phonebook::print_info(std::string str)
 {
     int i;
     i =0;
-    
     while (str[i])
     {
         char c = str[i];
@@ -77,7 +76,7 @@ std::string new_entry(std::string order)
     std::getline(std::cin, new_);
     if (std::cin.eof() || std::cin.fail() || std::cin.bad())
         {
-            std::cout << "error eof";
+            std::cout << "input error" << std::endl;
             std::exit(1);
         }
     return (new_);
@@ -107,7 +106,6 @@ std::string check_num(std::string str)
     }
     return (str);
 }
-
 
 int Contact::fill()
 {
@@ -142,6 +140,7 @@ int Phonebook::fill_attr(Phonebook *phonebook, int index_count)
 int main()
 {
     int index_count , contacts_count;
+    int i;
     index_count = 0;
     contacts_count = 0;
     Phonebook phonebook;
@@ -164,11 +163,9 @@ int main()
                 std::cout << "enter contact index(0~7):";
                 std::getline(std::cin , search_);
                 std::istringstream convert(search_);
-                int i;
                 i = 0;
                 if (std::cin.eof() || std::cin.fail())
                     break;
-                // std::sscanf(search_.c_str(), "%d", &i);
                 if (!search_.compare("EXIT"))
                     break;
                 if (check_num(search_) == "" || !(convert >> i))
