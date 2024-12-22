@@ -78,7 +78,7 @@ std::string new_entry(std::string order)
     if (std::cin.eof() || std::cin.fail() || std::cin.bad())
         {
             std::cout << "error eof";
-            exit(1);
+            std::exit(1);
         }
     return (new_);
 }
@@ -100,7 +100,7 @@ int Phonebook::display_stat(Phonebook  phonebook , int count )
 
 std::string check_num(std::string str)
 {
-    for (size_t i = 0; i < std::strlen(str.c_str()); i++)
+    for (size_t i = 0; i < str.length(); i++)
     {
         if (!isdigit(str[i]))
             return ("");
@@ -163,6 +163,8 @@ int main()
             {
                 std::cout << "enter contact index(0~7):";
                 std::getline(std::cin , search_);
+                std::string res;
+                std::istringstream convert(search_);
                 int i;
                 i = 0;
                 if (std::cin.eof() || std::cin.fail())
@@ -170,7 +172,7 @@ int main()
                 std::sscanf(search_.c_str(), "%d", &i);
                 if (!search_.compare("EXIT"))
                     break;
-                if (check_num(search_) == "" || !(i <= 7 && i >= 0))
+                if (check_num(search_) == "" || !(convert >> res))
                 {
                         std::cout << "[-] indexes are from 0 to 7" << std::endl;
                         continue;
