@@ -163,7 +163,6 @@ int main()
             {
                 std::cout << "enter contact index(0~7):";
                 std::getline(std::cin , search_);
-                std::string res;
                 std::istringstream convert(search_);
                 int i;
                 i = 0;
@@ -172,7 +171,7 @@ int main()
                 std::sscanf(search_.c_str(), "%d", &i);
                 if (!search_.compare("EXIT"))
                     break;
-                if (check_num(search_) == "" || !(convert >> res))
+                if (check_num(search_) == "" || !(convert >> i))
                 {
                         std::cout << "[-] indexes are from 0 to 7" << std::endl;
                         continue;

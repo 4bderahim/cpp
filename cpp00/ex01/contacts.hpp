@@ -3,8 +3,10 @@
 #ifndef __CONTACT_H__
 #define __CONTACT_H__
 #include <iostream>
-#include <string>
 #include <iomanip>
+#include <cstdlib>
+#include <sstream>
+#include <string>
 
 class Contact
 {
