@@ -85,6 +85,8 @@ bool Account::makeWithdrawal(int withdrawal)
 
 void Account::makeDeposit(int deposit)
 {
+    if (deposit < 1)
+        return ;
     Account::_nbDeposits++;
     Account::_totalNbDeposits++;
     Account::_amount += deposit;

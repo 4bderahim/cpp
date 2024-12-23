@@ -4,9 +4,7 @@
 #define __CONTACT_H__
 #include <iostream>
 #include <iomanip>
-#include <cstdlib>
 #include <sstream>
-#include <string>
 
 class Contact
 {
