@@ -50,9 +50,3 @@ void Harl::complain( std::string level )
     std::cout << "Undefined complaint!!" << std::endl;
 }
 
-int main()
-{
-    Harl ha;
-    ha.complain("warning");
-    return (0);
-}
