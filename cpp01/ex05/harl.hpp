@@ -13,7 +13,6 @@ class Harl{
         void error( void );
     public:
         Harl();
-        void (Harl::*levelsStrPrts[4]) ();
         void complain( std::string level );
         
 };

@@ -5,7 +5,7 @@
 
 Harl::Harl()
 {
-    void (Harl::*levelsStrPrts[4]) ()= {&Harl::debug ,  &Harl::error,  &Harl::warning, &Harl::info};
+    // Harl::levelsStrPrts = {&Harl::debug ,  &Harl::error,  &Harl::warning, &Harl::info};
 }
 void Harl::error()
 {
@@ -25,29 +25,27 @@ void Harl::warning()
 void Harl::info()
 {
     std::cout << "I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
-    
 }
 
 void Harl::complain( std::string level )
 {
-    // void (Harl::*levelsStrPrts[4]) () = {&Harl::debug ,  &Harl::error,  &Harl::warning, &Harl::info};
+    void (Harl::*levelsStrPrts[4]) () = {&Harl::debug ,  &Harl::error,  &Harl::warning, &Harl::info};
     Harl h;
     std::string levels[4] = 
     {
-        "warning",
-        "error",
         "debug",
+        "error",
+        "warning",
         "info",
     };
 
     for (int i = 0; i < 4; i++)
     {
-        if (levels[i].compare(level))
+        if (!levels[i].compare(level))
             {
                 (this->*levelsStrPrts[i]) ();
                 return ;
             }
-        i++;
     }
     std::cout << "Undefined complaint!!" << std::endl;
 }
@@ -55,6 +53,6 @@ void Harl::complain( std::string level )
 int main()
 {
     Harl ha;
-    ha.complain("error");
+    ha.complain("warning");
     return (0);
 }
