@@ -9,9 +9,9 @@ OFILES		= $(CPPFILES:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : $(OFILES)
-	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
+	$(CC) -o $(CFLAGS) $(OFILES) -o $(NAME)
 %.o : %.cpp HumanB.hpp Weapon.hpp HumanA.hpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CPPFILES) -c $< -o $@
 clean:
 	rm -f $(OFILES)
 fclean: clean
