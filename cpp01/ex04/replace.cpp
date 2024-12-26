@@ -22,9 +22,15 @@ int replace_(std::string old_fileName,std::string content, std::string to_be_rep
         }
         else
         {
-            file << content.substr(i , index);
-            file << string;
-            i = index+to_be_replaced.length()-1;
+            content.erase(index, to_be_replaced.length());
+            std::cout << content << "<<<<<<" << index+to_be_replaced.length() << std::endl;
+            // return (1);
+            content.insert(index , string);
+            std::cout << content << "<<<<<<" << std::endl;
+            file << content;
+            break;
+            // file << content.substr(i , index);
+            // i = index+to_be_replaced.length()-1;
         }
     }
     file.close();
