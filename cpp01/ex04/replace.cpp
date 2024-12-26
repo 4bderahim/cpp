@@ -51,7 +51,6 @@ int main(int argc, char **argv)
     std::ifstream file (argv[1]);
     buf = file.rdbuf();
     
-
     if (!file)
     {
         std::cout << "[-] file doesn't exist!";
