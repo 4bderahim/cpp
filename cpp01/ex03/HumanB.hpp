@@ -3,7 +3,6 @@
 #define __HUMANB_H__
 
 #include "Weapon.hpp"
-// class Weapon;
 class HumanB
 {
     public:

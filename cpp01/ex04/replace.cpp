@@ -24,9 +24,8 @@ int replace_(std::string old_fileName,std::string content, std::string to_be_rep
         {
             content.erase(index, to_be_replaced.length());
             std::cout << content << "<<<<<<" << index+to_be_replaced.length() << std::endl;
-            // return (1);
             content.insert(index , string);
-            std::cout << content << "<<<<<<" << std::endl;
+            std::cout << "||>" <<  content << "<<<<<<" << std::endl;
             file << content;
             break;
             // file << content.substr(i , index);

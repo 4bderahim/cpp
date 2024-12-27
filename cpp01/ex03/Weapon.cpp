@@ -20,6 +20,3 @@ void Weapon::setType(std::string new_)
 {
      Weapon::type = new_;
 }
-
-
-
