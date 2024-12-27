@@ -6,6 +6,10 @@
 Harl::Harl()
 {
     std::cout << "Harl in action.." << std::endl;
+    this->levelsStrPrts[0] = &Harl::debug;
+    this->levelsStrPrts[1] = &Harl::error;
+    this->levelsStrPrts[2] = &Harl::warning;
+    this->levelsStrPrts[3] = &Harl::info;
 }
 void Harl::error()
 {
@@ -29,8 +33,6 @@ void Harl::info()
 
 void Harl::complain( std::string level )
 {
-    void (Harl::*levelsStrPrts[4]) () = {&Harl::debug ,  &Harl::error,  &Harl::warning, &Harl::info};
-    Harl h;
     std::string levels[4] = 
     {
         "debug",
@@ -38,7 +40,7 @@ void Harl::complain( std::string level )
         "warning",
         "info",
     };
-
+    
     for (int i = 0; i < 4; i++)
     {
         if (!levels[i].compare(level))
@@ -49,4 +51,3 @@ void Harl::complain( std::string level )
     }
     std::cout << "Undefined complaint!!" << std::endl;
 }
-

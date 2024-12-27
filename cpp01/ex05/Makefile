@@ -12,11 +12,10 @@ $(NAME) : $(OFILES)
 	$(CC) -o $(CPPFLAGS) $(OFILES) -o $(NAME)
 %.o : %.cpp harl.hpp
 	$(CC) $(CPPFLAGS) -c $< -o $@
-clean :
+clean:
 	rm -rf $(OFILES)
-fclean : clean
+fclean: clean
 	rm -rf $(NAME)
-re :
-	fclean all
+re: fclean all
 
 
