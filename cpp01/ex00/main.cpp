@@ -12,7 +12,7 @@ Zombie *newZombie( std::string name)
 
 int main()
 {
-    Zombie *new_ = newZombie("Hellloo");
+    Zombie *new_ = newZombie("name");
     new_->announce();
     delete new_;
 }
