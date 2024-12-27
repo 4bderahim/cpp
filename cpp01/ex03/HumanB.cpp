@@ -17,8 +17,3 @@ void HumanB::attack()
 {
     std::cout <<  HumanB::name  <<  " attacks with " << this->weapon->getType() << std::endl;
 }
-
-
-
-
-

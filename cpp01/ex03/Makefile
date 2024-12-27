@@ -5,13 +5,12 @@ NAME	= violence
 CPPFILES	= Weapon.cpp HumanA.cpp HumanB.cpp main.cpp
 
 OFILES		= $(CPPFILES:.cpp=.o)
-
 all : $(NAME)
 
 $(NAME) : $(OFILES)
-	$(CC) -o $(CFLAGS) $(OFILES) -o $(NAME)
+	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
 %.o : %.cpp HumanB.hpp Weapon.hpp HumanA.hpp
-	$(CC) $(CPPFILES) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OFILES)
 fclean: clean
