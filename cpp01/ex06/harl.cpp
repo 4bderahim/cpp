@@ -5,7 +5,7 @@
 
 Harl::Harl()
 {
-    // Harl::levelsStrPrts = {&Harl::debug ,  &Harl::error,  &Harl::warning, &Harl::info};
+    std::cout << "Harl in action.." << std::endl;
 }
 void Harl::debug()
 {
