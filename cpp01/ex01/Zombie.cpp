@@ -10,6 +10,10 @@ void Zombie::announce()
     std::cout << this->name << ":" << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
+Zombie::Zombie()
+{
+    std::cout << "a zombie created!!" << std::endl;   
+}
 void Zombie::set_name(Zombie *zz,  std::string new_name)
 {
     zz->name = new_name;
