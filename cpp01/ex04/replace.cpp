@@ -1,8 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <cstdio>
-#include <string>
-
+#include "replace.hpp"
 int replace_(std::string old_fileName,std::string content, std::string to_be_replaced, std::string string)
 {
     int i = 0 ;
@@ -23,13 +19,10 @@ int replace_(std::string old_fileName,std::string content, std::string to_be_rep
         else
         {
             content.erase(index, to_be_replaced.length());
-            std::cout << content << "<<<<<<" << index+to_be_replaced.length() << std::endl;
             content.insert(index , string);
-            std::cout << "||>" <<  content << "<<<<<<" << std::endl;
+
             file << content;
             break;
-            // file << content.substr(i , index);
-            // i = index+to_be_replaced.length()-1;
         }
     }
     file.close();
@@ -40,6 +33,7 @@ int main(int argc, char **argv)
 {
     std::string hello;
     std::string content;
+
     std::filebuf *buf;
     char c;
     if (argc < 4 || !argv[1][0] || !argv[2][0]|| !argv[2][0] || !argv[3][0])
@@ -52,9 +46,11 @@ int main(int argc, char **argv)
     
     if (!file)
     {
-        std::cout << "[-] file doesn't exist!";
+        std::cout << "[-] can't open file  '" << argv[1] << "'" << std::endl;
         return (1);
     }
+    
+    
     c = buf->sbumpc();
     while (file.is_open() && c != EOF)
         {
