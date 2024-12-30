@@ -12,19 +12,14 @@ int replace_(std::string old_fileName,std::string content, std::string to_be_rep
     {
         int index = content.find(to_be_replaced, i);
         if (index == -1)
-        {
-            file << content.substr(i , (content.length()));
             break;
-        }
         else
         {
             content.erase(index, to_be_replaced.length());
             content.insert(index , string);
-
-            file << content;
-            break;
         }
     }
+    file << content;
     file.close();
     return (1);
 }
