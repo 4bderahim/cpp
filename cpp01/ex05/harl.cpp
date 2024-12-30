@@ -35,10 +35,10 @@ void Harl::complain( std::string level )
 {
     std::string levels[4] = 
     {
-        "debug",
-        "error",
+        "debug"  ,
+        "error"   ,
         "warning",
-        "info",
+        "info"   ,
     };
     
     for (int i = 0; i < 4; i++)
