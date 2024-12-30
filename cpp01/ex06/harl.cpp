@@ -1,5 +1,4 @@
-#include <iostream>
-#include <string>
+
 #include "harl.hpp"
 
 
@@ -29,8 +28,7 @@ void Harl::error()
 
 void Harl::complain( std::string level )
 {
-    // void (Harl::*levelsStrPrts[4]) () = {&Harl::debug, &Harl::info,    &Harl::warning,  &Harl::error};
-    // Harl h;
+    
     std::string levels[4] = 
     {
         "debug",
