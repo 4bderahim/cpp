@@ -8,8 +8,8 @@ int replace_(std::string old_fileName,std::string content, std::string to_be_rep
     new__file =  ".replace";
     new__file = old_fileName + ".replace";
     std::fstream file;
-    file.open(new__file.c_str());
-    if (file.fail())
+    file.open(new__file.c_str(), std::fstream::out);
+    if (!file)
         return (0);
     while (1)
     {
@@ -53,7 +53,7 @@ int main(int argc, char **argv)
     }
     if (!replace_(argv[1],content ,argv[2],  argv[3]))
     {
-        std::cout << "[-] Unknown error accured!!" << std::endl;
+        std::cout << "[-] an error accured!!" << std::endl;
         file.close();
         return (1);
     }
