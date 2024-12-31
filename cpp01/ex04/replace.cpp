@@ -7,7 +7,8 @@ int replace_(std::string old_fileName,std::string content, std::string to_be_rep
     std::string new__file;  
     new__file =  ".replace";
     new__file = old_fileName + ".replace";
-    std::ofstream file (new__file);
+    std::fstream file;
+    file.open(new__file.c_str());
     if (file.fail())
         return (0);
     while (1)
@@ -32,7 +33,7 @@ int main(int argc, char **argv)
     std::string content;
     std::filebuf *buf;
     char c;
-    if (argc < 4 || !argv[1][0] || !argv[1][0] || !argv[2][0])
+    if (argc < 4 || argc > 4 || !argv[1][0] || !argv[1][0] || !argv[2][0])
     {
         std::cout << "arguments error!!" << std::endl;
         return (1);
