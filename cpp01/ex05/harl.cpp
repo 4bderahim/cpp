@@ -5,11 +5,11 @@
 
 Harl::Harl()
 {
-    std::cout << "Harl in action.." << std::endl;
     this->levelsStrPrts[0] = &Harl::debug;
     this->levelsStrPrts[1] = &Harl::error;
     this->levelsStrPrts[2] = &Harl::warning;
     this->levelsStrPrts[3] = &Harl::info;
+    std::cout << "Harl is constructed!" << std::endl;
 }
 void Harl::error()
 {
@@ -40,7 +40,7 @@ void Harl::complain( std::string level )
         "warning",
         "info"   ,
     };
-    
+        
     for (int i = 0; i < 4; i++)
     {
         if (!levels[i].compare(level))
