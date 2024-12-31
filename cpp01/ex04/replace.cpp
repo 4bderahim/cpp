@@ -32,13 +32,13 @@ int main(int argc, char **argv)
     std::string content;
     std::filebuf *buf;
     char c;
-    if (argc < 4 || !argv[1][0] || !argv[2][0]|| !argv[2][0] || !argv[3][0])
+    if (argc < 4 || !argv[1][0] || !argv[1][0] || !argv[2][0])
     {
         std::cout << "arguments error!!" << std::endl;
         return (1);
     }
     std::ifstream file (argv[1]);
-    if (!file) 
+    if (!file)
     {
         std::cout << "[-] can't open file  '" << argv[1] << "'" << std::endl;
         return (1);
