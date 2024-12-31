@@ -1,4 +1,6 @@
 #include "replace.hpp"
+
+
 int replace_(std::string old_fileName,std::string content, std::string to_be_replaced, std::string string)
 {
     int i = 0 ;
@@ -28,7 +30,6 @@ int main(int argc, char **argv)
 {
     std::string hello;
     std::string content;
-
     std::filebuf *buf;
     char c;
     if (argc < 4 || !argv[1][0] || !argv[2][0]|| !argv[2][0] || !argv[3][0])
@@ -37,21 +38,18 @@ int main(int argc, char **argv)
         return (1);
     }
     std::ifstream file (argv[1]);
-    buf = file.rdbuf();
-    
-    if (!file)
+    if (!file) 
     {
         std::cout << "[-] can't open file  '" << argv[1] << "'" << std::endl;
         return (1);
     }
-    
-    
+    buf = file.rdbuf();
     c = buf->sbumpc();
     while (file.is_open() && c != EOF)
-        {
-            content += c;
-            c = buf->sbumpc();
-        }
+    {
+        content += c;
+        c = buf->sbumpc();
+    }
     if (!replace_(argv[1],content ,argv[2],  argv[3]))
     {
         std::cout << "[-] Unknown error accured!!" << std::endl;

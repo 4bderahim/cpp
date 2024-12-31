@@ -24,7 +24,7 @@ Zombie* zombieHorde( int N, std::string name)
     
     Zombie *zzz;
 
-    if (N <=0 )
+    if (N <= 0 )
         return (NULL);
     zzz = new Zombie[N];
 
