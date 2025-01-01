@@ -2,12 +2,10 @@
 #include "HumanA.hpp"
 
 HumanA::HumanA(std::string name, Weapon &weapon) 
-    
-    :weapon (weapon)
+:weapon (weapon)
 {
    this->name = name;
 }
-
 
 void HumanA::attack()
 {
