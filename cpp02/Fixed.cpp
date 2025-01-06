@@ -1,15 +1,19 @@
 #include "Fixed.hpp"
 
 
-
+Fixed::~Fixed()
+{
+    std::cout << "destructor was called " << std::endl;
+}
 
 Fixed::Fixed(const Fixed &fixed)
 {
-    this = fixed;
+    *this = fixed;
 }
 Fixed::Fixed()
+:integer {0}
 {
-    this->integer = 0;
+    std::cout << "default constructor was called" << std::endl;
 }
 void Fixed::setRawBits( int const raw )
 {

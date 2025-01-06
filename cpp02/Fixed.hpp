@@ -11,7 +11,7 @@ class Fixed
         int integer;
         static const int frac;
     public:
-        Fixed();
+        Fixed(); 
         ~Fixed();
         Fixed(const Fixed &obj);
         int getRawBits( void ) const;
