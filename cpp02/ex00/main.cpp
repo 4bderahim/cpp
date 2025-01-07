@@ -3,7 +3,6 @@
 
 int main( void ) {
 Fixed a;
-a.
 Fixed b( a );
 Fixed c;
 c = b;
