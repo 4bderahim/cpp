@@ -21,7 +21,8 @@ Fixed::Fixed(const Fixed &fixed)
 }
 
 Fixed::Fixed()
-      :integer (0)
+      :integer (0),
+       value (8)
 {
     std::cout << "default constructor called !" << std::endl;
 }

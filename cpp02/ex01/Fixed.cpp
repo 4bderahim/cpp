@@ -9,6 +9,25 @@ Fixed& Fixed::operator= (const Fixed &fixed)
     return (*this);
 }
 
+Fixed::Fixed(const int integer )
+{
+    this->integer = integer;
+}
+Fixed::Fixed(const float number )
+{
+    this->integer =  number *256;
+}
+int Fixed::toInt( void ) const
+{
+    return (this->integer / 256);
+}
+
+
+float Fixed::toFloat(void) const
+{
+    return ( this->integer / 256 );
+}
+
 Fixed::~Fixed()
 {
     std::cout << "destructor called" << std::endl;
@@ -19,6 +38,8 @@ Fixed::Fixed(const Fixed &fixed)
     std::cout << "Copy constructor called" << std::endl;
     *this = fixed;
 }
+
+
 
 Fixed::Fixed()
       :integer (0)
