@@ -13,15 +13,15 @@ Fixed::Fixed(const int integer )
 {
     this->integer = integer;
 }
-Fixed::Fixed(const float number )
+Fixed::Fixed(const float num )
 {
-    this->integer =  number *256;
+    this->integer = num * 256;
 }
+
 int Fixed::toInt( void ) const
 {
     return (this->integer / 256);
 }
-
 
 float Fixed::toFloat(void) const
 {
