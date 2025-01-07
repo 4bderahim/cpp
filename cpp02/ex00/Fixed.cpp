@@ -4,7 +4,7 @@ Fixed& Fixed::operator= (const Fixed &fixed)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if (&fixed != this)
-        this->integer = fixed.integer;
+        this->integer = fixed.getRawBits();
     return (*this);
 }
 
@@ -27,7 +27,7 @@ Fixed::Fixed()
 
 void Fixed::setRawBits( int const raw )
 {
-    this->integer = raw;
+    this->integer = raw ;
     std::cout << "setRawBits member function called" << std::endl;
 }
 
