@@ -5,7 +5,7 @@ Fixed& Fixed::operator= (const Fixed &fixed)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if (&fixed != this)
-        this->integer = fixed.getRawBits();
+        this->integer = fixed.integer;
     return (*this);
 }
 
@@ -16,17 +16,18 @@ Fixed::Fixed(const int integer )
 
 Fixed::Fixed(const float num )
 {
+    std::cout << "Float constructor called" << std::endl;
     this->integer = num * 256;
 }
 
 int Fixed::toInt( void ) const
 {
+    std::cout << "Int constructor called" << std::endl;
     return (this->integer / 256);
 }
 
 float Fixed::toFloat(void) const
 {
-
     return float( float(this->integer) / 256);
 }
 
