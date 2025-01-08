@@ -9,8 +9,14 @@ Fixed& Fixed::operator= (const Fixed &fixed)
     return (*this);
 }
 
+Fixed::Fixed()
+    :integer (0)
+{
+    std::cout << "default constructor called !" << std::endl;
+}
 Fixed::Fixed(const int integer )
 {
+    std::cout << "Int constructor called" << std::endl;
     this->integer = integer * 256;
 }
 
@@ -22,7 +28,6 @@ Fixed::Fixed(const float num )
 
 int Fixed::toInt( void ) const
 {
-    std::cout << "Int constructor called" << std::endl;
     return (this->integer / 256);
 }
 
@@ -48,11 +53,6 @@ std::ostream& operator<<(std::ostream& os, const Fixed& obj)
     return (os);
 }
 
-Fixed::Fixed()
-      :integer (0)
-{
-    std::cout << "default constructor called !" << std::endl;
-}
 
 void Fixed::setRawBits( int const raw )
 {
