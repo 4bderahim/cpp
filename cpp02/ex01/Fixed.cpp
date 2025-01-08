@@ -17,7 +17,7 @@ Fixed::Fixed(const int integer )
 Fixed::Fixed(const float num )
 {
     std::cout << "Float constructor called" << std::endl;
-    this->integer = num * 256;
+    this->integer = roundf(num * 256);
 }
 
 int Fixed::toInt( void ) const
@@ -37,7 +37,7 @@ Fixed::~Fixed()
 }
 
 Fixed::Fixed(const Fixed &fixed)
-{
+{   
     std::cout << "Copy constructor called" << std::endl;
     *this = fixed;
 }
