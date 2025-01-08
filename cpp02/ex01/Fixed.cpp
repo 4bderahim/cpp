@@ -11,8 +11,9 @@ Fixed& Fixed::operator= (const Fixed &fixed)
 
 Fixed::Fixed(const int integer )
 {
-    this->integer = integer;
+    this->integer = integer * 256;
 }
+
 Fixed::Fixed(const float num )
 {
     this->integer = num * 256;
@@ -25,7 +26,8 @@ int Fixed::toInt( void ) const
 
 float Fixed::toFloat(void) const
 {
-    return ( this->integer / 256 );
+
+    return float( float(this->integer) / 256);
 }
 
 Fixed::~Fixed()
@@ -39,7 +41,11 @@ Fixed::Fixed(const Fixed &fixed)
     *this = fixed;
 }
 
-
+std::ostream& operator<<(std::ostream& os, const Fixed& obj)
+{
+    os << obj.toFloat() ;
+    return (os);
+}
 
 Fixed::Fixed()
       :integer (0)
