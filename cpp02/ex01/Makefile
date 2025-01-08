@@ -3,7 +3,6 @@ CFLAGS = -Wall -Wextra -Werror -std=c++11
 NAME = Fixed
 
 CPPFILES = Fixed.cpp main.cpp
-
 OFILES = $(CPPFILES:.cpp=.o)
 
 all: $(NAME)
