@@ -59,27 +59,25 @@ Fixed Fixed::operator-(const Fixed& fixed)
     return (result);
 }
 
-
-
 Fixed Fixed::operator*(const Fixed& fixed)
 {
     Fixed result;
+
     result =  *this;
-    result.integer *=  fixed.integer;
+    // std::cout << (float)result.integer/256 << "|#$||" << fixed.integer/256 << std::endl;
+    
+    result.integer = result.toFloat() * fixed.toFloat() ;
     return (result);
 }
-
 
 Fixed Fixed::operator/(const Fixed& fixed)
 {
     Fixed result;
-    result =  *this;
-    result.integer /=  fixed.integer;
+    result = *this;
+    result.integer /= fixed.integer;
     return (result);
 }
 // ----------------------------------------------------------------------
-
-
 
 Fixed Fixed::operator++(int)
 {
@@ -97,14 +95,12 @@ Fixed Fixed::operator--(int)
     return (result);
 }
 
-
-
-
 Fixed& Fixed::operator++()
 {
     this->integer++;
     return (*this);
 }
+
 Fixed& Fixed::operator--()
 {
     this->integer--;

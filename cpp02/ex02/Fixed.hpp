@@ -35,8 +35,6 @@ class Fixed
         Fixed operator* (const Fixed& fixed);
         Fixed operator/ (const Fixed& fixed);
         
-        
-        
         // increment/decrement 
         // postfix
         Fixed operator--(int );
@@ -45,7 +43,6 @@ class Fixed
         // prefix
         Fixed& operator--();
         Fixed& operator++();
-
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& dt);
