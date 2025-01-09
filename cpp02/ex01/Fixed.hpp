@@ -19,13 +19,7 @@ class Fixed
         int toInt( void ) const;
         int getRawBits( void ) const;
         void setRawBits( int const raw );
-        Fixed& operator= (const Fixed &fixed);
-        bool operator==(const Fixed& rhs);
-        bool operator!=(const Fixed&  rhs);
-        bool operator< (const Fixed& rhs);
-        bool operator> (const Fixed& rhs);
-        bool operator<=(const Fixed& rhs);
-        bool operator>=(const Fixed& rhs);
+       
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& dt);

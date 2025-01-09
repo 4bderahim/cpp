@@ -17,9 +17,35 @@ class Fixed
         ~Fixed();
         Fixed(const Fixed &obj);
         int toInt( void ) const;
-        Fixed& operator= (const Fixed &fixed);
         int getRawBits( void ) const;
         void setRawBits( int const raw );
+
+        Fixed& operator= (const Fixed &fixed);
+        // Fixed& operator= (const Fixed &fixed);
+        bool operator==(const Fixed& fixed);
+        bool operator!=(const Fixed&  fixed);
+        bool operator< (const Fixed& fixed);
+        bool operator> (const Fixed& fixed);
+        bool operator<=(const Fixed& fixed);
+        bool operator>=(const Fixed& fixed);
+        
+        // arithmetic operators
+        Fixed operator+ (const Fixed& fixed);
+        Fixed operator- (const Fixed& fixed);
+        Fixed operator* (const Fixed& fixed);
+        Fixed operator/ (const Fixed& fixed);
+        
+        
+        
+        // increment/decrement 
+        // postfix
+        Fixed operator--(int );
+        Fixed operator++(int );
+
+        // prefix
+        Fixed& operator--();
+        Fixed& operator++();
+
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& dt);

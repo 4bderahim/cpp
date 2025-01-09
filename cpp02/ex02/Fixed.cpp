@@ -9,6 +9,115 @@ Fixed& Fixed::operator= (const Fixed &fixed)
     return (*this);
 }
 
+
+
+bool Fixed::operator==( const Fixed& fixed) 
+{
+    return ( (this->integer == fixed.integer ));
+    // if (this->integer == rhs.integer )
+    //     return (true);
+    // return (false);
+}
+bool Fixed::operator!=(const Fixed& fixed) 
+{
+     return ( (this->integer != fixed.integer ));
+}
+bool Fixed::operator< ( const Fixed& fixed) 
+{
+     return ( (this->integer < fixed.integer ));
+}
+
+bool Fixed::operator> ( const Fixed& fixed) 
+{
+     return ( (this->integer > fixed.integer )); 
+}
+
+bool Fixed::operator<=( const Fixed& fixed) 
+{
+     return ( (this->integer <= fixed.integer ));
+}
+
+bool Fixed::operator>=( const Fixed& fixed) 
+{
+     return ( (this->integer >= fixed.integer ));
+}
+
+// ----------------------------------------------------------------------
+Fixed Fixed::operator+(const Fixed& fixed)
+{
+    Fixed result;
+    result =  *this;
+    result.integer +=  fixed.integer;
+    return (result);
+}
+
+Fixed Fixed::operator-(const Fixed& fixed)
+{
+    Fixed result;
+    result =  *this;
+    result.integer -=  fixed.integer;
+    return (result);
+}
+
+
+
+Fixed Fixed::operator*(const Fixed& fixed)
+{
+    Fixed result;
+    result =  *this;
+    result.integer *=  fixed.integer;
+    return (result);
+}
+
+
+Fixed Fixed::operator/(const Fixed& fixed)
+{
+    Fixed result;
+    result =  *this;
+    result.integer /=  fixed.integer;
+    return (result);
+}
+// ----------------------------------------------------------------------
+
+
+
+Fixed Fixed::operator++(int)
+{
+    Fixed result;
+    result =  *this;
+    this->integer++;
+    return (result);
+}
+
+Fixed Fixed::operator--(int)
+{
+    Fixed result;
+    result =  *this;
+    this->integer--;
+    return (result);
+}
+
+
+
+
+Fixed& Fixed::operator++()
+{
+    this->integer++;
+    return (*this);
+}
+Fixed& Fixed::operator--()
+{
+    this->integer--;
+    return (*this);
+}
+
+
+
+
+
+
+
+
 Fixed::Fixed()
     :integer (0)
 {
