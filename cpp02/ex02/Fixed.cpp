@@ -9,40 +9,6 @@ Fixed& Fixed::operator= (const Fixed &fixed)
     return (*this);
 }
 
-
-
-bool Fixed::operator==( const Fixed& rhs) 
-{
-    return ( (this->integer == rhs.integer ));
-    // if (this->integer == rhs.integer )
-    //     return (true);
-    // return (false);
-}
-bool Fixed::operator!=(const Fixed& rhs) 
-{
-     return ( (this->integer != rhs.integer ));
-}
-bool Fixed::operator< ( const Fixed& rhs) 
-{
-     return ( (this->integer < rhs.integer ));
-}
-bool Fixed::operator> ( const Fixed& rhs) 
-{
-     return ( (this->integer > rhs.integer )); 
-}
-bool Fixed::operator<=( const Fixed& rhs) 
-{
-     return ( (this->integer <= rhs.integer ));
-}
-bool Fixed::operator>=( const Fixed& rhs) 
-{
-     return ( (this->integer >= rhs.integer ));
-}
-
-
-
-
-
 Fixed::Fixed()
     :integer (0)
 {
