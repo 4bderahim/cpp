@@ -14,9 +14,6 @@ Fixed& Fixed::operator= (const Fixed &fixed)
 bool Fixed::operator==( const Fixed& fixed) 
 {
     return ( (this->integer == fixed.integer ));
-    // if (this->integer == rhs.integer )
-    //     return (true);
-    // return (false);
 }
 bool Fixed::operator!=(const Fixed& fixed) 
 {
@@ -61,13 +58,7 @@ Fixed Fixed::operator-(const Fixed& fixed)
 
 Fixed Fixed::operator*(const Fixed& fixed)
 {
-    Fixed result;
-
-    result =  *this;
-    // std::cout << (float)result.integer/256 << "|#$||" << fixed.integer/256 << std::endl;
-    
-    result.integer = result.toFloat() * fixed.toFloat() ;
-    return (result);
+    return (Fixed(this->toFloat()* fixed.toFloat())) ;
 }
 
 Fixed Fixed::operator/(const Fixed& fixed)
@@ -108,6 +99,12 @@ Fixed& Fixed::operator--()
 }
 
 
+const Fixed&  Fixed::max(const Fixed&  F,const Fixed& FF)
+{
+    if (F.toFloat() > FF.toFloat())
+        return (F);
+    return (FF);
+}
 
 
 

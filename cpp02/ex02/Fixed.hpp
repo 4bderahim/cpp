@@ -23,7 +23,7 @@ class Fixed
         Fixed& operator= (const Fixed &fixed);
         // Fixed& operator= (const Fixed &fixed);
         bool operator==(const Fixed& fixed);
-        bool operator!=(const Fixed&  fixed);
+        bool operator!=(const Fixed& fixed);
         bool operator< (const Fixed& fixed);
         bool operator> (const Fixed& fixed);
         bool operator<=(const Fixed& fixed);
@@ -32,7 +32,7 @@ class Fixed
         // arithmetic operators
         Fixed operator+ (const Fixed& fixed);
         Fixed operator- (const Fixed& fixed);
-        Fixed operator* (const Fixed& fixed);
+        Fixed operator* (const Fixed& f);
         Fixed operator/ (const Fixed& fixed);
         
         // increment/decrement 
@@ -43,6 +43,11 @@ class Fixed
         // prefix
         Fixed& operator--();
         Fixed& operator++();
+
+
+        //----------
+        static const Fixed&  max(const Fixed &F,const Fixed &FF);
+
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& dt);
