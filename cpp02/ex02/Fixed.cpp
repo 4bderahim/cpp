@@ -106,8 +106,25 @@ const Fixed&  Fixed::max(const Fixed&  F,const Fixed& FF)
     return (FF);
 }
 
+Fixed&  Fixed::max( Fixed&  F, Fixed& FF)
+{
+    if (F.toFloat() > FF.toFloat())
+        return (F);
+    return (FF);
+}
 
-
+const Fixed&  Fixed::min(const Fixed&  F,const Fixed& FF)
+{
+    if (F.toFloat() < FF.toFloat())
+        return (F);
+    return (FF);
+}
+ Fixed&  Fixed::min( Fixed&  F, Fixed& FF)
+{
+    if (F.toFloat() < FF.toFloat())
+        return (F);
+    return (FF);
+}
 
 
 

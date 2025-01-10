@@ -46,7 +46,12 @@ class Fixed
 
 
         //----------
+        static const Fixed&  min(const Fixed &F,const Fixed &FF);
+        static  Fixed&  min( Fixed &F, Fixed &FF);
+
         static const Fixed&  max(const Fixed &F,const Fixed &FF);
+        static  Fixed&  max( Fixed &F, Fixed &FF);
+
 
 };
 
