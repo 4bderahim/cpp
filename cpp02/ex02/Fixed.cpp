@@ -50,9 +50,10 @@ Fixed Fixed::operator+(const Fixed& fixed)
 
 Fixed Fixed::operator-(const Fixed& fixed)
 {
-    Fixed result;
-    result =  *this;
-    result.integer -=  fixed.integer;
+    Fixed result(*this);
+
+    result.integer = this->integer -  fixed.integer;
+
     return (result);
 }
 
