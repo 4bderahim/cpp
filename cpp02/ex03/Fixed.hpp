@@ -9,6 +9,7 @@ class Fixed
     private:
         int integer;
         static const int value;
+        
     public:
         Fixed(); 
         Fixed(const int integer ); 
