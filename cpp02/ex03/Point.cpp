@@ -1,14 +1,15 @@
-#include "Point.cpp"
+#include "Point.hpp"
 
 
 
 Point::Point(const float x, const float y)
-: x(0), y(0)
 {
+    
     std::cout << "constructed!" << std::endl;
 }
 
 Point::Point()
+    : x(0), y(0)
 {
     std::cout << "constructed!" << std::endl;
 }
@@ -27,8 +28,18 @@ Fixed& Fixed::operator= (const Fixed &fixed)
     return (*this);
 }
 
-int main()
+const Fixed& Point::getx()
 {
-
-    return (1);
+    return (this->x );
 }
+
+const Fixed& Point::getx()
+{
+    return (this->y);
+}
+
+// int main()
+// {
+
+//     return (1);
+// }
