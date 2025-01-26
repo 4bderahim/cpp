@@ -3,13 +3,13 @@
 
 
 Point::Point(const float x, const float y)
+    : x(0), y(0)
 {
     
     std::cout << "constructed!" << std::endl;
 }
 
 Point::Point()
-    : x(0), y(0)
 {
     std::cout << "constructed!" << std::endl;
 }
@@ -19,6 +19,11 @@ Point::~Point()
     std::cout << "destructed!" << std::endl;
 }
 
+Point::Point(const Point &point)
+{
+    *this = point;
+    std::cout << "copy constructor called!" << std::endl;
+}
 
 Fixed& Fixed::operator= (const Fixed &fixed)
 {
