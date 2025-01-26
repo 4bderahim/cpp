@@ -5,19 +5,21 @@
 
 
 
-float area(float x1, float y1, float x2,  float y2,  float x3,  float y3)
+float area(Point a, Point b, Point c)
 {
-   return abs((x1.getx().toFloat() *(y2.gety().toFloat()-y3.gety().toFloat()) 
-            + x2.getx().toFloat()*(y3.gety().toFloat()-y1.gety().toFloat())
-            + x3.getx().toFloat()*(y1.gety().toFloat()-y2.gety().toFloat()))/2.0);
+   return abs((a.getx().toFloat() *(b.gety().toFloat()-c.gety().toFloat()) 
+            + b.getx().toFloat()*(c.gety().toFloat()-a.gety().toFloat())
+            + c.getx().toFloat()*(a.gety().toFloat()-b.gety().toFloat()))/2.0);
 }
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-    //
-    float a = area(a,  b,  c, point);
-    // float a1 = area();
-    // float a2 = area();
-    // float a3 = area();
-    // float a4 = area();
+    float a0 = area(a,  b, c);
+    float a1 = area(point, a,  b);
+    float a2 = area(a,  point, c);
+    float a3 = area(b,  c, point);
+    
+    if (a0 == (a1 + a2 + a3))
+        return (true);
+    return (false);
 }
