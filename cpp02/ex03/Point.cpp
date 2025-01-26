@@ -25,11 +25,14 @@ Point::Point(const Point &point)
     std::cout << "copy constructor called!" << std::endl;
 }
 
-Fixed& Fixed::operator= (const Fixed &fixed)
+Point& Point::operator= (const Point &point)
 {
     std::cout << "Copy assignment operator called" << std::endl;
-    if (&fixed != this)
-        this->integer = fixed.integer;
+    if (&point != this)
+        {
+            this->x {point.x};
+            this->y {point.y};
+        }
     return (*this);
 }
 
@@ -38,7 +41,7 @@ const Fixed& Point::getx()
     return (this->x );
 }
 
-const Fixed& Point::getx()
+const Fixed& Point::gety()
 {
     return (this->y);
 }
