@@ -20,7 +20,7 @@ Point::~Point()
 }
 
 Point::Point(const Point &point)
-    : x {point.x}, y {point.y}
+    : x (point.x), y (point.y)
 {
     *this = point;
     std::cout << "copy constructor called!" << std::endl;
