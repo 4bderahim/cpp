@@ -1,6 +1,6 @@
 CC = c++
 CFLAGS =  -std=c++11
-NAME = Fixed
+NAME = Point
 
 CPPFILES = Fixed.cpp Point.cpp bsp.cpp main.cpp
 OFILES = $(CPPFILES:.cpp=.o)

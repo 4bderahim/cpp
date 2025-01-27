@@ -14,7 +14,7 @@ float area(Point a, Point b, Point c)
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
-    float a0 = area(a,  b, c);
+    float a0 = area(a,  b, c)    ;
     float a1 = area(point, a,  b);
     float a2 = area(a,  point, c);
     float a3 = area(b,  c, point);

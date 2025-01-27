@@ -3,7 +3,7 @@
 
 
 Point::Point(const float x, const float y)
-    : x(0), y(0)
+    : x(x), y(y)
 {
     
     std::cout << "constructed!" << std::endl;
@@ -46,9 +46,3 @@ const Fixed& Point::gety()
 {
     return (this->y);
 }
-
-// int main()
-// {
-
-//     return (1);
-// }
