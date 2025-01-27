@@ -81,13 +81,13 @@ Fixed Fixed::operator--(int)
 {
     Fixed result;
     result =  *this;
-    this->integer--;
+    this->integer  = this->integer-1;
     return (result);
 }
 
 Fixed& Fixed::operator++()
 {
-    this->integer++;
+    this->integer = this->integer+1;
     return (*this);
 }
 
