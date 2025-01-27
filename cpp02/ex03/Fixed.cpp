@@ -3,7 +3,7 @@
 
 Fixed& Fixed::operator= (const Fixed &fixed)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    // std::cout << "Copy assignment operator called" << std::endl;
     if (&fixed != this)
         this->integer = fixed.integer;
     return (*this);
@@ -130,17 +130,17 @@ const Fixed&  Fixed::min(const Fixed&  F,const Fixed& FF)
 Fixed::Fixed()
     :integer (0)
 {
-    std::cout << "default constructor called !" << std::endl;
+    // std::cout << "default constructor called !" << std::endl;
 }
 Fixed::Fixed(const int integer )
 {
-    std::cout << "Int constructor called" << std::endl;
+    // std::cout << "Int constructor called" << std::endl;
     this->integer = integer * 256;
 }
 
 Fixed::Fixed(const float num )
 {
-    std::cout << "Float constructor called" << std::endl;
+    // std::cout << "Float constructor called" << std::endl;
     this->integer = roundf(num * 256);
 }
 
@@ -156,12 +156,12 @@ float Fixed::toFloat(void) const
 
 Fixed::~Fixed()
 {
-    std::cout << "destructor called" << std::endl;
+    // std::cout << "destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed)
 {   
-    std::cout << "Copy constructor called" << std::endl;
+    // std::cout << "Copy constructor called" << std::endl;
     *this = fixed;
 }
 
@@ -175,11 +175,11 @@ std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 void Fixed::setRawBits( int const raw )
 {
     this->integer = raw ;
-    std::cout << "setRawBits member function called" << std::endl;
+    // std::cout << "setRawBits member function called" << std::endl;
 }
 
 int Fixed::getRawBits( void ) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
+    // std::cout << "getRawBits member function called" << std::endl;
     return (this->integer);
 }
