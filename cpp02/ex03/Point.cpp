@@ -20,6 +20,7 @@ Point::~Point()
 }
 
 Point::Point(const Point &point)
+    : x {point.x}, y {point.y}
 {
     *this = point;
     std::cout << "copy constructor called!" << std::endl;
@@ -30,8 +31,8 @@ Point& Point::operator= (const Point &point)
     std::cout << "Copy assignment operator called" << std::endl;
     if (&point != this)
         {
-            this->x {point.x};
-            this->y {point.y};
+            x  = point.x;
+            y  = point.y;
         }
     return (*this);
 }

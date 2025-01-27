@@ -15,7 +15,7 @@ bool Fixed::operator==( const Fixed& fixed)
 }
 bool Fixed::operator!=(const Fixed& fixed) 
 {
-     return ( (this->integer != fixed.integer ));
+     return ((this->integer != fixed.integer));
 }
 bool Fixed::operator< ( const Fixed& fixed) 
 {
