@@ -2,8 +2,6 @@
 
 #include "Fixed.hpp"
 
-
-
 class Point 
 {
     private:

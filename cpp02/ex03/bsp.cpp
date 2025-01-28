@@ -7,6 +7,7 @@
 
 float area(Point a, Point b, Point c)
 {
+    // 0 * 
    return abs((a.getx().toFloat() *(b.gety().toFloat()-c.gety().toFloat()) 
             + b.getx().toFloat()*(c.gety().toFloat()-a.gety().toFloat())
             + c.getx().toFloat()*(a.gety().toFloat()-b.gety().toFloat()))/2.0);
