@@ -1,7 +1,6 @@
 #include "Point.hpp"
 
 
-
 Point::Point(const float x, const float y)
     : x(x), y(y)
 {

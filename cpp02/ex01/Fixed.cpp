@@ -11,11 +11,6 @@ Fixed& Fixed::operator= (const Fixed &fixed)
 
 
 
-
-
-
-
-
 Fixed::Fixed()
     :integer (0)
 {
@@ -59,7 +54,6 @@ std::ostream& operator<<(std::ostream& os, const Fixed& obj)
     os << obj.toFloat() ;
     return (os);
 }
-
 
 void Fixed::setRawBits( int const raw )
 {
