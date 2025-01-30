@@ -1,6 +1,7 @@
 
 #include "Fixed.hpp"
 
+
 Fixed& Fixed::operator= (const Fixed &fixed)
 {
     std::cout << "Copy assignment operator called" << std::endl;
@@ -21,8 +22,7 @@ Fixed::Fixed(const Fixed &fixed)
 }
 
 Fixed::Fixed()
-      :integer (0),
-       value (8)
+      :integer (0)
 {
     std::cout << "default constructor called !" << std::endl;
 }
