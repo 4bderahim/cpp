@@ -2,9 +2,6 @@
 
 #include "Point.hpp"
 
-
-
-
 float area(Point a, Point b, Point c)
 {
     // (ax (by - cy) + bx (xy - ay) + cx (ay - by)) / 2
