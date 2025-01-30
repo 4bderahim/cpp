@@ -49,7 +49,7 @@ Fixed::Fixed(const Fixed &fixed)
     *this = fixed;
 }
 
-std::ostream& Fixed::operator<<(std::ostream& os, const Fixed& obj)
+std::ostream& operator<<(std::ostream& os, const Fixed& obj)
 {
     os << obj.toFloat() ;
     return (os);
