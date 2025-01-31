@@ -13,7 +13,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-    name = name;
+    this->name = name;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -35,13 +35,14 @@ void ClapTrap::takeDamage(unsigned int amount)
     this->damage += amount;
     std::cout << this->name << " took " << amount << " of damage" << std::endl;
 }
+
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if (!this->hit || !this->energy)
         return ;
     this->hit += amount;
     this->energy--;
-    std::cout << name << " repaired ,, amount : " << amount << std::endl;
+    std::cout << this->name << " repaired ,, amount : " << amount << std::endl;
 }
 
 
