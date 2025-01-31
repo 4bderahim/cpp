@@ -9,13 +9,12 @@ Fixed& Fixed::operator= (const Fixed &fixed)
     return (*this);
 }
 
-
-
 Fixed::Fixed()
     :integer (0)
 {
     std::cout << "default constructor called !" << std::endl;
 }
+
 Fixed::Fixed(const int integer )
 {
     std::cout << "Int constructor called" << std::endl;
