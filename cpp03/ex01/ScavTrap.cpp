@@ -4,13 +4,13 @@
 
 ScavTrap::ScavTrap(std::string name)
 {
-    setName(name);
+    name =  name ;
 }
 
 ScavTrap::ScavTrap()
 {
-
-    this->
+    this->energy =  50;
+    this->hit    =  100;
     std::cout << "ScavTrap Constructed !" << std::endl;
 }
 
