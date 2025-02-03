@@ -2,27 +2,11 @@
 #include "ClapTrap.hpp"
 
 
-void ClapTrap::setHit(int hit)
-{
-    this->hit = hit;
-}
-void ClapTrap::setEnergy(int en)
-{
-    this->energy = en;
-}
+
+
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap destructed" << std::endl;
-}
-
-void ClapTrap::setDamage( int damage )
-{
-    this->damage  =damage;
-}
-
-void ClapTrap::setName(std::string name)
-{
-    this->name =  name;
 }
 
 ClapTrap::ClapTrap()

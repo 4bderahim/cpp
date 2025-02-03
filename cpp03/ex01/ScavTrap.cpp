@@ -10,9 +10,7 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::ScavTrap()
 {
 
-    setDamage(20);
-    setEnergy(50);
-    setHit(100);
+    this->
     std::cout << "ScavTrap Constructed !" << std::endl;
 }
 
