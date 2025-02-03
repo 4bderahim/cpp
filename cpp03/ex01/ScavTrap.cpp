@@ -2,23 +2,23 @@
 
 
 
-
 ScavTrap::ScavTrap(std::string name)
 {
-    name = name;
+    setName(name);
 }
 
 ScavTrap::ScavTrap()
 {
+
+    setDamage(20);
+    setEnergy(50);
+    setHit(100);
     std::cout << "ScavTrap Constructed !" << std::endl;
-
 }
-
 
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap destructed !" << std::endl;
-    
 }
 
 void guardGate()
@@ -35,6 +35,5 @@ void ScavTrap::attack(const std::string& target)
     //         return ;
     //     }
     // hit--;
-
     std::cout << "SvaTrap attacks "<< target  << " , causing <damage> points of damage!" << std::endl;
 }
