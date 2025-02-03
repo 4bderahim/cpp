@@ -44,3 +44,11 @@ void ClapTrap::beRepaired(unsigned int amount)
     this->energy--;
     std::cout << this->name << " repaired ,, amount : " << amount << std::endl;
 }
+
+
+
+
+
+
+
+
