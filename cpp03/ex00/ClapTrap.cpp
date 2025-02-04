@@ -14,6 +14,9 @@ ClapTrap::ClapTrap()
 ClapTrap::ClapTrap(std::string name)
 {
     this->name = name;
+    hit  = 10;
+    energy  = 10;
+    damage = 0;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -24,7 +27,8 @@ void ClapTrap::attack(const std::string& target)
             return ;
         }
     this->hit--;
-    std::cout << "ClapTrap "<< name <<" attacks "<< target  << " , causing <damage> points of damage!" << std::endl;
+    this->damage++;
+    std::cout << "ClapTrap "<< name <<" attacks "<< target  << " , causing " << this->damage << " points of damage!" << std::endl;
     
 }
 
