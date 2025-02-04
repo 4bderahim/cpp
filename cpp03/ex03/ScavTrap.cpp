@@ -27,7 +27,7 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap destructed !" << std::endl;
 }
 
-void guardGate()
+void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }

@@ -31,10 +31,6 @@ DiamondTrap::~DiamondTrap()
 //     std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 // }
 
-void FragTrap::highFivesGuys(void)
-{
-    std::cout << "high fives " << std::endl;
-}
 void DiamondTrap::whoAmI()
 {
     std::cout << "my name is " << this->name << "ClapTrap name" << ClapTrap::name << std::endl;
