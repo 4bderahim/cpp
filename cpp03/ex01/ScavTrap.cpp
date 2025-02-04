@@ -2,14 +2,14 @@
 
 
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name):ClapTrap(name)
 {
-    this->name =  name ;
+    //
 }
 
 ScavTrap::ScavTrap()
 {
-    this->energy =  50;
+    this->energy =  50 ; 
     this->hit    =  100;
     std::cout << "ScavTrap Constructed !" << std::endl;
 }
