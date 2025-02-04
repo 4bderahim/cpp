@@ -35,15 +35,11 @@ void FragTrap::highFivesGuys(void)
 {
     std::cout << "high fives " << std::endl;
 }
-
+void DiamondTrap::whoAmI()
+{
+    std::cout << "my name is " << this->name << "ClapTrap name" << ClapTrap::name << std::endl;
+}
 void DiamondTrap::attack(const std::string& target)
 {
-
-    if (!hit || !energy)
-    {
-        std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
-        return ;
-    }
-    hit--;
-    std::cout << "FragTrap attacks "<< target  << " , causing <damage> points of damage!" << std::endl;
+    ScavTrap::attack(target);
 }
