@@ -26,6 +26,7 @@ ClapTrap::ClapTrap()
 ClapTrap::ClapTrap(std::string name)
 {
     this->name = name;
+    std::cout << "arg constructor called!" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
