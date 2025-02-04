@@ -26,12 +26,12 @@ FragTrap::~FragTrap()
     std::cout << "FragTrap destructed !" << std::endl;
 }
 
-void guardGate()
-{
-    std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
-}
+// void guardGate()
+// {
+//     std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+// }
 
-void highFivesGuys(void)
+void FragTrap::highFivesGuys(void)
 {
     std::cout << "high fives " << std::endl;
 }
