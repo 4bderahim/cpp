@@ -5,10 +5,10 @@
 
 ScavTrap::ScavTrap(const ScavTrap &sc)
 {
-    *this =  sc;
+    *this = sc;
 }
 
-ScavTrap::ScavTrap(std::string name):ClapTrap(name)
+ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
     //
 }
