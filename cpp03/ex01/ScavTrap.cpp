@@ -2,6 +2,12 @@
 
 
 
+
+ScavTrap::ScavTrap(const ScavTrap &sc)
+{
+    *this =  sc;
+}
+
 ScavTrap::ScavTrap(std::string name):ClapTrap(name)
 {
     //
@@ -11,6 +17,7 @@ ScavTrap::ScavTrap()
 {
     this->energy =  50 ; 
     this->hit    =  100;
+    this->damage =  20;
     std::cout << "ScavTrap Constructed !" << std::endl;
 }
 

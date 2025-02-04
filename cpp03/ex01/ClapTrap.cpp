@@ -9,6 +9,11 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap destructed" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &cl)
+{
+    *this = cl;
+}
+
 ClapTrap::ClapTrap()
 :
     hit (10),
