@@ -3,7 +3,7 @@
 
 
 
-const int value = 8;
+const int Fixed::value = 8;
 Fixed& Fixed::operator= (const Fixed &fixed)
 {
     std::cout << "Copy assignment operator called" << std::endl;

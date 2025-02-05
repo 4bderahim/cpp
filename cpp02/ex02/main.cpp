@@ -27,15 +27,16 @@ void    formatMin(const Fixed& a, const Fixed& b)
     std::cout << "a: " << a << " | b: " << b << " | min(a, b) : " << Fixed::min(a, b) << '\n';
 }
 
+void    formatMinus(Fixed& a, const Fixed& b)
+{
+    std::cout << "a: " << a << " | b: " << b << " | a - b : " << a - b << '\n';
+}
+
 void    formatPlus(Fixed& a, const Fixed& b)
 {
     std::cout << "a: " << a << " | b: " << b << " | a + b : " << a + b << '\n';
 }
 
-void    formatMinus(Fixed& a, const Fixed& b)
-{
-    std::cout << "a: " << a << " | b: " << b << " | a - b : " << a - b << '\n';
-}
 
 void    formatMult(Fixed& a, const Fixed& b)
 {
@@ -53,14 +54,14 @@ int main( void ) {
     Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
     
     
-    // formatPlus(a, b);
-    // formatMinus(a, b);
-    // formatMult(a, b);
-    // formatDivide(a, b);
-    // formatSmaller(a, b);
-    // formatLarger(a, b);
-    // formatMax(a, b);
-    // formatMin(a, b);   
+    formatPlus(a, b);
+    formatMinus(a, b);
+    formatMult(a, b);
+    formatDivide(a, b);
+    formatSmaller(a, b);
+    formatLarger(a, b);
+    formatMax(a, b);
+    formatMin(a, b);
 
     std::cout << a << std::endl;
     std::cout << ++a << std::endl;
