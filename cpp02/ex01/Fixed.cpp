@@ -1,6 +1,9 @@
 
 #include "Fixed.hpp"
 
+
+
+const int value = 8;
 Fixed& Fixed::operator= (const Fixed &fixed)
 {
     std::cout << "Copy assignment operator called" << std::endl;
@@ -24,7 +27,7 @@ Fixed::Fixed(const int integer )
 Fixed::Fixed(const float num )
 {
     std::cout << "Float constructor called" << std::endl;
-    this->integer = roundf(num * 256);
+    this->integer = roundf(num * (value*32));
 }
 
 int Fixed::toInt( void ) const
