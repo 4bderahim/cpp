@@ -146,7 +146,7 @@ Fixed::Fixed(const int integer )
 Fixed::Fixed(const float num )
 {
     // std::cout << "Float constructor called" << std::endl;
-    this->integer = roundf(num * (value*32)));
+    this->integer = roundf(num * (value*32));
 }
 
 int Fixed::toInt( void ) const
