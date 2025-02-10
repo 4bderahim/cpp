@@ -43,8 +43,6 @@ class Fixed
         Fixed& operator--();
         Fixed& operator++();
 
-
-        //----------
         static const Fixed&  min(const Fixed &F,const Fixed &FF);
         static  Fixed&  min( Fixed &F, Fixed &FF);
 

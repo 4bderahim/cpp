@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS =  -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = tri
 
 CPPFILES = Fixed.cpp Point.cpp bsp.cpp main.cpp

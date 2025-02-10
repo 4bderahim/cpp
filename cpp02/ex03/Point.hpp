@@ -1,5 +1,6 @@
 
 
+#pragma once
 #include "Fixed.hpp"
 
 class Point 

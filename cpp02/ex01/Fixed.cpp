@@ -1,8 +1,6 @@
 
 #include "Fixed.hpp"
 
-
-
 const int Fixed::value = 8;
 Fixed& Fixed::operator= (const Fixed &fixed)
 {
