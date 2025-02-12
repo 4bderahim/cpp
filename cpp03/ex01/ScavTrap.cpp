@@ -34,7 +34,7 @@ void guardGate()
 void ScavTrap::attack(const std::string& target)
 {
 
-     if (!this->hit || !this->energy)
+     if (this->hit <= 0 || !this->energy <= 0)
         {
             std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
             return ;

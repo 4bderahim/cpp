@@ -19,6 +19,23 @@ ClapTrap::ClapTrap(std::string name)
     damage = 0;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &cl)
+{
+    *this = cl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &cl)
+{
+    if (this != &cl)
+    {
+        this->damage = cl.damage;
+        this->energy = cl.energy;
+        this->hit = cl.hit;
+        this->name = cl.name;
+    }
+    return (*this);
+}
+
 void ClapTrap::attack(const std::string& target)
 {
      if (this->hit <= 0 || this->energy <= 0)

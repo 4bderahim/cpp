@@ -13,6 +13,21 @@ FragTrap::FragTrap(std::string name): ScavTrap(name)
     //
 }
 
+
+
+FragTrap& FragTrap::operator=(const FragTrap& cl)
+{
+    if (this != &cl)
+    {
+        this->damage = cl.damage;
+        this->energy = cl.energy;
+        this->hit = cl.hit;
+        this->name = cl.name;
+    }
+    return (*this);
+}
+
+
 FragTrap::FragTrap()
 {
     this->energy =  100 ; 
@@ -26,24 +41,23 @@ FragTrap::~FragTrap()
     std::cout << "FragTrap destructed !" << std::endl;
 }
 
-// void guardGate()
-// {
-//     std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
-// }
+void guardGate()
+{
+    std::cout << "FragTrap is now in Gate keeper mode" << std::endl;
+}
 
 void FragTrap::highFivesGuys(void)
 {
     std::cout << "high fives " << std::endl;
 }
 
-// void FragTrap::attack(const std::string& target)
-// {
-
-//     if (!hit || !energy)
-//     {
-//         std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
-//         return ;
-//     }
-//     hit--;
-//     std::cout << "FragTrap attacks "<< target  << " , causing <damage> points of damage!" << std::endl;
-// }
+void FragTrap::attack(const std::string& target)
+{
+    if (!hit || !energy)
+    {
+        std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
+        return ;
+    }
+    hit--;
+    std::cout << "FragTrap attacks "<< target  << " , causing <damage> points of damage!" << std::endl;
+}

@@ -13,6 +13,6 @@ class FragTrap :virtual public ScavTrap
         int getHit();
         int getDamage();
 
-        // void attack(const std::string& target);
-        // void guardGate();
+        void attack(const std::string& target);
+        void guardGate();
 };

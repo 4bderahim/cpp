@@ -1,18 +1,11 @@
 
 #include "ClapTrap.hpp"
 
-
-
-
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap destructed" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &cl)
-{
-    *this = cl;
-}
 
 ClapTrap::ClapTrap()
 :
@@ -28,9 +21,27 @@ ClapTrap::ClapTrap(std::string name)
     this->name = name;
 }
 
+ClapTrap::ClapTrap(const ClapTrap &cl)
+{
+    *this = cl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap &cl)
+{
+    if (this != &cl)
+    {
+        this->damage = cl.damage;
+        this->energy = cl.energy;
+        this->hit = cl.hit;
+        this->name = cl.name;
+    }
+    return (*this);
+}
+
+
 void ClapTrap::attack(const std::string& target)
 {
-    if (!this->hit || !this->energy)
+    if (this->hit <= 0 || !this->energy <= 0)
         {
             std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
             return ;
@@ -42,7 +53,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (!this->hit || !this->energy)
+    if (this->hit <= 0 || !this->energy <= 0)
         return ;
     this->hit -= amount;
     std::cout << this->name << " took " << amount << " of damage" << std::endl;
@@ -50,7 +61,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (!this->hit || !this->energy)
+    if (this->hit <= 0 || !this->energy <= 0)
         return ;
     this->hit += amount;
     std::cout << this->name << " repaired ,, amount : " << amount << std::endl;
