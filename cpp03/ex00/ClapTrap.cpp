@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(std::string name)
 
 void ClapTrap::attack(const std::string& target)
 {
-     if (!this->hit || !this->energy)
+     if (this->hit <= 0 || this->energy <= 0)
         {
             std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
             return ;
@@ -32,7 +32,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if (!this->hit || !this->energy)
+    if (this->hit <= 0 || this->energy <= 0)
         {
             std::cout << "no hit point / energy" << std::endl;
             return ;
@@ -43,7 +43,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (!this->hit || !this->energy)
+    if (this->hit <= 0 || this->energy <= 0)
         {
             std::cout << "no hit/energy point left" << std::endl;
             return ;
