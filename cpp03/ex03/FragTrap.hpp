@@ -9,6 +9,8 @@ class FragTrap :virtual public ScavTrap
         FragTrap();
         ~FragTrap();
         FragTrap(const FragTrap &sc);
+        FragTrap& operator=(const FragTrap& cl);
+
         void highFivesGuys(void);
         int getHit();
         int getDamage();

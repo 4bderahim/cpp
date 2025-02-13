@@ -10,7 +10,7 @@ class ScavTrap :virtual public ClapTrap
         int getEnergy();
         ~ScavTrap();
         ScavTrap(const ScavTrap &sc);
+        ScavTrap& operator=(const ScavTrap& cl);
         void attack(const std::string& target);
         void guardGate();
-
 };

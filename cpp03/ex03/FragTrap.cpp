@@ -7,6 +7,17 @@ FragTrap::FragTrap(const FragTrap &sc)
 {
     *this = sc;
 }
+FragTrap& FragTrap::operator=(const FragTrap& cl)
+{
+    if (this != &cl)
+    {
+        this->damage = cl.damage;
+        this->energy = cl.energy;
+        this->hit = cl.hit;
+        this->name = cl.name;
+    }
+    return (*this);
+}
 
 FragTrap::FragTrap(std::string name): ScavTrap(name)
 {
@@ -46,7 +57,7 @@ void FragTrap::highFivesGuys(void)
 void FragTrap::attack(const std::string& target)
 {
 
-    if (this->hit <= 0 || !this->energy <= 0)
+    if (this->hit <= 0 || this->energy <= 0)
     {
         std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
         return ;

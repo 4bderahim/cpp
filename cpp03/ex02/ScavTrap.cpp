@@ -9,10 +9,10 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& cl)
 {
     if (this != &cl)
     {
-        this->damage = cl.damage;
-        this->energy = cl.energy;
-        this->hit = cl.hit;
-        this->name = cl.name;
+        this->damage =  cl.damage;
+        this->energy =  cl.energy;
+        this->hit =     cl.hit;
+        this->name =    cl.name;
     }
     return (*this);
 }
