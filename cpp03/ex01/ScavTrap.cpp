@@ -2,15 +2,26 @@
 
 
 
-
-ScavTrap::ScavTrap(const ScavTrap &sc)
-{
-    *this = sc;
-}
-
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
     //
+}
+
+ClapTrap::ClapTrap(const ClapTrap &cl)
+{
+    *this = cl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap &cl)
+{
+    if (this != &cl)
+    {
+        this->damage = cl.damage;
+        this->energy = cl.energy;
+        this->hit = cl.hit;
+        this->name = cl.name;
+    }
+    return (*this);
 }
 
 ScavTrap::ScavTrap()
@@ -26,7 +37,7 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap destructed !" << std::endl;
 }
 
-void guardGate()
+void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
 }

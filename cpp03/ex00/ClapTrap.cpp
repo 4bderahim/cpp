@@ -14,7 +14,7 @@ ClapTrap::ClapTrap()
 ClapTrap::ClapTrap(std::string name)
 {
     this->name = name;
-    hit  = 10;
+    hit = 10;
     energy  = 10;
     damage = 0;
 }

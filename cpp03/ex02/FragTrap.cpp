@@ -3,10 +3,6 @@
 
 
 
-FragTrap::FragTrap(const FragTrap &sc)
-{
-    *this = sc;
-}
 
 FragTrap::FragTrap(std::string name): ScavTrap(name)
 {
@@ -14,6 +10,10 @@ FragTrap::FragTrap(std::string name): ScavTrap(name)
 }
 
 
+FragTrap::FragTrap(const FragTrap &sc)
+{
+    *this = sc;
+}
 
 FragTrap& FragTrap::operator=(const FragTrap& cl)
 {
@@ -41,7 +41,7 @@ FragTrap::~FragTrap()
     std::cout << "FragTrap destructed !" << std::endl;
 }
 
-void guardGate()
+void FragTrap::guardGate()
 {
     std::cout << "FragTrap is now in Gate keeper mode" << std::endl;
 }
@@ -53,7 +53,7 @@ void FragTrap::highFivesGuys(void)
 
 void FragTrap::attack(const std::string& target)
 {
-    if (!hit || !energy)
+    if (hit <= 0  || energy <= 0 )
     {
         std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
         return ;
