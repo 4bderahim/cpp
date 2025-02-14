@@ -51,7 +51,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if (this->hit <= 0 || this->energy <= 0)
         {
-            std::cout << "no hit point / energy" << std::endl;
+            std::cout << "no hit / energy points" << std::endl;
             return ;
         }
     this->energy -= amount ;

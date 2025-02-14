@@ -32,7 +32,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &cl)
     {
         this->damage = cl.damage;
         this->energy = cl.energy;
-        this->hit = cl.hit;
+        this->hit = cl.hit  ;
         this->name = cl.name;
     }
     return (*this);
