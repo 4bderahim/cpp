@@ -4,10 +4,10 @@
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-    //
+    std::cout << "ScavTrap(name) constructed" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &cl)
+ScavTrap::ScavTrap(const ScavTrap &cl)
 {
     *this = cl;
 }
@@ -45,12 +45,12 @@ void ScavTrap::guardGate()
 void ScavTrap::attack(const std::string& target)
 {
 
-     if (this->hit <= 0 || !this->energy <= 0)
+     if (this->hit <= 0 || this->energy <= 0)
         {
-            std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
+            std::cout << "target "<< this->hit << target << " is unhealthy to be attacked!" << std::endl;
             return ;
         }
     this->energy--;
-    std::cout << "ScavTrap "<< name <<" attacks "<< target  << " , causing <damage> points of damage!" << std::endl;
+    std::cout << "ScavTrap "<< name <<" attacks "<< target  << " , causing " << damage << " points of damage!" << std::endl;
     
 }
