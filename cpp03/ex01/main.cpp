@@ -5,7 +5,7 @@
 
 int main()
 {
-    ScavTrap a("killer");
+    ScavTrap a;
     a.attack("named");
     a.takeDamage(10);
     a.beRepaired(1);

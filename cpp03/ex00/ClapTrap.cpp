@@ -67,5 +67,5 @@ void ClapTrap::beRepaired(unsigned int amount)
         }
     this->hit += amount;
     this->energy--;
-    std::cout << this->name << " repaired ,, amount : " << amount << std::endl;
+    std::cout << this->name << "ClapTrap repaired ,, amount : " << amount << std::endl;
 }

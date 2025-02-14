@@ -39,6 +39,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &cl)
 
 ClapTrap::ClapTrap(std::string name)
 {
+    hit = 10;
+    energy = 10; 
+    damage = 0;
     this->name = name;
     std::cout << "arg constructor called!" << std::endl;
 }
@@ -69,7 +72,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         return ;
     this->hit += amount;
     this->energy--;
-    std::cout << this->name << " repaired ,, amount : " << amount << std::endl;
+    std::cout << this->name << "ClapTrap repaired ,, amount : " << amount << std::endl;
 }
 
 
