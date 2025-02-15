@@ -4,7 +4,7 @@
 #include "FragTrap.hpp"
 
 
-class DiamondTrap : virtual public ScavTrap, virtual public FragTrap
+class DiamondTrap :public FragTrap,  public ScavTrap
 {
     protected:
         std::string name;
@@ -14,7 +14,6 @@ class DiamondTrap : virtual public ScavTrap, virtual public FragTrap
         DiamondTrap(std::string name);
         DiamondTrap(const DiamondTrap &cl);
         DiamondTrap& operator=(const DiamondTrap &cl);
-
         void whoAmI();
         void attack(const std::string& target);
         // void takeDamage(unsigned int amount);

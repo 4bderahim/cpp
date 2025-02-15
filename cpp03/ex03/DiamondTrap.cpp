@@ -24,11 +24,11 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name+"_clap_name")
     std::cout << "DiamondTrap name constructor called!" << std::endl;
 }
 
-DiamondTrap::DiamondTrap()// create constructors to set values.
+DiamondTrap::DiamondTrap()
 {
-    this->energy =  ScavTrap::getEnergy();
-    this->hit    =  FragTrap::getHit();
-    this->damage =  FragTrap::getDamage();
+    // // this->energy =  ScavTrap::getEnergy();
+    // this->hit    =  FragTrap::getHit();
+    // this->damage =  FragTrap::getDamage();
     std::cout << "DiamondTrap Constructed !" << std::endl;
 }
 
