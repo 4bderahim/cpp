@@ -42,7 +42,7 @@ ClapTrap::ClapTrap(std::string name)
     energy = 10; 
     damage = 0;
     this->name = name;
-    std::cout << "arg constructor called!" << std::endl;
+    std::cout << "ClapTrap(name) constructor called!" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)

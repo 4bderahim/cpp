@@ -3,15 +3,14 @@
 
 
 
-
-FragTrap::FragTrap(std::string name): ScavTrap(name)
+FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
+    this->name  =  name;
     this->energy =  100 ; 
     this->hit    =  100;
     this->damage =  30;
-    std::cout << "FragTrap Constructed !" << std::endl;
+    std::cout << "FragTrap(name) Constructed !" << std::endl;
 }
-
 
 FragTrap::FragTrap(const FragTrap &sc)
 {

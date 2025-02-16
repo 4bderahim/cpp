@@ -19,7 +19,11 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& cl)
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-    //
+    this->name =  name ;
+    this->energy =  50 ; 
+    this->hit    =  100;
+    this->damage =  20 ;
+    std::cout << "ScavTrap(name) Constructed !" << std::endl;
 }
 
 ScavTrap::ScavTrap()
