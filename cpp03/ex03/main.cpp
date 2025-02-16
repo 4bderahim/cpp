@@ -12,4 +12,5 @@ int main()
     a.takeDamage(10);
     a.beRepaired(1);
     a.highFivesGuys();
+    a.whoAmI();
 }

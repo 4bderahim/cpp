@@ -20,10 +20,6 @@ DiamondTrap& DiamondTrap::operator=(const DiamondTrap &cl)
 DiamondTrap::DiamondTrap(std::string name): ClapTrap(name+"_clap_name"), ScavTrap(50) , FragTrap(100, 30)
 {
     this->name = name;
-    
-    std::cout << hit << "\n";
-    std::cout << damage ;
-    std::cout << energy  << "\n";
     std::cout << "DiamondTrap name constructor called!" << std::endl;
 }
 
