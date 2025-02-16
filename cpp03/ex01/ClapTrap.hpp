@@ -11,7 +11,7 @@ class ClapTrap
         int damage;
     public:
         ClapTrap();
-        virtual ~ClapTrap();// virtula for delete case
+        virtual ~ClapTrap();// virtual for delete case
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap &cl);
         ClapTrap& operator=(const ClapTrap &cl);
