@@ -16,10 +16,10 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& cl)
     }
     return (*this);
 }
-
-int ScavTrap::getEnergy()
+ScavTrap::ScavTrap(int energy)
 {
-    return this->energy;
+    this->energy = energy;
+
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)

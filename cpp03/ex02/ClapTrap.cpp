@@ -16,7 +16,7 @@ ClapTrap::ClapTrap()
     energy (10),
     damage(0)
 {
-    std::cout << "Constructed" << std::endl;
+    std::cout << "ClapTrap Constructed" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &cl)
@@ -61,7 +61,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if (this->hit <= 0 || this->energy <= 0)
         return ;
-    this->damage += amount;
+    this->hit -= amount;
     std::cout << this->name << " took " << amount << " of damage" << std::endl;
 }
 

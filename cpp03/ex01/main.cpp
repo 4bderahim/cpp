@@ -5,8 +5,10 @@
 
 int main()
 {
-    ScavTrap a;
-    a.attack("named");
-    a.takeDamage(10);
-    a.beRepaired(1);
+     ScavTrap *a = new ScavTrap("killer");
+    delete a;
+    // ScavTrap a;
+    // a.attack("named");
+    // a.takeDamage(10);
+    // a.beRepaired(1);
 }

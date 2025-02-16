@@ -1,13 +1,13 @@
+
+#pragma once
+
 #include "ClapTrap.hpp"
-
-
-
-class ScavTrap :virtual public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
      public:
         ScavTrap(std::string name);
         ScavTrap();
-        int getEnergy();
+        ScavTrap(int energy);
         ~ScavTrap();
         ScavTrap(const ScavTrap &sc);
         ScavTrap& operator=(const ScavTrap& cl);

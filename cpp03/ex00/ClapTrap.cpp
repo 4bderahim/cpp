@@ -2,13 +2,18 @@
 #include "ClapTrap.hpp"
 
 
+ClapTrap::~ClapTrap()
+{
+    std::cout << "ClapTrap destructed" << std::endl;
+}
+
 ClapTrap::ClapTrap()
 :
     hit (10),
     energy (10), 
     damage(0)
 {
-    std::cout << "Constructed" << std::endl;
+    std::cout << "ClapTrap Constructed" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -17,6 +22,8 @@ ClapTrap::ClapTrap(std::string name)
     hit = 10;
     energy  = 10;
     damage = 0;
+    std::cout << "ClapTrap(name) Constructed" << std::endl;
+
 }
 
 ClapTrap::ClapTrap(const ClapTrap &cl)
@@ -44,7 +51,7 @@ void ClapTrap::attack(const std::string& target)
             return ;
         }
     this->energy--;
-    std::cout << "ClapTrap "<< name <<" attacks "<< target  << " , causing <damage> points of damage!" << std::endl;
+    std::cout << "ClapTrap "<< name <<" attacks "<< target  << " , causing " << damage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -55,6 +62,7 @@ void ClapTrap::takeDamage(unsigned int amount)
             return ;
         }
     this->energy -= amount ;
+    this->hit -= amount;
     std::cout << this->name << " took " << amount << " of damage" << std::endl;
 }
 

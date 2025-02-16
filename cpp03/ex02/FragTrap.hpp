@@ -1,7 +1,6 @@
+
+#pragma once
 #include "ScavTrap.hpp"
-
-
-
 class FragTrap : public ScavTrap
 {
      public:

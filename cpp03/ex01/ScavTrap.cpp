@@ -4,6 +4,9 @@
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
+    this->energy =  50 ; 
+    this->hit    =  100;
+    this->damage =  20 ;
     std::cout << "ScavTrap(name) constructed" << std::endl;
 }
 

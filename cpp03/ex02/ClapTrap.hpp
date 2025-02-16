@@ -1,5 +1,5 @@
 
-
+#pragma once
 #include <iostream>
 
 
@@ -13,7 +13,7 @@ class ClapTrap
         int damage;
     public:
         ClapTrap();
-        ~ClapTrap();
+        virtual ~ClapTrap();
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap &cl);
         ClapTrap& operator=(const ClapTrap &cl);

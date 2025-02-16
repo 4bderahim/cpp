@@ -1,8 +1,5 @@
 #include "FragTrap.hpp"
 
-
-
-
 FragTrap::FragTrap(const FragTrap &sc)
 {
     *this = sc;
@@ -18,23 +15,23 @@ FragTrap& FragTrap::operator=(const FragTrap& cl)
     }
     return (*this);
 }
+FragTrap::FragTrap(int hit, int damage)
+{
+     this->hit = hit;
+    this->damage = damage;
+}
 
-FragTrap::FragTrap(std::string name): ScavTrap(name)
+FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
-    //
+    this->energy =  100 ; 
+    this->hit    =  10000;
+    this->damage =  30;
 }
-int FragTrap::getHit()
-{
-    return this->hit;
-}
-int FragTrap::getDamage()
-{
-    return this->damage;
-}
+
 FragTrap::FragTrap()
 {
     this->energy =  100 ; 
-    this->hit    =  100;
+    this->hit    =  10000;
     this->damage =  30;
     std::cout << "FragTrap Constructed !" << std::endl;
 }
@@ -62,6 +59,6 @@ void FragTrap::attack(const std::string& target)
         std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
         return ;
     }
-    hit--;
+    this->energy--;
     std::cout << "FragTrap attacks "<< target  << " , causing <damage> points of damage!" << std::endl;
 }

@@ -6,7 +6,10 @@
 
 FragTrap::FragTrap(std::string name): ScavTrap(name)
 {
-    //
+    this->energy =  100 ; 
+    this->hit    =  100;
+    this->damage =  30;
+    std::cout << "FragTrap Constructed !" << std::endl;
 }
 
 
@@ -58,6 +61,6 @@ void FragTrap::attack(const std::string& target)
         std::cout << "target " << target << " is unhealthy to be attacked!" << std::endl;
         return ;
     }
-    hit--;
+    this->energy--;
     std::cout << "FragTrap attacks "<< target  << " , causing "<< damage << " points of damage!" << std::endl;
 }

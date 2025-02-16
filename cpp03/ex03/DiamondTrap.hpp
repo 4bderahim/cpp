@@ -1,10 +1,10 @@
 
-
-
+#pragma once
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 
-class DiamondTrap :public FragTrap,  public ScavTrap
+class DiamondTrap :   public ScavTrap, public FragTrap
 {
     protected:
         std::string name;
@@ -16,6 +16,4 @@ class DiamondTrap :public FragTrap,  public ScavTrap
         DiamondTrap& operator=(const DiamondTrap &cl);
         void whoAmI();
         void attack(const std::string& target);
-        // void takeDamage(unsigned int amount);
-        // void beRepaired(unsigned int amount);
 }; 

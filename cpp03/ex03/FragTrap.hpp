@@ -1,18 +1,17 @@
-#include "ScavTrap.hpp"
 
 
-
-class FragTrap :virtual public ScavTrap
+#pragma once
+#include "ClapTrap.hpp"
+class FragTrap : virtual public ClapTrap
 {
      public:
-        FragTrap(std::string name);
         FragTrap();
+        FragTrap(std::string name);
+        FragTrap(int hit, int damage);
         ~FragTrap();
         FragTrap(const FragTrap &sc);
         FragTrap& operator=(const FragTrap& cl);
         void highFivesGuys(void);
-        int getHit();
-        int getDamage();
         void attack(const std::string& target);
         void guardGate();
 };
