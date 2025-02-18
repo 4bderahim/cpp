@@ -23,7 +23,6 @@ ClapTrap::ClapTrap(std::string name)
     energy  = 10;
     damage = 0;
     std::cout << "ClapTrap(name) Constructed" << std::endl;
-
 }
 
 ClapTrap::ClapTrap(const ClapTrap &cl)
