@@ -24,7 +24,7 @@ Dog::Dog(const Dog &a)
 
 Dog::~Dog()
 {
-    // delete this->brain;
+    delete this->brain;
     std::cout << "Dog destructed!" << std::endl;
 }
 

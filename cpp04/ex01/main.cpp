@@ -16,7 +16,7 @@ int main()
     }
     for (int i = 0; i < 10; i++)
     {
-        // delete l[i];
+        delete l[i];
     }
     // const Animal* j = new Dog();
     // const Animal* i = new Cat();
