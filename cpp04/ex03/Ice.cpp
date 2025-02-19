@@ -29,5 +29,5 @@ std::string const & Ice::getType() const
 
 void Ice::use(ICharacter& target)
 {
-    std::cout << "* heals "<< this->type << "s wounds *" << std::endl;
+    std::cout << "* heals "<< this->name << "s wounds *" << std::endl;
 }

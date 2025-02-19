@@ -29,5 +29,5 @@ std::string const & Cure::getType() const
 
 void Cure::use(ICharacter& target)
 {
-    std::cout << "* shoots an " << this->type <<  " bolt at <name> *" << std::endl;
+    std::cout << "* shoots an " << this->type <<  " bolt at " <<  this->name  << " *" << std::endl;
 }
