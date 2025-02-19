@@ -8,6 +8,7 @@ class Character: public ICharacter
         std::string name;
         AMateria **materias;
         AMateria **unequipMaterias;
+        unsigned int length;
 
     public:
         ~Character();
