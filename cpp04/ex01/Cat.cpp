@@ -24,10 +24,7 @@ Cat::Cat(const Cat &a)
 Cat::~Cat()
 {
     delete this->brain;
-
-
     std::cout << "Cat destructed!" << std::endl;
-
 }
 Cat::Cat():  type ("Cat")
 {
