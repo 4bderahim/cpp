@@ -10,6 +10,10 @@ Character::Character()
         this->materias[i] = NULL;
     std::cout << "Character constructed !" << std::endl;
 }
+Character::Character(std::string name)
+{
+    //
+}
 
 Character::~Character()
 {
@@ -46,5 +50,5 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, Character& target)
 {
-
+    this->materias[idx]->use(target);
 }

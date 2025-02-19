@@ -12,6 +12,7 @@ class Character: public ICharacter
 
     public:
         ~Character();
+        Character(std::string name);
         std::string const & getName();
         void equip(AMateria* m);
         void unequip(int idx) ;
