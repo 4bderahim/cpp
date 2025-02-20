@@ -7,9 +7,9 @@ Ice::~Ice()
     std::cout << "Cure destructed!" << std::endl;
 }
 
-Ice::Ice(const Cure &cu)
+Ice::Ice(const Ice &i)
 {
-    *this =  cu; 
+    *this = i; 
 }
 
 Ice::Ice()
@@ -29,5 +29,6 @@ std::string const & Ice::getType() const
 
 void Ice::use(ICharacter& target)
 {
-    std::cout << "* heals "<< this->name << "s wounds *" << std::endl;
+    std::cout << "* shoots an bolt at " <<  target.getName()  << " *" << std::endl;
+
 }
