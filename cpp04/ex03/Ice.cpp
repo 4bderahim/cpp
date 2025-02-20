@@ -5,8 +5,8 @@
 Ice::~Ice()
 {
     std::cout << "Cure destructed!" << std::endl;
-
 }
+
 Ice::Ice(const Cure &cu)
 {
     *this =  cu; 

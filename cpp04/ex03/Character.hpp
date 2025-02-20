@@ -1,4 +1,3 @@
-
 #pragma once
 #include "Character.hpp"
 #include "AMateria.hpp"
@@ -10,7 +9,6 @@ class Character: public ICharacter
         AMateria **materias;
         AMateria **unequipMaterias;
         unsigned int length;
-
     public:
         ~Character();
         Character();

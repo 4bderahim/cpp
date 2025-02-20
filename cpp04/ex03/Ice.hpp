@@ -1,5 +1,6 @@
-#include "AMateria.hpp"
 
+#pragma once
+#include "Cure.hpp"
 
 class Ice : public AMateria
 {
