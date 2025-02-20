@@ -1,5 +1,6 @@
 
-#include "ICharacter.hpp"
+#pragma once
+#include "Character.hpp"
 #include "AMateria.hpp"
 
 class Character: public ICharacter
@@ -12,6 +13,7 @@ class Character: public ICharacter
 
     public:
         ~Character();
+        Character();
         Character(std::string name);
         std::string const & getName();
         void equip(AMateria* m);
