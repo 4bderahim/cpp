@@ -3,6 +3,5 @@
 
 AMateria::AMateria()
 {
-
     //
 }
