@@ -2,7 +2,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = poly
 
-CPPFILES = AMateria.cpp ICHaracter.cpp Character.cpp Ice.cpp	Cure.cpp 
+CPPFILES = AMateria.cpp ICHaracter.cpp Character.cpp Ice.cpp	Cure.cpp main.cpp
 
 OFILES = $(CPPFILES:.cpp=.o)
 
