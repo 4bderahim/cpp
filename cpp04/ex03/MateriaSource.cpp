@@ -1,6 +1,6 @@
 
 #include "MateriaSource.hpp"
-
+#include "Cure.hpp"
 
 MateriaSource::~MateriaSource()
 {
@@ -25,10 +25,10 @@ void MateriaSource::learnMateria(AMateria* m)
     }
     std::cout << "AMateria added !" << std::endl;
 }
-AMateria* createMateria(std::string const & type)
-{
 
+AMateria* MateriaSource::createMateria(std::string const & type)
+{
     AMateria *k;
-    k = new AMateria
-    return (new AMateria());
+    k = new Cure();
+    return (k);
 }

@@ -18,17 +18,15 @@ Cat& Cat::operator=(const Cat &a)
 
 Cat::Cat(const Cat &a)
 {
-    *this =  a;
+    *this = a;
 }
 
 Cat::~Cat()
 {
     delete this->brain;
-
-
     std::cout << "Cat destructed!" << std::endl;
-
 }
+
 Cat::Cat():  type ("Cat")
 {
     this->brain =  new Brain();
