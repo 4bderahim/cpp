@@ -28,7 +28,11 @@ void MateriaSource::learnMateria(AMateria* m)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-    AMateria *k;
-    k = new Cure();
-    return (k);
+    for (int i = 0; i < 4; i++)
+    {
+        if (this->materias[i]->getType() == type)
+            return (this->materias[i]->clone());
+    }
+
+    return (NULL);
 }
