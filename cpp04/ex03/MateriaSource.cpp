@@ -1,6 +1,6 @@
 
 #include "MateriaSource.hpp"
-#include "Cure.hpp"
+
 
 MateriaSource::~MateriaSource()
 {
@@ -23,16 +23,15 @@ void MateriaSource::learnMateria(AMateria* m)
         if (this->materias[i] != NULL)
             this->materias[i] = m;
     }
-    std::cout << "AMateria added !" << std::endl;
+    std::cout << "" << std::endl;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (this->materias[i]->getType() == type)
+        if (this->materias[i] != NULL && type != "NULL")
             return (this->materias[i]->clone());
     }
-
     return (NULL);
 }

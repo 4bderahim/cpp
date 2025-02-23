@@ -1,6 +1,8 @@
 
-#pragma once
-#include "Cure.hpp"
+// #pragma once
+#include "AMateria.hpp"
+
+class AMateria;
 
 class Ice : public AMateria
 {

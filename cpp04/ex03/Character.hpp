@@ -1,5 +1,5 @@
-#pragma once
-#include "Character.hpp"
+// #pragma once
+// #include "Character.hpp"
 #include "AMateria.hpp"
 
 class Character: public ICharacter
