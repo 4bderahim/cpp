@@ -12,7 +12,8 @@ Cure::Cure(const Cure &cu)
     *this =  cu; 
 }
 
-Cure::Cure()
+Cure::Cure():
+    type ("00000")
 {
     std::cout << "Cure constructed!" << std::endl;
 }

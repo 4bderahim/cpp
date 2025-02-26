@@ -5,7 +5,7 @@
 class MateriaSource:public IMateriaSource  
 {
     protected:
-        AMateria **materias;      
+        AMateria *materias[4];      
     public:
         MateriaSource();
         ~MateriaSource();
