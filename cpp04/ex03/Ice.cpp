@@ -14,7 +14,10 @@ Ice::Ice(const Ice &i)
 
 Ice::Ice()
 {
+    this->type =  "78978979789";
     std::cout << "Cure constructed!" << std::endl;
+
+    std::cout << "------------------------>" << this->type << std::endl;
 }
 
 AMateria* Ice::clone() const

@@ -30,6 +30,6 @@ std::string const & Cure::getType() const
 
 void Cure::use(ICharacter& target)
 {
-    printf("\t\t\t\n hellio from segv\n\n\n");
+    printf("\t\t\t\n hello from segv\n\n\n");
     std::cout << "* heals "<< target.getName() << "s wounds *" << std::endl;
 }

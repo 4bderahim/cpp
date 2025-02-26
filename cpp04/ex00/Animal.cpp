@@ -19,6 +19,7 @@ Animal::~Animal()
 {
     std::cout << "Animale destructed!" << std::endl;
 }
+
 Animal::Animal():  type ("Animal")
 {
     std::cout << "Animale constructed!" << std::endl;
