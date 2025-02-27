@@ -3,7 +3,7 @@
 #include "WrongCat.hpp"
 
 
-Cat& Cat::operator=(const Cat &a)
+WrongCat& WrongCat::operator=(const WrongCat &a)
 {
 
     if (this != &a)
@@ -11,28 +11,28 @@ Cat& Cat::operator=(const Cat &a)
     return (*this);
 }
 
-std::string Cat::getType() const
+std::string WrongCat::getType() const
 {
     return (this->type);
 }
 
-Cat::Cat(const Cat &a)
+WrongCat::WrongCat(const WrongCat &a)
 {
     *this =  a;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-    std::cout << "Cat destructed!" << std::endl;
+    std::cout << "WrongCat destructed!" << std::endl;
 }
 
-Cat::Cat():  type ("Cat")
+WrongCat::WrongCat():  type ("WrongCat")
 {
-    std::cout << "cat's type setted !" << this->type <<  std::endl;
-    std::cout << "Cat constructed!" << std::endl;
+    std::cout << "WrongCat's type setted !" << this->type <<  std::endl;
+    std::cout << "WrongCat constructed!" << std::endl;
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
-    std::cout << "Cat makes a Sound ~~~~~~~~~ "<< std::endl;
+    std::cout << "WrongCat makes a Sound ~~~~~~~~~ "<< std::endl;
 }
