@@ -2,7 +2,7 @@
 #include "WrongAnimal.hpp"
 
 
-class Cat :public Animal
+class Cat :public WrongAnimal
 {
     protected:
         std::string type;
@@ -10,6 +10,7 @@ class Cat :public Animal
         Cat();
         Cat(const Cat &a);
         Cat& operator=(const Cat &a);
+        std::string getType() const;
         ~Cat();
         void makeSound() const;
 };

@@ -3,38 +3,38 @@
 #include "WrongAnimal.hpp"
 
 
-Animal& Animal::operator=(const Animal &a)
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal &a)
 {
     if (this != &a)
         this->type = a.type;
     return (*this);
 }
 
-Animal::Animal(std::string type)
+WrongAnimal::WrongAnimal(std::string type)
 {
     this->type =  type;
 }
 
-Animal::Animal(const Animal &a)
+WrongAnimal::WrongAnimal(const WrongAnimal &a)
 {
     *this = a;
 }
 
-Animal::~Animal()
+WrongAnimal::~WrongAnimal()
 {
-    std::cout << "Animale destructed!" << std::endl;
+    std::cout << "WrongAnimale destructed!" << std::endl;
 }
-Animal::Animal():  type ("Animal")
+WrongAnimal::WrongAnimal():  type ("WrongAnimal")
 {
-    std::cout << "Animale constructed!" << std::endl;
-}
-
-void Animal::makeSound() const
-{
-    std::cout << "Animal makes a sound ~~~~~~~" << std::endl;
+    std::cout << "WrongAnimale constructed!" << std::endl;
 }
 
-std::string Animal::getType() const
+void WrongAnimal::makeSound() const
+{
+    std::cout << "WrongAnimal makes a sound ~~~~~~~" << std::endl;
+}
+
+std::string WrongAnimal::getType() const
 {
     return (this->type);
 }

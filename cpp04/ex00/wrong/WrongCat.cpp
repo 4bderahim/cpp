@@ -11,6 +11,11 @@ Cat& Cat::operator=(const Cat &a)
     return (*this);
 }
 
+std::string Cat::getType() const
+{
+    return (this->type);
+}
+
 Cat::Cat(const Cat &a)
 {
     *this =  a;
