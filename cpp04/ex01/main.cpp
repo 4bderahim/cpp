@@ -9,10 +9,9 @@ int main()
         if (i < 5)
             l[i] =  new Dog(); 
         else
-            {
-                // std::cout << ">>" << std::endl;
-                l[i] = new Cat();
-            }
+        {
+            l[i] = new Cat();
+        }
     }
     for (int i = 0; i < 10; i++)
     {

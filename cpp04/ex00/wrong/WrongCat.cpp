@@ -28,7 +28,6 @@ WrongCat::~WrongCat()
 
 WrongCat::WrongCat():  type ("WrongCat")
 {
-    std::cout << "WrongCat's type setted !" << this->type <<  std::endl;
     std::cout << "WrongCat constructed!" << std::endl;
 }
 

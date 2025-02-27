@@ -10,6 +10,11 @@ Animal& Animal::operator=(const Animal &a)
     return (*this);
 }
 
+Animal::Animal(std::string type)
+{
+    this->type =  type;
+}
+
 Animal::Animal(const Animal &a)
 {
     *this = a;
@@ -19,6 +24,7 @@ Animal::~Animal()
 {
     std::cout << "Animale destructed!" << std::endl;
 }
+
 Animal::Animal():  type ("Animal")
 {
     std::cout << "Animale constructed!" << std::endl;
