@@ -6,6 +6,7 @@
 Cat& Cat::operator=(const Cat &a)
 {
 
+    // deep copy !
    if (this != &a)
         {
             this->type = a.type;
