@@ -19,14 +19,15 @@ Cat::Cat(const Cat &a)
 Cat::~Cat()
 {
     std::cout << "Cat destructed!" << std::endl;
-
 }
+
 Cat::Cat():  type ("Cat")
 {
+    std::cout << "cat's type setted !" << this->type <<  std::endl;
     std::cout << "Cat constructed!" << std::endl;
 }
 
 void Cat::makeSound() const
 {
-    std::cout << "MEW :) "<< std::endl;
+    std::cout << "Cat makes a Sound ~~~~~~~~~ "<< std::endl;
 }

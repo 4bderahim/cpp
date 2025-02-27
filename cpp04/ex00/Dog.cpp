@@ -10,7 +10,11 @@ Dog& Dog::operator=(const Dog &a)
         this->type = a.type;
     return (*this);
 }
+std::string Dog::getType() const
+{
 
+    return (this->type);
+}
 
 Dog::Dog(const Dog &a)
 {

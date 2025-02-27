@@ -5,10 +5,16 @@
 
 Cat& Cat::operator=(const Cat &a)
 {
-
     if (this != &a)
         this->type = a.type;
     return (*this);
+}
+
+
+std::string Cat::getType() const
+{
+
+    return (this->type);
 }
 
 Cat::Cat(const Cat &a)
@@ -19,8 +25,8 @@ Cat::Cat(const Cat &a)
 Cat::~Cat()
 {
     std::cout << "Cat destructed!" << std::endl;
-
 }
+
 Cat::Cat():  type ("Cat")
 {
     std::cout << "Cat constructed!" << std::endl;
@@ -28,5 +34,5 @@ Cat::Cat():  type ("Cat")
 
 void Cat::makeSound() const
 {
-    std::cout << "MEW :) "<< std::endl;
+    std::cout << "Cat makes sound ~~~~~~~~~"<< std::endl;
 }

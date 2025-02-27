@@ -3,7 +3,10 @@
 #include "Cat.hpp"
 
 
-
+void f()
+{
+    std::system("leaks -q poly");
+}
 
 int main()
 {
@@ -11,13 +14,14 @@ int main()
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     std::cout << meta->getType() << std::endl;
-    std::cout << i->getType() << " " << std::endl;
+    std::cout << "Doowg >> :" << j->getType() << " " << std::endl;
     meta->makeSound();
     i->makeSound();
     j->makeSound();
     // delete meta;
+    delete j;
     // delete i;
-    std::system("leaks -q poly");
-    // delete i;
+    // atexit(f);
     return 0;
+
 }

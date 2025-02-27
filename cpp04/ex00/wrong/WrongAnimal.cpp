@@ -10,6 +10,11 @@ Animal& Animal::operator=(const Animal &a)
     return (*this);
 }
 
+Animal::Animal(std::string type)
+{
+    this->type =  type;
+}
+
 Animal::Animal(const Animal &a)
 {
     *this = a;
