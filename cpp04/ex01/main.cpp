@@ -17,12 +17,10 @@ int main()
     {
         delete l[i];
     }
-    // const Animal* j = new Dog();
-    // const Animal* i = new Cat();
-    // delete j;//should not create a leak
-    // (void)j;
-    // (void)i;
-    // delete i;
-    std::system("leaks -q poly");
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;//should not create a leak
+    delete i;
+    // std::system("leaks -q poly");
 
 }

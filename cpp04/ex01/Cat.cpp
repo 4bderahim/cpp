@@ -26,14 +26,16 @@ Cat::~Cat()
 {
     delete this->brain;
     std::cout << "Cat destructed!" << std::endl;
+
 }
+
 Cat::Cat():  type ("Cat")
 {
     this->brain =  new Brain();
     std::cout << "Cat constructed!" << std::endl;
 }
 
-void Cat::makeSound() const
+void Cat::makeSound() const 
 {
-    std::cout << "MEW :) "<< std::endl;
+    std::cout << "Cat makes  a sound ~~~~~~~~ "<< std::endl;
 }
