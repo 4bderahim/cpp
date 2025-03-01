@@ -19,7 +19,7 @@ Animal::~Animal()
 
 Animal::Animal():  type ("Animal")
 {
-    std::cout << "Animale constructed!" << (this) << std::endl;
+    std::cout << "Animale constructed!" << std::endl;
 }
 
 void Animal::makeSound() const
