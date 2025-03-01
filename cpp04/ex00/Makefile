@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 NAME = poly
 
 CPPFILES = Animal.cpp Cat.cpp Dog.cpp main.cpp

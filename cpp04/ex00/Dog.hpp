@@ -15,5 +15,4 @@ class Dog : public Animal
         std::string getType() const;                 
         ~Dog();
         void makeSound() const;
-
 };

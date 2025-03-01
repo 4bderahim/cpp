@@ -1,7 +1,4 @@
-
-
 #include "Animal.hpp"
-
 
 Animal& Animal::operator=(const Animal &a)
 {
@@ -22,7 +19,7 @@ Animal::~Animal()
 
 Animal::Animal():  type ("Animal")
 {
-    std::cout << "Animale constructed!" << std::endl;
+    std::cout << "Animale constructed!" << (this) << std::endl;
 }
 
 void Animal::makeSound() const

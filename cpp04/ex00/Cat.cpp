@@ -13,7 +13,6 @@ Cat& Cat::operator=(const Cat &a)
 
 std::string Cat::getType() const
 {
-
     return (this->type);
 }
 
@@ -24,7 +23,7 @@ Cat::Cat(const Cat &a)
 
 Cat::~Cat()
 {
-    std::cout << "Cat destructed!" << std::endl;
+    std::cout << "Cat destructed! " << std::endl;
 }
 
 Cat::Cat():  type ("Cat")
