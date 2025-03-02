@@ -12,5 +12,6 @@ class Cat :public Animal
         Cat(const Cat &a);
         Cat& operator=(const Cat &a);
         ~Cat();
+        std::string getType() const;
         void makeSound() const;
 };

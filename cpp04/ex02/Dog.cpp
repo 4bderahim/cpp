@@ -22,6 +22,12 @@ Dog::Dog(const Dog &a)
     *this =  a;
 }
 
+
+std::string Dog::getType() const
+{
+    return (this->type);
+}      
+
 Dog::~Dog()
 {
     delete this->brain;
@@ -36,5 +42,5 @@ Dog::Dog():  type ("Dog")
 
 void Dog::makeSound() const
 {
-    std::cout << "Dog Barks  ~~~" << std::endl;
+    std::cout << "Dog Makes a sound  ~~~~" << std::endl;
 }

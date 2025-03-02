@@ -11,7 +11,7 @@ Cat& Cat::operator=(const Cat &a)
         {
             this->type = a.type;
             this->brain  = new Brain();
-            for (unsigned long i = 0; i < a.brain->ideas->length(); i++ )
+            for (int i = 0; i < 100; i++)
                 this->brain->ideas[i] =  a.brain->ideas[i]; 
         }
     return (*this);
@@ -26,7 +26,6 @@ Cat::~Cat()
 {
     delete this->brain;
     std::cout << "Cat destructed!" << std::endl;
-
 }
 
 Cat::Cat():  type ("Cat")

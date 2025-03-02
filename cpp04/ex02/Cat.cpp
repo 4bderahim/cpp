@@ -21,6 +21,11 @@ Cat::Cat(const Cat &a)
     *this = a;
 }
 
+std::string Cat::getType() const
+{
+    return (this->type);
+}                  
+
 Cat::~Cat()
 {
     delete this->brain;
@@ -35,5 +40,5 @@ Cat::Cat():  type ("Cat")
 
 void Cat::makeSound() const
 {
-    std::cout << "Cat MEWing ~~~ "<< std::endl;
+    std::cout << "Cat Makes a sound ~~~ "<< std::endl;
 }
