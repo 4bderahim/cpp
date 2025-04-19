@@ -25,12 +25,12 @@ Animal::Animal():  type ("Animal")
     std::cout << "Animale constructed!" << std::endl;
 }
 
-void Animal::makeSound() const
-{
-    std::cout << "Animal makes a sound ~~~~~~~" << std::endl;
-}
+// void Animal::makeSound() const
+// {
+//     std::cout << "Animal makes a sound ~~~~~~~" << std::endl;
+// }
 
-std::string Animal::getType() const
-{
-    return (this->type);
-}
+// std::string Animal::getType() const
+// {
+//     return (this->type);
+// }

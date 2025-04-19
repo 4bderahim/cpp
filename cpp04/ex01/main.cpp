@@ -20,5 +20,4 @@ int main()
     {
         delete l[i];// 
     }
-    
 }

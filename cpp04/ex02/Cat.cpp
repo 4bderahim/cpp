@@ -1,16 +1,12 @@
-
-
 #include "Cat.hpp"
-
 
 Cat& Cat::operator=(const Cat &a)
 {
-
    if (this != &a)
         {
             this->type = a.type;
             this->brain  = new Brain();
-            for (unsigned long i = 0; i < a.brain->ideas->length(); i++ )
+            for ( int i = 0; i < 100; i++ )
                 this->brain->ideas[i] =  a.brain->ideas[i]; 
         }
     return (*this);
