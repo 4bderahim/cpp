@@ -4,7 +4,6 @@
 
 class radeTooLowException: public std::exception
 {
-
-    //
+    const char *what();
 
 };
