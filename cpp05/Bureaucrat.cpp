@@ -19,17 +19,18 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bu)
 {
     if (this != &bu)
-        {
-            this->name = bu.name; 
-            this->grade = bu.grade;
-
-        }
+    {
+        this->name = bu.name; 
+        this->grade = bu.grade;
+    }
     return (*this);
 }
+
 Bureaucrat::Bureaucrat(const Bureaucrat &bu)
 {
     *this =  bu;
 }
+
 std::string Bureaucrat::getName()
 {
     return this->name;
