@@ -2,7 +2,7 @@
 #include <exception>
 	
 
-class radeTooHighException: public std::exception
+class GradeTooHighException: public std::exception
 {
-    const char *what();
+    const char *what() const throw();
 };

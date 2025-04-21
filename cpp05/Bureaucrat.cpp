@@ -2,8 +2,12 @@
 #include "Bureaucrat.hpp"
 
 
-Bureaucrat::Bureaucrat(int grade) :grade (grade)
+Bureaucrat::Bureaucrat(int grade) 
 {
+    if (grade  < 1)
+        throw low; 
+    if (grade > 150)
+        throw high;
     std::cout << "Bureaucrat constructed!" << std::endl;
 }
 

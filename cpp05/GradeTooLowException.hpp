@@ -1,9 +1,7 @@
 #include <iostream>
 #include <exception>
 	
-
-class radeTooLowException: public std::exception
+class GradeTooLowException: public std::exception
 {
-    const char *what();
-
+    const char *what() const throw();
 };
