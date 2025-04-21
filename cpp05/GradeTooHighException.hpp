@@ -5,6 +5,6 @@
 class GradeTooHighException: public std::exception
 {
     public:
-        GradeTooHighException();
+        // GradeTooHighException();
         const char *what() const throw();
 };

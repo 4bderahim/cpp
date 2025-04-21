@@ -5,12 +5,11 @@ int main()
 {
     try
     {
-        Bureaucrat b = Bureaucrat("dsdsd", 0);
+        Bureaucrat b = Bureaucrat("dsdsd", 10000);
     }   
-    catch( b.low &e )
+    catch(std::exception &e )
     {
         std::cout << e.what() << std::endl;
     }
-
 
 }
