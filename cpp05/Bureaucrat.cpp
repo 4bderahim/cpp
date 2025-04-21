@@ -1,13 +1,12 @@
-
 #include "Bureaucrat.hpp"
 
-
-Bureaucrat::Bureaucrat(int grade) 
+Bureaucrat::Bureaucrat(const std::string name,  int grade) :name (name)
 {
     if (grade  < 1)
-        throw low; 
+        throw low(); 
     if (grade > 150)
-        throw high;
+        throw high();
+    this->grade = grade;
     std::cout << "Bureaucrat constructed!" << std::endl;
 }
 
@@ -20,8 +19,8 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bu)
 {
     if (this != &bu)
     {
-        this->name = bu.name; 
         this->grade = bu.grade;
+        // this->name = bu.name;
     }
     return (*this);
 }
