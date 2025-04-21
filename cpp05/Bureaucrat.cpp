@@ -16,20 +16,20 @@ Bureaucrat::~Bureaucrat()
     std::cout << "Bureaucrat destructed!" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &bu)
-{
-    *this =  bu;
-}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bu)
 {
     if (this != &bu)
         {
-            this->grade = bu.grade; 
             this->name = bu.name; 
+            this->grade = bu.grade; 
 
         }
     return (*this);
+}
+Bureaucrat::Bureaucrat(const Bureaucrat &bu)
+{
+    *this =  bu;
 }
 std::string Bureaucrat::getName()
 {
