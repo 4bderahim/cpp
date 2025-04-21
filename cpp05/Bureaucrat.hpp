@@ -10,7 +10,9 @@ class Bureaucrat
         GradeTooLowException low;
     public:
         Bureaucrat(int grade);
-        ~Bureaucrat();
+        Bureaucrat(const Bureaucrat &bu);
+        Bureaucrat& operator=(Bureaucrat &bu);
         std::string getName();
         int getGrade();
+        ~Bureaucrat();
 };

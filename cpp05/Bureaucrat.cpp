@@ -15,7 +15,16 @@ Bureaucrat::~Bureaucrat()
 {
     std::cout << "Bureaucrat destructed!" << std::endl;
 }
+Bureaucrat& Bureaucrat::operator=(Bureaucrat bu)
+{
+    if (this != &bu)
+        {
+            this->grade = bu->grade; 
+            this->name = bu->name; 
 
+        }
+    return (*this);
+}
 std::string Bureaucrat::getName()
 {
     return this->name;
@@ -25,5 +34,3 @@ int Bureaucrat::getGrade()
 {
     return this->grade;
 }
-
-
