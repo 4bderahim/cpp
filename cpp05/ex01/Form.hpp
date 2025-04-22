@@ -13,7 +13,10 @@ class Form: public std::exception
         bool b;
         const int grade;
         const int grade_;
+        //lowexecption
+        //highexecption
     public:
+        //what();
         Form();
         ~Form();
         const int getGrade();
@@ -21,5 +24,5 @@ class Form: public std::exception
         bool getBool();
         void setBool();
         const std::string getName();
-        static void beSigned(Bureaucrat &bure);
+        void beSigned(Bureaucrat &bure);
 };

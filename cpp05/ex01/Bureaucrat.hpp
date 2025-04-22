@@ -18,6 +18,6 @@ class Bureaucrat
         Bureaucrat(const Bureaucrat &bu);
         std::string getName();
         int getGrade();
-        void signForm(Bureaucrat &obj);
+        void signForm(Form form);
         ~Bureaucrat();
 };

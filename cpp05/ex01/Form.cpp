@@ -39,7 +39,7 @@ void Form::beSigned(Bureaucrat &bure)
 {
     if (bure.getGrade() > Form::grade)
         throw bure.low;
-    Form::setBool();
+    this->b = 1;
 }
 
 
