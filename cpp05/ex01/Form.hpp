@@ -1,5 +1,6 @@
 #include <iostream>
 #include <exception>
+#include "Bureaucrat.hpp"
 
 class Form: public std::exception
 {
@@ -15,6 +16,7 @@ class Form: public std::exception
         const int getGrade_();
         bool getBool();
         const std::string getName();
+        void beSigned(const Bureaucrat &bure);
 
 
 };

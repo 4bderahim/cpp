@@ -27,7 +27,6 @@ const int Form::getGrade_()
     return (this->grade_);
 }
 
-
 bool Form::getBool()
 {
     return (this->b);
@@ -36,4 +35,14 @@ const std::string Form::getName()
 {
     return (this->name);
 }
+
+void Form::beSigned(Bureaucrat &bure)
+{
+    if (bure.getGrade() >= this->grade)
+        this->b = 1;
+    
+}
+
+
+
 
