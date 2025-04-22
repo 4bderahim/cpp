@@ -42,3 +42,10 @@ int Bureaucrat::getGrade()
 {
     return this->grade;
 }
+
+void Bureaucrat::signForm()
+{
+    Form::beSigned(this);
+
+}
+

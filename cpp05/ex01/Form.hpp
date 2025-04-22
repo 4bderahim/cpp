@@ -1,7 +1,11 @@
+#pragma once
+
 #include <iostream>
 #include <exception>
 #include "Bureaucrat.hpp"
-
+#include "GradeTooHighException.hpp"
+#include "GradeTooLowException.hpp"
+class Bureaucrat;
 class Form: public std::exception
 {
     private:
@@ -15,8 +19,7 @@ class Form: public std::exception
         const int getGrade();
         const int getGrade_();
         bool getBool();
+        void setBool();
         const std::string getName();
-        void beSigned(const Bureaucrat &bure);
-
-
+        void beSigned(Bureaucrat &bure);
 };
