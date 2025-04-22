@@ -9,5 +9,12 @@ class Form: public std::exception
         const int grade;
         const int grade_;
     public:
-        
+        Form();
+        ~Form();
+        const int getGrade();
+        const int getGrade_();
+        bool getBool();
+        const std::string getName();
+
+
 };
