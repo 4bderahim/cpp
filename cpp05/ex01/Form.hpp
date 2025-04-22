@@ -6,17 +6,16 @@
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
 class Bureaucrat;
-class Form: public std::exception
+class Form
 {
     private:
         const std::string name;
         bool b;
         const int grade;
         const int grade_;
-        //lowexecption
-        //highexecption
     public:
-        //what();
+        GradeTooHighException high;
+        GradeTooLowException low;
         Form();
         ~Form();
         const int getGrade();
