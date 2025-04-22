@@ -37,7 +37,7 @@ const std::string Form::getName()
 
 void Form::beSigned(Bureaucrat &bure)
 {
-    if (bure.getGrade() > this->grade)
+    if (bure.getGrade() > Form::grade)
         throw bure.low;
     Form::setBool();
 }

@@ -43,9 +43,8 @@ int Bureaucrat::getGrade()
     return this->grade;
 }
 
-void Bureaucrat::signForm()
+void Bureaucrat::signForm(Bureaucrat &obj)
 {
-    Form::beSigned(this);
-
+    Form::beSigned(obj);
 }
 

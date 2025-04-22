@@ -21,5 +21,5 @@ class Form: public std::exception
         bool getBool();
         void setBool();
         const std::string getName();
-        void beSigned(Bureaucrat &bure);
+        static void beSigned(Bureaucrat &bure);
 };
