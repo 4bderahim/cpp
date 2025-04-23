@@ -1,6 +1,13 @@
 #include "Form.hpp"
 
-Form::Form()
+
+
+Form::Form(int grade, int grade_): b (0), grade (grade), grade_ (grade_) 
+{
+    std::cout << "Form constructed!" << std::endl;
+}
+
+Form::Form(): b (0)
 {
     std::cout << "Form constructed!" << std::endl;
 }

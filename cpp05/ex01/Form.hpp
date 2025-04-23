@@ -16,6 +16,7 @@ class Form
     public:
         GradeTooHighException high;
         GradeTooLowException low;
+        Form(int grade, int grade_);
         Form();
         ~Form();
         const int getGrade();
