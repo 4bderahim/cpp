@@ -4,9 +4,16 @@
 int main()
 {
     // grade too high
-    Bureaucrat b = Bureaucrat("dsdsd", 10000);
+    Bureaucrat b = Bureaucrat("dsdsd", 10);
     Form f = Form(1,84);
-    b.signForm(f);
+    try
+    {
+        b.signForm(f);
+    }
+    catch (std::exception &ee)
+    {
+        std::cout << ee.what() << std::endl;
+    }
     
     // try
     // {

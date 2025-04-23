@@ -2,7 +2,10 @@
 
 Form::Form(int gr, int gr_): grade (gr), grade_(gr_)
 {
-    // throw
+    if (gr  < 1)
+        throw Form::low;
+    if (gr > 150)
+        throw Form::high;
     std::cout << "Form constructed!" << std::endl;
 }
 
@@ -43,6 +46,7 @@ const std::string Form::getName()
 
 void Form::beSigned(Bureaucrat &bure)
 {
+    std::cout << bure.getGrade() << "||" << Form::grade << std::endl;
     if (bure.getGrade() > Form::grade)
         throw bure.low;
     this->b = 1;
