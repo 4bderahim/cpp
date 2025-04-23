@@ -16,11 +16,11 @@ int main()
     }
 
     // all valid (no exception)
-    Bureaucrat b = Bureaucrat("name", 1);
-    Form f = Form(11,84);
+    Bureaucrat bb = Bureaucrat("name", 1);
+    Form ff = Form(11,84);
     try
     {
-        b.signForm(f);
+        b.signForm(ff);
     }
     catch (std::exception &ee)
     {
