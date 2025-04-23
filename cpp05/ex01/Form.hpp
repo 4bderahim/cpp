@@ -5,6 +5,7 @@
 #include "Bureaucrat.hpp"
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
+
 class Bureaucrat;
 class Form
 {
@@ -19,8 +20,8 @@ class Form
         Form(int grade, int grade_);
         Form();
         ~Form();
-        const int getGrade();
-        const int getGrade_();
+         int getGrade();
+         int getGrade_();
         bool getBool();
         void setBool();
         const std::string getName();

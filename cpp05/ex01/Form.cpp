@@ -1,13 +1,12 @@
 #include "Form.hpp"
 
-
-
-Form::Form(int grade, int grade_): b (0), grade (grade), grade_ (grade_) 
+Form::Form(int gr, int gr_): grade (gr), grade_(gr_)
 {
+    // throw
     std::cout << "Form constructed!" << std::endl;
 }
 
-Form::Form(): b (0)
+Form::Form(): b(0),  grade (1), grade_(1)
 {
     std::cout << "Form constructed!" << std::endl;
 }
@@ -17,12 +16,12 @@ Form::~Form()
     std::cout << "Form destructed!" << std::endl;
 }
 
-const int Form::getGrade()
+int Form::getGrade()
 {
     return (this->grade);
 }
 
-const int Form::getGrade_()
+int Form::getGrade_()
 {
     return (this->grade_);
 }

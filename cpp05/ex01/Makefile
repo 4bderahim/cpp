@@ -2,7 +2,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = bure
 
-CPPFILES = GradeTooHighException.cpp GradeTooLowException.cpp Bureaucrat.cpp main.cpp
+CPPFILES = Form.cpp GradeTooHighException.cpp GradeTooLowException.cpp Bureaucrat.cpp main.cpp
 
 OFILES = $(CPPFILES:.cpp=.o)
 
@@ -10,7 +10,7 @@ all: $(NAME)
 
 $(NAME): $(OFILES)
 	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
-%.o: %.cpp GradeTooLowException.hpp  GradeTooHighException.hpp  Bureaucrat.hpp
+%.o: %.cpp GradeTooLowException.hpp  GradeTooHighException.hpp  Bureaucrat.hpp Form.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OFILES)
