@@ -11,7 +11,7 @@ Bureaucrat::Bureaucrat(const std::string name,  int grade) :name (name)
 }
 Bureaucrat::Bureaucrat()
 {
-    //
+    std::cout << "Bureaucrat constructed !" << std::endl;
 }
 Bureaucrat::~Bureaucrat()
 {
