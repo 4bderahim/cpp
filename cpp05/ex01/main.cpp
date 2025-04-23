@@ -4,8 +4,8 @@
 int main()
 {
     // grade too high
-    Bureaucrat b = Bureaucrat("dsdsd", 10);
-    Form f = Form(1,84);
+    Bureaucrat b = Bureaucrat("dsdsd", 12);
+    Form f = Form(11,84);
     try
     {
         b.signForm(f);
