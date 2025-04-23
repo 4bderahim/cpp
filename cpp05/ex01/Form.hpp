@@ -20,8 +20,11 @@ class Form
         Form(int grade, int grade_);
         Form();
         ~Form();
-         int getGrade();
-         int getGrade_();
+        Form& operator=(const Form &fo);
+        Form(const Form &fo);
+
+        int getGrade();
+        int getGrade_();
         bool getBool();
         void setBool();
         const std::string getName();

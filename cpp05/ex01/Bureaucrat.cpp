@@ -27,16 +27,17 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bu)
     return (*this);
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat &bu)
+{
+    *this =  bu;
+}
+
 std::ostream& operator<<(std::ostream& os,Bureaucrat& obj)
 {
     os << obj.getName() << ", bureaucrat grade" << obj.getGrade();
     return (os);
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &bu)
-{
-    *this =  bu;
-}
 
 std::string Bureaucrat::getName()
 {

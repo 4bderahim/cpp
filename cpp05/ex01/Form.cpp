@@ -39,6 +39,21 @@ void Form::setBool()
     this->b = 1;
 }
 
+Form& Form::operator=(const Form &fo)
+{
+    if (this != &fo)
+    {
+        this->b = fo.b;
+        //this->grade = for.grade;
+    }
+    return (*this);
+}
+
+Form::Form(const Form &fo)
+{
+    *this =  fo;
+}
+
 const std::string Form::getName()
 {
     return (this->name);
