@@ -21,6 +21,7 @@ int main()
     std::cout << "--------------" << std::endl;
     Bureaucrat bb = Bureaucrat("name", 1);
     Form ff = Form(11,84);
+    std::cout  << bb << std::endl;
     try
     {
         bb.signForm(ff);
@@ -30,4 +31,5 @@ int main()
         std::cout << ee.what() << std::endl;
     }
     }
+    std::cout << "--------------------" << std::endl; 
 }
