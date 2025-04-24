@@ -21,23 +21,20 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bu)
 {
     if (this != &bu)
-    {
         this->grade = bu.grade;
-    }
     return (*this);
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bu)
 {
-    *this =  bu;
+    *this = bu;
 }
 
 std::ostream& operator<<(std::ostream& os,Bureaucrat  &obj)
 {
-    os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+    os << obj.getName() << " bureaucrat grade " << obj.getGrade();
     return (os);
 }
-
 
 std::string Bureaucrat::getName()
 {

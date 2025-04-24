@@ -3,6 +3,7 @@
 #include "GradeTooLowException.hpp"
 #include "GradeTooHighException.hpp"
 #include "Form.hpp"
+
 class Form;
 class Bureaucrat
 {
@@ -21,5 +22,4 @@ class Bureaucrat
         void signForm(Form form);
         ~Bureaucrat();
 };
-
 std::ostream& operator<<(std::ostream& os, Bureaucrat  &obj);
