@@ -32,7 +32,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &bu)
     *this =  bu;
 }
 
-std::ostream& operator<<(std::ostream& os,Bureaucrat& obj)
+std::ostream& operator<<(std::ostream& os,Bureaucrat const &obj)
 {
     os << obj.getName() << ", bureaucrat grade" << obj.getGrade();
     return (os);

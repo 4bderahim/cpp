@@ -22,7 +22,6 @@ class Form
         ~Form();
         Form& operator=(const Form &fo);
         Form(const Form &fo);
-
         int getGrade();
         int getGrade_();
         bool getBool();

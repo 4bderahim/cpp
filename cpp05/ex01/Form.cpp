@@ -9,7 +9,7 @@ Form::Form(int gr, int gr_): grade (gr), grade_(gr_)
     std::cout << "Form constructed!" << std::endl;
 }
 
-Form::Form(): b(0),  grade (1), grade_(1)
+Form::Form():name("name"),  b(0),  grade (1), grade_(1) 
 {
     std::cout << "Form constructed!" << std::endl;
 }
@@ -49,7 +49,7 @@ Form& Form::operator=(const Form &fo)
     return (*this);
 }
 
-Form::Form(const Form &fo)
+Form::Form(const Form &fo):name("name"),  b(0),  grade (1), grade_(1) 
 {
     *this =  fo;
 }
