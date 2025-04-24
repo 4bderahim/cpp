@@ -11,11 +11,11 @@ class Form
     public:
         GradeTooHighException high;
         GradeTooLowException low;
-        Form(int grade, int grade_);
-        Form();
-        ~Form();
-        Form& operator=(const Form &fo);
-        Form(const Form &fo);
+        // Form(int grade, int grade_);
+        // Form();
+        // ~Form();
+        // Form& operator=(const Form &fo);
+        // Form(const Form &fo);
         virtual int getGrade()  = 0;
         virtual int getGrade_() = 0;
         virtual bool getBool()  = 0;
