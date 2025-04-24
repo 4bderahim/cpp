@@ -1,10 +1,10 @@
 
-
 #include "AForm.hpp"
 
 
-
-class PresidentialPardonForm
+class PresidentialPardonForm: public Aform
 {
+    public:
+        
 
 };
