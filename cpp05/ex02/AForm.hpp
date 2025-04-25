@@ -22,7 +22,7 @@ class AForm
         void check_execution_grade(int grade,int  rec_grade, int exec_grade, int rec_execgrade);
 
         void setBool();
-        const std::string getName(int grade);
+        const std::string getName();
         void beSigned(Bureaucrat &bure);
         void execute(Bureaucrat const & executor);
 };

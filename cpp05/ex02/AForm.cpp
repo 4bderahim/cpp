@@ -69,7 +69,9 @@ void AForm::beSigned(Bureaucrat &bure)
 
 void AForm::check_execution_grade(int grade,int  rec_grade, int exec_grade, int rec_execgrade)
 {
-    if (grade)
-
+    if (!this->b || grade < rec_grade || exec_grade < rec_execgrade)
+        throw AForm::low;
+    if (!this->b || grade > rec_grade || exec_grade > rec_execgrade)
+        throw AForm::high;
 }
 
