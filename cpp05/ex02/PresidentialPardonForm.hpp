@@ -8,7 +8,7 @@ class PresidentialPardonForm: public AForm
          
 
     public:
-        void execute(Bureaucrat const & executor);
+        void execute(Bureaucrat const & executor) const ;
 
 
         
