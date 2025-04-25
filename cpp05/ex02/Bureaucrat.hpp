@@ -18,7 +18,7 @@ class Bureaucrat
         Bureaucrat& operator=(const Bureaucrat &bu);
         Bureaucrat(const Bureaucrat &bu);
         std::string getName();
-        int getGrade();
+        const int getGrade() ;
         void signForm(Form form);
         ~Bureaucrat();
 };
