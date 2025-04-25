@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 
-class Form
+class AForm
 {
     private:
         const std::string name;
@@ -11,16 +11,18 @@ class Form
     public:
         GradeTooHighException high;
         GradeTooLowException low;
-        // Form(int grade, int grade_);
-        // Form();
-        // ~Form();
-        // Form& operator=(const Form &fo);
-        // Form(const Form &fo);
-        virtual int getGrade()  = 0;
-        virtual int getGrade_() = 0;
-        virtual bool getBool()  = 0;
-        virtual void setBool()  = 0;
-        virtual const std::string getName() = 0;
-        virtual void beSigned(Bureaucrat &bure);
-        virtual void execute(Bureaucrat const & executor) = 0;
+        AForm(int grade, int grade_);
+        AForm();
+        ~AForm();
+        AForm& operator=(const AForm &fo);
+        AForm(const AForm &fo);
+        int getGrade();
+        int getGrade_();
+        bool getBool();
+        void check_execution_grade(int grade,int  rec_grade, int exec_grade, int rec_execgrade);
+
+        void setBool();
+        const std::string getName(int grade);
+        void beSigned(Bureaucrat &bure);
+        void execute(Bureaucrat const & executor);
 };
