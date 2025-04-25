@@ -1,3 +1,4 @@
+
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm():target ("target")
@@ -10,8 +11,8 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target):target (targe
     std::cout << "PresidentialPardonForm constructor called" << std::endl;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const & executor)  
+void PresidentialPardonForm::execute(Bureaucrat const & executor)
 {
-    check_execution_grade(executor.getGrade() , 25, this->getGrade_() , 5 );
-    std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+    check_execution_grade(executor , 25, this->getGrade_() , 5 );
+    std::cout << this->target << "has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

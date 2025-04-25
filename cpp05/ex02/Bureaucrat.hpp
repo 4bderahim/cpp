@@ -2,9 +2,9 @@
 #include <iostream>
 #include "GradeTooLowException.hpp"
 #include "GradeTooHighException.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 class Bureaucrat
 {
     private:
@@ -18,9 +18,8 @@ class Bureaucrat
         Bureaucrat& operator=(const Bureaucrat &bu);
         Bureaucrat(const Bureaucrat &bu);
         std::string getName();
-        const int getGrade() ;
-        void signForm(Form form);
+        int getGrade() const;
+        void signForm(AForm Aform);
         ~Bureaucrat();
 };
-
 std::ostream& operator<<(std::ostream& os, Bureaucrat  &obj);

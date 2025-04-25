@@ -1,6 +1,9 @@
+
+#pragma once 
 #include <iostream>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
 class AForm
 {
     private:
@@ -19,9 +22,9 @@ class AForm
         int getGrade();
         int getGrade_();
         bool getBool();
-        void check_execution_grade(int grade,int  rec_grade, int exec_grade, int rec_execgrade);
+        void check_execution_grade(const Bureaucrat & executor,int  rec_grade, int exec_grade, int rec_execgrade);
         void setBool();
-        const std::string getName();
+        std::string getName();
         void beSigned(Bureaucrat &bure);
         virtual void execute(Bureaucrat const & executor)  = 0;
 };

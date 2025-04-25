@@ -13,6 +13,7 @@ Bureaucrat::Bureaucrat()
 {
     std::cout << "Bureaucrat constructed !" << std::endl;
 }
+
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Bureaucrat destructed!" << std::endl;
@@ -41,12 +42,12 @@ std::string Bureaucrat::getName()
     return this->name;
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const 
 {
     return this->grade;
 }
 
-void Bureaucrat::signForm(Form form)
+void Bureaucrat::signForm(AForm form)
 {
     form.beSigned(*this);
 }

@@ -54,7 +54,7 @@ AForm::AForm(const AForm &fo):name("name"),  b(0),  grade (1), grade_(1)
     *this =  fo;
 }
 
-const std::string AForm::getName()
+std::string AForm::getName()
 {
     return (this->name);
 }
@@ -67,11 +67,11 @@ void AForm::beSigned(Bureaucrat &bure)
     this->b = 1;
 }
 
-void AForm::check_execution_grade(int grade,int  rec_grade, int exec_grade, int rec_execgrade)
+void AForm::check_execution_grade(Bureaucrat const & executor,int  rec_grade, int exec_grade, int rec_execgrade)
 {
-    if (!this->b || grade < rec_grade || exec_grade < rec_execgrade)
+    if (!this->b ||  executor.getGrade() < rec_grade || exec_grade < rec_execgrade)
         throw AForm::low;
-    if (!this->b || grade > rec_grade || exec_grade > rec_execgrade)
+    if (!this->b || executor.getGrade() > rec_grade || exec_grade > rec_execgrade)
         throw AForm::high;
 }
 
