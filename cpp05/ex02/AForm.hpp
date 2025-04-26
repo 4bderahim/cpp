@@ -9,7 +9,7 @@ class AForm
     private:
         const std::string name;
         bool b;
-        const int grade;
+        const int grade;//s
         const int grade_;
     public:
         GradeTooHighException high;
@@ -22,7 +22,7 @@ class AForm
         int getGrade();
         int getGrade_();
         bool getBool();
-        void check_execution_grade(const Bureaucrat & executor,int  rec_grade, int exec_grade, int rec_execgrade);
+        void check_execution_grade(const Bureaucrat & executor);
         void setBool();
         std::string getName();
         void beSigned(Bureaucrat &bure);

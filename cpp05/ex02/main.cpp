@@ -4,8 +4,8 @@
 int main()
 {
     PresidentialPardonForm p;
-    AForm form = form();
-    p.
+    AForm fr = form();
+    
     
 
 }

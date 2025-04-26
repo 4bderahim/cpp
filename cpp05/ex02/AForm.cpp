@@ -49,7 +49,7 @@ AForm& AForm::operator=(const AForm &fo)
     return (*this);
 }
 
-AForm::AForm(const AForm &fo):name("name"),  b(0),  grade (1), grade_(1) 
+AForm::AForm(const AForm &fo):name("name"), b(0),  grade (1), grade_(1) 
 {
     *this =  fo;
 }
@@ -67,11 +67,11 @@ void AForm::beSigned(Bureaucrat &bure)
     this->b = 1;
 }
 
-void AForm::check_execution_grade(Bureaucrat const & executor,int  rec_grade, int exec_grade, int rec_execgrade)
+void AForm::check_execution_grade(Bureaucrat const & executor)
 {
-    if (!this->b ||  executor.getGrade() < rec_grade || exec_grade < rec_execgrade)
+    if (!this->b ||  executor.getGrade() < this->grade)
         throw AForm::low;
-    if (!this->b || executor.getGrade() > rec_grade || exec_grade > rec_execgrade)
+    if (!this->b || executor.getGrade() > this->grade)
         throw AForm::high;
 }
 
