@@ -3,10 +3,11 @@
 
 PresidentialPardonForm::PresidentialPardonForm():target ("target")
 {
+    
     std::cout << "PresidentialPardonForm constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target , int grade_ex , int g_sign):target (target), grade(g_sign), grade_(grade_ex)
+PresidentialPardonForm::PresidentialPardonForm(std::string target , int grade_ex , int g_sign):target (target),AForm(g_sign, grade_ex)
 {
     std::cout << "PresidentialPardonForm constructor called" << std::endl;
 }
