@@ -6,7 +6,7 @@
 class Bureaucrat;
 class AForm
 {
-    private:
+    protected:
         const std::string name;
         bool b;
         const int grade;//s

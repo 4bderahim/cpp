@@ -1,6 +1,6 @@
 
 #include "AForm.hpp"
-
+#include <fstream>
 
 class PresidentialPardonForm: public AForm
 {
@@ -10,6 +10,5 @@ class PresidentialPardonForm: public AForm
         PresidentialPardonForm();
         PresidentialPardonForm(std::string target , int grade_ex , int g_sign);
         ~PresidentialPardonForm();
-        void execute(Bureaucrat const & executor) ;
-
+        void execute(Bureaucrat const & executor);
 };

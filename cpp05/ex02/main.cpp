@@ -3,8 +3,9 @@
 
 int main()
 {
-    PresidentialPardonForm p;
-    AForm fr = form();
+    PresidentialPardonForm p("hello", 15, 8);
+    Bureaucrat b("bu name", 150);
+    p.execute(b);
     
     
 
