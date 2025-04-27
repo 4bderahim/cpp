@@ -1,13 +1,15 @@
-#include <iostream>
+#include "Intern.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
- class Intern
- {
-    // private:
-    //     std::string form_name;
-    //     std::string form_target;
-    public:
-        void makeForm( std::string form_name, std::string form_target);
-        
+AForm &Intern::makeForm( std::string form_name, std::string form_target)
+{
+    std::string  str[3] = {"robotomy request", "shrubbery creation", "presidential pardon"};
+    PresidentialPardonForm pr();
 
 
-};
+}
+
+
+
