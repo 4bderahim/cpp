@@ -51,7 +51,7 @@ AForm& AForm::operator=(const AForm &fo)
 
 AForm::AForm(const AForm &fo):name("name"), b(0),  grade (1), grade_(1) 
 {
-    *this =  fo;
+    *this = fo;
 }
 
 std::string AForm::getName()
@@ -61,8 +61,6 @@ std::string AForm::getName()
 
 void AForm::beSigned(Bureaucrat &bure)
 {
-    std::cout << bure.getGrade() << ">" << AForm::grade << std::endl;
-    std::cout << bure.getGrade() << "||" << AForm::grade << std::endl;
     if (bure.getGrade() > AForm::grade)
         throw bure.low;
     this->b = 1;
@@ -70,7 +68,6 @@ void AForm::beSigned(Bureaucrat &bure)
 
 void AForm::check_execution_grade(Bureaucrat const & executor)
 {
-    std::cout << this->b << " < " <<  executor.getGrade() << "<<" <<  this->grade_ << std::endl;
     if (!this->b ||  executor.getGrade() < this->grade_)
         throw AForm::low;
     // if (!this->b || executor.getGrade() > this->grade_)
