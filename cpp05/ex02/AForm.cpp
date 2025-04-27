@@ -61,6 +61,7 @@ std::string AForm::getName()
 
 void AForm::beSigned(Bureaucrat &bure)
 {
+    std::cout << bure.getGrade() << ">" << AForm::grade << std::endl;
     std::cout << bure.getGrade() << "||" << AForm::grade << std::endl;
     if (bure.getGrade() > AForm::grade)
         throw bure.low;
@@ -69,9 +70,10 @@ void AForm::beSigned(Bureaucrat &bure)
 
 void AForm::check_execution_grade(Bureaucrat const & executor)
 {
-    if (!this->b ||  executor.getGrade() < this->grade)
+    std::cout << this->b << " < " <<  executor.getGrade() << "<<" <<  this->grade_ << std::endl;
+    if (!this->b ||  executor.getGrade() < this->grade_)
         throw AForm::low;
-    if (!this->b || executor.getGrade() > this->grade)
-        throw AForm::high;
+    // if (!this->b || executor.getGrade() > this->grade_)
+    //     throw AForm::high;
 }
 

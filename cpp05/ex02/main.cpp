@@ -3,8 +3,9 @@
 
 int main()
 {
-    PresidentialPardonForm p("hello", 15, 8);
-    Bureaucrat b("bu name", 150);
+    PresidentialPardonForm p("hello", 5, 50);
+    Bureaucrat b("bu name", 20);
+        p.beSigned(b);
     try
     {
         p.execute(b);
