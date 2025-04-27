@@ -20,7 +20,6 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void RobotomyRequestForm::execute(Bureaucrat const & executor)
 {
     check_execution_grade(executor);
-    std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
     
     std::cout << "... making some drilling noises....!" << std::endl;
     std::cout << this->target << " has been robotomized 50% of the time !" << std::endl;

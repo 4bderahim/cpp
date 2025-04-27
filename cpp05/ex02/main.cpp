@@ -32,10 +32,9 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
-    }
     
+    }
     std::cout << "------------------------" << std::endl;
-
     {
     RobotomyRequestForm p("hello2", 5, 50);
     Bureaucrat b("bu name", 20);
