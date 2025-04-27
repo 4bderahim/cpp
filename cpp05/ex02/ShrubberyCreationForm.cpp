@@ -5,17 +5,17 @@
 ShrubberyCreationForm::ShrubberyCreationForm():target ("target")
 {
     
-    std::cout << "PresidentialPardonForm constructor called" << std::endl;
+    std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target , int grade_ex , int g_sign):target (target),AForm(g_sign, grade_ex)
 {
-    std::cout << "PresidentialPardonForm constructor called" << std::endl;
+    std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    std::cout << "PresidentialPardonForm destructed!" << std::endl;
+    std::cout << "ShrubberyCreationForm destructed!" << std::endl;
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor)
