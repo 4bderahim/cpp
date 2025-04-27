@@ -2,7 +2,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = bure
 
-CPPFILES = AForm.cpp GradeTooHighException.cpp GradeTooLowException.cpp Bureaucrat.cpp PresidentialPardonForm.cpp main.cpp
+CPPFILES = AForm.cpp GradeTooHighException.cpp GradeTooLowException.cpp Bureaucrat.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp main.cpp
 
 OFILES = $(CPPFILES:.cpp=.o)
 
