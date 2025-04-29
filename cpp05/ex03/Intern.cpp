@@ -4,9 +4,12 @@
 #include "RobotomyRequestForm.hpp"
 
 
-AForm  &make_presidentialpardonForm()
+AForm  &make_presidentialpardonForm(std::string target)
 {
-    AForm form  =  PresidentialPardonForm();
+    AForm form;
+    form =  PresidentialPardonForm();
+
+    return (form);
 }
 
 AForm &Intern::makeForm( std::string form_name, std::string form_target)
