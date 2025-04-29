@@ -27,11 +27,14 @@ AForm *Intern::makeForm( std::string form_name, std::string form_target)
     while (i < 3)
     {
         if (form_name == str[i])
-            break;
+            {
+                std::cout << "Intern creates " << form_name << std::endl;
+                return ((makers[i](form_target)));
+            }
         i++;
     }
-    std::cout << "Intern creates " << form_name << std::endl;
-    return ((makers[i](form_target)));
+    std::cout << "target name '" << form_name << "' not found!" <<  std::endl;
+    return (NULL);
 }
 
 
