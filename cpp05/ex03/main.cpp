@@ -9,5 +9,17 @@ int main()
     AForm* rrf;
     rrf = someRandomIntern.makeForm("robotomy request", "Bender");
     }
+    std::cout << "----------------------------" << std::endl;
+    {
+    Intern someRandomIntern;
+    AForm* rrf;
+    rrf = someRandomIntern.makeForm("shrubbery creation", "sBender");
+    }
+    std::cout << "----------------------------" << std::endl;
+    {
+    Intern someRandomIntern;
+    AForm* rrf;
+    rrf = someRandomIntern.makeForm("presidential pardon", "aaaBender");
+    }
 }
 
