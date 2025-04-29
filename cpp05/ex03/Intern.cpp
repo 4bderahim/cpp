@@ -18,11 +18,12 @@ AForm  *make_ShrubberyCreationForm(std::string target)
     return (new ShrubberyCreationForm(target));
 }
 
-AForm &Intern::makeForm( std::string form_name, std::string form_target)
+AForm *Intern::makeForm( std::string form_name, std::string form_target)
 {
     AForm *( *makers[])(std::string target) = {&make_PresidentialPardonForm, &make_RobotomyRequestForm, make_ShrubberyCreationForm};
     std::string  str[3] = {"robotomy request", "shrubbery creation", "presidential pardon"};
     int i;
+    i = 0;
     while (i < 3)
     {
         if (form_name == str[i])
@@ -30,7 +31,7 @@ AForm &Intern::makeForm( std::string form_name, std::string form_target)
         i++;
     }
     std::cout << "Intern creates " << form_name << std::endl;
-    return *((makers[i](form_target)));
+    return ((makers[i](form_target)));
 }
 
 
