@@ -6,7 +6,7 @@
 
 AForm  &make_presidentialpardonForm()
 {
-    AForm 
+    AForm form  =  PresidentialPardonForm();
 }
 
 AForm &Intern::makeForm( std::string form_name, std::string form_target)
