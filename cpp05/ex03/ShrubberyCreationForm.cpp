@@ -1,7 +1,10 @@
 #include "ShrubberyCreationForm.hpp"
 
 
-
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm(72,45)
+{
+    std::cout << "ShrubberyCreationForm constructed!" << std::endl;
+}
 ShrubberyCreationForm::ShrubberyCreationForm():target ("target")
 {
     

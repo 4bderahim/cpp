@@ -1,6 +1,12 @@
 
 #include "PresidentialPardonForm.hpp"
 
+
+PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm(72,45)
+{
+    std::cout << "ShrubberyCreationForm constructed!" << std::endl;
+}
+
 PresidentialPardonForm::PresidentialPardonForm():target ("target")
 {
     

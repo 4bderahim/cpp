@@ -26,5 +26,5 @@ class AForm
         void setBool();
         std::string getName();
         void beSigned(Bureaucrat &bure);
-        virtual void execute(Bureaucrat const & executor)  = 0;
+        virtual void execute(Bureaucrat const & executor) = 0;
 };
