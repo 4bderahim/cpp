@@ -1,15 +1,10 @@
 #include "RobotomyRequestForm.hpp"
 
-
-
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& robo)
 {
     if (this != &robo)
     {
         this->b = robo.b;
-        this->target =  robo.target;
-        // this->
-
     }
     return(*this);
 }

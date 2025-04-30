@@ -1,6 +1,21 @@
 #include "ShrubberyCreationForm.hpp"
 
 
+
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm& robo)
+{
+    if (this != &robo)
+    {
+        this->b = robo.b;
+    }
+    return(*this);
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &robo)
+{
+    *this =  robo;
+}
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm(72,45)
 {
     std::cout << "ShrubberyCreationForm constructed!" << std::endl;
