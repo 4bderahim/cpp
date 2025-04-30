@@ -1,6 +1,24 @@
 #include "RobotomyRequestForm.hpp"
 
 
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& robo)
+{
+    if (this != &robo)
+    {
+        this->b = robo.b;
+        this->target =  robo.target;
+        // this->
+
+    }
+    return(*this);
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &robo)
+{
+    *this =  robo;
+}
+
 RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm(72,45)
 {
     std::cout << "RobotomyRequestForm constructed!" << std::endl;
