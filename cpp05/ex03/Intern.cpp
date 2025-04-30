@@ -3,6 +3,18 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
+
+Intern::Intern()
+{
+    std::cout << "Intern constructed !" << std::endl;
+}
+
+Intern::~Intern()
+{
+    std::cout << "Intern destructed !" << std::endl;
+}
+
+
 Intern &Intern::operator=(const Intern& robo)
 {
     //
