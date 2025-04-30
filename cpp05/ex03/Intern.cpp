@@ -3,6 +3,18 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
+Intern &Intern::operator=(const Intern& robo)
+{
+    //
+    return(*this);
+}
+
+Intern::Intern(const Intern &Intern)
+{
+    *this =  Intern;
+}
+
+
 AForm  *make_PresidentialPardonForm(std::string target)
 {
     return (new PresidentialPardonForm(target));
