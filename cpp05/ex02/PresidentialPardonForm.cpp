@@ -1,6 +1,24 @@
 
 #include "PresidentialPardonForm.hpp"
 
+
+
+PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm& robo)
+{
+    if (this != &robo)
+        this->b = robo.b;
+    return(*this);
+}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &robo)
+{
+    *this =  robo;
+}
+PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm(72,45)
+{
+    std::cout << "ShrubberyCreationForm constructed!" << std::endl;
+}
+
 PresidentialPardonForm::PresidentialPardonForm():target ("target")
 {
     

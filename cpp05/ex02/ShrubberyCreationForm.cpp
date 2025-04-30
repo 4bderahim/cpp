@@ -2,6 +2,24 @@
 
 
 
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm& robo)
+{
+    if (this != &robo)
+    {
+        this->b = robo.b;
+    }
+    return(*this);
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &robo)
+{
+    *this =  robo;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm(72,45)
+{
+    std::cout << "ShrubberyCreationForm constructed!" << std::endl;
+}
 ShrubberyCreationForm::ShrubberyCreationForm():target ("target")
 {
     
@@ -33,6 +51,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor)
     file << "         |||/\\\n";
     file << "         |||//\n";
     file << "         |||||\n";
-    file << "   .....//||||\\....   \n";
+    file << "   .....//||||\\....   ";
     file.close();
 }
