@@ -1,11 +1,8 @@
-// #include <iostream>
+
 #pragma once
 #include "AForm.hpp"
- class Intern
- {
-    // private:
-    //     std::string form_name;
-    //     std::string form_target;
+class Intern
+{
     public:
         AForm *makeForm( std::string form_name, std::string form_target);
 };

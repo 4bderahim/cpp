@@ -36,6 +36,6 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor)
     file << "         |||/\\\n";
     file << "         |||//\n";
     file << "         |||||\n";
-    file << "   .....//||||\\....   \n";
+    file << "   .....//||||\\....   ";
     file.close();
 }
