@@ -9,7 +9,7 @@ class AForm
     protected:
         const std::string name;
         bool b;
-        const int grade;//sign
+        const int grade;// sign
         const int grade_;
     public:
         GradeTooHighException high;
