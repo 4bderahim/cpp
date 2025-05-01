@@ -2,7 +2,6 @@
 #include "PresidentialPardonForm.hpp"
 
 
-
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm& robo)
 {
     if (this != &robo)

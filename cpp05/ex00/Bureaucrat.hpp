@@ -1,3 +1,6 @@
+
+#pragma once
+
 #include <iostream>
 #include "GradeTooLowException.hpp"
 #include "GradeTooHighException.hpp"

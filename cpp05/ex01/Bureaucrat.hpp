@@ -21,5 +21,4 @@ class Bureaucrat
         void signForm(Form form);
         ~Bureaucrat();
 };
-
 std::ostream& operator<<(std::ostream& os, Bureaucrat  &obj);

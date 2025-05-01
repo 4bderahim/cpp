@@ -1,3 +1,4 @@
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(const std::string name,  int grade) :name (name)
@@ -11,7 +12,7 @@ Bureaucrat::Bureaucrat(const std::string name,  int grade) :name (name)
 }
 Bureaucrat::Bureaucrat()
 {
-    //
+    std::cout << "Bureaucrat constructed!" << std::endl;
 }
 Bureaucrat::~Bureaucrat()
 {
@@ -23,7 +24,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bu)
     if (this != &bu)
     {
         this->grade = bu.grade;
-        // this->name = bu.name;
     }
     return (*this);
 }
