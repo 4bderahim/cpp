@@ -6,7 +6,7 @@ int main()
     // grade too high
     try
     {
-        Bureaucrat b = Bureaucrat("dsdsd", 10000);
+        Bureaucrat b = Bureaucrat("hello_world", 10000);
     }   
     catch(std::exception &e )
     {

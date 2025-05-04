@@ -20,7 +20,6 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm(72,45)
 
 PresidentialPardonForm::PresidentialPardonForm():target ("target")
 {
-    
     std::cout << "PresidentialPardonForm constructor called" << std::endl;
 }
 

@@ -18,7 +18,6 @@ int main()
     }
 
     }
-
     std::cout << "------------------------" << std::endl;
     {
     ShrubberyCreationForm p("hello", 5, 50);
@@ -34,6 +33,7 @@ int main()
     }
     
     }
+    
     std::cout << "------------------------" << std::endl;
     {
     RobotomyRequestForm p("hello2", 5, 50);
