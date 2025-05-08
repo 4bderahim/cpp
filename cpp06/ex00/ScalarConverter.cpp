@@ -2,7 +2,7 @@
 
 int valid(std::string s, std::string s_)
 {
-    for (int i = 0; i < s.length(); i++)      
+    for (int i = 0; i < s.length(); i++)
     {
         if (s_.find(s[i]) == std::string::npos)
             return (0);
@@ -11,7 +11,7 @@ int valid(std::string s, std::string s_)
     return (1);
 }
 
-int who_am_i(std::string s)
+int ScalarConverter::who_am_i(std::string s)
 {
     // 0 > -inff
     // 1 > +inff
@@ -25,13 +25,13 @@ int who_am_i(std::string s)
     if (s == "+inff")
         return (1);
     if (s.length() == 1)
-        return (2);
+        this->is_char = 1;
     if (valid(s, "0123456789+-"))
-        return (3);
+        this->is_int = 1;
     if (valid(s, "0123456789+-."))
-        return (4);
+        this->is_double = 1;
     if (valid(s, "0123456789+-.f"))
-        return (5);
+        this->is_float = 1;
     return (-1);
 }
 
