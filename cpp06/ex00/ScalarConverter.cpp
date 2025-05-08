@@ -10,7 +10,13 @@ int valid(std::string s, std::string s_)
     }
     return (1);
 }
-
+ScalarConverter::ScalarConverter()
+{
+    this->is_int = 0;
+    this->is_float = 0;
+    this->is_double = 0;
+    this->is_char = 0;
+}
 int ScalarConverter::who_am_i(std::string s)
 {
     // 0 > -inff
@@ -19,13 +25,13 @@ int ScalarConverter::who_am_i(std::string s)
     // 3 > int
     // 4 > double
     // 5 > float
-
+    
     if (s == "-inff")
         return (0);
     if (s == "+inff")
         return (1);
     if (s.length() == 1)
-        this->is_char = 1; 
+        this->is_char = 1;
     if (valid(s, "0123456789+-"))
         this->is_int = 1;
     if (valid(s, "0123456789+-."))
