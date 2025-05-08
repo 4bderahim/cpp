@@ -25,7 +25,7 @@ int ScalarConverter::who_am_i(std::string s)
     if (s == "+inff")
         return (1);
     if (s.length() == 1)
-        this->is_char = 1;
+        this->is_char = 1; 
     if (valid(s, "0123456789+-"))
         this->is_int = 1;
     if (valid(s, "0123456789+-."))
@@ -41,5 +41,4 @@ void ScalarConverter::convert(std::string str)
     float to_float;
     double to_double;
     std::cout <<  ">>>>> " << who_am_i(str) << std::endl;
-
 }
