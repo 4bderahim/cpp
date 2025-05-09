@@ -4,6 +4,9 @@ int main()
 {
     ScalarConverter l;
     
+    float ll = 356.3ffffff;
+    int j =ll;
+    std::cout << ">>|" << j << std::endl;
     l.convert("-infff");
     l.convert("+inff");
     l.convert("123");
