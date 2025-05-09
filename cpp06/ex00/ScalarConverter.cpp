@@ -28,14 +28,6 @@ ScalarConverter::ScalarConverter()
     this->is_char = 0;
 }
 
-
-// int check_str(std::string str)
-// {
-//     std::count()
-
-
-// }
-
 int ScalarConverter::who_am_i(std::string s)
 {
 
@@ -49,13 +41,20 @@ int ScalarConverter::who_am_i(std::string s)
     {
         int i = 0;
         while (s[i] == ' ')
-            i++
-            ;
+            {
+
+                printf("\t\t\t--%d\n", i);
+                i++;
+            }
+        // printf("\t\t\t.%d\n", i);
         while (i != -1)
         {
+            printf("\t\t\t~%d\n", i);
             s.erase(i);
             i--;
         }
+
+        std::cout << ">>>||" <<  s << "|||<<<<<<<<" << std::endl;
         while (s.find(" ")!= std::string::npos)
             return (-1);
     }
