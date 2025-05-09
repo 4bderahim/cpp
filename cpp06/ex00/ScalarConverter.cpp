@@ -54,7 +54,7 @@ int ScalarConverter::who_am_i(std::string s)
     this->double_int_float = (valid(s, "0123456789+-") || valid(s, "0123456789+-.") || valid(s, "0123456789+-.f"));
     if (this->double_int_float)
     {
-        if (count_(s, '-') > 0 && count_(s, '+') > 0 )
+        if (count_(s, '-') > 0 && count_(s, '+') > 0)
             return (-1);
         if (count_(s, '.') > 1 || count_(s, '-') > 1 || count_(s, 'f') > 1 || count_(s, '+') > 1)
             return -1;
@@ -69,5 +69,6 @@ void ScalarConverter::convert(std::string str)
     int to_int;
     float to_float;
     double to_double;
-    // std::cout <<  ">>>>> " << who_am_i(str) << std::endl;
+    std::cout <<  ">>>>> " << ScalarConverter::who_am_i(str) << std::endl;
+
 }
