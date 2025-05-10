@@ -30,7 +30,6 @@ ScalarConverter::ScalarConverter()
 
 int ScalarConverter::who_am_i(std::string s)
 {
-
     if (s.find_last_not_of("1234657890") == std::string::npos)
         return (-1);
     if (s.length() == 1)
@@ -41,20 +40,25 @@ int ScalarConverter::who_am_i(std::string s)
     {
         int i = 0;
         while (s[i] == ' ')
-            {
-
-                printf("\t\t\t--%d\n", i);
-                i++;
-            }
-        // printf("\t\t\t.%d\n", i);
+            i++
+            ;
         while (i != -1)
         {
-            printf("\t\t\t~%d\n", i);
-            s.erase(i);
+            s.erase(i, 1);
             i--;
         }
-
-        std::cout << ">>>||" <<  s << "|||<<<<<<<<" << std::endl;
+        if (s[s.length()-1] == ' ')
+            {
+                i = s.length()-1;
+                while (i >= 0 && s[i] == ' ')
+                    i--
+                    ;
+                while (i < s.length())
+                {
+                    s.erase(i, 1);
+                    i++;
+                }
+            }
         while (s.find(" ")!= std::string::npos)
             return (-1);
     }
