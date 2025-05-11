@@ -12,10 +12,11 @@ class ScalarConverter
         char _char;
         //
         int is_char;
-        int double_int_float;
+        int is_int; 
+        int is_double_float;
         
     public:
         ScalarConverter();
         static void convert(std::string str);
-        int who_am_i(std::string s);
+        int who_am_i(std::string *s);
 };

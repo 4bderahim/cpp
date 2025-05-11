@@ -24,46 +24,48 @@ int count_(std::string str, char r)
 }
 ScalarConverter::ScalarConverter()
 {
-    this->double_int_float = 0;
-    this->is_char = 0;
+    this->is_char = 1;
+    this->is_int = 1;
+    this->is_double_float = 0;
 }
 
-int ScalarConverter::who_am_i(std::string s)
+int ScalarConverter::who_am_i(std::string *str)
 {
-    if (s.find_last_not_of("1234657890") == std::string::npos)
-        return (-1);
+    std::string s = *str; 
+    if (s == "-inff")
+        return (1);
+    if (s == "+inff")
+        return (1);
+    if (s.find_first_not_of(" 1234657890.f+-") != std::string::npos)
+        {
+            printf("\t---[ss%s]\n", s.c_str());
+            return (-1);
+        }
     if (s.length() == 1)
         this->is_char = 1;
-    if (s.find(' ') != std::string::npos &&s.find(' ') != 0 )
-        return (-1);
-    else
+    int i = 0;
+    while (s[i] == ' ')
+        i++
+        ;
+    i--;
+    while (i != -1)
     {
-        int i = 0;
-        while (s[i] == ' ')
-            i++
-            ;
-        while (i != -1)
-        {
-            s.erase(i, 1);
-            i--;
-        }
-        if (s[s.length()-1] == ' ')
-            {
-                i = s.length()-1;
-                while (i >= 0 && s[i] == ' ')
-                    i--
-                    ;
-                while (i < s.length())
-                {
-                    s.erase(i, 1);
-                    i++;
-                }
-            }
-        while (s.find(" ")!= std::string::npos)
-            return (-1);
+        s.erase(i, 1);
+        i--;
     }
-    this->double_int_float = (valid(s, "0123456789+-") || valid(s, "0123456789+-.") || valid(s, "0123456789+-.f"));
-    if (this->double_int_float)
+    if (s[s.length()-1] == ' ')
+    {
+        i = s.length()-1;
+        while (i >= 0 && s[i] == ' ')
+                i--
+                ;
+        i++;
+        s.erase(i,s.length()-i);
+    }
+    if (s.find(" ")!= std::string::npos)
+        return (-1);
+    this->is_double_float = (valid(s, "0123456789+-") || valid(s, "0123456789+-.") || valid(s, "0123456789+-.f"));
+    if (this->is_double_float)
     {
         if (count_(s, '-') > 0 && count_(s, '+') > 0)
             return (-1);
@@ -71,13 +73,17 @@ int ScalarConverter::who_am_i(std::string s)
             return -1;
         if ((s.find("f") != std::string::npos && s.find("f") != s.length()-1) || (s.find("-") != std::string::npos && s.find("-") != 0) || (s.find("+") != std::string::npos && s.find("+") != 0) || (s.find(".") != std::string::npos && (s.find(".") == 0 || s.find(".") == s.length()-1)))
             return -1;
+        *str = s;
+        //0~31 , 127 ..
+        this->_float = std::atof(s.c_str());
+        this->_double = this->_float;
+        this->_int = std::atoi(s.c_str());
+        if (this->_int > 255 || (this->_int >= 0 && this->_int <= 31) || this->_int == 127)
+            this->is_char = 0;
+            
         return (1);
     }
-    if (s == "-inff")
-        return (1);
-    if (s == "+inff")
-        return (1);
-
+    *str = s;
     return (-1);
 }
 
@@ -87,5 +93,13 @@ void ScalarConverter::convert(std::string str)
     float to_float;
     double to_double;
     ScalarConverter k;
-    std::cout <<  ">>>>> " << k.who_am_i(str) << std::endl;
+    if (k.who_am_i(&str) == -1)
+    {
+        std::cout << "CHAR : IMPOSSIBLE" << std::endl;
+    }
+    std::cout <<  ">>>>> " << k.who_am_i(&str) << std::endl;
+    // if ()
+    // {
+    // }
+
 }
