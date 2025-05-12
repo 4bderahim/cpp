@@ -22,6 +22,7 @@ int count_(std::string str, char r)
     }
     return (c);
 }
+
 ScalarConverter::ScalarConverter()
 {
     this->is_char = 1;
@@ -37,10 +38,7 @@ int ScalarConverter::who_am_i(std::string *str)
     if (s == "+inff")
         return (1);
     if (s.find_first_not_of(" 1234657890.f+-") != std::string::npos)
-        {
-            printf("\t---[ss%s]\n", s.c_str());
-            return (-1);
-        }
+        return (-1);
     if (s.length() == 1)
         this->is_char = 1;
     int i = 0;
@@ -73,18 +71,18 @@ int ScalarConverter::who_am_i(std::string *str)
             return -1;
         if ((s.find("f") != std::string::npos && s.find("f") != s.length()-1) || (s.find("-") != std::string::npos && s.find("-") != 0) || (s.find("+") != std::string::npos && s.find("+") != 0) || (s.find(".") != std::string::npos && (s.find(".") == 0 || s.find(".") == s.length()-1)))
             return -1;
-        *str = s;
-        //0~31 , 127 ..
         this->_float = std::atof(s.c_str());
         this->_double = this->_float;
         this->_int = std::atoi(s.c_str());
         if (this->_int > 255 || (this->_int >= 0 && this->_int <= 31) || this->_int == 127)
             this->is_char = 0;
-        // if int max >> is_int = 0;
-
-        //   (liong )INT_MAX
+        if (std::atol(s.c_str()) > INT_MAX)
+            this->is_int = 0;
+        *str = s;
         return (1);
     }
+    this->is_int = 0;
+    this->is_char = 0;
     *str = s;
     return (-1);
 }
