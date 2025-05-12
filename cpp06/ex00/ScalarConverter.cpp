@@ -81,7 +81,8 @@ int ScalarConverter::who_am_i(std::string *str)
         if (this->_int > 255 || (this->_int >= 0 && this->_int <= 31) || this->_int == 127)
             this->is_char = 0;
         // if int max >> is_int = 0;
-        
+
+        //   (liong )INT_MAX
         return (1);
     }
     *str = s;
