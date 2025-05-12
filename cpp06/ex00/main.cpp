@@ -11,10 +11,10 @@ int main()
     // l.convert("+inff");
     // l.convert("123");
     // l.convert("111111111111111112.3");
-    // l.convert("12.35");
+    l.convert("5000.35");
 
-    std::cout  << ">>" << std::atoi("+147483647") << std::endl;;
-    std::cout << ">>" << std::atof("+2147444444836471.1") << std::endl;;
-    l.convert("+");
+    // std::cout  << ">>" << std::atoi("+147483647") << std::endl;;
+    // std::cout << ">>" << std::atof("+2147444444836471.1") << std::endl;;
+    // l.convert("+");
 
 }

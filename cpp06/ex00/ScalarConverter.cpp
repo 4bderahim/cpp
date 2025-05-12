@@ -102,17 +102,27 @@ void ScalarConverter::convert(std::string str)
     {
         k.is_char = 0;
         k.is_int = 0;
-        // all impossible
+        std::cout <<  "all impossible" << std::endl;
+        return ;
     }
     if (k.is_char)
-        k._char = atoi(str.c_str());
+        {
+            k._char = atoi(str.c_str());
+            std::cout << "CHAR : " << k._char << std::endl;
+        }
+    else
+        std::cout << "CHAR : " << "IMPOSSIBLE" << std::endl;
     if (k.is_int)
-        k._int = std::atoi(str.c_str());
+        {
+            k._int = std::atoi(str.c_str());
+            std::cout << "INT : " << k._int << std::endl;
+        }
     if (k.is_double_float)
         {
             k._float = std::atof(str.c_str());
             k._double = std::atof(str.c_str());
+            std::cout << "FLOAT : " << k._float << std::endl;
+            std::cout << "DOUBLE : " << k._double << std::endl;
         }
-    
     // std::cout << "CHAR :" << (k.is_char ? k._char : "IMPOSSIBLE") << std::endl;
 }
