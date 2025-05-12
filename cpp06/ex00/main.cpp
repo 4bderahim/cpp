@@ -15,6 +15,6 @@ int main()
 
     std::cout  << ">>" << std::atoi("+147483647") << std::endl;;
     std::cout << ">>" << std::atof("+2147444444836471.1") << std::endl;;
-    l.convert("+inff");
+    l.convert("+");
 
 }

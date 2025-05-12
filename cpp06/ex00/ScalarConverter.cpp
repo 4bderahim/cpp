@@ -28,6 +28,7 @@ ScalarConverter::ScalarConverter()
     this->is_char = 1;
     this->is_int = 1;
     this->is_double_float = 0;
+    this->nob = 0;
 }
 
 int ScalarConverter::who_am_i(std::string *str)
@@ -93,13 +94,25 @@ void ScalarConverter::convert(std::string str)
     float to_float;
     double to_double;
     ScalarConverter k;
-    if (k.who_am_i(&str) == -1)
+    if (str == "-inff" || str == "+inff" || str == "nan" || str == "NAN")
+        k.nob = 1;
+    if (!k.nob)
+        k.who_am_i(&str);
+    else
     {
-        std::cout << "CHAR : IMPOSSIBLE" << std::endl;
+        k.is_char = 0;
+        k.is_int = 0;
+        // all impossible
     }
-    std::cout <<  ">>>>> " << k.who_am_i(&str) << std::endl;
-    // if ()
-    // {
-    // }
-
+    if (k.is_char)
+        k._char = atoi(str.c_str());
+    if (k.is_int)
+        k._int = std::atoi(str.c_str());
+    if (k.is_double_float)
+        {
+            k._float = std::atof(str.c_str());
+            k._double = std::atof(str.c_str());
+        }
+    
+    // std::cout << "CHAR :" << (k.is_char ? k._char : "IMPOSSIBLE") << std::endl;
 }
