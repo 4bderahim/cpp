@@ -38,10 +38,12 @@ int ScalarConverter::who_am_i(std::string *str)
         return (1);
     if (s == "+inff")
         return (1);
-    if (s.find_first_not_of(" 1234657890.f+-") != std::string::npos)
+    if (s.find_first_not_of(" 1234657890.f+-") != std::string::npos && s.length() > 1)
         return (-1);
     if (s.length() == 1)
-        this->is_char = 1;
+        {
+            this->is_char = 1;
+        }
     int i = 0;
     while (s[i] == ' ')
         i++
@@ -75,10 +77,13 @@ int ScalarConverter::who_am_i(std::string *str)
         this->_float = std::atof(s.c_str());
         this->_double = this->_float;
         this->_int = std::atoi(s.c_str());
-        if (this->_int > 255 || (this->_int >= 0 && this->_int <= 31) || this->_int == 127)
-            this->is_char = 0;
         if (std::atol(s.c_str()) > INT_MAX)
             this->is_int = 0;
+        if (!this->is_int|| (this->_int >= 0 && this->_int <= 31) || this->_int == 127)
+        {
+            if (s.length() > 1)
+                this->is_char = 0;
+            }
         *str = s;
         return (1);
     }
@@ -107,22 +112,33 @@ void ScalarConverter::convert(std::string str)
     }
     if (k.is_char)
         {
-            k._char = atoi(str.c_str());
+            if (str.length() == 1)
+                {
+                    k._char = str[0];
+                }
+            else
+                k._char = atoi(str.c_str());
             std::cout << "CHAR : " << k._char << std::endl;
         }
     else
         std::cout << "CHAR : " << "IMPOSSIBLE" << std::endl;
     if (k.is_int)
-        {
-            k._int = std::atoi(str.c_str());
-            std::cout << "INT : " << k._int << std::endl;
-        }
+    {
+        k._int = std::atoi(str.c_str());
+        std::cout << "INT : " << k._int << std::endl;
+    }
+    else
+        std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
     if (k.is_double_float)
-        {
-            k._float = std::atof(str.c_str());
-            k._double = std::atof(str.c_str());
-            std::cout << "FLOAT : " << k._float << std::endl;
-            std::cout << "DOUBLE : " << k._double << std::endl;
-        }
-    // std::cout << "CHAR :" << (k.is_char ? k._char : "IMPOSSIBLE") << std::endl;
+    {
+        k._float = std::atof(str.c_str());
+        k._double = std::atof(str.c_str());
+        std::cout << "FLOAT : " << k._float << "f" << std::endl;
+        std::cout << "DOUBLE : " << k._double << std::endl;
+    }
+    else
+    {
+        std::cout << "FLOAT : " << "IMPOSSIBLE" << std::endl;
+        std::cout << "DOUBLE : " << "IMPOSSIBLE" << std::endl;
+    }
 }
