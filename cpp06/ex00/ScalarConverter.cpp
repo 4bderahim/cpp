@@ -84,19 +84,16 @@ int ScalarConverter::who_am_i(std::string *str)
         this->_int = std::atoi(s.c_str());
         if (std::atol(s.c_str()) > INT_MAX)
             this->is_int = 0;
-        if (this->is_int && ((this->_int >= 0 && this->_int <= 31) || this->_int == 127))
+        if (this->is_int && ((this->_int >= 0 && this->_int <= 31) || this->_int == 127 || this->_int > 255 || this->_int < -255))
             this->is_char = 0;
         if (!this->is_int)
             {
                 printf("\t\t\t**************\n");
-                if (s.length() == 1)
-                    this->is_a_char_no_num = 1;
+                if (s.length() > 1)
+                    this->is_char = 0;
+                    // this->is_a_char_no_num = 1;
             }
         // if (!this->is_int && s.length() > 1)
-        //         {
-        //             printf("\t\t\t**************\n");
-        //             this->is_char = 0;
-        //         }
         *str = s;
         return (1);
     }
@@ -127,7 +124,7 @@ void ScalarConverter::convert(std::string str)
     }
     if (k.is_char)
         {
-            if (!k.is_int)
+            if (!k.is_int && str.length() == 1)
                 k._char = str[0];
             else
                 k._char = atoi(str.c_str());
