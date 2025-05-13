@@ -11,7 +11,7 @@ int main()
     // l.convert("+inff");
     // l.convert("123");
     // l.convert("111111111111111112.3");
-    l.convert("+_");
+    l.convert("1");
     // std::cout  << ">>" << std::atoi("147483647") << std::endl;;
     std::cout << ">>" << std::atof("448364.01") << std::endl;;
     // l.convert("+");

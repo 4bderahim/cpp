@@ -28,6 +28,8 @@ ScalarConverter::ScalarConverter()
     this->is_char = 1;
     this->is_int = 1;
     this->is_double_float = 0;
+    this->is_a_char_no_num = 0;
+
     this->nob = 0;
 }
 
@@ -63,6 +65,11 @@ int ScalarConverter::who_am_i(std::string *str)
     }
     if (s.find(" ")!= std::string::npos)
         return (-1);
+    if (!valid(s, "0123456789") && s.length() == 1)
+        {
+            this->is_int = 0;
+            return -1;
+        }
     this->is_double_float = (valid(s, "0123456789+-") || valid(s, "0123456789+-.") || valid(s, "0123456789+-.f"));
     if (this->is_double_float)
     {
@@ -77,15 +84,24 @@ int ScalarConverter::who_am_i(std::string *str)
         this->_int = std::atoi(s.c_str());
         if (std::atol(s.c_str()) > INT_MAX)
             this->is_int = 0;
-        if (!this->is_int|| (this->_int >= 0 && this->_int <= 31) || this->_int == 127)
-        {
-            if (s.length() > 1)
-                this->is_char = 0;
-        }
+        if (this->is_int && ((this->_int >= 0 && this->_int <= 31) || this->_int == 127))
+            this->is_char = 0;
+        if (!this->is_int)
+            {
+                printf("\t\t\t**************\n");
+                if (s.length() == 1)
+                    this->is_a_char_no_num = 1;
+            }
+        // if (!this->is_int && s.length() > 1)
+        //         {
+        //             printf("\t\t\t**************\n");
+        //             this->is_char = 0;
+        //         }
         *str = s;
         return (1);
     }
     this->is_int = 0;
+
     this->is_char = 0;
     *str = s;
     return (-1);
@@ -111,10 +127,8 @@ void ScalarConverter::convert(std::string str)
     }
     if (k.is_char)
         {
-            if (str.length() == 1)
-                {
-                    k._char = str[0];
-                }
+            if (!k.is_int)
+                k._char = str[0];
             else
                 k._char = atoi(str.c_str());
             std::cout << "CHAR : " << k._char << std::endl;
