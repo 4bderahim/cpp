@@ -33,7 +33,7 @@ ScalarConverter::ScalarConverter()
 
 int ScalarConverter::who_am_i(std::string *str)
 {
-    std::string s = *str; 
+    std::string s = *str;
     if (s == "-inff")
         return (1);
     if (s == "+inff")
@@ -41,9 +41,7 @@ int ScalarConverter::who_am_i(std::string *str)
     if (s.find_first_not_of(" 1234657890.f+-") != std::string::npos && s.length() > 1)
         return (-1);
     if (s.length() == 1)
-        {
-            this->is_char = 1;
-        }
+        this->is_char = 1;
     int i = 0;
     while (s[i] == ' ')
         i++
@@ -83,7 +81,7 @@ int ScalarConverter::who_am_i(std::string *str)
         {
             if (s.length() > 1)
                 this->is_char = 0;
-            }
+        }
         *str = s;
         return (1);
     }
@@ -92,6 +90,7 @@ int ScalarConverter::who_am_i(std::string *str)
     *str = s;
     return (-1);
 }
+
 
 void ScalarConverter::convert(std::string str)
 {
