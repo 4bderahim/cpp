@@ -118,7 +118,6 @@ void ScalarConverter::convert(std::string str)
         std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
         std::cout << "FLOAT : " << ( (str == "nan") ? "nanf" : "IMPOSSIBLE") << std::endl;
         std::cout << "DOUBLE : " << ( (str == "nan") ? "nan" : "IMPOSSIBLE") << std::endl;
-        // std::cout <<  "all impossible" << std::endl;
         return ;
     }
     if (k.is_char)
