@@ -11,7 +11,6 @@ int valid(std::string s, std::string s_)
     return (1);
 }
 
-
 int count_(std::string str, char r)
 {
     int c = 0;
@@ -29,7 +28,6 @@ ScalarConverter::ScalarConverter()
     this->is_int = 1;
     this->is_double_float = 0;
     this->is_a_char_no_num = 0;
-
     this->nob = 0;
 }
 
@@ -88,12 +86,9 @@ int ScalarConverter::who_am_i(std::string *str)
             this->is_char = 0;
         if (!this->is_int)
             {
-                printf("\t\t\t**************\n");
                 if (s.length() > 1)
                     this->is_char = 0;
-                    // this->is_a_char_no_num = 1;
             }
-        // if (!this->is_int && s.length() > 1)
         *str = s;
         return (1);
     }
@@ -119,7 +114,11 @@ void ScalarConverter::convert(std::string str)
     {
         k.is_char = 0;
         k.is_int = 0;
-        std::cout <<  "all impossible" << std::endl;
+        std::cout << "CHAR : " << "IMPOSSIBLE" << std::endl;
+        std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
+        std::cout << "FLOAT : " << ( (str == "nan") ? "nanf" : "IMPOSSIBLE") << std::endl;
+        std::cout << "DOUBLE : " << ( (str == "nan") ? "nan" : "IMPOSSIBLE") << std::endl;
+        // std::cout <<  "all impossible" << std::endl;
         return ;
     }
     if (k.is_char)
