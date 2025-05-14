@@ -2,11 +2,10 @@
 
 int valid(std::string s, std::string s_)
 {
-    for (int i = 0; i < s.length(); i++)
+    for (size_t i = 0; i < s.length(); i++)
     {
         if (s_.find(s[i]) == std::string::npos)
             return (0);
-        i++;
     }
     return (1);
 }
@@ -85,26 +84,23 @@ int ScalarConverter::who_am_i(std::string *str)
         if (this->is_int && ((this->_int >= 0 && this->_int <= 31) || this->_int == 127 || this->_int > 255 || this->_int < -255))
             this->is_char = 0;
         if (!this->is_int)
-            {
-                if (s.length() > 1)
-                    this->is_char = 0;
-            }
+        {
+            if (s.length() > 1)
+                this->is_char = 0;
+        }
         *str = s;
         return (1);
     }
     this->is_int = 0;
-
     this->is_char = 0;
     *str = s;
     return (-1);
+
 }
 
 
 void ScalarConverter::convert(std::string str)
 {
-    int to_int;
-    float to_float;
-    double to_double;
     ScalarConverter k;
     if (str == "-inff" || str == "+inff" || str == "nan" || str == "NAN")
         k.nob = 1;
