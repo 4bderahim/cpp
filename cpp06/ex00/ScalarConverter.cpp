@@ -102,11 +102,12 @@ int ScalarConverter::who_am_i(std::string *str)
 void ScalarConverter::convert(std::string str)
 {
     ScalarConverter k;
-    if (str == "-inff" || str == "+inff" || str == "nan" || str == "NAN")
+    if (str == "-inff" || str == "+inff" || str == "-INFF" || str == "+INFF" || str == "nan" || str == "NAN")
         k.nob = 1;
-    if (!k.nob)
-        k.who_am_i(&str);
-    else
+    if (k.who_am_i(&str) == -1)
+        k.nob =1;
+    // else
+    if (k.nob)
     {
         k.is_char = 0;
         k.is_int = 0;

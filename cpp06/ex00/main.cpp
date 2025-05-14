@@ -19,5 +19,4 @@ int main()
     l.convert("-1111");
     // std::cout  << ">>" << std::atoi("147483647") << std::endl;;
     std::cout << ">>" << std::atof("448364.01") << std::endl;;
-    // l.convert("+");
 }
