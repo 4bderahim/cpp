@@ -10,13 +10,16 @@ class ScalarConverter
         float _float;
         double _double;
         char _char;
-        // int  is_a_char_no_num;
+
         int is_char;
         int is_int; 
         int is_double_float;
         int nob;
     public:
         ScalarConverter();
+        ~ScalarConverter();
+        ScalarConverter(const ScalarConverter &sc);
+        // ScalarConverter ==
         static void convert(std::string str);
         int who_am_i(std::string *s);
 };
