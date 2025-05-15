@@ -65,7 +65,7 @@ int ScalarConverter::who_am_i(std::string *str)
     if (!valid(s, "0123456789") && s.length() == 1)
         {
             this->is_int = 0;
-            return -1;
+            return 1;
         }
     this->is_double_float = (valid(s, "0123456789+-") || valid(s, "0123456789+-.") || valid(s, "0123456789+-.f"));
     if (this->is_double_float)
@@ -95,7 +95,6 @@ int ScalarConverter::who_am_i(std::string *str)
     this->is_char = 0;
     *str = s;
     return (-1);
-
 }
 
 
@@ -105,7 +104,9 @@ void ScalarConverter::convert(std::string str)
     if (str == "-inff" || str == "+inff" || str == "-INFF" || str == "+INFF" || str == "nan" || str == "NAN")
         k.nob = 1;
     if (k.who_am_i(&str) == -1)
-        k.nob =1;
+        {
+            k.nob =1;
+        }
     // else
     if (k.nob)
     {
@@ -113,8 +114,8 @@ void ScalarConverter::convert(std::string str)
         k.is_int = 0;
         std::cout << "CHAR : " << "IMPOSSIBLE" << std::endl;
         std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
-        std::cout << "FLOAT : " << ( (str == "nan") ? "nanf" : "IMPOSSIBLE") << std::endl;
-        std::cout << "DOUBLE : " << ( (str == "nan") ? "nan" : "IMPOSSIBLE") << std::endl;
+        std::cout << "FLOAT : " << ((str == "nan") ? "nanf" : "IMPOSSIBLE") << std::endl;
+        std::cout << "DOUBLE : " << ((str == "nan") ? "nan" : "IMPOSSIBLE") << std::endl;
         return ;
     }
     if (k.is_char)
