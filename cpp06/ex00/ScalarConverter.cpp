@@ -26,7 +26,7 @@ ScalarConverter::ScalarConverter()
     this->is_char = 1;
     this->is_int = 1;
     this->is_double_float = 0;
-    this->is_a_char_no_num = 0;
+    // this->is_a_char_no_num = 0;
     this->nob = 0;
 }
 
@@ -103,11 +103,8 @@ void ScalarConverter::convert(std::string str)
     ScalarConverter k;
     if (str == "-inff" || str == "+inff" || str == "-INFF" || str == "+INFF" || str == "nan" || str == "NAN")
         k.nob = 1;
-    if (k.who_am_i(&str) == -1)
-        {
-            k.nob =1;
-        }
-    // else
+    if (k.who_am_i(&str) == -1 || str == "")
+        k.nob =1;
     if (k.nob)
     {
         k.is_char = 0;
