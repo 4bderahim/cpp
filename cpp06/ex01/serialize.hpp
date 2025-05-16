@@ -1,6 +1,7 @@
 #include <iostream>
 
 
+// data structer
 
 typedef struct data_
 {
@@ -8,6 +9,8 @@ typedef struct data_
     std::string data_string;
 }Data;
 
+
+//serlialize class
 class serialize_
 {
     private:

@@ -1,14 +1,9 @@
 
-
-
 #include "serialize.hpp"
-
-
-
 
 int main()
 {
-    
+
     Data data;
     serialize_ ser;
     data.data_string  = "str";
