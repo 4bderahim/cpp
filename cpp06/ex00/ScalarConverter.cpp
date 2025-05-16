@@ -21,7 +21,6 @@ int count_(std::string str, char r)
     return (c);
 }
 
-
 ScalarConverter::~ScalarConverter()
 {
     std::cout << "ScalarConverter destructed!" << std::endl;
