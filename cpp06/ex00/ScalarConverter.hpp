@@ -19,7 +19,7 @@ class ScalarConverter
         ScalarConverter();
         ~ScalarConverter();
         ScalarConverter(const ScalarConverter &sc);
-        // ScalarConverter ==
+        ScalarConverter &operator=(const ScalarConverter &sc);
         static void convert(std::string str);
         int who_am_i(std::string *s);
 };

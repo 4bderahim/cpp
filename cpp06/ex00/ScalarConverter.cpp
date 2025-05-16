@@ -21,8 +21,35 @@ int count_(std::string str, char r)
     return (c);
 }
 
+
+ScalarConverter::~ScalarConverter()
+{
+    std::cout << "ScalarConverter destructed!" << std::endl;
+}
+ScalarConverter::ScalarConverter(const ScalarConverter &sc)
+{
+    *this = sc;
+}
+
+ScalarConverter &ScalarConverter::operator=(const ScalarConverter &sc)
+{
+    if (this != &sc)
+    {
+        this->_int    = sc._int   ;
+        this->_float   = sc._float  ;
+        this->_double  = sc._double ;
+        this->_char  = sc._char ;
+        this->is_char = sc.is_char ;
+        this->is_int  = sc.is_int ; 
+        this->is_double_float = sc.is_double_float;
+        this->nob = sc.nob;
+    }
+    return (*this);
+}
+
 ScalarConverter::ScalarConverter()
 {
+    std::cout << "ScalarConverter constructed!" << std::endl;
     this->is_char = 1;
     this->is_int = 1;
     this->is_double_float = 0;
