@@ -31,6 +31,34 @@ void identify(Base* p)
         std::cout << "UNKNOWN OBJECT " << std::endl;
 }
 
+void identify(Base& p)
+{
+    try{
+        dynamic_cast<A&>(p);  
+        std::cout << "he actual type of the object pointed to by p: 'A'" << std::endl;
+        return ;
+    }
+    catch (std::bad_cast)
+        {}
+    try{
+        dynamic_cast<A&>(p);  
+        std::cout << "he actual type of the object pointed to by p: 'A'" << std::endl;
+        return ;
+    }
+    catch (std::bad_cast)
+        {}
+    try{
+        dynamic_cast<A&>(p);  
+        std::cout << "he actual type of the object pointed to by p: 'A'" << std::endl;
+        return ;
+    }
+    catch (std::bad_cast)
+        {}
+}
+
+
 int main()
 {
+    //
+    return (0);
 }
