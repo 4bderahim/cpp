@@ -1,7 +1,11 @@
 #include "Base.hpp"
+//
 
 
-Base:Base()
+
+Base::~Base()
 {
-    std::cout << "Base class constructed" << std::endl;
+
+//
+    // std::cout << "" << 
 }

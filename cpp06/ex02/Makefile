@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -Werror  -std=c++98
 
 NAME = ser
 
-CPPFILES = Base.hpp A.cpp B.cpp C.cpp main.cpp
+CPPFILES = Base.cpp A.cpp B.cpp C.cpp main.cpp
 
 OFILES = $(CPPFILES:.cpp=.o)
 
@@ -17,5 +17,4 @@ clean:
 	rm -f $(OFILES)
 fclean: clean
 	rm -f $(NAME)
-
 re: fclean all
