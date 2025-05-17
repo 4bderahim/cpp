@@ -1,7 +1,10 @@
+
+#pragma once
+
 #include "Base.hpp"
 
 
-class B: public Base
+class C: public Base
 {
     // 
 };
