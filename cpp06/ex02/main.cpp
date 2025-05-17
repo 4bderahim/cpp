@@ -1,5 +1,5 @@
 #include <cstdlib> 
-#include <ctime>
+// #include <ctime>
 #include "Base.hpp"
 #include "A.hpp"
 #include "B.hpp"
@@ -11,20 +11,11 @@ Base * generate(void)
 
     random = (rand()) %3+1;
     if (random == 1)
-        {
-            // std::cout << "a";
-            
-            return (new A);
-        }
+        return (new A);
     if (random == 2)
-        {
-            // std::cout << "b"
-            return (new B);
-        }
+        return (new B);
     if (random == 3)
-        {
-            return (new C);
-        }
+        return (new C);
     return (NULL);
 }
 
@@ -42,17 +33,16 @@ void identify(Base* p)
 
 void identify(Base& p)
 {
-    std::cout << "hello from refernce func\n";
     try{
         A a = dynamic_cast<A&>(p);  
-        std::cout << "he actual type of the object pointed to by p: 'A'" << std::endl;
+        std::cout << "the actual type of the object pointed to by p: 'A'" << std::endl;
         return ;
     }
     catch (std::bad_cast)
         {}
     try{
         B b = dynamic_cast<B&>(p);  
-        std::cout << "he actual type of the object pointed to by p: 'A'" << std::endl;
+        std::cout << "the actual type of the object pointed to by p: 'A'" << std::endl;
         return ;
     }
     catch (std::bad_cast)
@@ -60,7 +50,7 @@ void identify(Base& p)
     try{
         C c = dynamic_cast<C&>(p);  
  
-        std::cout << "he actual type of the object pointed to by p: 'A'" << std::endl;
+        std::cout << "the actual type of the object pointed to by p: 'A'" << std::endl;
         return ;
     }
     catch (std::bad_cast)
