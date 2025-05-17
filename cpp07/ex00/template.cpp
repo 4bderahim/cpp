@@ -1,4 +1,4 @@
-#include <iostream>
+#include "template.hpp"
 
 
 
@@ -7,7 +7,7 @@ T min(T x, T y)
 {
     if (x < y)
         return (x);
-    return (y)
+    return (y);
 }
 
 template <typename T> 
@@ -24,9 +24,9 @@ void swap (T &first, T &sec)
 
 
 template <typename T> 
-T min(T x, T y)
+T max(T x, T y)
 {
     if (x > y)
         return (x);
-    return (y)
+    return (y);
 }
