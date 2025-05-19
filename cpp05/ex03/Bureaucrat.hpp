@@ -3,7 +3,6 @@
 #include "GradeTooLowException.hpp"
 #include "GradeTooHighException.hpp"
 #include "AForm.hpp"
-
 class AForm;
 class Bureaucrat
 {
@@ -18,8 +17,10 @@ class Bureaucrat
         Bureaucrat& operator=(const Bureaucrat &bu);
         Bureaucrat(const Bureaucrat &bu);
         std::string getName();
-        int getGrade() const;
-        void signForm(AForm Aform);
+        int getGrade() const ;
+        void signForm(AForm form) ;
+        void increment(int grade_);
+        void decrement(int grade_);
         ~Bureaucrat();
 };
 std::ostream& operator<<(std::ostream& os, Bureaucrat  &obj);

@@ -16,7 +16,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &robo)
     *this =  robo;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm(72,45)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("name", 72,45)
 {
     std::cout << "ShrubberyCreationForm constructed!" << std::endl;
 }
@@ -26,7 +26,7 @@ ShrubberyCreationForm::ShrubberyCreationForm():target ("target")
     std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target , int grade_ex , int g_sign):target (target),AForm(g_sign, grade_ex)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target , int grade_ex , int g_sign):target (target),AForm("name", g_sign, grade_ex)
 {
     std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }
