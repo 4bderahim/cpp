@@ -10,7 +10,8 @@ Bureaucrat::Bureaucrat(const std::string name,  int grade) :name (name)
     this->grade = grade;
     std::cout << "Bureaucrat constructed!" << std::endl;
 }
-Bureaucrat::Bureaucrat()
+
+Bureaucrat::Bureaucrat(): name ("name"),  grade(1)
 {
     std::cout << "Bureaucrat constructed!" << std::endl;
 }
@@ -39,4 +40,21 @@ std::string Bureaucrat::getName()
 int Bureaucrat::getGrade()
 {
     return this->grade;
+}
+
+void Bureaucrat::increment(int grade_)
+{
+    if (this->grade-grade_ < 1)
+        throw high;
+    grade -= grade_ ;
+    std::cout << "grade incremented by " << grade_ << " grade" << std::endl;
+
+}
+void Bureaucrat::decrement(int grade_)
+{
+    if (this->grade+grade_ > 150)
+        throw low;
+    grade += grade_ ;
+    std::cout << "grade decremented by " << grade_ << " grade" << std::endl;
+
 }

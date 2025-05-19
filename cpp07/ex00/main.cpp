@@ -10,7 +10,7 @@ int main()
     std::cout  << " min >" << min(45, 88) << std::endl;
 
     int h = 9;
-    int x =  2;
+    int x = 2;
     max(h, x);
     swap(x, h);
     std::cout  << "swap  > h =" << h << "\t x = " << x  << std::endl;

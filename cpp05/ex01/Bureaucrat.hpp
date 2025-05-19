@@ -19,6 +19,8 @@ class Bureaucrat
         std::string getName();
         int getGrade();
         void signForm(Form form);
+        void increment(int grade_);
+        void decrement(int grade_);
         ~Bureaucrat();
 };
 std::ostream& operator<<(std::ostream& os, Bureaucrat  &obj);

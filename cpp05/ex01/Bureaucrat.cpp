@@ -51,6 +51,24 @@ int Bureaucrat::getGrade()
 
 void Bureaucrat::signForm(Form form)
 {
+    if (form.getBool())
+        std::cout << "Bureaucrat : " << this->name <<  " couldn’t sign Form: " << form.getName() << "because its already signed!" << std::endl;
     form.beSigned(*this);
+    std::cout << "Bureaucrat : " << this->name <<  " signed Form: " << form.getName() << std::endl;
 }
 
+void Bureaucrat::increment(int grade_)
+{
+    if (this->grade-grade_ < 1)
+        throw high;
+    grade -= grade_ ;
+    std::cout << "grade incremented by " << grade_ << " grade" << std::endl;
+}
+void Bureaucrat::decrement(int grade_)
+{
+    if (this->grade+grade_ > 150)
+        throw low;
+    grade += grade_ ;
+    std::cout << "grade decremented by " << grade_ << " grade" << std::endl;
+
+}

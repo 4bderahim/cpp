@@ -5,7 +5,7 @@ int main()
 {
     {
     // exception catched !
-    Bureaucrat b = Bureaucrat("dsdsd", 12);
+    Bureaucrat b = Bureaucrat("cpp", 12);
     Form f = Form(11,84);
     try
     {

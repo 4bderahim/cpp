@@ -18,5 +18,7 @@ class Bureaucrat
         Bureaucrat(const Bureaucrat &bu);
         std::string getName();
         int getGrade();
+        void increment(int grade_);
+        void decrement(int grade_);
         ~Bureaucrat();
 };
