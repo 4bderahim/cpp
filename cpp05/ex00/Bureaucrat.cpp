@@ -4,9 +4,9 @@
 Bureaucrat::Bureaucrat(const std::string name,  int grade) :name (name)
 {
     if (grade  < 1)
-        throw low; 
-    if (grade > 150)
         throw high;
+    if (grade > 150)
+        throw low;
     this->grade = grade;
     std::cout << "Bureaucrat constructed!" << std::endl;
 }
@@ -22,9 +22,7 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bu)
 {
     if (this != &bu)
-    {
         this->grade = bu.grade;
-    }
     return (*this);
 }
 

@@ -3,7 +3,7 @@
 
 int main()
 {
-    // grade too high
+    // grade too low
     try
     {
         Bureaucrat b = Bureaucrat("hello_world", 10000);
@@ -13,7 +13,7 @@ int main()
         std::cout << e.what() << std::endl;
     }
 
-    // grade too low
+    // grade too high
     try
     {
         Bureaucrat b = Bureaucrat("dsdsd", 0);
