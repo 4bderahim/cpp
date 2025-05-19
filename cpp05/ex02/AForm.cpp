@@ -1,22 +1,22 @@
 #include "AForm.hpp"
 
-AForm::AForm(int gr, int gr_): grade (gr), grade_(gr_)
+AForm::AForm(std::string name_ , int gr, int gr_):name (name_),  grade (gr), grade_(gr_)
 {
     if (gr  < 1)
-        throw AForm::low;
-    if (gr > 150)
         throw AForm::high;
-    std::cout << "Form constructed!" << std::endl;
+    if (gr > 150)
+        throw AForm::low;
+    std::cout << "AForm constructed!" << std::endl;
 }
 
-AForm::AForm():name("name"),  b(0),  grade (1), grade_(1) 
+AForm::AForm():name("!!name"),  b(0),  grade (101), grade_(11) 
 {
-    std::cout << "Form constructed!" << std::endl;
+    std::cout << "AForm constructed!" << std::endl;
 }
 
 AForm::~AForm()
 {
-    std::cout << "Form destructed!" << std::endl;
+    std::cout << "AForm destructed!" << std::endl;
 }
 
 int AForm::getGrade()
@@ -42,26 +42,25 @@ void AForm::setBool()
 AForm& AForm::operator=(const AForm &fo)
 {
     if (this != &fo)
-    {
         this->b = fo.b;
-        //this->grade = for.grade;
-    }
     return (*this);
 }
 
-AForm::AForm(const AForm &fo):name("name"), b(0),  grade (1), grade_(1) 
+AForm::AForm(const AForm &fo): name(fo.name), grade (fo.grade), grade_(fo.grade_)
 {
-    *this = fo;
+    std::cout << "AForm copy constructor called!" << std::endl;
+    *this =  fo;
 }
 
-std::string AForm::getName()
+const std::string AForm::getName()
 {
     return (this->name);
 }
 
 void AForm::beSigned(Bureaucrat &bure)
 {
-    if (bure.getGrade() > AForm::grade)
+    std::cout << bure.getGrade() << "||" << AForm::grade << std::endl;
+    if (bure.getGrade() > AForm::grade  )
         throw bure.low;
     this->b = 1;
 }

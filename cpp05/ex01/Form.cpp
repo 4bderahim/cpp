@@ -1,15 +1,15 @@
 #include "Form.hpp"
 
-Form::Form(int gr, int gr_): grade (gr), grade_(gr_)
+Form::Form(std::string name_ , int gr, int gr_):name (name_),  grade (gr), grade_(gr_)
 {
     if (gr  < 1)
-        throw Form::low;
-    if (gr > 150)
         throw Form::high;
+    if (gr > 150)
+        throw Form::low;
     std::cout << "Form constructed!" << std::endl;
 }
 
-Form::Form():name("name"),  b(0),  grade (1), grade_(1) 
+Form::Form():name("!!name"),  b(0),  grade (101), grade_(11) 
 {
     std::cout << "Form constructed!" << std::endl;
 }
@@ -46,8 +46,9 @@ Form& Form::operator=(const Form &fo)
     return (*this);
 }
 
-Form::Form(const Form &fo):name("name"),  b(0),  grade (1), grade_(1) 
+Form::Form(const Form &fo): name(fo.name), grade (fo.grade), grade_(fo.grade_)
 {
+    std::cout << "Form copy constructor called!" << std::endl;
     *this =  fo;
 }
 

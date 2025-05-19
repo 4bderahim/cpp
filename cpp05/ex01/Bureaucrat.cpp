@@ -13,6 +13,7 @@ Bureaucrat::Bureaucrat()
 {
     std::cout << "Bureaucrat constructed !" << std::endl;
 }
+
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Bureaucrat destructed!" << std::endl;
@@ -21,15 +22,13 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bu)
 {
     if (this != &bu)
-    {
         this->grade = bu.grade;
-    }
     return (*this);
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bu)
 {
-    *this =  bu;
+    *this = bu;
 }
 
 std::ostream& operator<<(std::ostream& os,Bureaucrat  &obj)
@@ -49,21 +48,22 @@ int Bureaucrat::getGrade()
     return this->grade;
 }
 
-void Bureaucrat::signForm(Form form)
+void Bureaucrat::signForm(Form form)  
 {
     if (form.getBool())
         std::cout << "Bureaucrat : " << this->name <<  " couldn’t sign Form: " << form.getName() << "because its already signed!" << std::endl;
+    std::cout << "Bureaucrat : " << this->name <<  " _signed Form: " << form.getName() << std::endl;
     form.beSigned(*this);
-    std::cout << "Bureaucrat : " << this->name <<  " signed Form: " << form.getName() << std::endl;
 }
 
 void Bureaucrat::increment(int grade_)
 {
     if (this->grade-grade_ < 1)
         throw high;
-    grade -= grade_ ;
+    grade -= grade_;
     std::cout << "grade incremented by " << grade_ << " grade" << std::endl;
 }
+
 void Bureaucrat::decrement(int grade_)
 {
     if (this->grade+grade_ > 150)

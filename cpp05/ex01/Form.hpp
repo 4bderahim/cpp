@@ -17,7 +17,7 @@ class Form
     public:
         GradeTooHighException high;
         GradeTooLowException low;
-        Form(int grade, int grade_);
+        Form(std::string name, int grade, int grade_);
         Form();
         ~Form();
         Form& operator=(const Form &fo);

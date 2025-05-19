@@ -14,7 +14,7 @@ class AForm
     public:
         GradeTooHighException high;
         GradeTooLowException low;
-        AForm(int grade, int grade_);
+        AForm(std::string name_ ,int grade, int grade_);
         AForm();
         ~AForm();
         AForm& operator=(const AForm &fo);
@@ -24,7 +24,7 @@ class AForm
         bool getBool();
         void check_execution_grade(const Bureaucrat & executor);
         void setBool();
-        std::string getName();
+        const std::string getName();
         void beSigned(Bureaucrat &bure);
         virtual void execute(Bureaucrat const & executor)  = 0;
 };
