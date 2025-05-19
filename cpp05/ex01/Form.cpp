@@ -42,10 +42,7 @@ void Form::setBool()
 Form& Form::operator=(const Form &fo)
 {
     if (this != &fo)
-    {
         this->b = fo.b;
-        //this->grade = for.grade;
-    }
     return (*this);
 }
 
