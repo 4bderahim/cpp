@@ -12,7 +12,6 @@ class ShrubberyCreationForm: public AForm
         ShrubberyCreationForm(const ShrubberyCreationForm &robo);
         ShrubberyCreationForm();
         ShrubberyCreationForm(std::string target);
-        ShrubberyCreationForm(std::string target , int grade_ex , int g_sign);
         ~ShrubberyCreationForm();
         void execute(Bureaucrat const & executor);
 };

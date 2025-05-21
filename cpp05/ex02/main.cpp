@@ -5,8 +5,8 @@ int main()
 {
     std::cout << "------------------------" << std::endl;
     {
-    PresidentialPardonForm p("hello", 5, 50);
-    Bureaucrat b("name1", 20);
+    PresidentialPardonForm p("hello0");
+    Bureaucrat b("name0", 2);
     try
     {
         p.beSigned(b);
@@ -14,14 +14,29 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << e.what() << '\n';
+    }
+    }
+    std::cout << "------------------------" << std::endl;
+    {
+    ShrubberyCreationForm p("hello1");
+    Bureaucrat b("bu name1", 20);
+    try
+    {
+        p.beSigned(b);
+        p.execute(b);
+    }
+
+    catch(const std::exception& e)
+    {
+        std::cout << e.what() << '\n';
     }
 
     }
     std::cout << "------------------------" << std::endl;
     {
-    ShrubberyCreationForm p("hello", 5, 50);
-    Bureaucrat b("bu name2", 20);
+    RobotomyRequestForm p("hello2");
+    Bureaucrat b("bu name2", 46);
     try
     {
         p.beSigned(b);
@@ -29,25 +44,8 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << e.what() << '\n';
     }
-    
-    }
-    
-    std::cout << "------------------------" << std::endl;
-    {
-    RobotomyRequestForm p("hello2", 5, 50);
-    Bureaucrat b("bu name", 20);
-    try
-    {
-        p.beSigned(b);
-        p.execute(b);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
     }
 }
 

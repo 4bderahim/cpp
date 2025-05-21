@@ -11,21 +11,15 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &robo)
 {
-    *this =  robo;
+    *this = robo;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("ShrubberyCreationForm", 72,45)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target):target(target),  AForm("ShrubberyCreationForm", 72,45)
 {
     std::cout << "ShrubberyCreationForm constructed!" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm():target ("target")
-{
-    
-    std::cout << "ShrubberyCreationForm constructor called" << std::endl;
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target , int grade_ex , int g_sign):target (target),AForm("ShrubberyCreationForm", g_sign, grade_ex)
 {
     std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }

@@ -1,6 +1,4 @@
-
 #include "PresidentialPardonForm.hpp"
-
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm& robo)
 {
@@ -13,17 +11,13 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rob
 {
     *this =  robo;
 }
-PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm("name", 72,45)
-{
-    std::cout << "ShrubberyCreationForm constructed!" << std::endl;
-}
 
-PresidentialPardonForm::PresidentialPardonForm():target ("target")
+PresidentialPardonForm::PresidentialPardonForm():target ("target"), AForm("PresidentialPardonForm", 25,5)
 {
     std::cout << "PresidentialPardonForm constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target , int grade_ex , int g_sign):target (target),AForm("name", g_sign, grade_ex)
+PresidentialPardonForm::PresidentialPardonForm(std::string target):target (target),AForm("PresidentialPardonForm",25,5)  
 {
     std::cout << "PresidentialPardonForm constructor called" << std::endl;
 }

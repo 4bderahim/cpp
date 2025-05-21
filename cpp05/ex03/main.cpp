@@ -13,7 +13,7 @@ int main()
     {
     Intern someRandomIntern;
     AForm* rrf;
-    rrf = someRandomIntern.makeForm("shrubberys creation", "sBender");
+    rrf = someRandomIntern.makeForm("shrubbery creation", "sBender");
     }
     std::cout << "----------------------------" << std::endl;
     {

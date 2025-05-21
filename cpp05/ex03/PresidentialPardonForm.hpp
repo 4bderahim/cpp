@@ -11,7 +11,6 @@ class PresidentialPardonForm: public AForm
         PresidentialPardonForm(const PresidentialPardonForm &robo);
         PresidentialPardonForm();
         PresidentialPardonForm(std::string target);
-        PresidentialPardonForm(std::string target , int grade_ex , int g_sign);
         ~PresidentialPardonForm();
         void execute(Bureaucrat const & executor);
 };

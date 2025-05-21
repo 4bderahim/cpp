@@ -1,30 +1,25 @@
 #include "ShrubberyCreationForm.hpp"
 
-
-
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm& robo)
 {
     if (this != &robo)
+    {
         this->setBool(robo.getBool());
+    }
     return(*this);
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &robo)
 {
-    *this =  robo;
+    *this = robo;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm("name", 72,45)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target):target(target),  AForm("ShrubberyCreationForm", 72,45)
 {
     std::cout << "ShrubberyCreationForm constructed!" << std::endl;
 }
-ShrubberyCreationForm::ShrubberyCreationForm():target ("target")
-{
-    
-    std::cout << "ShrubberyCreationForm constructor called" << std::endl;
-}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target , int grade_ex , int g_sign):target (target),AForm("name", g_sign, grade_ex)
+ShrubberyCreationForm::ShrubberyCreationForm():target ("target")
 {
     std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 }

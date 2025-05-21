@@ -67,7 +67,7 @@ void AForm::beSigned(Bureaucrat &bure)
 
 void AForm::check_execution_grade(Bureaucrat const & executor)
 {
-    if (!this->b  || executor.getGrade() < this->grade_)
+    if (!this->b  || executor.getGrade() > this->grade_)
         throw AForm::low;
 }
 

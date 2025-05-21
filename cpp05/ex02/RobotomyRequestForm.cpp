@@ -19,7 +19,7 @@ RobotomyRequestForm::RobotomyRequestForm():target ("target"), AForm("RobotomyReq
     std::cout << "RobotomyRequestForm constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target , int grade_ex , int g_sign):target (target),AForm("RobotomyRequestForm", g_sign, grade_ex)
+RobotomyRequestForm::RobotomyRequestForm(std::string target):target (target),AForm("RobotomyRequestForm",72,45)
 {
     std::cout << "RobotomyRequestForm constructor called" << std::endl;
 }
