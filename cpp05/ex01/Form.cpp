@@ -9,7 +9,7 @@ Form::Form(std::string name_ , int gr, int gr_):name (name_),  grade (gr), grade
     std::cout << "Form constructed!" << std::endl;
 }
 
-Form::Form():name("!!name"),  b(0),  grade (101), grade_(11) 
+Form::Form():name("!!name"), b(0), grade (101), grade_(11)
 {
     std::cout << "Form constructed!" << std::endl;
 }
@@ -59,7 +59,7 @@ const std::string Form::getName()
 
 void Form::beSigned(Bureaucrat &bure)
 {
-    std::cout << bure.getGrade() << "||" << Form::grade << std::endl;
+    // std::cout << bure.getGrade() << "||" << Form::grade << std::endl;
     if (bure.getGrade() > Form::grade  )
         throw bure.low;
     this->b = 1;

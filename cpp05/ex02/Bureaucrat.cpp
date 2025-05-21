@@ -37,7 +37,6 @@ std::ostream& operator<<(std::ostream& os,Bureaucrat  &obj)
     return (os);
 }
 
-
 std::string Bureaucrat::getName()
 {
     return this->name;
@@ -48,7 +47,7 @@ int Bureaucrat::getGrade() const
     return this->grade;
 }
 
-void Bureaucrat::signForm(AForm form)  
+void Bureaucrat::signForm(AForm form)
 {
     if (form.getBool())
         std::cout << "Bureaucrat : " << this->name <<  " couldn’t sign Form: " << form.getName() << "because its already signed!" << std::endl;

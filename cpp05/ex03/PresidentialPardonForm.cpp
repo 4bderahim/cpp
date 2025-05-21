@@ -5,9 +5,7 @@
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm& robo)
 {
     if (this != &robo)
-        {
-            this->b = robo.b;
-        }
+        this->setBool(robo.getBool());
     return(*this);
 }
 

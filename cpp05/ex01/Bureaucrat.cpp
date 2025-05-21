@@ -52,8 +52,8 @@ void Bureaucrat::signForm(Form form)
 {
     if (form.getBool())
         std::cout << "Bureaucrat : " << this->name <<  " couldn’t sign Form: " << form.getName() << "because its already signed!" << std::endl;
-    std::cout << "Bureaucrat : " << this->name <<  " _signed Form: " << form.getName() << std::endl;
     form.beSigned(*this);
+    std::cout << "Bureaucrat : " << this->name <<  " _signed Form: " << form.getName() << std::endl;
 }
 
 void Bureaucrat::increment(int grade_)

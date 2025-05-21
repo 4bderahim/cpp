@@ -13,7 +13,7 @@ $(NAME): $(OFILES)
 %.o: %.cpp GradeTooLowException.hpp  GradeTooHighException.hpp  Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp Intern.hpp 
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
-	rm -f $(OFILES)
+	rm -f $(OFILES) hello_shrubbery
 fclean: clean
 	rm -f $(NAME)
 

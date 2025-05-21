@@ -5,9 +5,7 @@
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm& robo)
 {
     if (this != &robo)
-    {
-        this->b = robo.b;
-    }
+        this->setBool(robo.getBool());
     return(*this);
 }
 

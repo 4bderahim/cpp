@@ -9,7 +9,7 @@ AForm::AForm(std::string name_ , int gr, int gr_):name (name_),  grade (gr), gra
     std::cout << "AForm constructed!" << std::endl;
 }
 
-AForm::AForm():name("!!name"),  b(0),  grade (101), grade_(11) 
+AForm::AForm():name("!!name"), b(0), grade (101), grade_(11) 
 {
     std::cout << "AForm constructed!" << std::endl;
 }
@@ -29,14 +29,14 @@ int AForm::getGrade_()
     return (this->grade_);
 }
 
-bool AForm::getBool()
+bool AForm::getBool()const
 {
     return (this->b);
 }
 
-void AForm::setBool()
+void AForm::setBool(bool l)
 {
-    this->b = 1;
+    this->b = l;
 }
 
 AForm& AForm::operator=(const AForm &fo)
@@ -60,7 +60,7 @@ const std::string AForm::getName()
 void AForm::beSigned(Bureaucrat &bure)
 {
     std::cout << bure.getGrade() << "||" << AForm::grade << std::endl;
-    if (bure.getGrade() > AForm::grade  )
+    if (bure.getGrade() > AForm::grade)
         throw bure.low;
     this->b = 1;
 }

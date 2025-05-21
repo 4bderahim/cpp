@@ -29,14 +29,14 @@ int AForm::getGrade_()
     return (this->grade_);
 }
 
-bool AForm::getBool()
+bool AForm::getBool() const
 {
     return (this->b);
 }
 
-void AForm::setBool()
+void AForm::setBool(bool l)
 {
-    this->b = 1;
+    this->b = l;
 }
 
 AForm& AForm::operator=(const AForm &fo)
@@ -59,17 +59,15 @@ const std::string AForm::getName()
 
 void AForm::beSigned(Bureaucrat &bure)
 {
-    std::cout << bure.getGrade() << "||" << AForm::grade << std::endl;
-    if (bure.getGrade() > AForm::grade  )
+    // std::cout << bure.getGrade() << "||" << AForm::grade << std::endl;
+    if (bure.getGrade() > AForm::grade)
         throw bure.low;
     this->b = 1;
 }
 
 void AForm::check_execution_grade(Bureaucrat const & executor)
 {
-    if (!this->b ||  executor.getGrade() < this->grade_)
+    if (!this->b  || executor.getGrade() < this->grade_)
         throw AForm::low;
-    // if (!this->b || executor.getGrade() > this->grade_)
-    //     throw AForm::high;
 }
 

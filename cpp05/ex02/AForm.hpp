@@ -6,11 +6,11 @@
 class Bureaucrat;
 class AForm
 {
-    protected:
+    private:
         const std::string name;
         bool b;
         const int grade;// sign
-        const int grade_;
+        const int grade_;// exec
     public:
         GradeTooHighException high;
         GradeTooLowException low;
@@ -21,9 +21,9 @@ class AForm
         AForm(const AForm &fo);
         int getGrade();
         int getGrade_();
-        bool getBool();
+        bool getBool() const;
         void check_execution_grade(const Bureaucrat & executor);
-        void setBool();
+        void setBool(bool l);
         const std::string getName();
         void beSigned(Bureaucrat &bure);
         virtual void execute(Bureaucrat const & executor)  = 0;
