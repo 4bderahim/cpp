@@ -16,7 +16,7 @@ class AForm
         GradeTooLowException low;
         AForm(std::string name_ ,int grade, int grade_);
         AForm();
-        ~AForm();
+        virtual ~AForm();
         AForm& operator=(const AForm &fo);
         AForm(const AForm &fo);
         int getGrade();

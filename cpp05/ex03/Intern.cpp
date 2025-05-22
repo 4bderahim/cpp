@@ -26,7 +26,6 @@ Intern::Intern(const Intern &Intern)
     *this =  Intern;
 }
 
-
 AForm  *make_PresidentialPardonForm(std::string target)
 {
     return (new PresidentialPardonForm(target));
@@ -45,7 +44,7 @@ AForm  *make_ShrubberyCreationForm(std::string target)
 AForm *Intern::makeForm( std::string form_name, std::string form_target)
 {
     AForm *( *makers[])(std::string target) = {&make_PresidentialPardonForm, &make_RobotomyRequestForm, make_ShrubberyCreationForm};
-    std::string  str[3] = {"robotomy request", "shrubbery creation", "presidential pardon"};
+    std::string  str[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};
     int i;
     i = 0;
     while (i < 3)
