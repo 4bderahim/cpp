@@ -3,7 +3,7 @@
 
 Bureaucrat::Bureaucrat(const std::string name,  int grade) :name (name)
 {
-    if (grade  < 1)
+    if (grade < 1)
         throw high;
     if (grade > 150)
         throw low;
@@ -11,10 +11,11 @@ Bureaucrat::Bureaucrat(const std::string name,  int grade) :name (name)
     std::cout << "Bureaucrat constructed!" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(): name ("name"),  grade(1)
+Bureaucrat::Bureaucrat(): name ("name"), grade(1)
 {
     std::cout << "Bureaucrat constructed!" << std::endl;
 }
+
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Bureaucrat destructed!" << std::endl;
@@ -40,6 +41,12 @@ std::string Bureaucrat::getName()
 int Bureaucrat::getGrade()
 {
     return this->grade;
+}
+
+std::ostream& operator<<(std::ostream& os,Bureaucrat  &obj)
+{
+    os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+    return (os);
 }
 
 void Bureaucrat::increment(int grade_)

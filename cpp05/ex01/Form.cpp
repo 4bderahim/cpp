@@ -59,11 +59,17 @@ const std::string Form::getName()
 
 void Form::beSigned(Bureaucrat &bure)
 {
-    // std::cout << bure.getGrade() << "||" << Form::grade << std::endl;
-    if (bure.getGrade() > Form::grade  )
+    if (bure.getGrade() > Form::grade)
         throw bure.low;
     this->b = 1;
 }
+
+std::ostream& operator<<(std::ostream& os, Form  &obj)
+{
+    os << "name :" << obj.getName() << " b : " << obj.getBool() << " sign garde : " << obj.getGrade() << " exec garde : " << obj.getGrade_();
+    return (os);
+}
+
 
 
 

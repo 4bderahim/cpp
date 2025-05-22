@@ -71,3 +71,9 @@ void AForm::check_execution_grade(Bureaucrat const & executor)
         throw AForm::low;
 }
 
+std::ostream& operator<<(std::ostream& os, Form  &obj)
+{
+    os << "name :" << obj.getName() << " b : " << obj.getBool() << " sign garde : " << obj.getGrade() << " exec garde : " << obj.getGrade_();
+    return (os);
+}
+

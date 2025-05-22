@@ -4,6 +4,7 @@
 #include <iostream>
 #include "GradeTooLowException.hpp"
 #include "GradeTooHighException.hpp"
+
 class Bureaucrat
 {
     private:
@@ -22,3 +23,4 @@ class Bureaucrat
         void decrement(int grade_);
         ~Bureaucrat();
 };
+std::ostream& operator<<(std::ostream& os, Bureaucrat  &obj);

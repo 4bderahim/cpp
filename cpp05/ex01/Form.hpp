@@ -29,3 +29,4 @@ class Form
         const std::string getName();
         void beSigned(Bureaucrat &bure);
 };
+std::ostream& operator<<(std::ostream& os,  Form  &obj);
