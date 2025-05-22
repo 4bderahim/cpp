@@ -1,8 +1,10 @@
 #include "PresidentialPardonForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "AForm.hpp"
 int main()
 {
+    //
     std::cout << "------------------------" << std::endl;
     {
     PresidentialPardonForm p("hello0");
