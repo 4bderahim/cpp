@@ -12,23 +12,26 @@ int main()
     try
     {
         p.beSigned(b);
-        p.execute(b);
+        // p.execute(b);
+        b.executeForm(p);
     }
     catch(const std::exception& e)
     {
-        std::cout << e.what() << '\n';
+        std::cout << e.what() << "<<\n";
     }
     }
+
     std::cout << "------------------------" << std::endl;
+
     {
     ShrubberyCreationForm p("hello1");
     Bureaucrat b("bu name1", 20);
     try
     {
-        p.beSigned(b);
-        p.execute(b);
-    }
+        p.beSigned(b);        
+        b.executeForm(p);
 
+    }
     catch(const std::exception& e)
     {
         std::cout << e.what() << '\n';
@@ -42,7 +45,7 @@ int main()
     try
     {
         p.beSigned(b);
-        p.execute(b);
+        b.executeForm(p);
     }
     catch(const std::exception& e)
     {
