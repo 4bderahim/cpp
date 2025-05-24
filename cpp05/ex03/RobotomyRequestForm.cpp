@@ -29,7 +29,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
     std::cout << "RobotomyRequestForm destructed!" << std::endl;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const & executor)
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     check_execution_grade(executor);
     std::cout << "... making some drilling noises....!" << std::endl;

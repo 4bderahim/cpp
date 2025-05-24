@@ -72,3 +72,17 @@ void Bureaucrat::decrement(int grade_)
     std::cout << "grade decremented by " << grade_ << " grade" << std::endl;
 
 }
+void Bureaucrat::executeForm(AForm const & form) const
+{
+    try
+    {
+        form.execute(*this);
+    }
+    catch (std::exception &e)
+        {
+            std::cout << "cant execute Form " << form.getName() << std::endl;
+            return ;
+        }
+    std::cout << this->name << " executed " << form.getName() << std::endl;
+    //
+}

@@ -22,9 +22,9 @@ class AForm
         int getGrade();
         int getGrade_();
         bool getBool()const;
-        void check_execution_grade(const Bureaucrat & executor);
+        void check_execution_grade(const Bureaucrat & executor) const;
         void setBool(bool l);
-        const std::string getName();
+        const std::string getName() const;
         void beSigned(Bureaucrat &bure);
-        virtual void execute(Bureaucrat const & executor) = 0;
+        virtual void execute(Bureaucrat const & executor) const = 0;
 };
