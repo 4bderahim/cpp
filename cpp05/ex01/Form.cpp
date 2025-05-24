@@ -2,9 +2,9 @@
 
 Form::Form(std::string name_ , int gr, int gr_):name (name_),  grade (gr), grade_(gr_)
 {
-    if (gr  < 1)
+    if (gr  < 1 || gr_ < 1)
         throw Form::high;
-    if (gr > 150)
+    if (gr > 150 || gr_ > 150)
         throw Form::low;
     std::cout << "Form constructed!" << std::endl;
 }

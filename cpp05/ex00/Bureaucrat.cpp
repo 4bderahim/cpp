@@ -55,8 +55,8 @@ void Bureaucrat::increment(int grade_)
         throw high;
     grade -= grade_ ;
     std::cout << "grade incremented by " << grade_ << " grade" << std::endl;
-
 }
+
 void Bureaucrat::decrement(int grade_)
 {
     if (this->grade+grade_ > 150)

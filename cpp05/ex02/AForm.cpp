@@ -2,9 +2,9 @@
 
 AForm::AForm(std::string name_ , int gr, int gr_):name (name_),  grade (gr), grade_(gr_)
 {
-    if (gr  < 1)
+    if (gr  < 1 || gr_ < 1)
         throw AForm::high;
-    if (gr > 150)
+    if (gr > 150 || gr_ > 150)
         throw AForm::low;
     std::cout << "AForm constructed!" << std::endl;
 }
@@ -52,7 +52,7 @@ AForm::AForm(const AForm &fo): name(fo.name), grade (fo.grade), grade_(fo.grade_
     *this =  fo;
 }
 
-const std::string AForm::getName()
+const std::string AForm::getName() const
 {
     return (this->name);
 }
@@ -65,7 +65,7 @@ void AForm::beSigned(Bureaucrat &bure)
     this->b = 1;
 }
 
-void AForm::check_execution_grade(Bureaucrat const & executor)
+void AForm::check_execution_grade(Bureaucrat const & executor) const 
 {
     if (!this->b  || executor.getGrade() > this->grade_)
         throw AForm::low;

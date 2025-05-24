@@ -29,7 +29,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
     std::cout << "ShrubberyCreationForm destructed!" << std::endl;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor)
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const 
 {
     check_execution_grade(executor);
     std::cout << this->target << " has been pardoned by Zaphod Beeblebrox" << std::endl;

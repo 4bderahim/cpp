@@ -12,7 +12,7 @@ class Form
     private:
         const std::string name;
         bool b;
-        const int grade;
+        const int grade;// sign
         const int grade_;
     public:
         GradeTooHighException high;
