@@ -10,7 +10,7 @@ all: $(NAME)
 
 $(NAME): $(OFILES)
 	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
-%.o: %.cpp GradeTooLowException.hpp  GradeTooHighException.hpp  Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+%.o: %.cpp GradeTooLowException.hpp  GradeTooHighException.hpp  Bureaucrat.hpp Form.hpp 
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OFILES)

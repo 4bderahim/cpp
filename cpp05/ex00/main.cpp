@@ -7,7 +7,7 @@ int main()
     
     try
     {
-        Bureaucrat b = Bureaucrat("hello_world", 10000);
+        Bureaucrat b = Bureaucrat("hello_world", 10);
         std::cout << b << std::endl;
     }   
     catch(std::exception &e )
@@ -18,7 +18,9 @@ int main()
     // grade too high
     try
     {
-        Bureaucrat b = Bureaucrat("anyyyy", 0);
+        Bureaucrat b = Bureaucrat("anyyyy", 1);
+        std::cout << b << std::endl;
+
     }   
     catch(std::exception &e )
     {
@@ -30,6 +32,7 @@ int main()
     Bureaucrat bure =  Bureaucrat("cpp", 15);
     try
     {
+        std::cout << "grade : "  <<  bure.getGrade() << std::endl;
         bure.increment(1);
         std::cout << "grade : "  <<  bure.getGrade() << std::endl;
     }
@@ -43,13 +46,16 @@ int main()
 
     try
     {
+        std::cout << "grade : "  <<  bure.getGrade() << std::endl;
         bure.decrement(2);
+        std::cout << "grade : "  <<  bure.getGrade() << std::endl;
+
     }
     catch(std::exception &e)
     {
         std::cout << e.what() << std::endl;
     }
-    std::cout << "grade : "  <<  bure.getGrade() << std::endl;
+    // std::cout << "grade : "  <<  bure.getGrade() << std::endl;
     
 
 }

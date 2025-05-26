@@ -41,7 +41,7 @@ int main()
     std::cout << "------------------------" << std::endl;
     {
     RobotomyRequestForm p("hello2");
-    Bureaucrat b("bu name2", 46);
+    Bureaucrat b("bu name2", 4);
     try
     {
         p.beSigned(b);

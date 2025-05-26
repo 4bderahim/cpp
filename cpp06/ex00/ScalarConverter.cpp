@@ -25,6 +25,7 @@ ScalarConverter::~ScalarConverter()
 {
     std::cout << "ScalarConverter destructed!" << std::endl;
 }
+
 ScalarConverter::ScalarConverter(const ScalarConverter &sc)
 {
     *this = sc;
@@ -124,9 +125,9 @@ int ScalarConverter::who_am_i(std::string *str)
 }
 
 
-void ScalarConverter::convert(std::string str)
+void ScalarConverter::convert(std::string str, ScalarConverter &k)
 {
-    ScalarConverter k;
+    // ScalarConverter k;
     if (str == "-inff" || str == "+inff" || str == "-INFF" || str == "+INFF" || str == "nan" || str == "NAN")
         k.nob = 1;
     if (k.who_am_i(&str) == -1 || str == "")
@@ -158,10 +159,10 @@ void ScalarConverter::convert(std::string str)
     }
     else
         std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
-    if (k.is_double_float)
+    if (k.is_int)
     {
         k._float = std::atof(str.c_str());
-        k._double = std::atof(str.c_str());
+        k._double = static_cast<double>(std::atof(str.c_str()));
         std::cout << "FLOAT : " << k._float << "f" << std::endl;
         std::cout << "DOUBLE : " << k._double << std::endl;
     }
