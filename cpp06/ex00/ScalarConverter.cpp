@@ -96,9 +96,10 @@ int ScalarConverter::who_am_i(std::string *str)
             return 1;
         }
     this->is_double_float = (valid(s, "0123456789+-") || valid(s, "0123456789+-.") || valid(s, "0123456789+-.f"));
+    if (s.find(".") == std::string::npos && s.length() > 19)
+        return (-1);
     if (this->is_double_float)
     {
-        std::cout << "--->>" <<  s ;
         if (s.find(".") != std::string::npos)
             this->floating_point = 1;
         if (count_(s, '-') > 0 && count_(s, '+') > 0)
@@ -112,8 +113,12 @@ int ScalarConverter::who_am_i(std::string *str)
         this->_int = std::atoi(s.c_str());
         if (std::atol(s.c_str()) > INT_MAX)
             this->is_int = 0;
-        if (this->is_int && ((this->_int >= 0 && this->_int <= 31) || this->_int == 127 || this->_int > 255 || this->_int < -255))
-            this->is_char = 0;
+        if (this->is_int && ((this->_int >= 0 && this->_int <= 31) || this->_int == 127))
+            {
+                this->none_displayable =1;
+                if (this->_int > 255 || this->_int < -255)
+                    this->is_char = 0;
+            }
         if (!this->is_int)
         {
             if (s.length() > 1)
@@ -128,25 +133,35 @@ int ScalarConverter::who_am_i(std::string *str)
     return (-1);
 }
 
+void for_fun_myxxx(std::string s)
+{
+    std::cout << "CHAR : " << s << std::endl;
+    std::cout << "INT : " << s << std::endl;
+    std::cout << "FLOAT : " << s << "f" << std::endl;
+    std::cout << "DOUBLE : " << s << std::endl;
+}
 
 void ScalarConverter::convert(std::string str, ScalarConverter &k)
 {
     // ScalarConverter k;
-    if (str == "-inff" || str == "+inff" || str == "-INFF" || str == "+INFF" || str == "nan" || str == "NAN")
-        k.nob = 1;
+    if (str == "-inf" || str == "+inf" || str == "-INF" || str == "+INF" || str == "-inff" || str == "+inff" || str == "-INFF" || str == "+INFF")
+        {
+            for_fun_myxxx(str);
+            return ;
+        }
     if (k.who_am_i(&str) == -1 || str == "")
         k.nob =1;
-    if (k.nob)
+    if (str == "nan" || str == "NAN")
     {
         k.is_char = 0;
         k.is_int = 0;
         std::cout << "CHAR : " << "IMPOSSIBLE" << std::endl;
         std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
-        std::cout << "FLOAT : " << ((str == "nan") ? "nanf" : "IMPOSSIBLE") << std::endl;
-        std::cout << "DOUBLE : " << ((str == "nan") ? "nan" : "IMPOSSIBLE") << std::endl;
+        std::cout << "FLOAT : " << "nanf" << std::endl;
+        std::cout << "DOUBLE : " << "nan"  << std::endl;
         return ;
     }
-    if (k.is_char)
+    if (k.is_char && !k.nob && !k.is_double_float)
         {
             if (!k.is_int && str.length() == 1)
                 k._char = str[0];
@@ -155,18 +170,18 @@ void ScalarConverter::convert(std::string str, ScalarConverter &k)
             std::cout << "CHAR : " << k._char << std::endl;
         }
     else
-        std::cout << "CHAR : " << "IMPOSSIBLE" << std::endl;
-    if (k.is_int)
+        std::cout << "CHAR : " << (!k.none_displayable ? "IMPO00SSIBLE" : "Non displayable") << std::endl;
+    if (k.is_int && !k.nob)
     {
         k._int = std::atoi(str.c_str());
         std::cout << "INT : " << k._int << std::endl;
     }
     else
         std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
-    if (k.is_int)
+    if (k.is_double_float)
     {
         k._float = std::atof(str.c_str());
-        k._double = static_cast<double>(std::atof(str.c_str()));
+        k._double = static_cast<double>(std::stod(str.c_str()));
         std::cout << "FLOAT : " << k._float<< ((k.floating_point) ? "" : ".00") << "f" << std::endl;
         std::cout << "DOUBLE : " << k._double << ((k.floating_point) ? "" : ".00") << std::endl;
     }

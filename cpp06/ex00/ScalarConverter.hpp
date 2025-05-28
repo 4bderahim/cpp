@@ -18,6 +18,7 @@ class ScalarConverter
 
 
         bool floating_point;
+        bool none_displayable;
     public:
         ScalarConverter();
         ~ScalarConverter();
