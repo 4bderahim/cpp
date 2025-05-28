@@ -15,6 +15,9 @@ class ScalarConverter
         int is_int; 
         int is_double_float;
         int nob;
+
+
+        bool floating_point;
     public:
         ScalarConverter();
         ~ScalarConverter();

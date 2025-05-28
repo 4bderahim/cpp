@@ -53,6 +53,7 @@ ScalarConverter::ScalarConverter()
     this->is_char = 1;
     this->is_int = 1;
     this->is_double_float = 0;
+    this->floating_point = 0;
     // this->is_a_char_no_num = 0;
     this->nob = 0;
 }
@@ -97,6 +98,9 @@ int ScalarConverter::who_am_i(std::string *str)
     this->is_double_float = (valid(s, "0123456789+-") || valid(s, "0123456789+-.") || valid(s, "0123456789+-.f"));
     if (this->is_double_float)
     {
+        std::cout << "--->>" <<  s ;
+        if (s.find(".") != std::string::npos)
+            this->floating_point = 1;
         if (count_(s, '-') > 0 && count_(s, '+') > 0)
             return (-1);
         if (count_(s, '.') > 1 || count_(s, '-') > 1 || count_(s, 'f') > 1 || count_(s, '+') > 1)
@@ -163,8 +167,8 @@ void ScalarConverter::convert(std::string str, ScalarConverter &k)
     {
         k._float = std::atof(str.c_str());
         k._double = static_cast<double>(std::atof(str.c_str()));
-        std::cout << "FLOAT : " << k._float << "f" << std::endl;
-        std::cout << "DOUBLE : " << k._double << std::endl;
+        std::cout << "FLOAT : " << k._float<< ((k.floating_point) ? "" : ".00") << "f" << std::endl;
+        std::cout << "DOUBLE : " << k._double << ((k.floating_point) ? "" : ".00") << std::endl;
     }
     else
     {
