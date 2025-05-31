@@ -115,7 +115,7 @@ int ScalarConverter::who_am_i(std::string *str)
             this->is_int = 0;
         if (this->is_int && ((this->_int >= 0 && this->_int <= 31) || this->_int == 127))
             {
-                this->none_displayable =1;
+                this->none_displayable = 1;
                 if (this->_int > 255 || this->_int < -255)
                     this->is_char = 0;
             }

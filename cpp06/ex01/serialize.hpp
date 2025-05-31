@@ -5,8 +5,8 @@
 
 typedef struct data_
 {
+   std::string data_string;
     int data_int;
-    std::string data_string;
 }Data;
 
 
@@ -14,13 +14,12 @@ typedef struct data_
 class serialize_
 {
     private:
-        //
-    public:
         serialize_();
+    public:
         ~serialize_();
         serialize_(const serialize_ &s);
         serialize_ & operator=(const serialize_ &s);
-        uintptr_t serialize(Data* ptr);
-        Data* deserialize(uintptr_t raw);
+        static uintptr_t serialize(Data* ptr);
+        static Data* deserialize(uintptr_t raw);
 
 };
