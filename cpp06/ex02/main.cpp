@@ -49,7 +49,6 @@ void identify(Base& p)
         {}
     try{
         C c = dynamic_cast<C&>(p);  
- 
         std::cout << "the actual type of the object pointed to by p: 'A'" << std::endl;
         return ;
     }
