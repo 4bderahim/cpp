@@ -172,21 +172,24 @@ void ScalarConverter::convert(std::string str, ScalarConverter &k)
 
     if (k.is_char && !k.nob && !k.floating_point && !k.none_displayable)
         {
-                k._char = atoi(str.c_str());
+            if (str.length() == 1 && str.find_first_of("0123456789") == std::string::npos)
+                    k._char =  str[0];
+            else
+                k._char = static_cast<float>(atoi(str.c_str()));
             std::cout << "CHAR : " << k._char << std::endl;
         }
     else
         std::cout << "CHAR : " << (!k.none_displayable ? "IMPOSSIBLE" : "Non displayable") << std::endl;
     if (k.is_int && !k.nob)
     {
-        k._int = std::atoi(str.c_str());
+        k._int = static_cast<float>(std::atoi(str.c_str()));
         std::cout << "INT : " << k._int << std::endl;
     }
     else
         std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
     if (k.is_double_float && !k.nob)
     {
-        k._float = std::atof(str.c_str());
+        k._float = static_cast<float>(std::atof(str.c_str()));
         k._double = static_cast<double>(std::stod(str.c_str()));
         std::cout << "FLOAT : " << k._float<< ((k.floating_point) ? "" : ".00") << "f" << std::endl;
         std::cout << "DOUBLE : " << k._double << ((k.floating_point) ? "" : ".00") << std::endl;
