@@ -73,10 +73,7 @@ void ScalarConverter::convert(std::string str)
 
 
     bool none_displayable;
-    // if (who_am_i(&str) == -1 || str == "")
-    // {
-    //    nob =1;
-    //   }
+    
 
     if (str == "")
         nob =1;
@@ -111,7 +108,8 @@ void ScalarConverter::convert(std::string str)
             is_int = 0;
         }
     is_double_float = (valid(s, "0123456789+-") || valid(s, "0123456789+-.") || valid(s, "0123456789+-.f"));
-        
+    if ((s =="-") ||(s =="+") || (s =="f"))
+        is_double_float = 0;
     if ((s.length() > 19 && s.find(".") == std::string::npos) || (s.find(".") > 19 && s.find(".") != std::string::npos))
         nob = 1;
     if (s.find(".") != std::string::npos)
@@ -134,25 +132,23 @@ void ScalarConverter::convert(std::string str)
                 is_char = 0;
                 is_int = 0;
             }
-        if (_int > 127 || _int < -127)
+        if ((_int > 127  || _int < -128))
         {
             is_char = 0;
             }
-        if (is_int && ((_int >= 0 && _int <= 31) || _int == 127 || _int < 0 ) )
-            {
-                if (_int < 127  || _int > -127)
-                    none_displayable = 1;
-            }
+        if (is_char && ((_int >= 0 && _int <= 31) || _int == 127 || _int < 0 ) )
+        {
+                none_displayable = 1;
+        }
         str = s;
     }
     else
     {
         is_int = 0;
-        is_char = 0;
+        if (str.length() != 1)
+            is_char = 0;
         str = s;
     }
-
-
     if (str == "nan" || str == "NAN" || str == "nanf" || str == "NANF"  )
     {
         is_char = 0;
@@ -163,7 +159,6 @@ void ScalarConverter::convert(std::string str)
         std::cout << "DOUBLE : " << "nan"  << std::endl;
         return ;
     }
-
     if (is_char && !nob && !floating_point && !none_displayable)
         {
             if (str.length() == 1 && str.find_first_of("0123456789") == std::string::npos)

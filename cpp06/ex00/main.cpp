@@ -3,6 +3,7 @@
 
 int main(int argc, char **argv)
 {
+    // int o = -0;
     if (argc == 2)
     {
             ScalarConverter::convert(argv[1]);
