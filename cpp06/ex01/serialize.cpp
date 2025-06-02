@@ -5,21 +5,21 @@ serialize_::serialize_()
     std::cout << "serialize_ constructed" << std::endl;
 }
 
-serialize_::serialize_(const serialize_ &s)
-{
-    *this = s;
-}
+// serialize_::serialize_(const serialize_ &s)
+// {
+//     *this = s;
+// }
 
-serialize_::~serialize_()
-{
-    std::cout << "serialize_ destructed" << std::endl;
-}
+// serialize_::~serialize_()
+// {
+//     std::cout << "serialize_ destructed" << std::endl;
+// }
 
-serialize_& serialize_::operator=(const serialize_ &s)
-{
-    (void)s;
-    return (*this);
-}
+// serialize_& serialize_::operator=(const serialize_ &s)
+// {
+//     (void)s;
+//     return (*this);
+// }
 
 
 uintptr_t serialize_::serialize(Data* ptr)

@@ -4,11 +4,13 @@
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
+#include  <ctime>
+#include <cstdlib>
 
 Base * generate(void)
 {
     int random;
-
+    srand(time(0));
     random = (rand()) %3+1;
     if (random == 1)
         return (new A);
@@ -64,9 +66,8 @@ int main()
     identify(abc_);
 
     // ---------------------
-
-    Base *abc =  generate();
-    Base &t = *abc;
-    identify(t);
+    // Base *abc =  generate();
+    // // Base &t = *abc;
+    // identify(abc);
     return (0);
 }
