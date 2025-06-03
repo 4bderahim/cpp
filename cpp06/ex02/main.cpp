@@ -13,11 +13,12 @@ Base * generate(void)
     srand(time(0));
     random = (rand()) %3+1;
     if (random == 1)
-        return (new A);
+        return (new A());
     if (random == 2)
-        return (new B);
+        return (new B());
     if (random == 3)
-        return (new C);
+        return (new C());
+    printf("rand() error");
     return (NULL);
 }
 
@@ -37,37 +38,49 @@ void identify(Base& p)
 {
     try{
         A a = dynamic_cast<A&>(p);  
-        std::cout << "the actual type of the object pointed to by p: 'A'" << std::endl;
+        std::cout << "-the actual type of the object pointed to by p: 'A'" << std::endl;
         return ;
     }
-    catch (std::bad_cast)
-        {}
+     catch (std::exception &e)
+        {
+            std::cout << e.what() << std::endl;
+        return ;
+
+        }
     try{
         B b = dynamic_cast<B&>(p);  
-        std::cout << "the actual type of the object pointed to by p: 'A'" << std::endl;
+        std::cout << "-the actual type of the object pointed to by p: 'B'" << std::endl;
         return ;
     }
-    catch (std::bad_cast)
-        {}
+    catch (std::exception &e)
+        {
+            std::cout << e.what() << std::endl;
+        return ;
+
+        }
     try{
         C c = dynamic_cast<C&>(p);  
-        std::cout << "the actual type of the object pointed to by p: 'A'" << std::endl;
+        std::cout << "-the actual type of the object pointed to by p: 'C'" << std::endl;
         return ;
     }
-    catch (std::bad_cast)
-        {}
-}
+     catch (std::exception &e)
+        {
+            std::cout << e.what() << std::endl;
+        return ;
 
+        }
+}
 
 int main()
 {
     
     Base *abc_ =  generate();
+    Base *u = generate();
+    Base *&h = u;
     identify(abc_);
+    identify(h);
+    delete abc_;
+    delete u;
 
-    // ---------------------
-    // Base *abc =  generate();
-    // // Base &t = *abc;
-    // identify(abc);
     return (0);
 }
