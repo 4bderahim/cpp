@@ -169,13 +169,7 @@ void ScalarConverter::convert(std::string str)
         }
     else
         std::cout << "CHAR : " << (!none_displayable ? "IMPOSSIBLE" : "Non displayable") << std::endl;
-    if (is_int && !nob)
-    {
-        _int = static_cast<float>(std::atoi(str.c_str()));
-        std::cout << "INT : " << _int << std::endl;
-    }
-    else
-        std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
+    
     if (is_double_float && !nob)
     {
         char *c;
@@ -189,4 +183,11 @@ void ScalarConverter::convert(std::string str)
         std::cout << "FLOAT : " << "IMPOSSIBLE" << std::endl;
         std::cout << "DOUBLE : " << "IMPOSSIBLE" << std::endl;
     }
+    if (is_int && !nob)
+    {
+        _int = static_cast<float>(_float);
+        std::cout << "INT : " << _int << std::endl;
+    }
+    else
+        std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
 }
