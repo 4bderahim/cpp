@@ -1,8 +1,8 @@
 
 #pragma once
-#include <limits>
+#include <climits>
 #include <iostream>
-
+#include <cstdlib>
 class ScalarConverter
 {
     private:

@@ -178,8 +178,9 @@ void ScalarConverter::convert(std::string str)
         std::cout << "INT : " << "IMPOSSIBLE" << std::endl;
     if (is_double_float && !nob)
     {
+        char *c;
         _float = static_cast<float>(std::atof(str.c_str()));
-        _double = static_cast<double>(std::stod(str.c_str()));
+        _double = static_cast<double>(std::strtod(str.c_str(), &c));
         std::cout << "FLOAT : " << _float<< ((floating_point) ? "" : ".00") << "f" << std::endl;
         std::cout << "DOUBLE : " << _double << ((floating_point) ? "" : ".00") << std::endl;
     }
