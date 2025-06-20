@@ -2,13 +2,9 @@
 #pragma once
 #include <iostream>
 
-
-
-
 template <typename T> 
 
 void iter_(T *array, size_t size, void (*func)(T arg))
-
 {
     if (array == NULL || size <= 0)
         return ;
