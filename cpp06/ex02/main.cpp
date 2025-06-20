@@ -70,7 +70,10 @@ void identify(Base& p)
 
         }
 }
+// class s
+// {
 
+// };
 int main()
 {
     
