@@ -1,13 +1,16 @@
-#include "iter.hpp"
-
-void func(int j)
-{
-    std::cout << j << std::endl;
-}
+#include "Array.hpp"
 
 int main()
 {
-    int d[] = {1, 5 ,8, 6};
-    // std::cout << sizeof(d) << std::endl;
-    iter_(d, sizeof(d)/sizeof(int), func);
+    Array<int> k(5);
+    k.set();
+    std::cout << k[3] << std::endl;
+    try
+    {
+        std::cout << k[9] << std::endl;
+    }
+    catch(const std::exception& ee)
+    {
+        std::cout << ee.what() << '\n';
+    }
 }
