@@ -34,7 +34,7 @@ class Array
         {
             return (this->size);
         }
-        
+
         Array &operator=(const Array &arr)
         {
             if (*this != arr)
@@ -49,6 +49,13 @@ class Array
                 delete[] arr;
             }
             return *this;
+        }
+        
+        T &operator[](size_t idx)
+        {
+            if (idx > this->size)
+                throw std::exception;
+            return this->arr[idx];
 
         }
 };
