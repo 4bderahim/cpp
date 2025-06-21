@@ -27,7 +27,6 @@ class Array
         }
         Array(unsigned int n)
         {
-            // printf("\t||%u||\n", n);
             sizee = n;
             arr = new T(sizee);
             std::cout << "Array destructed !" << std::endl;
