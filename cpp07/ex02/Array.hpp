@@ -9,9 +9,7 @@ class Array
     private:
         T *arr;
         size_t sizee;
-
     public:
-        
         Array(): sizee(0)
         {
             arr = new T(sizee);
@@ -32,7 +30,8 @@ class Array
 
         ~Array()
         {
-            std::cout << "Array constructed !" << std::endl;
+            delete[] arr;
+            std::cout << "Array destructed !" << std::endl;
         }
 
         Array(const Array &arr)
