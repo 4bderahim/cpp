@@ -3,6 +3,9 @@
 #pragma once
 #include <iostream>
 
+
+
+
 template <typename T> 
 T min(T x, T y)
 {
@@ -11,12 +14,11 @@ T min(T x, T y)
     return (y);
 }
 
-template <typename T> 
+template <typename T>
 
 void swap (T &first, T &sec)
 {
     T tmp  = sec;
-
     sec  = first;
     first = tmp;
 }
@@ -27,4 +29,4 @@ T max(T x, T y)
     if (x > y)
         return (x);
     return (y);
-
+}

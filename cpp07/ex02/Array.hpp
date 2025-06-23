@@ -1,12 +1,8 @@
 
-
 #pragma once
-
-// #include "index_is_out_of_bound.hpp"
-
 #include <iostream>
-
 #include <exception>
+
 template <typename T>
 class Array 
 {
