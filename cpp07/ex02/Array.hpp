@@ -17,10 +17,12 @@ class Array
             arr = new T(sizee);
             std::cout << "Array destructed !" << std::endl;
         }
+
         void set()
         {
             this->arr[0] = 22;
         }
+
         Array(unsigned int n)
         {
             sizee = n;
@@ -37,6 +39,7 @@ class Array
         {
             *this = arr;
         }
+
         unsigned int size()
         {
             return (this->sizee);
@@ -56,15 +59,16 @@ class Array
             }
             return *this;
         }
+
         class index_is_out_of_bound:public std::exception
         {
-
         public:
             const char *what() const throw()
             {
-              return ( "index is out of bound" );
-         }
+                return ( "index is out of bound" );
+            }
         };
+        
         T &operator[](size_t idx)
         {
             if (idx > this->sizee)

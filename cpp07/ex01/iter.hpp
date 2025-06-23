@@ -4,9 +4,9 @@
 
 template <typename T> 
 
-void iter_(T *array, size_t size, void (*func)(T arg))
+void iter(T *array, size_t size, void (* func)(const T &))
 {
-    if (array == NULL || size <= 0)
+    if (array == NULL || func == NULL || size <= 0)
         return ;
     size_t i = 0;
     while (i < size)
@@ -15,3 +15,4 @@ void iter_(T *array, size_t size, void (*func)(T arg))
         i++;
     }
 }
+
