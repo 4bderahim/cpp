@@ -1,4 +1,3 @@
-
 #pragma once
 #include <iostream>
 #include <exception>
@@ -15,12 +14,10 @@ class Array
             arr = new T(sizee);
             std::cout << "Array destructed !" << std::endl;
         }
-
         void set()
         {
             this->arr[0] = 22;
         }
-
         Array(unsigned int n)
         {
             sizee = n;
@@ -61,20 +58,23 @@ class Array
 
         class index_is_out_of_bound:public std::exception
         {
-        public:
-            const char *what() const throw()
-            {
-                return ( "index is out of bound" );
-            }
+            private:
+                int ts;
+
+            public:
+                const char *what() const throw()
+                {
+                    return ( "index is out of bound" );
+                }
         };
-        
+
         T &operator[](size_t idx)
         {
             if (idx > this->sizee)
-                {
-                    index_is_out_of_bound k;
-                    throw k;
-                }
+            {
+                index_is_out_of_bound k;
+                throw k;
+            }
             return this->arr[idx];
         }
 };

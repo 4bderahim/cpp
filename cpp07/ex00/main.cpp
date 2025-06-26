@@ -7,7 +7,6 @@ int main()
     
     std::cout  << " max >" << max(456.3, 8.8) << std::endl;
     std::cout  << " max >" << max(45, 88) << std::endl;
-
     std::cout  << " min >" << min(44.45, 8.8) << std::endl;
     std::cout  << " min >" << min(45, 88) << std::endl;
 

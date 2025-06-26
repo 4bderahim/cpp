@@ -34,5 +34,5 @@ int main()
     int d[] = {1, 2 ,3, 5};
     // S tab[4];
     // std::cout << sizeof(d) << std::endl;
-    iter(d, sizeof(d)/sizeof(int), func);
+    iter(d, 4, func);
 }

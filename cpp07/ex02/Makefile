@@ -4,12 +4,9 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror  -std=c++98
 
 NAME = arr
-
 CPPFILES = Array.cpp main.cpp
 OFILES = $(CPPFILES:.cpp=.o)
-
 all: $(NAME)
-
 $(NAME): $(OFILES)
 	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
 %.o: %.cpp  Array.hpp
