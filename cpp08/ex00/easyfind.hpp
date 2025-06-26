@@ -1,21 +1,29 @@
+#pragma once
 #include <iostream>
+#include <algorithm>
+
+#include <exception>
+
+class notfound : public std::exception
+{
 
 
+    public:
+        const char *what() const throw()
+        {
+            return ("*NOT FOUND*");
+        } 
+};
 
 
 template <typename T>
 
 int easyfind(T ints, int in)
 {
-    size_t t = sizeof(ints)/sizeof(int);
-    size_t i = 0;
-    while (i < t)
-    {
-        if (ints[i] == in)
-            return (in);
-        i++;
-    }
-    return (-1);
+    notfound not_found;
+    if (std::find(ints.begin() , ints.end(), in) !=  ints.end())
+        return (in);
+    throw not_found;
 }
 
 
