@@ -31,17 +31,28 @@ class Span
             N = n;
             ve.reserve(n);
             std::cout << "Span constructed (args) !!" << std::endl;
-
         }
+
         ~Span()
         {
             std::cout << "Span destructed !!" << std::endl;
         }
+
         Span(const Span &s);
-        Span &operator=(const Span &sp);
+        Span &operator=(const Span &sp)
+        {
+            if (this != &sp)
+            {
+                this->N =  sp.N;
+                this->ve =  sp.ve;
+
+            }
+            return (*this);
+        }
+
         void addNumber(int toadd)
         {
-            if (ve.size() > (size_t)N)   
+            if (ve.size() == (size_t)N)
                 throw max; 
             ve.push_back(toadd);
         }   
@@ -64,7 +75,7 @@ class Span
             int short_ = (t.end() - t.begin());
             for (it = t.begin()+1; it != t.end(); it++)
             {
-                printf("%lu", (unsigned long)&it);
+                // printf("%lu", (unsigned long)&it);
                 // std::cout << *it << "||" << *(it-1) << std::endl;
                 if (( *it- *(it-1)) < short_)
                     short_ = ( ( *it- *(it-1)));
@@ -73,7 +84,6 @@ class Span
         }
         template <typename T> void addSeqNumbers(T begin, T last)
         {
-            
             unsigned int i = 0;
             T tmp =  begin;
             while (tmp != last)
