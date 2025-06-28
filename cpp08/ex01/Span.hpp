@@ -28,8 +28,9 @@ class Span
         }
         Span(unsigned int n)
         {
-            ve.reserve(N);
-            std::cout << "Span constructed !!" << std::endl;
+            N = n;
+            ve.reserve(n);
+            std::cout << "Span constructed (args) !!" << std::endl;
 
         }
         ~Span()
@@ -37,21 +38,21 @@ class Span
             std::cout << "Span destructed !!" << std::endl;
         }
         Span(const Span &s);
-        Span &operator=(const Span &sp)
-        {
-
-        }
+        Span &operator=(const Span &sp);
         void addNumber(int toadd)
         {
             if (ve.size() > (size_t)N)   
                 throw max; 
             ve.push_back(toadd);
         }   
-        int ongestSpan()
+        int longestSpan()
         {
             std::vector<int> t = ve;
             sort(t.begin(), t.end());
-            return (t.end() - t.begin());   
+            std::vector<int>::iterator it;
+
+            // std::cout << *(t.end()-1) << "|_"<<t.size()<< "__|" << *t.begin() << std::endl;
+            return (*(t.end()-1) - *t.begin());   
         }
         int shortestSpan()
         {
@@ -60,18 +61,28 @@ class Span
             if (t.size() == 2)
                 return (t.end() - t.begin());
             std::vector<int>::iterator it;
-            int short_ = 0;
+            int short_ = (t.end() - t.begin());
             for (it = t.begin()+1; it != t.end(); it++)
             {
-                if (( it-1 - it) < short_)
-                    short_ = ( (it-1) - it);
+                printf("%lu", (unsigned long)&it);
+                // std::cout << *it << "||" << *(it-1) << std::endl;
+                if (( *it- *(it-1)) < short_)
+                    short_ = ( ( *it- *(it-1)));
             }
-            return (*it);
+            return (short_);
         }
-        template <typename T> void addSeqNumbers(T *begin, T *last)
+        template <typename T> void addSeqNumbers(T begin, T last)
         {
-            if ((((unsigned int)last) - (unsigned int)begin)+ ve.size() > N)
-                throw max
+            
+            unsigned int i = 0;
+            T tmp =  begin;
+            while (tmp != last)
+            {
+                i++;
+                tmp++;
+            }
+            if (i > N)
+                throw max;
             while (begin != last)
             {
                 ve.push_back(*begin);
