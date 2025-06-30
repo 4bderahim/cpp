@@ -10,12 +10,11 @@ class notfound : public std::exception
         const char *what() const throw()
         {
             return ("*NOT FOUND*");
-        } 
+        }
 };
 
 
 template <typename T>
-
 int easyfind(T ints, int in)
 {
     notfound not_found;

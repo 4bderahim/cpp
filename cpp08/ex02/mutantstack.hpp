@@ -14,10 +14,11 @@ class MutantStack : public std::stack <T>
         MutantStack &operator=(MutantStack const &src){
             if (&src != this)
                 std::stack<T>::operator=(src);
-            (void)src;
+            // (void)src;
             return (*this);
         };
-        typedef typename std::deque<T>::iterator iiterator;
-        iiterator begin(){return this->c.begin();};
-        iiterator end(){return this->c.end();};
+        typedef typename std::stack<T>::container_type::iterator iterator;
+        // typedef typename std::deque<int>::iterator iterator;
+        iterator begin(){return this->c.begin();};
+        iterator end(){return this->c.end();};
 };
