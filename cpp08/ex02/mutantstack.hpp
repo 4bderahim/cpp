@@ -5,7 +5,7 @@
 #include <stack>
 
 template <class T>
-class MutantStack : public std::stack <T>
+class MutantStack : public std::stack<T>
 {
     public :
         MutantStack(){};
@@ -18,7 +18,6 @@ class MutantStack : public std::stack <T>
             return (*this);
         };
         typedef typename std::stack<T>::container_type::iterator iterator;
-        // typedef typename std::deque<int>::iterator iterator;
         iterator begin(){return this->c.begin();};
         iterator end(){return this->c.end();};
 };

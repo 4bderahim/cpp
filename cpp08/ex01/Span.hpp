@@ -61,10 +61,10 @@ class Span
             std::vector<int> t = ve;
             sort(t.begin(), t.end());
             std::vector<int>::iterator it;
-
             // std::cout << *(t.end()-1) << "|_"<<t.size()<< "__|" << *t.begin() << std::endl;
             return (*(t.end()-1) - *t.begin());   
         }
+
         int shortestSpan()
         {
             std::vector<int> t = ve;
@@ -75,13 +75,12 @@ class Span
             int short_ = (t.end() - t.begin());
             for (it = t.begin()+1; it != t.end(); it++)
             {
-                // printf("%lu", (unsigned long)&it);
-                // std::cout << *it << "||" << *(it-1) << std::endl;
                 if (( *it- *(it-1)) < short_)
                     short_ = ( ( *it- *(it-1)));
             }
             return (short_);
         }
+
         template <typename T> void addSeqNumbers(T begin, T last)
         {
             unsigned int i = 0;

@@ -12,12 +12,13 @@ int main()
     f.push_back(115);
     f.push_back(151);
     f.push_back(511);
-    std::cout << easyfind(f, 15) << std::endl;
 
+    std::cout << easyfind(f, 15) << std::endl;
     try
     {
         std::cout << easyfind(f, 1531);
     }
+    
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';

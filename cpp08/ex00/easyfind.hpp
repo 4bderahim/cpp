@@ -15,6 +15,7 @@ class notfound : public std::exception
 
 
 template <typename T>
+
 int easyfind(T ints, int in)
 {
     notfound not_found;
