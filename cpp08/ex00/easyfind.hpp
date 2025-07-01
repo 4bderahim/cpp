@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 #include <algorithm>
-
 #include <exception>
+
 
 class notfound : public std::exception
 {
@@ -12,9 +12,6 @@ class notfound : public std::exception
             return ("*NOT FOUND*");
         }
 };
-
-
-template <typename T>
 
 int easyfind(T ints, int in)
 {

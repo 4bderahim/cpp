@@ -19,7 +19,7 @@ class Span
     private:
         std::vector<int> ve;
         unsigned int N;
-        maxsize max;
+        maxsize max;//
     public:
         Span(): N(0)
         {
@@ -38,7 +38,10 @@ class Span
             std::cout << "Span destructed !!" << std::endl;
         }
 
-        Span(const Span &s);
+        Span(const Span &s)
+        {
+            *this = s;//
+        }
         Span &operator=(const Span &sp)
         {
             if (this != &sp)
@@ -84,8 +87,9 @@ class Span
         template <typename T> void addSeqNumbers(T begin, T last)
         {
             unsigned int i = 0;
-            T tmp =  begin;
-            while (tmp != last)
+            T tmp = begin;
+            //
+            while (tmp != last)//
             {
                 i++;
                 tmp++;

@@ -34,7 +34,6 @@ int main()
     tt = v.end();
     try
     {
-        
         sp.addSeqNumbers(v.begin(), v.end());
     }
     catch(const std::exception& e)
