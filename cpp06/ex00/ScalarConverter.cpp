@@ -71,7 +71,6 @@ void ScalarConverter::convert(std::string str)
     
     int nob = 0;
 
-
     bool none_displayable;
     
 
