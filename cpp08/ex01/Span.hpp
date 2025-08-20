@@ -14,6 +14,7 @@ class maxsize : public std::exception
         }
 };
 
+
 class Span
 {
     private:
