@@ -1,26 +1,26 @@
-#include <iostream>
+// #include <iostream>
 
 
-class BitcoinExchange
+// class BitcoinExchange
 
-{
-    private:
+// {
+//     private:
     
-    //
+//     //
 
-    public:
-        BitcoinExchange()
-        {
-            std::cout << "BitcoinExchange constructed " << std::endl;
-        }
-        ~BitcoinExchange()
-        {
-            std::cout << "BitcoinExchange destructed " << std::endl;
-        }
-        BitcoinExchange(const BitcoinExchange &btc)
-        {
-            *this    = btc;
-        }
+//     public:
+//         BitcoinExchange()
+//         {
+//             std::cout << "BitcoinExchange constructed " << std::endl;
+//         }
+//         ~BitcoinExchange()
+//         {
+//             std::cout << "BitcoinExchange destructed " << std::endl;
+//         }
+//         BitcoinExchange(const BitcoinExchange &btc)
+//         {
+//             *this    = btc;
+//         }
 
 
-};
+// };
