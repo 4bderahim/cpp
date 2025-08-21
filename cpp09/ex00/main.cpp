@@ -51,6 +51,7 @@ int main(int argc , char **argv)
                 std::cout << "file Error!!" << std::endl;
                 return (1);
             }
+            i++;
 
         }
                 }
