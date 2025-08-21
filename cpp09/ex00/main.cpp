@@ -35,21 +35,23 @@ int main(int argc , char **argv)
      std::string str;
      int i = 0;
     //  str <<  f.rdbuf();
-    while (getline(f, str))    
+    while (getline(f, str)) 
         {
-            std::cout << "|" << str<< "|" <<  std::endl;
-            if (str.size() && str.find_first_not_of(" ") == std::string::npos)
+            // std::cout << "|" << str<< "|" <<  std::endl;
+            if ((!i && str.size()) && str.find_first_not_of(" ") != std::string::npos)
         {
+            printf("\t#####%s####\n", str.c_str());
             i=1;
-            continue;
+            // continue;
+            
         }
         if (i == 1)
         {
-            if (!check_first_line(str))
-            {
-                std::cout << "file Error!!" << std::endl;
-                return (1);
-            }
+            // if (!check_first_line(str))
+            // {
+            //     std::cout << "file Error!!" << std::endl;
+            //     return (1);
+            // }
 
         }
                 }
