@@ -6,9 +6,24 @@
 
 
 
+int check_data(std::string str)
+{
+    std::string tmp = str;
+    if (std::count(str.begin(), str.end(), '|') !=1)
+        return (0);
+    if (std::count(str.begin(), str.end(), '-') !=2)
+        return (0);
+    tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
+    tmp.erase(std::remove(tmp.begin(), tmp.end(), '|'), tmp.end());
+    tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
+    
+
+
+
+}
+
 int check_first_line(std::string& str)
 {
-
     str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
     if (str != "date|value")
         {
@@ -44,6 +59,7 @@ int main(int argc , char **argv)
             // continue;
             
         }
+        
         if (i == 1)
         {
             if (!check_first_line(str))
