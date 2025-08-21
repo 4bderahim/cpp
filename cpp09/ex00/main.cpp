@@ -10,7 +10,11 @@ int check_first_line(std::string& str)
 {
 
     str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
-    printf("\t[%s]\n", str.c_str());
+    if (str != "date|value")
+        {
+            printf("[%s]", str.c_str());
+            return 0;
+        }
     return (2);
 }
 
