@@ -11,7 +11,8 @@ int check_data(std::string str)
     std::string tmp = str;
     if (std::count(str.begin(), str.end(), '|') !=1)
         return (0);
-    if (std::count(str.begin(), str.end(), '-') !=2)
+    tmp = str.substr(0, str.find('|'));
+    if (std::count(tmp.begin(), tmp.end(), '-') !=2)
         return (0);
     tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
     tmp.erase(std::remove(tmp.begin(), tmp.end(), '|'), tmp.end());
