@@ -1,20 +1,16 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <algorithm>
 // #include "BitcoinExchange.hpp"
 
 
 
-int check_first_line(std::string str)
+int check_first_line(std::string& str)
 {
 
-    if (str.find("|") == std::string::npos)
-        return (0);
-    if (str.find_first_not_of("date") != std::string::npos && str.find_first_not_of("value") != std::string::npos )
-    
-    {
-        return (0);
-
-    }
+    str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
+    printf("\t[%s]\n", str.c_str());
     return (2);
 }
 
@@ -40,18 +36,17 @@ int main(int argc , char **argv)
             // std::cout << "|" << str<< "|" <<  std::endl;
             if ((!i && str.size()) && str.find_first_not_of(" ") != std::string::npos)
         {
-            printf("\t#####%s####\n", str.c_str());
             i=1;
             // continue;
             
         }
         if (i == 1)
         {
-            // if (!check_first_line(str))
-            // {
-            //     std::cout << "file Error!!" << std::endl;
-            //     return (1);
-            // }
+            if (!check_first_line(str))
+            {
+                std::cout << "file Error!!" << std::endl;
+                return (1);
+            }
 
         }
                 }
