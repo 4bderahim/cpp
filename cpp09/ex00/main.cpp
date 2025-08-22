@@ -4,6 +4,13 @@
 #include <algorithm>
 // #include "BitcoinExchange.hpp"
 
+
+int that_error(std::string error_msg)
+{
+    std::cout << error_msg << std::endl;
+
+    return (0);
+}
 int check_file_data(std::string str)
 {
     std::string tmp = str;
@@ -19,13 +26,19 @@ int check_file_data(std::string str)
         std::cout << "[-] BAD input >>" << str << std::endl;
         return (0);
     }
-    printf("%s<<<<\n", str.c_str());
     tmp =  str.substr(0, str.substr(0, str.find('|')).find('-')) ;
     if (tmp.length() > 4 || std::atoi(tmp.c_str() ) > 2025)
-        {
-            std::cout << "[-] BIG year number >> " << str << std::endl;
-            return (0);
+    {
+        std::cout << "[-] BIG year number >> " << str << std::endl;
+        return (0);
     }
+    tmp =  str;
+    tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
+    tmp =  tmp.substr(tmp.find('-')+1,  tmp.find('|')) ;
+    if (std::atoi(tmp.substr(0,  tmp.find('-')).c_str()) > 12)
+        return (that_error("[-] month error "+str));
+    printf("%s<<<<\n", tmp.c_str());
+
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), '|'), tmp.end());
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
