@@ -19,10 +19,9 @@ int check_data(std::string str)
     if (std::count(tmp.begin(), tmp.end(), '-') !=2)
         return (0);
     tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
-    
     tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
-    printf("%s?", tmp.c_str());
-    if (!std::atoi(tmp.c_str()))
+
+    if (tmp.find_last_not_of("0987654321") != std::string::npos)
         return (0);
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), '|'), tmp.end());
