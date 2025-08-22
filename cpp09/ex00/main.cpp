@@ -36,7 +36,9 @@ int check_file_data(std::string str)
     tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
     tmp =  tmp.substr(tmp.find('-')+1,  tmp.find('|')) ;
     if (std::atoi(tmp.substr(0,  tmp.find('-')).c_str()) > 12)
-        return (that_error("[-] month error "+str));
+        return (that_error("[-] month number error "+str));
+    if (std::atoi(tmp.substr(tmp.find('-'),  tmp.find('|')).c_str()) > 12)
+        return (that_error("[-] day error "+str));
     printf("%s<<<<\n", tmp.c_str());
 
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
