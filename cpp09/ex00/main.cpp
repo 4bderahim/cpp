@@ -40,6 +40,9 @@ int check_file_data(std::string str)
         return (that_error("[-] month number error "+str));
     if (std::atoi(tmp.substr(tmp.find('-')+1,  tmp.find('|')).c_str()) > 31)
         return (that_error("[-] day error "+str));
+    tmp = tmp.substr(tmp.find('|')+1,  tmp.length()-1);
+    if (std::atoi(tmp.c_str()) > 1000 || std::atoi(tmp.c_str()) < 0)
+        return (that_error("[-] value error "+str));
     
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), '|'), tmp.end());
