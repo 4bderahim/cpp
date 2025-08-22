@@ -4,9 +4,7 @@
 #include <algorithm>
 // #include "BitcoinExchange.hpp"
 
-
-
-int check_data(std::string str)
+int check_file_data(std::string str)
 {
     std::string tmp = str;
     if (std::count(str.begin(), str.end(), '|') !=1)
@@ -16,11 +14,18 @@ int check_data(std::string str)
         return (0);
     tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
     tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
-
     if (tmp.find_last_not_of("0987654321") != std::string::npos)
+    {
+        std::cout << "[-] BAD input >>" << str << std::endl;
         return (0);
+    }
+    printf("%s<<<<\n", str.c_str());
     tmp =  str.substr(0, str.substr(0, str.find('|')).find('-')) ;
-    printf("%s<\n", tmp.c_str());
+    if (tmp.length() > 4 || std::atoi(tmp.c_str() ) > 2025)
+        {
+            std::cout << "[-] BIG year number >> " << str << std::endl;
+            return (0);
+    }
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), '|'), tmp.end());
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
@@ -82,7 +87,7 @@ int main(int argc , char **argv)
                 i++;
                 
             }
-            if (!check_data(str))
+            if (!check_file_data(str))
                 {}// printf("\t{######}]\n");
         }
     f.close();
