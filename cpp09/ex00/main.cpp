@@ -8,14 +8,10 @@
 
 int check_data(std::string str)
 {
-
-    // printf("\t\t\t####");
     std::string tmp = str;
     if (std::count(str.begin(), str.end(), '|') !=1)
         return (0);
     tmp = str.substr(0, str.find('|'));
-    // printf("%s>", tmp.c_str());
-
     if (std::count(tmp.begin(), tmp.end(), '-') !=2)
         return (0);
     tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
@@ -23,6 +19,8 @@ int check_data(std::string str)
 
     if (tmp.find_last_not_of("0987654321") != std::string::npos)
         return (0);
+    tmp =  str.substr(0, str.substr(0, str.find('|')).find('-')) ;
+    printf("%s<\n", tmp.c_str());
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), '|'), tmp.end());
     // tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
