@@ -44,11 +44,11 @@ int check_file_data(std::string str, std::map<std::string , double> map)
     if (std::atoi(tmp.c_str()) > 1000 || std::atoi(tmp.c_str()) < 0)
         return (that_error("[-] value error "+str));
     
-    // if (map.find(date) == map.end())
-    //     return 29;//
+    if (map.find(date) == map.end())
+        return 29;//
     value = tmp ;
     std::cout << date << "=>" << value << "=>" << map[date]*(std::atof(value.c_str())) << std::endl;
-    // std::cout << date << "|" << value << std::endl;?
+    
     return (1);
 }
 
