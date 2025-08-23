@@ -1,6 +1,7 @@
  #include <iostream>
 #include <fstream>
 #include <string>
+#include <map>
 #include <algorithm>
 // #include "BitcoinExchange.hpp"
 
@@ -48,6 +49,7 @@ int check_file_data(std::string str)
     if (std::atoi(tmp.c_str()) > 1000 || std::atoi(tmp.c_str()) < 0)
         return (that_error("[-] value error "+str));
     value = tmp ;
+    std::cout << date << "|" << value << std::endl;
     return (1);
 }
 
@@ -60,6 +62,28 @@ int check_first_line(std::string& str)
             return 0;
         }
     return (2);
+}
+
+
+
+void  map_data(std::map<std::string , double> &data, std::string file)
+{
+
+
+    std::fstream f(file);
+    std::string each_line;
+    // no checks for database ,,..file should be perfect!
+    while (getline(f, each_line))
+{
+        data[each_line.substr(0, each_line.find(","))] = std::atof(each_line.substr( each_line.find(",")+1, each_line.length() ).c_str())  ;
+
+}
+     for (std::map<std::string, double>::const_iterator it = data.begin(); it != data.end(); ++it) {
+        std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
+    }
+
+
+
 }
 
 int main(int argc , char **argv)
@@ -76,9 +100,11 @@ int main(int argc , char **argv)
         std::cout << "error opening the file!" << std::endl;
         return(1);
     }
+    std::map<std::string, double> data;
      std::string str;
      int i = 0;
     //  str <<  f.rdbuf();
+    map_data(data, "data.csv");
     while (getline(f, str)) 
     {
             // std::cout << str << std::endl;
@@ -93,7 +119,7 @@ int main(int argc , char **argv)
             {
                 if (i == 1&& !check_first_line(str))
                 {
-                    std::cout << "file Error!!" << std::endl;
+                    std::cout << "the file data should start with 'date | value'!!" << std::endl;
                     return (1);
                 }
                 else
