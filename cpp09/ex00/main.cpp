@@ -1,4 +1,4 @@
- #include <iostream>
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <map>
@@ -43,7 +43,6 @@ int check_file_data(std::string str, std::map<std::string , double> map)
     tmp = tmp.substr(tmp.find('|')+1,  tmp.length()-1);
     if (std::atoi(tmp.c_str()) > 1000 || std::atoi(tmp.c_str()) < 0)
         return (that_error("[-] value error "+str));
-    
     if (map.find(date) == map.end())
         return 29;//
     value = tmp ;
@@ -56,10 +55,7 @@ int check_first_line(std::string& str)
 {
     str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
     if (str != "date|value")
-        {
-            // printf("[%s]", str.c_str());
-            return 0;
-        }
+        return 0;
     return (2);
 }
 
@@ -87,7 +83,6 @@ int main(int argc , char **argv)
         std::cout << "args error !" << std::endl;
         return (1);
     }
-    // std::cout << argv[1] << std::endl;
     std::ifstream f(argv[1]);
     if (!f.is_open())
     {
@@ -97,7 +92,6 @@ int main(int argc , char **argv)
     std::map<std::string, double> data;
      std::string str;
      int i = 0;
-    //  str <<  f.rdbuf();
     map_data(data, "data.csv");
     while (getline(f, str)) 
     {
@@ -105,8 +99,6 @@ int main(int argc , char **argv)
             if ((!i && str.size()) && str.find_first_not_of(" ") != std::string::npos)
             {
                 i=1;
-                // continue;
-                
             }
             
             if (i ==1)
@@ -118,16 +110,14 @@ int main(int argc , char **argv)
                 }
                 else
                 {
-                    // std::cout << "d|" << str<< "|" <<  std::endl;
                     i = 99;
-                    
                     continue;
                 }
                 i++;
                 
             }
             if (!check_file_data(str, data))
-                {}// printf("\t{######}]\n");
+                {}
         }
     f.close();
     
