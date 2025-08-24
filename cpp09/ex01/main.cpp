@@ -30,6 +30,14 @@ int main(int argc , char **argv)
     std::string str = argv[1];
     std::stack<int> lifo;
     fill_stack(lifo, str);
+    std::size_t index;
+    while (( index = str.find_first_of("0987654321")) != std::string::npos)
+        {
+            str.erase(index , 1);
+        }
+    
+    str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
+    printf("\t\t\t>>>>%s]", str.c_str());
     // if (str.find_first_not_of("09876654321-+*/ ") 
     // || std::count(str.begin(), str.end(), '-'))
 
