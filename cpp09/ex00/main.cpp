@@ -64,7 +64,7 @@ int check_first_line(std::string& str)
 void  map_data(std::map<std::string , double> &data, std::string file)
 {
 
-    std::fstream f(file);
+    std::fstream f(file.c_str());
     std::string each_line;
     // no checks for database ,,..file should be perfect!
     while (getline(f, each_line))

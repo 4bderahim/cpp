@@ -13,7 +13,7 @@ all: $(NAME)
 
 $(NAME): $(OFILES)
 	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
-%.o: %.cpp  easyfind.hpp
+%.o: %.cpp  
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(OFILES)
