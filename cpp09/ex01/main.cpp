@@ -32,17 +32,16 @@ void rpn( std::stack<int> lifo, std::string str)
 {
     int top, top2;
 
-   int t = lifo.size();
-    for (lifo.size())
+    while (lifo.size()!=1)
     {
         top = lifo.top();
         lifo.pop();
         top2 = lifo.top();
         lifo.pop();
-        lifo.push(op(top, top2, ))
-
-        
+        lifo.push(op(top, top2, str[0]));
+        str.erase(0,1);
     }
+    std::cout << lifo.top()  << std::endl;
 
 } 
 int main(int argc , char **argv)
@@ -55,12 +54,17 @@ int main(int argc , char **argv)
         }
 
     std::string str = argv[1];
+    if (str.find_first_not_of("098765432 *-+/1") != std::string::npos)
+        {
+            std::cout << " error!" << std::endl;
+            return (1);
+        }
     std::stack<int> lifo;
     fill_stack(lifo, str);
     if (((std::count(str.begin(), str.end(), '-') 
     +std::count(str.begin(), str.end(), '+') 
     +std::count(str.begin(), str.end(), '*') 
-    +std::count(str.begin(), str.end(), '/')   ) != lifo.size()-1) || lifo.size() == 1)
+    +std::count(str.begin(), str.end(), '/')   ) != (long int)lifo.size()-1) || lifo.size() == 1)
     {
 
         std::cout << "OPERATION ERROR!" << std::endl;
@@ -74,13 +78,8 @@ int main(int argc , char **argv)
     
     str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
     // printf("\t\t\t>>>>%s]", str.c_str());
-
-    int t = lifo.size();
-    for (size_t i = 0; i < t ; i++)
-    {
-        printf("%d\n", lifo.top());
-        lifo.pop();
-    }
+    rpn(lifo, str);
+    
     
 
 
