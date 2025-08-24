@@ -4,18 +4,19 @@
 
 
 //$> ./RPN "8 9 * 9 - 9 - 9 - 4 - 1 +"
- void fill_stack(std::stack<int> lifo, std::string str)
+ void fill_stack(std::stack<int> &lifo, std::string str)
  {
-    int i = 0;
+    // int i = str.length();
     std::string nums = "0987654321";
-    while (i < str.length())
+    for (int i =  str.length(); i >= 0; i--)
     {
         if ( nums.find_first_of(str[i]) != std::string::npos)
         {
             lifo.push(std::atoi(str.substr(i, 1).c_str()));
         }
-        i++;
     }
+    
+    
     
  }
 int main(int argc , char **argv)
@@ -37,9 +38,15 @@ int main(int argc , char **argv)
         }
     
     str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
-    printf("\t\t\t>>>>%s]", str.c_str());
-    // if (str.find_first_not_of("09876654321-+*/ ") 
-    // || std::count(str.begin(), str.end(), '-'))
+    // printf("\t\t\t>>>>%s]", str.c_str());
+
+    int t = lifo.size();
+    for (size_t i = 0; i < t ; i++)
+    {
+        printf("%d\n", lifo.top());
+        lifo.pop();
+    }
+    
 
 }
 
