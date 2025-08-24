@@ -16,9 +16,35 @@
         }
     }
     
-    
-    
  }
+
+ int op(int f, int s ,char o)
+ {
+    if (o == '+')
+        return (f+s);
+    if (o == '-')
+        return (f-s);
+    if (o == '*')
+        return (f*s);
+    return (f/s);
+ }
+void rpn( std::stack<int> lifo, std::string str)
+{
+    int top, top2;
+
+   int t = lifo.size();
+    for (lifo.size())
+    {
+        top = lifo.top();
+        lifo.pop();
+        top2 = lifo.top();
+        lifo.pop();
+        lifo.push(op(top, top2, ))
+
+        
+    }
+
+} 
 int main(int argc , char **argv)
 {
 
@@ -31,6 +57,15 @@ int main(int argc , char **argv)
     std::string str = argv[1];
     std::stack<int> lifo;
     fill_stack(lifo, str);
+    if (((std::count(str.begin(), str.end(), '-') 
+    +std::count(str.begin(), str.end(), '+') 
+    +std::count(str.begin(), str.end(), '*') 
+    +std::count(str.begin(), str.end(), '/')   ) != lifo.size()-1) || lifo.size() == 1)
+    {
+
+        std::cout << "OPERATION ERROR!" << std::endl;
+        return (1);
+    }
     std::size_t index;
     while (( index = str.find_first_of("0987654321")) != std::string::npos)
         {
@@ -48,21 +83,5 @@ int main(int argc , char **argv)
     }
     
 
+
 }
-
-
-
-
-
-//  while (ii < str.length())
-//             {
-//                 std::size_t index;
-//                 if (( index = tmp.find_first_not_of(nums)) != std::string::npos)
-//                 {
-//                     printf("\t[%s]%lu\n", str.substr(i, index).c_str(), index);
-//                     // lifo.push(std::atoi(str.substr(i, index).c_str()));
-//                     i += index;
-//                     break;
-//                 }
-//                 ii++;
-//             }
