@@ -24,12 +24,9 @@ int check_file_data(std::string str, std::map<std::string , double> map)
     tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
     date = tmp ;
     tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
-    
     if (tmp.find_last_not_of("0987654321") != std::string::npos)
         return (that_error( "[-] BAD input >>"+str));
-
     tmp =  str.substr(0, str.substr(0, str.find('|')).find('-')) ;
-    
     if (tmp.length() > 4 || std::atoi(tmp.c_str() ) > 2025)
         return (that_error("[-] BIG year number >> "+str));
     tmp =  str;
