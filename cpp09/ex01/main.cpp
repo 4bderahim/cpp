@@ -66,7 +66,6 @@ int main(int argc , char **argv)
     +std::count(str.begin(), str.end(), '*') 
     +std::count(str.begin(), str.end(), '/')   ) != (long int)lifo.size()-1) || lifo.size() == 1)
     {
-
         std::cout << "OPERATION ERROR!" << std::endl;
         return (1);
     }
