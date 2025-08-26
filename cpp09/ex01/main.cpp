@@ -42,23 +42,21 @@ void rpn( std::stack<int> lifo, std::string str)
         str.erase(0,1);
     }
     std::cout << lifo.top()  << std::endl;
+}
 
-} 
 int main(int argc , char **argv)
 {
-
     if (argc != 2)
         {
             std::cout << "args error!" << std::endl;
             return (1);
         }
-
     std::string str = argv[1];
     if (str.find_first_not_of("098765432 *-+/1") != std::string::npos)
-        {
-            std::cout << " error!" << std::endl;
-            return (1);
-        }
+    {
+        std::cout << " error!" << std::endl;
+        return (1);
+    }
     std::stack<int> lifo;
     fill_stack(lifo, str);
     if (((std::count(str.begin(), str.end(), '-') 
@@ -74,7 +72,6 @@ int main(int argc , char **argv)
         {
             str.erase(index , 1);
         }
-    
     str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
     // printf("\t\t\t>>>>%s]", str.c_str());
     rpn(lifo, str);
