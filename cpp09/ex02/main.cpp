@@ -33,6 +33,7 @@ int this_error(std::string str)
 
 int main(int argc , char **argv)
 {
+    mergeme m;
     if (argc == 1 || argc == 2 )
         return (this_error("args error"));
     for (size_t i = 1; i < argc; i++)
