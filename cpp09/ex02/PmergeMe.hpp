@@ -15,7 +15,7 @@ class mergeme
 
 
     private:
-        std::vector<std::pair< unsigned int,unsigned int>> pairs;
+        // std::vector<std::pair< unsigned int,unsigned int>> pairs;
         std::vector<unsigned int> bigs;
         std::vector<unsigned int> smalls;
         std::vector<unsigned int> final;
@@ -34,20 +34,13 @@ class mergeme
             {
                 unsigned int first = std::atol(argv[i]);
                 unsigned int sec = std::atol(argv[i+1]);
-                if (first > sec)
-                {
-                    unsigned tmp = first;
-                    first = sec;
-                    sec = tmp;
-                }
-                    
-                pairs.push_back(std::make_pair(first , sec
-                )
-                );
+                bigs.push_back((first < sec ? sec:first));
+                smalls.push_back((first < sec ? first:sec));
+               
                 i+=2;
             }
-            for (const auto& p : pairs) {
-                std::cout << "(" << p.first << ", " << p.second << ")" << std::endl;
+            // for (const auto& p : pairs) {
+            //     std::cout << "(" << p.first << ", " << p.second << ")" << std::endl;
     }
 
         }
