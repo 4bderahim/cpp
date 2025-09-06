@@ -32,17 +32,23 @@ class mergeme
                 }
             while (i < args)
             {
-                
-                pairs.push_back(std::make_pair(std::atol(argv[i]), std::atol(argv[i+1])));
+                unsigned int first = std::atol(argv[i]);
+                unsigned int sec = std::atol(argv[i+1]);
+                if (first > sec)
+                {
+                    unsigned tmp = first;
+                    first = sec;
+                    sec = tmp;
+                }
+                    
+                pairs.push_back(std::make_pair(first , sec
+                )
+                );
                 i+=2;
             }
             for (const auto& p : pairs) {
                 std::cout << "(" << p.first << ", " << p.second << ")" << std::endl;
     }
-
-            
-
-
 
         }
 
