@@ -35,8 +35,8 @@ class mergeme
                 pairs.push_back(std::make_pair(std::atol(argv[i]), std::atol(argv[i+1])));
                 i+=2;
             }
-            for (const auto& p : pairs) { // Iterate through each pair in the vector
-        std::cout << "(" << p.first << ", " << p.second << ")" << std::endl;
+            for (const auto& p : pairs) {
+                std::cout << "(" << p.first << ", " << p.second << ")" << std::endl;
     }
 
             
