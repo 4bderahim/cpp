@@ -11,6 +11,9 @@ int valid(std::string str)
                 return(0);
             str.erase(0,1);
         }
+    size_t first_not_of_space=  str.find_first_not_of(' ');
+    str = str.substr(first_not_of_space, str.find_last_of("0987654321")-first_not_of_space+1);
+    std::cout << str << "<<<<<<<" << std::endl;
     if (str.find_last_not_of("0987654312") != std::string::npos)
         return (0);
     if(std::atol(str.c_str()) > UINT32_MAX)
@@ -42,7 +45,7 @@ int main(int argc ,  char **argv)
     {
         if (!valid(argv[i]))
             return (this_error("args error"));
-        std::cout << argv[i] << std::endl;
+        std::cout <<std::atoi(argv[i]) << std::endl;
     }
     
 
