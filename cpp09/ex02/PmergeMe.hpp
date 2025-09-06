@@ -24,6 +24,7 @@ class mergeme
         void pairing(int args, char **argv)
         {
             int i = 1;
+            args--;
             if (args %2 !=0)
                 {
                     lonely = std::atol(argv[0]);
