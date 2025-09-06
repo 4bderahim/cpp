@@ -11,8 +11,8 @@ int valid(std::string str)
                 return(0);
             str.erase(0,1);
         }
-    size_t first_not_of_space=  str.find_first_not_of(' ');
-    str = str.substr(first_not_of_space, str.find_last_of("0987654321")-first_not_of_space+1);
+    size_t that_first_not_of_space=  str.find_first_not_of(' ');
+    str = str.substr(that_first_not_of_space, str.find_last_of("0987654321")-first_not_of_space+1);
     // std::cout << str << "<<<<?<<<" << std::endl;
     if (str.find_last_not_of("0987654312") != std::string::npos)
         return (0);
@@ -25,8 +25,7 @@ int valid(std::string str)
 
 int this_error(std::string str)
 {
-
-
+    
     std::cout << str << std::endl;
     return (1);
 
