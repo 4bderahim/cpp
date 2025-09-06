@@ -6,14 +6,14 @@ int valid(std::string str)
 {
     if (str[0] == '+')
         {
-            std::string ehhjg = "0987654321";
-            if (ehhjg.find_first_of(str[1]) == std::string::npos)
+            std::string n = "0987654321";
+            if (n.find_first_of(str[1]) == std::string::npos)
                 return(0);
             str.erase(0,1);
         }
     size_t first_not_of_space=  str.find_first_not_of(' ');
     str = str.substr(first_not_of_space, str.find_last_of("0987654321")-first_not_of_space+1);
-    std::cout << str << "<<<<<<<" << std::endl;
+    // std::cout << str << "<<<<?<<<" << std::endl;
     if (str.find_last_not_of("0987654312") != std::string::npos)
         return (0);
     if(std::atol(str.c_str()) > UINT32_MAX)
@@ -34,13 +34,10 @@ int this_error(std::string str)
 
 
 
-int main(int argc ,  char **argv)
+int main(int argc , char **argv)
 {
     if (argc == 1 || argc == 2 )
-    {
-        std::cout << "args Error" << std::endl;
-        return (1);
-    }
+        return (this_error("args error"));
     for (size_t i = 1; i < argc; i++)
     {
         if (!valid(argv[i]))
