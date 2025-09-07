@@ -41,7 +41,8 @@ int main(int argc , char **argv)
         return (this_error("args error"));
     }
     mergeme m;
-    m.pairing(argc, argv, 1);
+
+    // m.pairing(argc, argv, 1);
     
 
 
