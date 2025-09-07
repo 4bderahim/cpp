@@ -45,7 +45,7 @@ int main(int argc , char **argv)
     std::deque<unsigned int> deqq;
     // m.fill_container(vvecc);
     int i = 1;
-    while (i < argc-1)
+    while (i < argc)
     {
         vecc.push_back(std::atol(argv[i]));
         deqq.push_back(std::atol(argv[i]));
@@ -65,8 +65,9 @@ int main(int argc , char **argv)
     //         }
     // m.pairing(argc, argv, 1);
     
+// 2   3   4   33  34  34  200  234  324  999 
 
-
+// 324 234 200 34  2   3   4    33   34   999 9090
 
 
     return (0);

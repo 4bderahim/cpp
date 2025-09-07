@@ -37,6 +37,7 @@ class mergeme
                     lonely  = cont.back(); 
                     cont.erase(cont.end()-1);
                 }
+            printf("\t\t\t\t [%lu]\n", lonely);
             while (i < cont.size())
             {   
                 unsigned int first = cont[i];
