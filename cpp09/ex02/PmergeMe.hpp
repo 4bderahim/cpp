@@ -53,9 +53,15 @@ class mergeme
             if (cont.size() <= 1 )
                 return cont;
             int i = 0;
-
+            std::vector<unsigned int >  smalls ;
+            std::vector<unsigned int >  bigs ;
+            
             while (i < cont.size())
             {   
+                 unsigned int first = std::atol(argv[i]);
+                unsigned int sec = std::atol(argv[i+1]);
+                bigs.push_back((first < sec ? sec:first));
+                smalls.push_back((first < sec ? first:sec));
                 i += 2;
             }
             
