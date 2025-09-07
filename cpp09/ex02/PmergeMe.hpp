@@ -54,12 +54,16 @@ class mergeme
             i  =0 ;
             while (i < smalls.size())
             {
-                smalls.insert()
-
+                bigs.insert(std::lower_bound(bigs.begin(), bigs.end(), smalls[i]), smalls[i]);
 
                 i++;
 
             }
+            for (size_t i = 0; i < bigs.size(); i++)
+            {
+                std::cout << bigs[i] << "<|\n";
+            }
+            
                
             
     }

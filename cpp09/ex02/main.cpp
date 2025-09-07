@@ -41,7 +41,7 @@ int main(int argc , char **argv)
         if (!valid(argv[i]))
             return (this_error("args error"));
      }
-     m.pairing(argc, argv);
+     m.pairing(argc, argv, 1);
     
 
 
