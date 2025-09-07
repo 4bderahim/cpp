@@ -40,8 +40,18 @@ int main(int argc , char **argv)
         if (!valid(argv[i]))
         return (this_error("args error"));
     }
-    mergeme m;
-
+    mergeme m(argc, argv);
+    std::vector<unsigned int> vecc;
+    std::deque<unsigned int> deqq;
+    // m.fill_container(vvecc);
+    int i = 1;
+    while (i < argc-1)
+    {
+        vecc.push_back(std::atol(argv[i]));
+        deqq.push_back(std::atol(argv[i]));
+        i++;
+    }
+    
     // m.pairing(argc, argv, 1);
     
 

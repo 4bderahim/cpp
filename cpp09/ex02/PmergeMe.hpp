@@ -9,11 +9,11 @@
 #include <chrono>
 
 
-template<typename Container>
 class mergeme
 {
 
     private:
+        Container cont;
         // std::vector<std::pair< unsigned int,unsigned int>> pairs;
     int argc;
     char **argv;
@@ -23,17 +23,28 @@ class mergeme
         {
 
         }
-        void set_vars(int ac, char **av)
+        mergeme(int ac, char **av)
         {
+
             argc = ac;
             argv = av;
         }
-        Container &fill_container(Container &cont, char **argv)
-        {
-            int i = 1;
-            while (i < ar)
+        // void set_vars(int ac, char **av)
+        // {
+        // }
+        // template<typename Container>
 
-        }
+        // Container &fill_container(Container cont)
+        // {
+        //     int i = 1;
+        //     argc--;
+        //     while (i < argc)
+        //     {
+        //         cont.
+
+        //     }
+
+        // }
         void Mr_fordJohnson(int args, char **argv, int vector)
         {
             
