@@ -29,6 +29,16 @@ int this_error(std::string str)
 
 }
 
+template<typename Container>
+ Container &Mr_fordJohnson(Container cont)
+{
+    if (cont. )
+            
+         
+           
+            
+    }
+
 
 
 int main(int argc , char **argv)
@@ -51,7 +61,7 @@ int main(int argc , char **argv)
         deqq.push_back(std::atol(argv[i]));
         i++;
     }
-    
+    Mr_fordJohnson(vecc);
     // m.pairing(argc, argv, 1);
     
 

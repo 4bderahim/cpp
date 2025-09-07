@@ -32,21 +32,33 @@ class mergeme
         // void set_vars(int ac, char **av)
         // {
         // }
-        // template<typename Container>
+        template<typename Container>
 
-        // Container &fill_container(Container cont)
-        // {
-        //     int i = 1;
-        //     argc--;
-        //     while (i < argc)
-        //     {
-        //         cont.
-
-        //     }
-
-        // }
-        void Mr_fordJohnson(int args, char **argv, int vector)
+        Container &fill_container(Container cont)
         {
+            int i = 1;
+            argc--;
+            while (i < argc)
+            {
+                con
+
+            }
+
+        }
+        template<typename Container>
+
+        Container Mr_fordJohnson(Container cons)
+        {
+            std::vector<unsigned int >  cont ;
+            if (cont.size() <= 1 )
+                return cont;
+            int i = 0;
+
+            while (i < cont.size())
+            {   
+                i += 2;
+            }
+            
             
          
            
