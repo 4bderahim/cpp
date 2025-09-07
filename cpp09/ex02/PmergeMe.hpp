@@ -20,9 +20,6 @@ class mergeme
 
         }
         
-        // void set_vars(int ac, char **av)
-        // {
-        // }
         
         template<typename Container>
 
@@ -49,6 +46,14 @@ class mergeme
             smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
             
             i = 0;
+            // printf("\t---------------------------------\n");
+
+            for (size_t i = 0; i < smalls.size(); i++)
+            {
+                std::cout << smalls[i] << "  ";
+            }
+            printf("\n\t---------------------------------\n");
+
             // insert bigs to smalls(thatSouuld be sorted )
             while (i < bigs.size())
             {
