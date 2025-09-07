@@ -52,7 +52,7 @@ int main(int argc , char **argv)
         i++;
     }
     vecc = m.Mr_fordJohnson(vecc);
-    deqq = m.Mr_fordJohnson(deqq);
+    // deqq = m.Mr_fordJohnson(deqq);
 
     printf("\t##");
     for (size_t i = 0; i < vecc.size(); i++)

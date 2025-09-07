@@ -31,7 +31,12 @@ class mergeme
             int i = 0;
             Container  smalls ;
             Container  bigs ;
-            
+            unsigned int lonely = -1;
+            if (cont.size() %2 != 0)
+                {
+                    lonely  = cont.back(); 
+                    cont.erase(cont.end()-1);
+                }
             while (i < cont.size())
             {   
                 unsigned int first = cont[i];
@@ -40,19 +45,24 @@ class mergeme
                 smalls.push_back((first < sec ? first:sec));
                 i += 2;
             }
-            if (cont.size() %2 != 0)
-                bigs.push_back(cont.back());
-            
+             if (lonely != -1)
+                bigs.push_back(lonely);
+            for (size_t i = 0; i < cont.size(); i++)
+            {
+                std::cout << cont[i] << "  ";
+            }
+            printf("\n\t---------------------------------\n");
+
             smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
             
             i = 0;
             // printf("\t---------------------------------\n");
 
-            for (size_t i = 0; i < smalls.size(); i++)
-            {
-                std::cout << smalls[i] << "  ";
-            }
-            printf("\n\t---------------------------------\n");
+            // for (size_t i = 0; i < smalls.size(); i++)
+            // {
+            //     std::cout << smalls[i] << "  ";
+            // }
+            // printf("\n\t---------------------------------\n");
 
             // insert bigs to smalls(thatSouuld be sorted )
             while (i < bigs.size())
