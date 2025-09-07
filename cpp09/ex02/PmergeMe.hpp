@@ -48,26 +48,50 @@ class mergeme
                 smalls.push_back((first < sec ? first:sec));
                 i += 2;
             }
+
+            
             if (lonely!= -1)
                 smalls.push_back(lonely);
             // mergiiing..
             i  =0 ;
+            for (unsigned int i = 0; i < bigs.size(); i++)
+             {
+                unsigned int one = bigs[i];
+                bigs.erase(bigs.begin()+i);
+                bigs.insert(std::lower_bound(bigs.begin(), bigs.end(), one), one);
+            }
+             for (size_t i = 0; i < bigs.size(); i++)
+            {
+                std::cout << bigs[i] << "-";
+            }
+                std::cout << "\n";
+
+            for (size_t i = 0; i < smalls.size(); i++)
+            {
+                std::cout << smalls[i] << "-";
+            }
+                std::cout << "\n";
+
+            i = 0;
             while (i < smalls.size())
             {
+                // auto f = std::lower_bound(bigs.begin(), bigs.end(), smalls[i]);
+                // std::cout << ">" << *f << "#" << smalls[i] << "<-----\n";
                 bigs.insert(std::lower_bound(bigs.begin(), bigs.end(), smalls[i]), smalls[i]);
+               
 
                 i++;
 
             }
             for (size_t i = 0; i < bigs.size(); i++)
             {
-                std::cout << bigs[i] << "<|\n";
+                std::cout << bigs[i] << "  ";
             }
             
                
             
     }
 
-        }
+        // }
 
 };
