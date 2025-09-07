@@ -33,15 +33,15 @@ int this_error(std::string str)
 
 int main(int argc , char **argv)
 {
-    mergeme m;
     if (argc == 1 || argc == 2 )
-        return (this_error("args error"));
+    return (this_error("args error"));
     for (size_t i = 1; i < argc; i++)
     {
         if (!valid(argv[i]))
-            return (this_error("args error"));
-     }
-     m.pairing(argc, argv, 1);
+        return (this_error("args error"));
+    }
+    mergeme m;
+    m.pairing(argc, argv, 1);
     
 
 
