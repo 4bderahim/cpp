@@ -15,13 +15,14 @@ class mergeme
     private:
         // std::vector<std::pair< unsigned int,unsigned int>> pairs;
         
-        unsigned int lonely;
+       long lonely;
     public:
+        mergeme():lonely (-1)
+        {
+
+        }
         void pairing(int args, char **argv, int vector)
         {
-        //    if (vector)
-        //    {
-
             std::vector<unsigned int> bigs;
             std::vector<unsigned int> smalls;
             std::vector<unsigned int> final;
@@ -45,9 +46,17 @@ class mergeme
                 unsigned int sec = std::atol(argv[i+1]);
                 bigs.push_back((first < sec ? sec:first));
                 smalls.push_back((first < sec ? first:sec));
-               
                 i += 2;
             }
+            if (lonely!= -1)
+                smalls.push_back(lonely);
+            // mergiiing..
+            i  =0 ;
+            while (i < )
+            {
+
+            }
+               
             
     }
 
