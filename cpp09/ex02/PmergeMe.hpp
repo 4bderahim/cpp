@@ -60,18 +60,7 @@ class mergeme
                 bigs.erase(bigs.begin()+i);
                 bigs.insert(std::lower_bound(bigs.begin(), bigs.end(), one), one);
             }
-             for (size_t i = 0; i < bigs.size(); i++)
-            {
-                std::cout << bigs[i] << "-";
-            }
-                std::cout << "\n";
-
-            for (size_t i = 0; i < smalls.size(); i++)
-            {
-                std::cout << smalls[i] << "-";
-            }
-                std::cout << "\n";
-
+            
             i = 0;
             while (i < smalls.size())
             {
