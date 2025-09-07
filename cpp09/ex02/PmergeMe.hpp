@@ -50,7 +50,7 @@ class mergeme
         Container Mr_fordJohnson(Container cons)
         {
             std::vector<unsigned int >  cont ;
-            if (cont.size() <= 1 )
+            if (cont.size() <= 1 )// stackoverflowHero
                 return cont;
             int i = 0;
             std::vector<unsigned int >  smalls ;
@@ -58,12 +58,16 @@ class mergeme
             
             while (i < cont.size())
             {   
-                 unsigned int first = std::atol(argv[i]);
+                unsigned int first = std::atol(argv[i]);
                 unsigned int sec = std::atol(argv[i+1]);
                 bigs.push_back((first < sec ? sec:first));
                 smalls.push_back((first < sec ? first:sec));
                 i += 2;
             }
+            if (cont.size() %2 != 0)
+                bigs.push_back(cont.back());
+            
+            smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
             
             
          
