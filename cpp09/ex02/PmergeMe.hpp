@@ -5,7 +5,7 @@
 #include <limits>
     #include <vector>
     #include <deque>
-
+#include <algorithm>
 
 
 
@@ -52,8 +52,12 @@ class mergeme
                 smalls.push_back(lonely);
             // mergiiing..
             i  =0 ;
-            while (i < )
+            while (i < smalls.size())
             {
+                smalls.insert()
+
+
+                i++;
 
             }
                
