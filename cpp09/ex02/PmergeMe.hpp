@@ -13,48 +13,27 @@ class mergeme
 {
 
     private:
-        Container cont;
-        // std::vector<std::pair< unsigned int,unsigned int>> pairs;
-    int argc;
-    char **argv;
-       long lonely;
+        ////////////
     public:
-        mergeme():lonely (-1), argc(0), argv(NULL)
+        mergeme()
         {
 
         }
-        mergeme(int ac, char **av)
-        {
-
-            argc = ac;
-            argv = av;
-        }
+        
         // void set_vars(int ac, char **av)
         // {
         // }
+        
         template<typename Container>
 
-        Container &fill_container(Container cont)
+        Container Mr_fordJohnson(Container cont)
         {
-            int i = 1;
-            argc--;
-            while (i < argc)
-            {
-                con
-
-            }
-
-        }
-        template<typename Container>
-
-        Container Mr_fordJohnson(Container cons)
-        {
-            std::vector<unsigned int >  cont ;
+            // std::vector<unsigned int >  cont ;
             if (cont.size() <= 1 )// stack Hero
                 return cont;
             int i = 0;
-            std::vector<unsigned int >  smalls ;
-            std::vector<unsigned int >  bigs ;
+            Container  smalls ;
+            Container  bigs ;
             
             while (i < cont.size())
             {   
@@ -69,11 +48,20 @@ class mergeme
             
             smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
             
+            i = 0;
+            // insert bigs to smalls(thatSouuld be sorted )
+            while (i < bigs.size())
+            {
+                smalls.insert(std::lower_bound(smalls.begin(), smalls.end(), bigs[i]), bigs[i]);
+
+                i++;
+            }
             
          
            
-            
-    }
+            return (smalls);// sortedd
+    
+        }
 
         // }
 

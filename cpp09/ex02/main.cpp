@@ -29,16 +29,6 @@ int this_error(std::string str)
 
 }
 
-template<typename Container>
- Container &Mr_fordJohnson(Container cont)
-{
-    if (cont. )
-            
-         
-           
-            
-    }
-
 
 
 int main(int argc , char **argv)
@@ -50,7 +40,7 @@ int main(int argc , char **argv)
         if (!valid(argv[i]))
         return (this_error("args error"));
     }
-    mergeme m(argc, argv);
+    mergeme m;
     std::vector<unsigned int> vecc;
     std::deque<unsigned int> deqq;
     // m.fill_container(vvecc);
@@ -61,7 +51,11 @@ int main(int argc , char **argv)
         deqq.push_back(std::atol(argv[i]));
         i++;
     }
-    Mr_fordJohnson(vecc);
+    vecc = m.Mr_fordJohnson(vecc);
+    for (size_t i = 0; i < vecc.size(); i++)
+            {
+                std::cout << vecc[i] << "  ";
+            }
     // m.pairing(argc, argv, 1);
     
 
