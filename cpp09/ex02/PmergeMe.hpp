@@ -5,10 +5,7 @@
 #include <vector>
 #include <deque>
 #include <algorithm>
-
-#include <chrono>
-
-
+#include <ctime>
 class mergeme
 {
 
@@ -37,7 +34,7 @@ class mergeme
                     lonely  = cont.back(); 
                     cont.erase(cont.end()-1);
                 }
-            printf("\t\t\t\t [%lu]\n", lonely);
+            // printf("\t\t\t\t [%lu]\n", lonely);
             while (i < cont.size())
             {   
                 unsigned int first = cont[i];
@@ -48,15 +45,15 @@ class mergeme
             }
              if (lonely != -1)
                 bigs.push_back(lonely);
-            for (size_t i = 0; i < cont.size(); i++)
-            {
-                std::cout << cont[i] << "  ";
-            }
-            printf("\n\t---------------------------------\n");
+            // for (size_t i = 0; i < cont.size(); i++)
+            // {
+            //     std::cout << cont[i] << "  ";
+            // }
+            // printf("\n\t---------------------------------\n");
 
             smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
             
-            i = 0;
+            // i = 0;
             // printf("\t---------------------------------\n");
 
             // for (size_t i = 0; i < smalls.size(); i++)
@@ -74,7 +71,7 @@ class mergeme
             }
             
          
-           
+         
             return (smalls);// sortedd
     
         }

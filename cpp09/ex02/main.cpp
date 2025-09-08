@@ -51,14 +51,19 @@ int main(int argc , char **argv)
         deqq.push_back(std::atol(argv[i]));
         i++;
     }
+    clock_t start = clock();
     vecc = m.Mr_fordJohnson(vecc);
+    clock_t end = clock();
     // deqq = m.Mr_fordJohnson(deqq);
 
-    printf("\t##");
-    for (size_t i = 0; i < vecc.size(); i++)
-            {
-                std::cout << vecc[i] << "  ";
-            }
+    double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
+    std::cout << " elements with std::vector : "
+              << elapsed << " us" << std::endl;
+    
+    // for (size_t i = 0; i < vecc.size(); i++)
+    //         {
+    //             std::cout << vecc[i] << "  ";
+    //         }
     // for (size_t i = 0; i < deqq.size(); i++)
     //         {
     //             std::cout << deqq[i] << "  ";
