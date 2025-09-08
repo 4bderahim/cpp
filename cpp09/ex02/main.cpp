@@ -60,20 +60,6 @@ int main(int argc , char **argv)
     std::cout << " elements with std::vector : "
               << elapsed << " us" << std::endl;
     
-    // for (size_t i = 0; i < vecc.size(); i++)
-    //         {
-    //             std::cout << vecc[i] << "  ";
-    //         }
-    // for (size_t i = 0; i < deqq.size(); i++)
-    //         {
-    //             std::cout << deqq[i] << "  ";
-    //         }
-    // m.pairing(argc, argv, 1);
-    
-// 2   3   4   33  34  34  200  234  324  999 
-
-// 324 234 200 34  2   3   4    33   34   999 9090
-
-
+   
     return (0);
 }
