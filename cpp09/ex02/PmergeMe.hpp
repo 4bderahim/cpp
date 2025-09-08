@@ -14,7 +14,15 @@ class mergeme
     public:
         mergeme()
         {
-
+            std::cout << "Constructed !" << std::endl;
+        }
+        ~mergeme()
+        {
+            std::cout << "destructed !" << std::endl;
+        }
+        mergeme(const mergeme& obj)
+        {
+            *this = obj;
         }
         
         
