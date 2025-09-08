@@ -69,7 +69,6 @@ void  map_data(std::map<std::string , double> &data, std::string file)
         data[each_line.substr(0, each_line.find(","))] = std::atof(each_line.substr( each_line.find(",")+1, each_line.length() ).c_str())  ;
 
     }
-
 }
 
 int main(int argc , char **argv)
