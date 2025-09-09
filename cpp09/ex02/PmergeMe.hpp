@@ -31,7 +31,6 @@ class mergeme
             return *this;
         }
         
-        
         template<typename Container>
 
         Container Mr_fordJohnson(Container cont)
@@ -60,9 +59,7 @@ class mergeme
             }
              if (lonely != -1)
                 bigs.push_back(lonely);
-            
             smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
-            
             
             // insert bigs to smalls(thatSouuld be sorted )
             while (i < bigs.size())
@@ -71,9 +68,6 @@ class mergeme
 
                 i++;
             }
-            
-         
-         
             return (smalls);// sortedd
     
         }
