@@ -24,6 +24,12 @@ class mergeme
         {
             *this = obj;
         }
+        const mergeme &operator=(const mergeme& m)
+        {
+
+            //////
+            return *this;
+        }
         
         
         template<typename Container>
