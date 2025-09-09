@@ -39,15 +39,14 @@ class mergeme
             unsigned int lonely = -1;
             size_t sizee = cont.size();
             if (sizee %2 != 0)
-                {
-                    lonely  = cont.back(); 
-                    cont.erase(cont.end()-1);
-                }
-            // printf("\t\t\t\t [%lu]\n", lonely);
+            {
+                lonely  = cont.back(); 
+                cont.erase(cont.end()-1);
+            }
             while (i < cont.size())
             {   
-                unsigned int first = cont[i];// first
-                unsigned int sec = cont[i+1];//sec
+                unsigned int first = cont[i];
+                unsigned int sec = cont[i+1];
 
                 bigs.push_back((first < sec ? sec:first));
                 smalls.push_back((first < sec ? first:sec));
