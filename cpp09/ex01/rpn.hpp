@@ -33,7 +33,22 @@ class rpn
             //
             return *this;
         }
-        
+        void rpnn( std::stack<int> lifo, std::string str)
+        {
+            int top, top2;
+
+            while (lifo.size()!=1)
+            {
+                top = lifo.top();
+                lifo.pop();
+                top2 = lifo.top();
+                lifo.pop();
+                lifo.push(op(top, top2, str[0]));
+                str.erase(0,1);
+            }
+            std::cout << lifo.top()  << std::endl;
+        }
+
         
 
 

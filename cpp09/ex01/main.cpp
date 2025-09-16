@@ -1,7 +1,4 @@
-#include <iostream>
-#include <stack>
-#include <algorithm>
-
+#include "rpn.hpp"
 
 //$> ./RPN "8 9 * 9 - 9 - 9 - 4 - 1 +"
  void fill_stack(std::stack<int> &lifo, std::string str)
@@ -28,21 +25,7 @@
         return (f*s);
     return (f/s);
  }
-void rpn( std::stack<int> lifo, std::string str)
-{
-    int top, top2;
 
-    while (lifo.size()!=1)
-    {
-        top = lifo.top();
-        lifo.pop();
-        top2 = lifo.top();
-        lifo.pop();
-        lifo.push(op(top, top2, str[0]));
-        str.erase(0,1);
-    }
-    std::cout << lifo.top()  << std::endl;
-}
 
 int main(int argc , char **argv)
 {
@@ -74,7 +57,8 @@ int main(int argc , char **argv)
         }
     str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
     // printf("\t\t\t>>>>%s]", str.c_str());
-    rpn(lifo, str);
+    rpn rpn;
+    rpn.rpnn(lifo, str);
     
     
 
