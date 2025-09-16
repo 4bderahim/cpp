@@ -58,7 +58,7 @@ int main(int argc , char **argv)
         return (1);
     }
     std::stack<int> lifo;
-    fill_stack(lifo, str);
+    fill_stack(lifo, str);  
     if (((std::count(str.begin(), str.end(), '-') 
     +std::count(str.begin(), str.end(), '+') 
     +std::count(str.begin(), str.end(), '*') 
