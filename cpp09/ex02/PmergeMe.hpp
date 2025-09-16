@@ -39,8 +39,8 @@ class mergeme
             if (cont.size() <= 1 )// stack Hero
                 return cont;
             int i = 0;
-            Container  smalls ;
-            Container  bigs ;
+            Container  smalls;
+            Container  bigs;
             unsigned int lonely = -1;
             size_t sizee = cont.size();
             if (sizee %2 != 0)
@@ -57,19 +57,17 @@ class mergeme
                 smalls.push_back((first < sec ? first:sec));
                 i += 2;
             }
-             if (lonely != -1)
+            if (lonely != -1)
                 bigs.push_back(lonely);
             smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
             
-            // insert bigs to smalls(thatSouuld be sorted )
+            // insert bigs to smalls(thatShouuld be sorted )
             while (i < bigs.size())
             {
                 smalls.insert(std::lower_bound(smalls.begin(), smalls.end(), bigs[i]), bigs[i]);
-
                 i++;
             }
             return (smalls);// sortedd
-    
         }
 
         // }
