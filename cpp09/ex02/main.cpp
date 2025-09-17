@@ -54,6 +54,12 @@ int main(int argc , char **argv)
     clock_t start = clock();
     vecc = m.Mr_fordJohnson(vecc);
     clock_t end = clock();
+
+    // for (size_t i = 0; i < vecc.size(); i++)
+    // {
+    //     std::cout << vecc[i] << std::endl;
+    // }
+    
     // deqq = m.Mr_fordJohnson(deqq);
 
     double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;

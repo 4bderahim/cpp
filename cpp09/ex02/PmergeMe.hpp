@@ -35,7 +35,7 @@ class mergeme
 
         Container Mr_fordJohnson(Container cont)
         {
-            // std::vector<unsigned int >  cont ;
+            
             if (cont.size() <= 1 )// stack Hero
                 return cont;
             int i = 0;
@@ -61,12 +61,16 @@ class mergeme
                 bigs.push_back(lonely);
             smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
             
+
+            i = 0;
             // insert bigs to smalls(thatShouuld be sorted )
             while (i < bigs.size())
             {
+                // printf("\t ##");
                 smalls.insert(std::lower_bound(smalls.begin(), smalls.end(), bigs[i]), bigs[i]);
                 i++;
             }
+            
             return (smalls);// sortedd
         }
 
