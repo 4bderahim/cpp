@@ -59,13 +59,27 @@ int main(int argc , char **argv)
     // {
     //     std::cout << vecc[i] << std::endl;
     // }
+     double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
+    std::cout << "Time to process a range of 3000 elements with std::vector  "
+              << elapsed << " us" << std::endl;
     
     // deqq = m.Mr_fordJohnson(deqq);
 
-    double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
-    std::cout << " elements with std::vector : "
+   
+
+    
+
+     start = clock();
+    deqq = m.Mr_fordJohnson(deqq);
+     end = clock();
+
+    // for (size_t i = 0; i < vecc.size(); i++)
+    // {
+    //     std::cout << vecc[i] << std::endl;
+    // }
+      elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
+    std::cout << "Time to process a range of 3000 elements with std::deque  "
               << elapsed << " us" << std::endl;
     
-   
     return (0);
 }
