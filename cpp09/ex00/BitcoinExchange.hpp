@@ -12,7 +12,6 @@ class BitcoinExchange
 
 {
     private:
-    
     //
 
     public:
@@ -31,6 +30,8 @@ class BitcoinExchange
 
         const BitcoinExchange &operator=(const BitcoinExchange &b)
         {
+
+            (void) b;
             return (*this);
         }
             
