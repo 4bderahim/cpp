@@ -17,12 +17,12 @@ class rpn
     public:
         rpn()
         {
-            std::cout << "rpn Constructed !" << std::endl ;
+            // std::cout << "rpn Constructed !" << std::endl ;
 
         }
         ~rpn()
         {
-            std::cout << "rpn destructed !" << std::endl ;
+            // std::cout << "rpn destructed !" << std::endl ;
 
         }
         rpn(const rpn &r)
@@ -33,8 +33,22 @@ class rpn
         const rpn &operator=(const rpn &r )
         {
             //
+
+            (void) r;
             return *this;
         }
+        int op(int f, int s ,char o)
+        {
+            if (o == '+')
+                return (f+s);
+            if (o == '-')
+                return (f-s);
+            if (o == '*')
+                return (f*s);
+            return (f/s);
+        }
+
+
         void rpnn( std::stack<int> lifo, std::string str)
         {
             int top, top2;

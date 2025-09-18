@@ -15,18 +15,7 @@
     
  }
 
- int op(int f, int s ,char o)
- {
-    if (o == '+')
-        return (f+s);
-    if (o == '-')
-        return (f-s);
-    if (o == '*')
-        return (f*s);
-    return (f/s);
- }
-
-
+ 
 int main(int argc , char **argv)
 {
     if (argc != 2)
