@@ -65,9 +65,6 @@ int main(int argc , char **argv)
     
     // deqq = m.Mr_fordJohnson(deqq);
 
-   
-
-    
 
      start = clock();
     deqq = m.Mr_fordJohnson(deqq);
