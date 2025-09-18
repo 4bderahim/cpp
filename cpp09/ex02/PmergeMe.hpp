@@ -28,6 +28,7 @@ class mergeme
         {
 
             //////
+            (void)m;
             return *this;
         }
         
@@ -38,10 +39,10 @@ class mergeme
             
             if (cont.size() <= 1 )// stack Hero
                 return cont;
-            int i = 0;
+            size_t i = 0;
             Container  smalls;
             Container  bigs;
-            unsigned int lonely = -1;
+            int lonely = -1;
             size_t sizee = cont.size();
             if (sizee %2 != 0)
             {

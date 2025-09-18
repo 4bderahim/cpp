@@ -35,11 +35,15 @@ int main(int argc , char **argv)
 {
     if (argc == 1 || argc == 2 )
     return (this_error("args error"));
-    for (size_t i = 1; i < argc; i++)
+    for (int i = 1; i < argc; i++)
     {
         if (!valid(argv[i]))
         return (this_error("args error"));
     }
+
+
+// ael-krid@c1r8p8 ex02 % ./PmergeMe 2 3 4  9 2 3  4 89  2 3 43 eooe
+
     mergeme m;
     std::vector<unsigned int> vecc;
     std::deque<unsigned int> deqq;
@@ -47,6 +51,8 @@ int main(int argc , char **argv)
     int i = 1;
     while (i < argc)
     {
+         int d = std::atol(argv[i]);
+        printf("%u|%s<", d, argv[i]);
         vecc.push_back(std::atol(argv[i]));
         deqq.push_back(std::atol(argv[i]));
         i++;
@@ -60,7 +66,7 @@ int main(int argc , char **argv)
     //     std::cout << vecc[i] << std::endl;
     // }
      double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
-    std::cout << "Time to process a range of 3000 elements with std::vector  "
+    std::cout << "Time to process a range of " << argc<< " elements with std::vector  "
               << elapsed << " us" << std::endl;
     
     // deqq = m.Mr_fordJohnson(deqq);
@@ -75,7 +81,7 @@ int main(int argc , char **argv)
     //     std::cout << vecc[i] << std::endl;
     // }
       elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
-    std::cout << "Time to process a range of 3000 elements with std::deque  "
+    std::cout << "Time to process a range of  " << argc<< " elements with std::deque  "
               << elapsed << " us" << std::endl;
     
     return (0);

@@ -3,7 +3,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror  -std=c++98
 
-NAME = PmergeMe
+NAME = 	PmergeMe
 
 CPPFILES =  main.cpp
 
@@ -12,12 +12,12 @@ OFILES = $(CPPFILES:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OFILES)
-        $(CC) $(CFLAGS) $(OFILES) -o $(NAME)
+	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
 %.o: %.cpp  PmergeMe.hpp
-        $(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 clean:
-        rm -f $(OFILES)
+	rm -f $(OFILES)
 fclean: clean
-        rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
