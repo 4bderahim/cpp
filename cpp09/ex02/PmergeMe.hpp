@@ -10,33 +10,44 @@ class mergeme
 {
 
     private:
-        ////////////
+        std::vector<unsigned int> seq;
+        unsigned int seq_limit  ;
     public:
         mergeme()
         {
-            // std::cout << "Constructed !" << std::endl;
         }
         ~mergeme()
         {
             // std::cout << "destructed !" << std::endl;
         }
+        std::vector<unsigned int> get_seq(){return (this->seq);}
         mergeme(const mergeme& obj)
         {
             *this = obj;
         }
         const mergeme &operator=(const mergeme& m)
         {
-
-            //////
             (void)m;
             return *this;
         }
-        
-        template<typename Container>
+        std::vector<unsigned int> generateJacobstahl(unsigned int n)
+        {
+            std::vector<unsigned int> jacobstahl;
+            jacobstahl.push_back(0); // J(0)
+            if (n == 1) return jacobstahl;
 
+            jacobstahl.push_back(1); // J(1)
+            for (unsigned int i = 2; i < n; ++i) {
+                unsigned int next = jacobstahl[i - 1] + 2 * jacobstahl[i - 2];
+                jacobstahl.push_back(next);
+            }
+            return jacobstahl;
+        }
+
+
+        template<typename Container>
         Container Mr_fordJohnson(Container cont)
         {
-            
             if (cont.size() <= 1 )// stack Hero
                 return cont;
             size_t i = 0;
@@ -46,7 +57,7 @@ class mergeme
             size_t sizee = cont.size();
             if (sizee %2 != 0)
             {
-                lonely  = cont.back(); 
+                lonely  = cont.back();
                 cont.erase(cont.end()-1);
             }
             while (i < cont.size())
@@ -61,21 +72,17 @@ class mergeme
             if (lonely != -1)
                 bigs.push_back(lonely);
             smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
-            
-
             i = 0;
-            // insert bigs to smalls(thatShouuld be sorted )
+
+            printf("\t\t\t\t >>%u<<\n", seqlimit);
+            // insert bigs to smalls(thatShouuld be sorted)
             while (i < bigs.size())
             {
-                // printf("\t ##");
                 smalls.insert(std::lower_bound(smalls.begin(), smalls.end(), bigs[i]), bigs[i]);
                 i++;
             }
-            
             return (smalls);// sortedd
         }
-
-        // }
 
 };
 

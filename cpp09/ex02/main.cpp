@@ -47,6 +47,7 @@ int main(int argc , char **argv)
     mergeme m;
     std::vector<unsigned int> vecc;
     std::deque<unsigned int> deqq;
+   
     // m.fill_container(vvecc);
     int i = 1;
     while (i < argc)
@@ -57,6 +58,17 @@ int main(int argc , char **argv)
         deqq.push_back(std::atol(argv[i]));
         i++;
     }
+    m.generateJacobstahl(vecc.size());
+    
+    int i = 0;
+    while ( i < m.get_seq().size())
+    {
+        if (m.get_seq()[i] == vecc.end())
+            //
+
+        i++;
+    }
+    
     clock_t start = clock();
     vecc = m.Mr_fordJohnson(vecc);
     clock_t end = clock();
