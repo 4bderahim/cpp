@@ -73,24 +73,31 @@ class mergeme
             i = 0;
             // insert bigs to smalls(thatShouuld be sorted)
             unsigned int prev = 0;
-            while (i < this->seq)
+            while (i < this->seq.size())
             {
-                unsigned int seq_pos = i;
-                while(seq_pos  >= prev)
+
+                while (i < bigs.size())
                 {
-                    smalls.insert(std::lower_bound(smalls.begin()+prev, smalls.end()-seq_pos, bigs[i]), bigs[i]);
-                    seq_pos--;
+                    smalls.insert(std::lower_bound(smalls.rbegin()-i, smalls.rend()+prev, bigs[i]), bigs[i]);
+                    i++;
                 }
                 prev = i;
                 i++;
+
+
+
+                // unsigned int seq_pos = i;
+                // while(seq_pos  >= prev)
+                // {
+                //     smalls.insert(std::lower_bound(smalls.begin()+prev, smalls.end()-seq_pos, bigs[i]), bigs[i]);
+                //     seq_pos--;
+                // }
+                // prev = i;
+                // i++;
             }
             
             
-            // while (i < bigs.size())
-            // {
-            //     smalls.insert(std::lower_bound(smalls.begin(), smalls.end(), bigs[i]), bigs[i]);
-            //     i++;
-            // }
+            
             return (smalls);// sortedd
         }
 };
