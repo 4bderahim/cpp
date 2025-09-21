@@ -35,9 +35,10 @@ class mergeme
         std::vector<unsigned int> generateJacobstahl(unsigned int n)
         {
             std::vector<unsigned int> jacobstahl;
-            jacobstahl.push_back(0); // J(0)
-            if (n == 1) return jacobstahl;
-            jacobstahl.push_back(1); // J(1)
+            jacobstahl.push_back(0);
+            if (n == 1) 
+                return jacobstahl;
+            jacobstahl.push_back(1); 
             for (unsigned int i = 2; i < n; ++i) {
                 unsigned int next = jacobstahl[i - 1] + 2 * jacobstahl[i - 2];
                 jacobstahl.push_back(next);
@@ -67,6 +68,7 @@ class mergeme
                 smalls.push_back((first < sec ? first:sec));
                 i += 2;
             }
+            
             if (lonely != -1)
                 bigs.push_back(lonely);
             smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
@@ -75,25 +77,18 @@ class mergeme
             unsigned int prev = 0;
             while (i < this->seq.size())
             {
-
-                while (i < bigs.size())
+                size_t ii = 0;
+                while (ii < bigs.size())
                 {
-                    smalls.insert(std::lower_bound(smalls.rbegin()-i, smalls.rend()+prev, bigs[i]), bigs[i]);
-                    i++;
+                    seq.rbegin();
+                    // print em 2 C
+                    typename Container::reverse_iterator it = std::lower_bound(smalls.rbegin()-(smalls.size()-i), smalls.rend()+prev, bigs[ii]);
+                    typename Container::iterator forw = it.base();
+                    smalls.insert(forw, bigs[ii]);
+                    ii++;
                 }
                 prev = i;
                 i++;
-
-
-
-                // unsigned int seq_pos = i;
-                // while(seq_pos  >= prev)
-                // {
-                //     smalls.insert(std::lower_bound(smalls.begin()+prev, smalls.end()-seq_pos, bigs[i]), bigs[i]);
-                //     seq_pos--;
-                // }
-                // prev = i;
-                // i++;
             }
             
             
