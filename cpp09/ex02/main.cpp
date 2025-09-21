@@ -30,7 +30,6 @@ int this_error(std::string str)
 }
 
 
-
 int main(int argc , char **argv)
 {
     if (argc == 1 || argc == 2 )
@@ -60,24 +59,22 @@ int main(int argc , char **argv)
     }
     m.generateJacobstahl(vecc.size());
     
-    int i = 0;
-    while ( i < m.get_seq().size())
+    size_t ii = 0;
+    while ( ii < m.get_seq().size())
     {
-        if (m.get_seq()[i] == vecc.end())
-            //
-
-        i++;
+        if (m.get_seq()[ii] > vecc.size())
+        // m.seq_limit
+        ii++;
     }
-    
     clock_t start = clock();
     vecc = m.Mr_fordJohnson(vecc);
     clock_t end = clock();
-
     // for (size_t i = 0; i < vecc.size(); i++)
     // {
     //     std::cout << vecc[i] << std::endl;
     // }
-     double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
+
+    double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
     std::cout << "Time to process a range of " << argc<< " elements with std::vector  "
               << elapsed << " us" << std::endl;
     

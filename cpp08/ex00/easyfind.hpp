@@ -4,7 +4,6 @@
 #include <exception>
 
 
-
 class notfound : public std::exception
 {
     public:
@@ -13,6 +12,8 @@ class notfound : public std::exception
             return ("*NOT FOUND*");
         }
 };
+
+
 
 int easyfind(T ints, int in)
 {
