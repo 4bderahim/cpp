@@ -76,21 +76,21 @@ class mergeme
             while (i < this->seq)
             {
                 unsigned int seq_pos = i;
-                while(prev <= i)
+                while(seq_pos  >= prev)
                 {
-
-
+                    smalls.insert(std::lower_bound(smalls.begin()+prev, smalls.end()-seq_pos, bigs[i]), bigs[i]);
+                    seq_pos--;
                 }
                 prev = i;
                 i++;
             }
             
             
-            while (i < bigs.size())
-            {
-                smalls.insert(std::lower_bound(smalls.begin(), smalls.end(), bigs[i]), bigs[i]);
-                i++;
-            }
+            // while (i < bigs.size())
+            // {
+            //     smalls.insert(std::lower_bound(smalls.begin(), smalls.end(), bigs[i]), bigs[i]);
+            //     i++;
+            // }
             return (smalls);// sortedd
         }
 };
