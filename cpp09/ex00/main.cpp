@@ -2,6 +2,7 @@
 
 int check_first_line(std::string& str)
 {
+    std::cout << str.size() << std::endl;
     str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
     if (str != "date|value")
         return 0;
@@ -62,7 +63,12 @@ int main(int argc , char **argv)
             if (!b.check_file_data(str, data))
                 {}
         }
+    if (i ==0)
+        {
+            std::cout << "error" << std::endl;
+            return (1);
+        }
     f.close();
     
-    return (1);
+    return (0);
 }

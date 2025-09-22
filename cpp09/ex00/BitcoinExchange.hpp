@@ -46,13 +46,14 @@ class BitcoinExchange
         {
             std::string value, date;
             std::string tmp = str;
+            printf("\t[%s]", str.c_str());
             if (std::count(str.begin(), str.end(), '|') !=1)
                 return (0);
             tmp = str.substr(0, str.find('|'));
             if (std::count(tmp.begin(), tmp.end(), '-') !=2)
                 return (0);
             tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
-            date = tmp ;
+            date = tmp;
             tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
             if (tmp.find_last_not_of("0987654321") != std::string::npos)
                 return (that_error( "[-] BAD input >>"+str));

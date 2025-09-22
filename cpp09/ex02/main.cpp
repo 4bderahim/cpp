@@ -39,6 +39,7 @@ int main(int argc , char **argv)
         if (!valid(argv[i]))
         return (this_error("args error"));
     }
+    #include <unistd.h>
 
 
 // ael-krid@c1r8p8 ex02 % ./PmergeMe 2 3 4  9 2 3  4 89  2 3 43 eooe
@@ -57,15 +58,20 @@ int main(int argc , char **argv)
         deqq.push_back(std::atol(argv[i]));
         i++;
     }
-    m.generateJacobstahl(vecc.size());
+                printf("\t####");
+
+    m.generateJacobstahl(50);
+
     
-    size_t ii = 0;
-    while ( ii < m.get_seq().size())
-    {
-        if (m.get_seq()[ii] > vecc.size())
-        // m.seq_limit
-        ii++;
-    }
+    // size_t ii = 0;
+    // while ( ii < m.get_seq().size())
+    // {
+    // write(1, "213123123", 11);
+
+    //     if (m.get_seq()[ii] > vecc.size())
+    //     // m.seq_limit
+    //     ii++;
+    // }
     clock_t start = clock();
     vecc = m.Mr_fordJohnson(vecc);
     clock_t end = clock();

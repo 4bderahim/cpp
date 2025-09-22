@@ -38,16 +38,21 @@ class mergeme
             jacobstahl.push_back(0);
             if (n == 1) 
                 return jacobstahl;
+                printf("\t####");
+
             jacobstahl.push_back(1); 
             for (unsigned int i = 2; i < n; ++i) {
                 unsigned int next = jacobstahl[i - 1] + 2 * jacobstahl[i - 2];
                 jacobstahl.push_back(next);
             }
-            return jacobstahl;
+            this->seq = jacobstahl;
+
+            return this->seq;
         }
         template<typename Container>
         Container Mr_fordJohnson(Container cont)
         {
+    write(1, "213123123", 11);
             if (cont.size() <= 1 )// stack Hero
                 return cont;
             size_t i = 0;
@@ -68,28 +73,37 @@ class mergeme
                 smalls.push_back((first < sec ? first:sec));
                 i += 2;
             }
-            
+
             if (lonely != -1)
                 bigs.push_back(lonely);
             smalls = Mr_fordJohnson(smalls);// do the same to the smalls ,, to split emm again.
             i = 0;
             // insert bigs to smalls(thatShouuld be sorted)
-            unsigned int prev = 0;
-            while (i < this->seq.size())
-            {
-                size_t ii = 0;
-                while (ii < bigs.size())
-                {
-                    seq.rbegin();
-                    // print em 2 C
-                    typename Container::reverse_iterator it = std::lower_bound(smalls.rbegin()-(smalls.size()-i), smalls.rend()+prev, bigs[ii]);
-                    typename Container::iterator forw = it.base();
-                    smalls.insert(forw, bigs[ii]);
-                    ii++;
-                }
-                prev = i;
-                i++;
-            }
+            // unsigned int prev = 0;
+            printf("\t\t\t[%zu]<---------", this->seq.size());
+         size_t t = 0;
+         while (t < smalls.size())
+         {
+            std::cout << "\t>>>>>>>>->" <<  *((smalls.rbegin()-1)-t) << "<====" << std::endl;
+            t++;
+         }
+            // while (i < this->seq.size())
+            // {
+            //     size_t ii = 0;
+            //     while (ii < bigs.size())
+            //     {
+            //         // seq.rbegin().
+
+            //         std::cout << "-----" << *(smalls.rbegin()-(smalls.size()-i)-1)<< "##" <<  std::endl;
+            //         // printf("\t\t==%u||%u<<",smalls.rbegin()-(smalls.size()-i), smalls.rend()+prev);
+            //         typename Container::reverse_iterator it = std::lower_bound(smalls.rbegin()-(smalls.size()-i), smalls.rend()+prev, bigs[ii]);
+            //         typename Container::iterator forw = it.base();
+            //         smalls.insert(forw, bigs[ii]);
+            //         ii++;
+            //     }
+            //     prev = i;
+            //     i++;
+            // }
             
             
             
