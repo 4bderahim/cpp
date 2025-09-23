@@ -2,7 +2,7 @@
 
 int check_first_line(std::string& str)
 {
-    std::cout << str.size() << std::endl;
+    // std::cout << str.size() << std::endl;
     str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
     if (str != "date|value")
         return 0;
@@ -27,6 +27,7 @@ int main(int argc , char **argv)
         std::cout << "args error !" << std::endl;
         return (1);
     }
+
     std::ifstream f(argv[1]);
     if (!f.is_open())
     {
@@ -65,10 +66,10 @@ int main(int argc , char **argv)
         }
     if (i ==0)
         {
-            std::cout << "error" << std::endl;
+            std::cout << "[-] file error" << std::endl;
             return (1);
         }
     f.close();
-    
     return (0);
+
 }
