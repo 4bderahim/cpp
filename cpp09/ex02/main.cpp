@@ -47,16 +47,16 @@ int main(int argc , char **argv)
     mergeme m;
     std::vector<unsigned int> vecc;
     std::deque<unsigned int> deqq;
-    std::vector<std::pair<unsigned int, unsigned int>> vec_pair;
-    std::deque<std::pair<unsigned int, unsigned int>> deque_pair;
-    
+    std::vector<std::pair<unsigned int, unsigned int> > vec_pair;
+    std::deque<std::pair<unsigned int, unsigned int> > deque_pair;
+
    
     // m.fill_container(vvecc);
     int i = 1;
     while (i < argc)
     {
-         int d = std::atol(argv[i]);
-        printf("%u|%s<", d, argv[i]);
+        //  int d = std::atol(argv[i]);
+        // printf("%u|%s<", d, argv[i]);
         vecc.push_back(std::atol(argv[i]));
         deqq.push_back(std::atol(argv[i]));
         i++;
@@ -73,7 +73,7 @@ int main(int argc , char **argv)
     //     ii++;
     // }
     clock_t start = clock();
-    vecc = m.Mr_fordJohnson(vecc);
+    vecc = m.Mr_fordJohnson(vecc ,vec_pair);
     clock_t end = clock();
     // for (size_t i = 0; i < vecc.size(); i++)
     // {
@@ -85,7 +85,7 @@ int main(int argc , char **argv)
     // deqq = m.Mr_fordJohnson(deqq);
 
      start = clock();
-    deqq = m.Mr_fordJohnson(deqq);
+    deqq = m.Mr_fordJohnson(deqq, deque_pair);
      end = clock();
 
     // for (size_t i = 0; i < vecc.size(); i++)
