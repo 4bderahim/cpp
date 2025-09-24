@@ -47,6 +47,9 @@ int main(int argc , char **argv)
     mergeme m;
     std::vector<unsigned int> vecc;
     std::deque<unsigned int> deqq;
+    std::vector<std::pair<unsigned int, unsigned int>> vec_pair;
+    std::deque<std::pair<unsigned int, unsigned int>> deque_pair;
+    
    
     // m.fill_container(vvecc);
     int i = 1;
@@ -58,11 +61,8 @@ int main(int argc , char **argv)
         deqq.push_back(std::atol(argv[i]));
         i++;
     }
-                printf("\t####");
-
     m.generateJacobstahl(50);
 
-    
     // size_t ii = 0;
     // while ( ii < m.get_seq().size())
     // {
@@ -79,13 +79,10 @@ int main(int argc , char **argv)
     // {
     //     std::cout << vecc[i] << std::endl;
     // }
-
     double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
     std::cout << "Time to process a range of " << argc<< " elements with std::vector  "
-              << elapsed << " us" << std::endl;
-    
+              << elapsed << " us" << std::endl;    
     // deqq = m.Mr_fordJohnson(deqq);
-
 
      start = clock();
     deqq = m.Mr_fordJohnson(deqq);

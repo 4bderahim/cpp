@@ -32,8 +32,6 @@ class rpn
         }
         const rpn &operator=(const rpn &r )
         {
-            //
-
             (void) r;
             return *this;
         }
@@ -47,7 +45,6 @@ class rpn
                 return (f*s);
             return (f/s);
         }
-
 
         void rpnn( std::stack<int> lifo, std::string str)
         {
