@@ -112,7 +112,7 @@ class mergeme
                 //looking for smaller bound ,,,,, only if its less than To_insert else >> jacob will do it
                 if (small_toinsert > last_inserted)
                 {
-                    
+                    low_bound = ;
                 }
                 else
                     low_bound = last_inserted;           
