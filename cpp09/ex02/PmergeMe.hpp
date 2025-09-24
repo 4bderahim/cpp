@@ -82,7 +82,7 @@ class mergeme
 
             // for (size_t i = 0; i < pair.size(); i++)
             // {
-            //     std::cout << ">>>||>" <<  pair. << std::endl;
+            //     std::cout << ">>>||>" <<  pair[i].first<<"|"<< pair[i].second << std::endl;
             // }
             
 
@@ -90,35 +90,41 @@ class mergeme
                 bigs.push_back(lonely);
             bigs = Mr_fordJohnson(bigs, pairing);// do the same to the smalls ,, to split emm again.
 
-            printf("\t\t\t>%zu<<==\n", pair.size());
+            size_t seq_pos = 0;
+            i = 0;
+
+            int next_round=  0;
+            while (seq_pos< this->seq.size())
+            {
+                i = 0;
+                unsigned int last_inserted = 0;
+                unsigned int small_toinsert = ;
+                next_round++;
+
+                unsigned int small_big_pair_index =   ;
+                if (smalls[i] == this->seq[seq_pos])
+                {
 
 
-        //     size_t seq_pos = 0;
-        //     i = 0;
 
+                }
+                
 
-        //     while (seq_pos< this->seq.size())
-        //     {
-        //         i = 0;
-        //         while (i < smalls.size())
-        //         {
-        //             if (smalls[i] == this->seq[seq_pos])
-        //             {
-        //                 if(i %2 == 0)
-        //                 {
+                if (next_round == 2)// i%2 != 0 ???
+                {
+                    for (size_t last_seq = this->seq[seq_pos-1]+1 ; last_seq < this->seq[seq_pos]; last_seq++)
+                    {
+                        
+                    }
+                    next_round = 0;
+                }
 
-        //                 }
-
-        //             }
-        //             i++;
-        //         }
-
-        //         seq_pos++;
-        //     }
+                seq_pos++;
+            }
             
-        //     // insert smalls to bigs(thatShouuld be sorted)
-        //     // unsigned int prev = 0;
-        //     printf("\t\t\t[%zu]<---------", this->seq.size());
+            // insert smalls to bigs(thatShouuld be sorted)
+            // unsigned int prev = 0;
+            printf("\t\t\t[%zu]<---------", this->seq.size());
         //  size_t t = 0;
          
             // while (i < this->seq.size())
