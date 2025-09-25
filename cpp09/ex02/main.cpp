@@ -1,5 +1,6 @@
-
 #include "PmergeMe.hpp"
+
+
 int valid(std::string str)
 {
     if (str[0] == '+')
@@ -8,10 +9,10 @@ int valid(std::string str)
             if (n.find_first_of(str[1]) == std::string::npos)
                 return(0);
             str.erase(0,1);
-        }
+    }
+
     size_t that_first_not_of_space=  str.find_first_not_of(' ');
     str = str.substr(that_first_not_of_space, str.find_last_of("0987654321")-that_first_not_of_space+1);
-    // std::cout << str << "<<<<?<<<" << std::endl;
     if (str.find_last_not_of("0987654312") != std::string::npos)
         return (0);
     if(std::atol(str.c_str()) > UINT32_MAX)

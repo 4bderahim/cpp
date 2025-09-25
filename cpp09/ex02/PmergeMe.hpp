@@ -97,7 +97,7 @@ class mergeme
             while (seq_pos< this->seq.size())
             {
                 i = 0;
-                unsigned int last_inserted = 0;
+                unsigned int last_inserted_index = 0;
                 unsigned int small_toinsert = smalls[seq_pos];
                 unsigned int bigger_bound = 0;
                 unsigned int low_bound = 0;
@@ -105,23 +105,29 @@ class mergeme
                 // looking for the bigger bound;
                 for (size_t small_big_pair_index = 0; small_big_pair_index < pair.size(); small_big_pair_index++)
                 {
-                    if (pair[i].first == small_toinsert)
+                    if (pair[small_big_pair_index].first == small_toinsert)
                         break;//for good.
                 }
-
                 //looking for smaller bound ,,,,, only if its less than To_insert else >> jacob will do it
+
                 if (small_toinsert > last_inserted)
                 {
+                    for (size_t i = 0; i < count; i++)
+                    {
+                        /* code */
+                    }
+                    
+
                     low_bound = ;
                 }
                 else
-                    low_bound = last_inserted;           
+                    low_bound = last_inserted_index;
 
+                // if (smalls[i] == this->seq[seq_pos])
+                // {
 
-                if (smalls[i] == this->seq[seq_pos])
-                {
+                // }
 
-                }
                 if (next_round == 2)// i%2 != 0 ???
                 {
                     for (size_t last_seq = this->seq[seq_pos-1]+1 ; last_seq < this->seq[seq_pos]; last_seq++)
