@@ -52,16 +52,29 @@ int main(int argc , char **argv)
     std::deque<std::pair<unsigned int, unsigned int> > deque_pair;
 
     // m.fill_container(vvecc);
-    int i = 1;
+    int i = 2;
     while (i < argc)
     {
         //  int d = std::atol(argv[i]);
         // printf("%u|%s<", d, argv[i]);
-        vecc.push_back(std::atol(argv[i]));
-        deqq.push_back(std::atol(argv[i]));
-        i++;
+        vec_pair.push_back(std::make_pair(std::atol(argv[i-1]), std::atol(argv[i])));
+        // vecc.push_back(std::atol(argv[i]));
+        // deqq.push_back(std::atol(argv[i]));
+
+        i += 2;
     }
+
+    // unsigned int ii = 0;
+
+    //  while (ii < vec_pair.size())
+    // {
+    //     std::cout << "+" <<  vec_pair[ii].first << "|" << vec_pair[ii].second << "+";
+    //     ii++;
+    // }
+    
+    // printf("\n");
     m.generateJacobstahl(50);
+
 
     // size_t ii = 0;
     // while ( ii < m.get_seq().size())
@@ -73,28 +86,29 @@ int main(int argc , char **argv)
     //     ii++;
     // }
     clock_t start = clock();
-    vecc = m.Mr_fordJohnson(vecc ,vec_pair);
+    vecc = m.Mr_fordJohnson(vec_pair);
     clock_t end = clock();
     // for (size_t i = 0; i < vecc.size(); i++)
     // {
     //     std::cout << vecc[i] << std::endl;
     // }
+
+
     double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
     std::cout << "Time to process a range of " << argc<< " elements with std::vector  "
               << elapsed << " us" << std::endl;    
     // deqq = m.Mr_fordJohnson(deqq);
 
-     start = clock();
-    deqq = m.Mr_fordJohnson(deqq, deque_pair);
-     end = clock();
+    //  start = clock();
+    // deqq = m.Mr_fordJohnson(deqq);
+    //  end = clock();
 
-    // for (size_t i = 0; i < vecc.size(); i++)
-    // {
-    //     std::cout << vecc[i] << std::endl;
-    // }
-      elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
-    std::cout << "Time to process a range of  " << argc<< " elements with std::deque  "
-              << elapsed << " us" << std::endl;
-    
+    // // for (size_t i = 0; i < vecc.size(); i++)
+    // // {
+    // //     std::cout << vecc[i] << std::endl;
+    // // }
+    //   elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
+    // std::cout << "Time to process a range of  " << argc<< " elements with std::deque  "
+    //           << elapsed << " us" << std::endl;
     return (0);
 }
