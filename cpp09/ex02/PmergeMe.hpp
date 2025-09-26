@@ -69,7 +69,6 @@ class mergeme
             // Container  smalls;
             Container  bigs;
             // Pairing       pair;
-
             
             // int lonely = -1;
             // size_t sizee = cont.size();
@@ -94,7 +93,8 @@ class mergeme
             while (i < cont.size()-1)
             {
 
-
+                 std::cout << "----#>" << cont[i].second << std::endl;  
+                std::cout << "---->" << cont[i].first << "~" << cont[i].second <<  "||" << cont[i+1].first << "~" << cont[i+1].second << std::endl;
                 bigs.push_back(std::make_pair(cont[i].second , cont[i+1].second));
                 // unsigned int first = cont[i];
                 // unsigned int sec = cont[i+1];
@@ -103,7 +103,7 @@ class mergeme
                 // pair.push_back(std::make_pair(small , big));
                 // bigs.push_back(big);
                 // smalls.push_back(small);
-                i++;
+                i +=2;
             }
 
             // for (size_t i = 0; i < pair.size(); i++)
@@ -116,18 +116,20 @@ class mergeme
             //     bigs.push_back(lonely);
             sorted = Mr_fordJohnson(bigs);// do the same to the smalls ,, to split emm again.
 
-            std::cout << sorted[0] << ">>>" << sorted[1] << std::endl;
 
             i = 0;
 
+            printf("\n------------------------------------------\n");
+            std::cout << sorted[0] << ">>>" << sorted[1] << std::endl;
 
-            while (i < bigs.size())
+            while (i < cont.size())
             {
-                std::cout << "[" <<  bigs[i].first << "-" << bigs[i].second << "]";
+                std::cout << "\t\t\t[" <<  cont[i].first << "-" << cont[i].second << "]";
             
                 i++;
             }
-            printf("\n");
+            printf("\n------------------------------------------\n");
+
             
             // size_t seq_pos = 0;
             // i = 0;
