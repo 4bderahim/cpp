@@ -35,19 +35,41 @@ class mergeme
         std::vector<unsigned int> generateJacobstahl(unsigned int n)
         {
             std::vector<unsigned int> jacobstahl;
+            std::vector<unsigned int> jacobstahl_insert;
             jacobstahl.push_back(0);
-            if (n == 1) 
+            if (n == 1)
                 return jacobstahl;
                 // printf("\t####");
-
-            jacobstahl.push_back(1); 
+            jacobstahl.push_back(1);
+            unsigned int prev;
+            int d = 0;
             for (unsigned int i = 2; i < n; ++i) {
+                
                 unsigned int next = jacobstahl[i - 1] + 2 * jacobstahl[i - 2];
-                jacobstahl.push_back(next);
-            }
-            this->seq = jacobstahl;
 
+
+                // save code in insertion logiccc ;)
+                if (next >= 3)
+                {
+                    for (size_t ii = jacobstahl[jacobstahl.size()-2]+1; ii < jacobstahl[jacobstahl.size()-1]; ii++)
+                    {
+                        std::cout << jacobstahl[jacobstahl.size()-2] <<"+++++++++"<< jacobstahl[jacobstahl.size()-1]  << "|<<" << std::endl;
+                        jacobstahl_insert.push_back(ii);
+                    }
+                }
+                jacobstahl.push_back(next);
+                jacobstahl_insert.push_back(next);
+
+                d++;
+                prev =  next;
+            }
+            this->seq = jacobstahl_insert;
+            for (size_t i = 0; i < this->seq.size(); i++)
+            {
+                std::cout << this->seq[i] << "|<<" << std::endl;
+            }
             return this->seq;
+
         }
         template<typename Container>
         std::vector<unsigned int> Mr_fordJohnson(Container cont)
@@ -87,14 +109,14 @@ class mergeme
 
                 i++;   
             }
-    printf("\n");
+            printf("\n");
             
             i = 0;
             while (i < cont.size()-1)
             {
 
-                 std::cout << "----#>" << cont[i].second << std::endl;  
-                std::cout << "---->" << cont[i].first << "~" << cont[i].second <<  "||" << cont[i+1].first << "~" << cont[i+1].second << std::endl;
+                //  std::cout << "----#>" << cont[i].second << std::endl;  
+                // std::cout << "---->" << cont[i].first << "~" << cont[i].second <<  "||" << cont[i+1].first << "~" << cont[i+1].second << std::endl;
                 bigs.push_back(std::make_pair(cont[i].second , cont[i+1].second));
                 // unsigned int first = cont[i];
                 // unsigned int sec = cont[i+1];

@@ -73,7 +73,7 @@ int main(int argc , char **argv)
     // }
     
     // printf("\n");
-    m.generateJacobstahl(50);
+    m.generateJacobstahl(vec_pair.size()+5);
 
 
     // size_t ii = 0;
