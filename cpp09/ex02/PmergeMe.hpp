@@ -161,7 +161,7 @@ class mergeme
             i = 0;
             unsigned int high_bound = 0;
             unsigned int low_bound = 0;
-            unsigned int last_inserted_index = 0;
+            // unsigned int last_inserted_index = 0;
             // int next_round=  0;
             while (seq_pos< sorted.size())
             {
@@ -172,18 +172,19 @@ class mergeme
                     if (cont[low_bound].second > cont[seq_pos].first)
                     {
                         // reverse,,, from lowerBBound to 000;
-                        sorted.inser(std::lower_bound(cont.rbegin()+(cont.size() -low_bound ), cont.rend(), cont[seq_pos].first), cont[seq_pos].first);
+                        sorted.insert()
+                        sorted.insert(std::lower_bound(cont.rbegin()+(cont.size() -low_bound ), cont.rend(), cont[seq_pos].first), cont[seq_pos].first);
                     }
                     else
                     {
                         //forward , from lowerbbound to high__bound
-                        sorted.inser(std::lower_bound(cont.rbegin()+low_bound, cont.begin()+high_bound, cont[seq_pos].first), cont[seq_pos].first));
+                        sorted.insert(std::lower_bound(cont.rbegin()+low_bound, cont.begin()+high_bound, cont[seq_pos].first), cont[seq_pos].first);
 
                     }
                     // sorted.inser(std::lower_bound(cont.begin(), cont.begin()+seq_pos, ));
                 }
                 else
-                    sorted.inser(std::lower_bound(cont.begin(), cont.begin()+seq_pos, ));
+                    sorted.insert(std::lower_bound(cont.begin(), cont.begin()+seq_pos, cont[seq_pos].first), cont[seq_pos].first);
 
                 seq_pos++;
 
