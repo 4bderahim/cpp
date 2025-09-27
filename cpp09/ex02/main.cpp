@@ -20,16 +20,11 @@ int valid(std::string str)
     return (1);// allgoood
 }
 
-
-
 int this_error(std::string str)
 {
-    
     std::cout << str << std::endl;
     return (1);
-
 }
-
 
 int main(int argc , char **argv)
 {
@@ -73,7 +68,7 @@ int main(int argc , char **argv)
     // }
     
     // printf("\n");
-    m.generateJacobstahl(vec_pair.size()+5);
+    m.generateJacobstahl(17);
 
 
     // size_t ii = 0;
