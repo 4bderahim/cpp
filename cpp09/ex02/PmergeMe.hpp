@@ -171,18 +171,16 @@ class mergeme
                     low_bound = seq_pos-1; //
                     if (cont[low_bound].second > cont[seq_pos].first)
                     {
-                        // reverse
-                        sorted.inser(std::lower_bound(cont.rbegin(), cont.rend()+low_bound, cont[seq_pos].first), cont[seq_pos].first));
+                        // reverse,,, from lowerBBound to 000;
+                        sorted.inser(std::lower_bound(cont.rbegin()+(cont.size() -low_bound ), cont.rend(), cont[seq_pos].first), cont[seq_pos].first);
                     }
                     else
                     {
-                        
-                        //forward
-
-                        sorted.inser(std::lower_bound(cont.rbegin()+low_bound, cont.begin()+low_bound, cont[seq_pos].first), cont[seq_pos].first));
+                        //forward , from lowerbbound to high__bound
+                        sorted.inser(std::lower_bound(cont.rbegin()+low_bound, cont.begin()+high_bound, cont[seq_pos].first), cont[seq_pos].first));
 
                     }
-                    sorted.inser(std::lower_bound(cont.begin(), cont.begin()+seq_pos, ));
+                    // sorted.inser(std::lower_bound(cont.begin(), cont.begin()+seq_pos, ));
                 }
                 else
                     sorted.inser(std::lower_bound(cont.begin(), cont.begin()+seq_pos, ));
