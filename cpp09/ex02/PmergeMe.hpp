@@ -41,7 +41,7 @@ class mergeme
                 return jacobstahl;
                 // printf("\t####");
             jacobstahl.push_back(1);
-            unsigned int prev;
+            // unsigned int prev;
             int d = 0;
             for (unsigned int i = 2; i < n; ++i) {
                 
@@ -61,7 +61,7 @@ class mergeme
                 jacobstahl_insert.push_back(next);
 
                 d++;
-                prev =  next;
+                // prev =  next;
             }
             this->seq = jacobstahl_insert;
             for (size_t i = 0; i < this->seq.size(); i++)
@@ -172,8 +172,8 @@ class mergeme
                     if (cont[low_bound].second > cont[seq_pos].first)
                     {
                         // reverse,,, from lowerBBound to 000;
-                        sorted.insert()
-                        sorted.insert(std::lower_bound(cont.rbegin()+(cont.size() -low_bound ), cont.rend(), cont[seq_pos].first), cont[seq_pos].first);
+                        auto it = std::lower_bound(cont.rbegin()+(cont.size() -low_bound ), cont.rend(), cont[seq_pos].first);
+                        sorted.insert(it, cont[seq_pos].first);
                     }
                     else
                     {
