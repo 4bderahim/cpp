@@ -53,7 +53,7 @@ class mergeme
                 {
                     for (size_t ii = jacobstahl[jacobstahl.size()-2]+1; ii < jacobstahl[jacobstahl.size()-1]; ii++)
                     {
-                        std::cout << jacobstahl[jacobstahl.size()-2] <<"+++++++++"<< jacobstahl[jacobstahl.size()-1]  << "|<<" << std::endl;
+                        // std::cout << jacobstahl[jacobstahl.size()-2] <<"+++++++++"<< jacobstahl[jacobstahl.size()-1]  << "|<<" << std::endl;
                         jacobstahl_insert.push_back(ii);
                     }
                 }
@@ -66,7 +66,7 @@ class mergeme
             this->seq = jacobstahl_insert;
             for (size_t i = 0; i < this->seq.size(); i++)
             {
-                std::cout << this->seq[i] << "|<<" << std::endl;
+                // std::cout << this->seq[i] << "|<<" << std::endl;
             }
             return this->seq;
 
@@ -104,7 +104,7 @@ class mergeme
             {
                 if (cont[i].first > cont[i].second)
                     std::swap(cont[i].first, cont[i].second);
-                std::cout << "+" <<  cont[i].first << "|" << cont[i].second << "+";
+                // std::cout << "+" <<  cont[i].first << "|" << cont[i].second << "+";
                 
 
                 i++;   
@@ -136,17 +136,25 @@ class mergeme
 
             // if (lonely != -1)
             //     bigs.push_back(lonely);
+
+            printf("==================\n");
+
+            for (size_t m = 0; m < bigs.size(); m++)
+            {
+                std::cout << "|" << bigs[m].first << "," << bigs[m].second;
+            }
+            
             sorted = Mr_fordJohnson(bigs);// do the same to the smalls ,, to split emm again.
 
 
             i = 0;
 
-            printf("\n------------------------------------------\n");
+            printf("\n\n\n\n------------------------------------------\n");
             std::cout << sorted[0] << ">>>" << sorted[1] << std::endl;
 
             while (i < cont.size())
             {
-                std::cout << "\t\t\t[" <<  cont[i].first << "-" << cont[i].second << "]";
+                std::cout << "[" <<  cont[i].first << "-" << cont[i].second << "]";
             
                 i++;
             }
@@ -157,35 +165,62 @@ class mergeme
 
 
 
-            size_t seq_pos = 00;
+            size_t seq_pos = 0;
             i = 0;
             unsigned int high_bound = 0;
             unsigned int low_bound = 0;
             // unsigned int last_inserted_index = 0;
             // int next_round=  0;
-            while (seq_pos< sorted.size())
+            while (seq_pos< cont.size())
             {
-                if (seq_pos >= 5)
-                {
+                printf("------after---\n");
+                        for (size_t p = 0; p < sorted.size(); p++)
+                        {
+                            std::cout << "|" <<  sorted[p];
+                        }
+                        std::cout << "\n" << std::endl;
+                if (seq_pos<= 5 && cont.size() < 6)
+                { 
+
+                     printf("\t\n-----seq_pos-%lu---\n", seq_pos);
+                        for (size_t p = 0; p < sorted.size(); p++)
+                        {
+                            std::cout << "|" <<  sorted[p];
+                        }
+                        printf("---------\n");
+                        std::cout << "cont[seq_pos].first>" << cont[seq_pos].first << std::endl; 
+                        auto it = std::lower_bound(sorted.begin(), sorted.end(), cont[seq_pos].first);
+                         
+                        sorted.insert(it, cont[seq_pos].first);
+                        
+
+
+}
+                else
+                    {
+                       // doesnt do its joobbs
+                    printf("\t\t\t\t#########$$$$$$$$$$$seqPOs[%lu]cont[seq_pos].second>%u\n", seq_pos, cont[seq_pos].second);
                     high_bound =  cont[seq_pos].second;
-                    low_bound = seq_pos-1; //
+                    low_bound = 0;
+                    if (seq_pos >3)
+                        low_bound    = seq_pos-1; //
                     if (cont[low_bound].second > cont[seq_pos].first)
                     {
-                        // reverse,,, from lowerBBound to 000;
-                        auto it = std::lower_bound(cont.rbegin()+(cont.size() -low_bound ), cont.rend(), cont[seq_pos].first);
-                        sorted.insert(it, cont[seq_pos].first);
+                        // reverse,,, from lowerBBound to 000
+                        auto it = std::lower_bound(sorted.rbegin()+(sorted.size() -low_bound ), sorted.rend(), cont[seq_pos].first);
+                        sorted.insert(it.base(), cont[seq_pos].first);
                     }
                     else
                     {
                         //forward , from lowerbbound to high__bound
-                        sorted.insert(std::lower_bound(cont.rbegin()+low_bound, cont.begin()+high_bound, cont[seq_pos].first), cont[seq_pos].first);
+                        auto it =  std::lower_bound(sorted.begin()+low_bound, sorted.end()+high_bound, cont[seq_pos].first);
+                        sorted.insert(it, cont[seq_pos].first);
 
                     }
                     // sorted.inser(std::lower_bound(cont.begin(), cont.begin()+seq_pos, ));
-                }
-                else
-                    sorted.insert(std::lower_bound(cont.begin(), cont.begin()+seq_pos, cont[seq_pos].first), cont[seq_pos].first);
+               
 
+                    }
                 seq_pos++;
 
             }
