@@ -159,15 +159,15 @@ class mergeme
 
           
             unsigned int seq_pos = 0;
-
+            printf("%ld#\n", lonely);
+            if (lonely)
+                sorted.push_back(lonely);
 
             while (seq_pos < this->seq.size() && this->seq[seq_pos] < cont.size())
             {
                 sorted.insert(std::lower_bound(sorted.begin(), sorted.end(), cont[this->seq[seq_pos]].first), cont[this->seq[seq_pos]].first);
                 seq_pos++;
             }
-            if (lonely)
-                sorted.push_back(lonely);
             
 
 
