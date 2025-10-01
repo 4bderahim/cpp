@@ -83,10 +83,10 @@ int main(int argc , char **argv)
     clock_t start = clock();
     vecc = m.Mr_fordJohnson(vec_pair);
     clock_t end = clock();
-    // for (size_t i = 0; i < vecc.size(); i++)
-    // {
-    //     std::cout << vecc[i] << std::endl;
-    // }
+    for (size_t i = 0; i < vecc.size(); i++)
+    {
+        std::cout << vecc[i] << std::endl;
+    }
 
 
     double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
