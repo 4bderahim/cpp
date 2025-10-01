@@ -48,7 +48,7 @@ int main(int argc , char **argv)
 
     // m.fill_container(vvecc);
     int i = 2;
-    while (i < argc)
+    while (i <= argc)
     {
         //  int d = std::atol(argv[i]);
         // printf("%u|%s<", d, argv[i]);

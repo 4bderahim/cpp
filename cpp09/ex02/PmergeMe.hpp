@@ -75,8 +75,10 @@ class mergeme
         std::vector<unsigned int> Mr_fordJohnson(Container cont)
         {
             std::vector<unsigned int> sorted;
-            // unsigned int lonely = -1;
-            if (cont.size() <= 1 )// stack Hero
+            // unsigned int lonely = -1;]
+            // if (cont.size() == 0 ) // first frame ,, store the paires > leftOvercaptured..
+
+            if (cont.size() == 1 )// stack Hero
                 {
                     // create a vector NONPAIRED
                     // to return 
