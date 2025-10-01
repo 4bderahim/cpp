@@ -160,6 +160,9 @@ class mergeme
             printf("\n------------------------------------------\n");
 
 
+        /// lower bound is 
+
+
             size_t seq_pos = 0;
             i = 0;
             unsigned int high_bound = 0;
@@ -168,6 +171,8 @@ class mergeme
             // int next_round=  0;
             while (seq_pos < cont.size())
             {
+
+
                 printf("------after---\n");
                         for (size_t p = 0; p < sorted.size(); p++)
                         {
@@ -192,7 +197,7 @@ class mergeme
                     {
                        // doesnt do its joobb
                     printf("\t#####$seqPOs[%lu]cont[seq_pos].second>%u < higher Bound\n", seq_pos, cont[seq_pos].second);
-                    printf("@> to insert %u.\n", cont[seq_pos].first);
+                    printf("@> to insert %u.\n", cont[this->seq[seq_pos]].first);
                     high_bound =  cont[seq_pos].second;
                     low_bound = 0;
                     if (seq_pos >3)
