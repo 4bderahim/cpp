@@ -48,10 +48,10 @@ int main(int argc , char **argv)
 
     // m.fill_container(vvecc);
     int i = 2;
+    printf("\t\t\t%d<<\n", argc);
     while (i < argc)
     {
         //  int d = std::atol(argv[i]);
-        // printf("%u|%s<", d, argv[i]);
         vec_pair.push_back(std::make_pair(std::atol(argv[i-1]), std::atol(argv[i])));
         // vecc.push_back(std::atol(argv[i]));
         // deqq.push_back(std::atol(argv[i]));
@@ -83,10 +83,10 @@ int main(int argc , char **argv)
     clock_t start = clock();
     vecc = m.Mr_fordJohnson(vec_pair);
     clock_t end = clock();
-    // for (size_t i = 0; i < vecc.size(); i++)
-    // {
-    //     std::cout << vecc[i] << std::endl;
-    // }
+    for (size_t i = 0; i < vecc.size(); i++)
+    {
+        std::cout << vecc[i] << std::endl;
+    }
 
 
     double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
