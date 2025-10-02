@@ -72,12 +72,16 @@ class mergeme
 
         }
         template<typename Container>
-        std::vector<unsigned int> Mr_fordJohnson(Container cont)
+        std::vector<unsigned int> Mr_fordJohnson(Container cont, long int left)
         {
             std::vector<unsigned int> sorted;
-            // unsigned int lonely = -1;]
+            long int lonely = -1;
             // if (cont.size() == 0 ) // first frame ,, store the paires > leftOvercaptured..
-
+            if (left  != -1)
+            {
+                lonely = left;
+                left = -1;// for Ever
+            }
             if (cont.size() == 1 )// stack Hero
                 {
                     // create a vector NONPAIRED
@@ -115,8 +119,11 @@ class mergeme
 
                 i++;   
             }
-            printf("\n");
-            
+            if (cont.size() %2 !=0)  
+            {
+                lonely = cont[cont.size()-1].second ;
+            }           
+
             i = 0;
             while (i < cont.size()-1)
             {
@@ -147,12 +154,14 @@ class mergeme
 
            
             
-            sorted = Mr_fordJohnson(bigs);// do the same to the smalls ,, to split emm again.
+            sorted = Mr_fordJohnson(bigs, left);// do the same to the smalls ,, to split emm again.
 
 
           
             unsigned int seq_pos = 0;
-
+            printf("%ld#\n", lonely);
+            if (lonely)
+                sorted.push_back(lonely);
 
             while (seq_pos < this->seq.size() && this->seq[seq_pos] < cont.size())
             {

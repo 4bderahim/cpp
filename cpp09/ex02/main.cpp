@@ -48,7 +48,9 @@ int main(int argc , char **argv)
 
     // m.fill_container(vvecc);
     int i = 2;
-    printf("\t\t\t%d<<\n", argc);
+    long int left =  -1;
+    if (argc %2 == 0)
+        left = std::atol(argv[argc-1]);
     while (i < argc)
     {
         //  int d = std::atol(argv[i]);
@@ -80,8 +82,10 @@ int main(int argc , char **argv)
     //     // m.seq_limit
     //     ii++;
     // }
+
+    printf("%ld<< leftOver\n", left);
     clock_t start = clock();
-    vecc = m.Mr_fordJohnson(vec_pair);
+    vecc = m.Mr_fordJohnson(vec_pair, left);
     clock_t end = clock();
     for (size_t i = 0; i < vecc.size(); i++)
     {
