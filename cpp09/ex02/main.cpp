@@ -47,29 +47,20 @@ int main(int argc , char **argv)
     std::deque<std::pair<unsigned int, unsigned int> > deque_pair;
 
     // m.fill_container(vvecc);
-    int i = 2;
-    long int left =  -1;
-    if (argc %2 == 0)
-        left = std::atol(argv[argc-1]);
+    int i = 1;
+    // long int left =  -1;
+    // if (argc %2 == 0)
+    //     left = std::atol(argv[argc-1]);
     while (i < argc)
     {
         //  int d = std::atol(argv[i]);
-        vec_pair.push_back(std::make_pair(std::atol(argv[i-1]), std::atol(argv[i])));
-        // vecc.push_back(std::atol(argv[i]));
-        // deqq.push_back(std::atol(argv[i]));
+        // vec_pair.push_back(std::make_pair(std::atol(argv[i-1]), std::atol(argv[i])));
+        vecc.push_back(std::atol(argv[i]));
+        deqq.push_back(std::atol(argv[i]));
 
-        i += 2;
+        i ++;
     }
 
-    // unsigned int ii = 0;
-
-    //  while (ii < vec_pair.size())
-    // {
-    //     std::cout << "+" <<  vec_pair[ii].first << "|" << vec_pair[ii].second << "+";
-    //     ii++;
-    // }
-    
-    // printf("\n");
     m.generateJacobstahl(17);
 
 
@@ -83,9 +74,9 @@ int main(int argc , char **argv)
     //     ii++;
     // }
 
-    printf("%ld<< leftOver\n", left);
+    // printf("%ld<< leftOver\n", left);
     clock_t start = clock();
-    vecc = m.Mr_fordJohnson(vec_pair, left);
+    vecc = m.Mr_fordJohnson(vecc);
     clock_t end = clock();
     for (size_t i = 0; i < vecc.size(); i++)
     {
