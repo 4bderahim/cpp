@@ -36,6 +36,7 @@ class mergeme
         {
             std::vector<unsigned int> jacobstahl;
             std::vector<unsigned int> jacobstahl_insert;
+            n = 11;
             jacobstahl.push_back(0);
             if (n == 1)
                 return jacobstahl;
@@ -47,8 +48,6 @@ class mergeme
                 
                 unsigned int next = jacobstahl[i - 1] + 2 * jacobstahl[i - 2];
 
-
-                // save code in insertion logiccc ;)
                 if (next >= 3)
                 {
                     for (size_t ii = jacobstahl[jacobstahl.size()-2]+1; ii < jacobstahl[jacobstahl.size()-1]; ii++)
@@ -64,68 +63,102 @@ class mergeme
                 // prev =  next;
             }
             this->seq = jacobstahl_insert;
-            for (size_t i = 0; i < this->seq.size(); i++)
-            {
-                // std::cout << this->seq[i] << "|<<" << std::endl;
-            }
+         for (size_t l = 0; l < this->seq.size(); l++)
+         {
+            std::cout << "index:"<< this->seq[l] << std::endl; 
+         }
+         
             return this->seq;
         }
+       template<typename Container>
 
-        template<typename Container>
-         Container Mr_fordJohnson(Container cont)
+
+        Container Mr_fordJohnson(Container cont)
+
+
         {
+
+
+
             if (cont.size() <= 1 )// stack Hero
                 return cont;
+
             size_t i = 0;
             Container  smalls;
             Container  bigs;
             long int lonely = -1;
+
+            // size_t sizee = cont.size();
+
+           
             if (cont.size() %2 != 0)
             {
                 lonely  = cont.back();
+
                 cont.erase(cont.end()-1);
+
             }
+
+
             while (i < cont.size())
             {
                 unsigned int first = cont[i];
                 unsigned int sec = cont[i+1];
                 bigs.push_back((first < sec ? sec:first));
                 smalls.push_back((first < sec ? first:sec));
+
+
                 i += 2;
             }
+
+
+
             if (lonely != -1)
-                bigs.push_back(lonely);
-            bigs = Mr_fordJohnson(bigs);// do the same to the smalls ,, to split emm again.
-            i = 0;
-            // insert bigs to smalls(thatShouuld be sorted)
-            // unsigned int prev = 0;
-            // while (i < this->seq)
+                smalls.push_back(lonely);
+
+
+            // printf("\t-------------");
+            // for (size_t ip = 0; ip < bigs.size(); ip++)
             // {
-            //     while(prev <= i)
-            //     while(seq_pos  >= prev)
-            //     {
-
-
-            //         smalls.insert(std::lower_bound(smalls.begin()+prev, smalls.end()-seq_pos, bigs[i]), bigs[i]);
-            //         seq_pos--;
-            //     }
-            //     prev = i;
-            //     i++;
+            //     std::cout << bigs[ip] << "<<:" << std::endl;
+            //     /* code */
             // }
-
-                unsigned int seq_pos = 0;
-
-            while (seq_pos < this->seq.size() && this->seq[seq_pos] < smalls.size())
+            
+            bigs = Mr_fordJohnson(bigs);// do the same to the smalls ,, to split emm again.
+             printf("\t\t\t########%zu#%u#####\n", cont.size(),  cont.back());
+            for (size_t w = 0; w < smalls.size(); w++)
             {
+                std::cout  << "|>" << smalls[w] << std::endl;
+            }
+            
+            if (bigs.size() <= 1 )
+                {
+                    this->seq.insert(this->seq.begin(), 0);
+                }
+            
+            unsigned int seq_pos = 0;/// seq doesnt start from 0
+            while (this->seq[seq_pos] < smalls.size())
+            {
+                std::cout << ">" << this->seq[seq_pos] << "size::" << smalls.size() << std::endl;
                 bigs.insert(std::lower_bound(bigs.begin(), bigs.end(), smalls[this->seq[seq_pos]]), smalls[this->seq[seq_pos]]);
+                if (this->seq[seq_pos] >= smalls.size())
+                    {
+                        
+                    }
                 seq_pos++;
             }
             // while (i < bigs.size())
+
             // {
+
             //     smalls.insert(std::lower_bound(smalls.begin(), smalls.end(), bigs[i]), bigs[i]);
+
             //     i++;
+
             // }
+
             return (bigs);// sortedd
+
         }
 };
 
