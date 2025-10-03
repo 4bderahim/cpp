@@ -47,7 +47,7 @@ int main(int argc , char **argv)
     // std::deque<std::pair<unsigned int, unsigned int> > deque_pair;
 
     // m.fill_container(vvecc);
-    int i = 2;
+    int i = 1;
     // long int left =  -1;
     // if (argc %2 == 0)
     //     left = std::atol(argv[argc-1]);
@@ -58,7 +58,7 @@ int main(int argc , char **argv)
         vecc.push_back(std::atol(argv[i]));
         deqq.push_back(std::atol(argv[i]));
 
-        i += 2;
+        i ++;
     }
 
     // unsigned int ii = 0;

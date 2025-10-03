@@ -79,9 +79,8 @@ class mergeme
             size_t i = 0;
             Container  smalls;
             Container  bigs;
-            int lonely = -1;
-            size_t sizee = cont.size();
-            if (sizee %2 != 0)
+            long int lonely = -1;
+            if (cont.size() %2 != 0)
             {
                 lonely  = cont.back();
                 cont.erase(cont.end()-1);
@@ -95,7 +94,7 @@ class mergeme
                 i += 2;
             }
             if (lonely != -1)
-                smalls.push_back(lonely);
+                bigs.push_back(lonely);
             bigs = Mr_fordJohnson(bigs);// do the same to the smalls ,, to split emm again.
             i = 0;
             // insert bigs to smalls(thatShouuld be sorted)
