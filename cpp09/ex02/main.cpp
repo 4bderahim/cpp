@@ -1,8 +1,9 @@
 #include "PmergeMe.hpp"
 
-
 int valid(std::string str)
 {
+    if (str.find_first_not_of("0987654321+") != std::string::npos)
+        return (0);
     if (str[0] == '+')
         {
             std::string n = "0987654321";
@@ -35,72 +36,84 @@ int main(int argc , char **argv)
         if (!valid(argv[i]))
         return (this_error("args error"));
     }
-    #include <unistd.h>
 
-
-// ael-krid@c1r8p8 ex02 % ./PmergeMe 2 3 4  9 2 3  4 89  2 3 43 eooe
 
     mergeme m;
     std::vector<unsigned int> vecc;
     std::deque<unsigned int> deqq;
 
-    // std::vector<std::pair<unsigned int, unsigned int> > vec_pair;
-    // std::deque<std::pair<unsigned int, unsigned int> > deque_pair;
-    // m.fill_container(vvecc);
     int i = 1;
-    // long int left =  -1;
-    // if (argc %2 == 0)
-    //     left = std::atol(argv[argc-1]);
     while (i < argc)
     {
-        //  int d = std::atol(argv[i]);
-        // vec_pair.push_back(std::make_pair(std::atol(argv[i-1]), std::atol(argv[i])));
         vecc.push_back(std::atol(argv[i]));
         deqq.push_back(std::atol(argv[i]));
         i++;
     }
 
     m.generateJacobstahl(17);
-    for (size_t ig = 0; ig < vecc.size(); ig++)
+    
+   
+
+    std::cout << "befor:" ;
+    size_t x = 5;
+    if (x > vecc.size())
+        x = vecc.size();
+    for (size_t j = 0; j < x; j++)
     {
-        std::cout << vecc[ig] << std::endl;
+        std::cout << " " << vecc[j];
     }
-
-    // size_t ii = 0;
-    // while ( ii < m.get_seq().size())
-    // {
-    // write(1, "213123123", 11);
-
-    //     if (m.get_seq()[ii] > vecc.size())
-    //     // m.seq_limit
-    //     ii++;
-    // }
-
-    // printf("%ld<< leftOver\n", left);
-    clock_t start = clock();
+    if (vecc.size() > 5)
+        std::cout << " [...]";
+    std::cout << "\n" ;
+     clock_t start = clock();
     vecc = m.Mr_fordJohnson(vecc);
     clock_t end = clock();
-    for (size_t i = 0; i < vecc.size(); i++)
+    std::cout << "after" ;
+    x = 5;
+    if (x > vecc.size())
+        x = vecc.size();
+    for (size_t j = 0; j < x; j++)
     {
-        std::cout << vecc[i] << std::endl;
+        std::cout << " " << vecc[j];
     }
-
-
+    if (vecc.size() > 5)
+        std::cout << " [...]" << std::endl;
     double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
     std::cout << "Time to process a range of " << argc<< " elements with std::vector  "
               << elapsed << " us" << std::endl;    
-    // deqq = m.Mr_fordJohnson(deqq);
 
-    //  start = clock();
-    // deqq = m.Mr_fordJohnson(deqq);
-    //  end = clock();
+    std::cout << "\n" << std::endl;
+    
 
-    // // for (size_t i = 0; i < vecc.size(); i++)
-    // // {
-    // //     std::cout << vecc[i] << std::endl;
-    // // }
-    //   elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
-    // std::cout << "Time to process a range of  " << argc<< " elements with std::deque  "
-    //           << elapsed << " us" << std::endl;
+    std::cout << "befor :" ;
+
+    x = 5;
+    if (x > deqq.size())
+        x = deqq.size();
+    for (size_t j = 0; j < x; j++)
+    {
+        std::cout << " " << deqq[j];
+    }
+    if (deqq.size() > 5)
+        std::cout << " [...]";
+    std::cout << "\n";
+    start = clock();//7231273972397892374892374
+    deqq = m.Mr_fordJohnson(deqq);
+    end = clock();//23467234623462346234678782346
+    std::cout << "after :" ;
+
+    x = 5;
+    if (x > deqq.size())
+        x = deqq.size();
+    for (size_t j = 0; j < x; j++)
+    {
+        std::cout << " " << deqq[j];
+    }
+    if (deqq.size() > 5)
+        std::cout << " [...]";
+    std::cout << "\n";
+      elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
+    std::cout << "Time to process a range of  " << argc<< " elements with std::deque  "
+              << elapsed << " us" << std::endl;
     return (0);
 }
