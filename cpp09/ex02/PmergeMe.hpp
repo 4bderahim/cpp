@@ -125,27 +125,28 @@ class mergeme
             // }
             
             bigs = Mr_fordJohnson(bigs);// do the same to the smalls ,, to split emm again.
-             printf("\t\t\t########%zu#%u#####\n", cont.size(),  cont.back());
+            // printf("\t\t\t########%zu#%u#####\n", cont.size(),  cont.back());
+
             for (size_t w = 0; w < smalls.size(); w++)
             {
                 std::cout  << "|>" << smalls[w] << std::endl;
             }
             
             if (bigs.size() <= 1 )
-                {
-                    this->seq.insert(this->seq.begin(), 0);
-                }
+            {
+                this->seq.insert(this->seq.begin(), 0);
+            }
             
             unsigned int seq_pos = 0;/// seq doesnt start from 0
+            // unsigned int seq_tmp;
             while (this->seq[seq_pos] < smalls.size())
             {
-                std::cout << ">" << this->seq[seq_pos] << "size::" << smalls.size() << std::endl;
+                // std::cout << ".." << seq_pos << ">" << this->seq[seq_pos] << "size::" << smalls.size() << std::endl;
                 bigs.insert(std::lower_bound(bigs.begin(), bigs.end(), smalls[this->seq[seq_pos]]), smalls[this->seq[seq_pos]]);
-                if (this->seq[seq_pos] >= smalls.size())
-                    {
-                        
-                    }
                 seq_pos++;
+                if (this->seq[seq_pos] >= smalls.size() && this->seq[seq_pos+1] < smalls.size())
+                    seq_pos++;
+                
             }
             // while (i < bigs.size())
 
