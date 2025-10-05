@@ -36,13 +36,10 @@ class mergeme
         {
             std::vector<unsigned int> jacobstahl;
             std::vector<unsigned int> jacobstahl_insert;
-            n = 11;
             jacobstahl.push_back(0);
             if (n == 1)
                 return jacobstahl;
-                // printf("\t####");
             jacobstahl.push_back(1);
-            // unsigned int prev;
             int d = 0;
             for (unsigned int i = 2; i < n; ++i) {
                 
@@ -52,7 +49,6 @@ class mergeme
                 {
                     for (size_t ii = jacobstahl[jacobstahl.size()-2]+1; ii < jacobstahl[jacobstahl.size()-1]; ii++)
                     {
-                        // std::cout << jacobstahl[jacobstahl.size()-2] <<"+++++++++"<< jacobstahl[jacobstahl.size()-1]  << "|<<" << std::endl;
                         jacobstahl_insert.push_back(ii);
                     }
                 }
@@ -60,14 +56,11 @@ class mergeme
                 jacobstahl_insert.push_back(next);
 
                 d++;
-                // prev =  next;
+                
             }
             this->seq = jacobstahl_insert;
-        //  for (size_t l = 0; l < this->seq.size(); l++)
-        //  {
-        //     std::cout << "index:"<< this->seq[l] << std::endl; 
-        //  }
-         
+            this->seq.insert(this->seq.begin(), 0);
+
             return this->seq;
         }
        template<typename Container>
@@ -80,7 +73,7 @@ class mergeme
 
 
 
-            if (cont.size() <= 1 )// stack Hero
+            if (cont.size() <= 1 )
                 return cont;
 
             size_t i = 0;
@@ -109,21 +102,19 @@ class mergeme
                 i += 2;
             }
 
-
-
             if (lonely != -1)
                 smalls.push_back(lonely);
 
             
-            bigs = Mr_fordJohnson(bigs);// do the same to the smalls ,, to split emm again.
+            bigs = Mr_fordJohnson(bigs);
            
 
-            if (bigs.size() <= 1 )
-            {
-                this->seq.insert(this->seq.begin(), 0);
-            }
+            // if (bigs.size() <= 1 )
+            // {
+            //     this->seq.insert(this->seq.begin(), 0);
+            // }
             
-            unsigned int seq_pos = 0;/// seq doesnt start from 0
+            unsigned int seq_pos = 0;
 
             while (this->seq[seq_pos] < smalls.size())
             {

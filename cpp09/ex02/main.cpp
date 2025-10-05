@@ -49,11 +49,9 @@ int main(int argc , char **argv)
         deqq.push_back(std::atol(argv[i]));
         i++;
     }
-
+    
     m.generateJacobstahl(17);
     
-   
-
     std::cout << "befor:" ;
     size_t x = 5;
     if (x > vecc.size())
@@ -68,7 +66,7 @@ int main(int argc , char **argv)
      clock_t start = clock();
     vecc = m.Mr_fordJohnson(vecc);
     clock_t end = clock();
-    std::cout << "after" ;
+    std::cout << "after : " ;
     x = 5;
     if (x > vecc.size())
         x = vecc.size();
@@ -78,9 +76,11 @@ int main(int argc , char **argv)
     }
     if (vecc.size() > 5)
         std::cout << " [...]" << std::endl;
-    double elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
+    std::cout << "\n";
+    
+    double elapsed = static_cast<double>(end - start) * 1000.0  / CLOCKS_PER_SEC ;
     std::cout << "Time to process a range of " << argc<< " elements with std::vector  "
-              << elapsed << " us" << std::endl;    
+              << elapsed << " ms" << std::endl;    
 
     std::cout << "\n" << std::endl;
     
@@ -97,9 +97,9 @@ int main(int argc , char **argv)
     if (deqq.size() > 5)
         std::cout << " [...]";
     std::cout << "\n";
-    start = clock();//7231273972397892374892374
+    start = clock();
     deqq = m.Mr_fordJohnson(deqq);
-    end = clock();//23467234623462346234678782346
+    end = clock();
     std::cout << "after :" ;
 
     x = 5;
@@ -107,13 +107,21 @@ int main(int argc , char **argv)
         x = deqq.size();
     for (size_t j = 0; j < x; j++)
     {
-        std::cout << " " << deqq[j];
+        std::cout << " " << deqq[j] ;
     }
+
     if (deqq.size() > 5)
         std::cout << " [...]";
     std::cout << "\n";
-      elapsed = static_cast<double>(end - start) / CLOCKS_PER_SEC * 1e6;
+      elapsed = static_cast<double>(end - start) * 1000.0 / CLOCKS_PER_SEC ;
     std::cout << "Time to process a range of  " << argc<< " elements with std::deque  "
-              << elapsed << " us" << std::endl;
+              << elapsed << " ms" << std::endl;
+
+
+    // for (size_t g = 0; g < deqq.size(); g++)
+    // {
+    //     std::cout <<  deqq[g] << " ";
+    // }
+    
     return (0);
 }
