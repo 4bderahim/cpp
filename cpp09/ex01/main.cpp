@@ -26,19 +26,31 @@ int precedence(std::string f, std::string s )
         else
         {
             printf("\t|%s|\n", str.substr(i, 1).c_str());
-            // if (str[i] == ' ')
-            //     continue;
+            if (str[i] == ' ')
+                continue;
             if (lifo_operators.size() ==0)
                 lifo_operators.push(str.substr(i, 1).c_str());   
             else
             {
+                // for (size_t j = 0; j < lifo_operators.size(); j++)
+                // {
+                //     std::cout << lifo_operators[j] ;
+                // }
+                for (size_t j = 0; j < lifo_operators.size(); j++)
+                {
+                   
                 if (precedence(str.substr(i, 1), lifo_operators.top()) == 1)
-                    lifo_operators.push(str.substr(i, 1).c_str()); 
+                    {
+                        lifo_operators.push(str.substr(i, 1).c_str()); 
+                        break;
+                    }
                 else
                 {
                     operands +=  lifo_operators.top();
                     lifo_operators.pop();
                 }  
+                }
+                
             }         
         }
     }
