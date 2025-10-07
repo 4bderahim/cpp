@@ -1,7 +1,15 @@
 #include "rpn.hpp"
 
 //$> ./RPN "8 9 * 9 - 9 - 9 - 4 - 1 +"
- void fill_stack(std::stack<int> &lifo, std::string str)
+int precedence(std::string f, std::string s )
+{
+    std::string pre = "*/-+" ;
+    if (pre.find_first_of(f)  < 2 && pre.find_first_of(s) > 1)
+        return (1);
+    return (-1);
+
+}
+ void fill_stack(std::string operands, std::stack<std::string>  lifo_operators, std::string str)
  {
     // int i = str.length();
     std::string nums = "0987654321";
@@ -9,28 +17,49 @@
     {
         if ( nums.find_first_of(str[i]) != std::string::npos)
         {
-            lifo.push(std::atoi(str.substr(i, 1).c_str()));
+            operands +=  (str.substr(i, 1))+" ";
+            // lifo.push(std::atoi(str.substr(i, 1).c_str()));
+        }
+        else
+        {
+            if (str[i] ==' ')
+                continue;
+            if (lifo_operators.size() ==0)
+                lifo_operators.push(str.substr(i, 1).c_str());   
+            else
+            {
+                if (precedence(str.substr(i, 1).c_str(), lifo_operators.top()))
+                    lifo_operators.push(str.substr(i, 1).c_str()); 
+                else
+                {
+                    operands +=  lifo_operators.top();
+                    lifo_operators.pop();
+                }  
+            }         
         }
     }
-    
  }
 
  
 int main(int argc , char **argv)
 {
     if (argc != 2)
-        {
-            std::cout << "args error!" << std::endl;
-            return (1);
-        }
+    {
+        std::cout << "args error!" << std::endl;
+        return (1);
+    }
     std::string str = argv[1];
     if (str.find_first_not_of("098765432 *-+/1") != std::string::npos)
     {
         std::cout << " error!" << std::endl;
         return (1);
     }
-    std::stack<int> lifo;
-    fill_stack(lifo, str);  
+    
+    // std::stack<std::string > lifo_operands;
+    std::string oprands;
+    std::stack<std::string > lifo_operators;
+
+    fill_stack(operands, lifo_operators ,str);  
     if (((std::count(str.begin(), str.end(), '-') 
     +std::count(str.begin(), str.end(), '+') 
     +std::count(str.begin(), str.end(), '*') 

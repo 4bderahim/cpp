@@ -98,7 +98,6 @@ class mergeme
                 bigs.push_back((first < sec ? sec:first));
                 smalls.push_back((first < sec ? first:sec));
 
-
                 i += 2;
             }
 
