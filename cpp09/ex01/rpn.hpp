@@ -48,6 +48,23 @@ class rpn
 
         void rpnn( std::stack<int> lifo, std::string str)
         {
+            std::stack<int> lifo;
+            std::string nums = "0987654321";
+
+            for (size_t i = 0; i < str.size()  ; i++)
+            {
+                if ( nums.find_first_of(str[i]) != std::string::npos)
+                    lifo.push()
+                
+                    
+            }
+            
+            
+
+
+
+
+
             int top, top2;
 
             while (lifo.size()!=1)
