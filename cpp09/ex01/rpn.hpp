@@ -37,6 +37,7 @@ class rpn
         }
         int op(int f, int s ,char o)
         {
+            
             if (o == '+')
                 return (f+s);
             if (o == '-')
@@ -46,40 +47,35 @@ class rpn
             return (f/s);
         }
 
-        void rpnn( std::stack<int> lifo, std::string str)
+        void rpnn(std::string str)
         {
             std::stack<int> lifo;
             std::string nums = "0987654321";
 
             for (size_t i = 0; i < str.size()  ; i++)
             {
+                if (str[i] == ' ')
+                    continue;
                 if ( nums.find_first_of(str[i]) != std::string::npos)
-                    lifo.push()
-                
-                    
+                    {
+                        lifo.push(std::atoi(str.substr(i, 1).c_str()));
+                    }
+                else
+                {
+                    if (lifo.size() == 1)
+                    {
+                        std::cout << "INERFIX  OPERATION" << std::endl;
+                        exit(1);
+                    }
+                    int poped_first = lifo.top();
+                    lifo.pop();
+                    int poped_sec = lifo.top();
+                    lifo.pop();
+                    lifo.push(op(poped_sec, poped_first, str[i]));
+                }
             }
-            
-            
+            std::cout << lifo.top() << std::endl;
 
-
-
-
-
-            int top, top2;
-
-            while (lifo.size()!=1)
-            {
-                top = lifo.top();
-                lifo.pop();
-                top2 = lifo.top();
-                lifo.pop();
-                lifo.push(op(top, top2, str[0]));
-                str.erase(0,1);
-            }
-            std::cout << lifo.top()  << std::endl;
         }
-
-        
-
 
 };

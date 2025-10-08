@@ -1,16 +1,14 @@
 #include "rpn.hpp"
 
 //$> ./RPN "8 9 * 9 - 9 - 9 - 4 - 1 +"
-int precedence(std::string f, std::string s )
-{
-    std::string pre = "*/-+" ;
-    // std::cout << f << "|" << s << std::endl;
-    if (pre.find_first_of(f)  < 2 && pre.find_first_of(s) > 1)
-        return (1);
-    // printf("-1");
-    return (-1);
+// int precedence(std::string f, std::string s )
+// {
+//     std::string pre = "*/-+" ;
+//     if (pre.find_first_of(f)  < 2 && pre.find_first_of(s) > 1)
+//         return (1);
+//     return (-1);
 
-}
+// }
 int op_size(std::string str)
 {
     std::string nums = "0987654321";
@@ -23,45 +21,45 @@ int op_size(std::string str)
     return (count);
 
 }
- void fill_stack(std::string &operands, std::stack<std::string>  lifo_operators, std::string str)
- {
-    std::string nums = "0987654321";
-    for (size_t i = 0; i < str.length(); i++)
-    {
-        if ( nums.find_first_of(str[i]) != std::string::npos)
-            operands +=  (str.substr(i, 1));
-        else
-        {
-            if (str[i] == ' ')
-                continue;
-            if (lifo_operators.size() ==0)
-                lifo_operators.push(str.substr(i, 1).c_str());   
-            else
-            {
-                for (size_t j = 0; j <= lifo_operators.size(); j++)
-                {  
-                    if (precedence(str.substr(i, 1), lifo_operators.top()) == 1)
-                    {
-                        lifo_operators.push(str.substr(i, 1).c_str());
-                        break;
-                    }
-                    else
-                    {
-                        operands +=  lifo_operators.top();
-                        lifo_operators.pop();
-                    }  
-                    if (lifo_operators.size() ==0)
-                        lifo_operators.push(str.substr(i, 1).c_str());   
-                }
-            }         
-        }
-    }
-    for (size_t j = 0; j <= lifo_operators.size(); j++)
-    {
-        operands += lifo_operators.top();    
-        lifo_operators.pop();
-    }
- }
+//  void fill_stack(std::string &operands, std::stack<std::string>  lifo_operators, std::string str)
+//  {
+//     std::string nums = "0987654321";
+//     for (size_t i = 0; i < str.length(); i++)
+//     {
+//         if ( nums.find_first_of(str[i]) != std::string::npos)
+//             operands +=  (str.substr(i, 1));
+//         else
+//         {
+//             if (str[i] == ' ')
+//                 continue;
+//             if (lifo_operators.size() ==0)
+//                 lifo_operators.push(str.substr(i, 1).c_str());   
+//             else
+//             {
+//                 for (size_t j = 0; j <= lifo_operators.size(); j++)
+//                 {  
+//                     if (precedence(str.substr(i, 1), lifo_operators.top()) == 1)
+//                     {
+//                         lifo_operators.push(str.substr(i, 1).c_str());
+//                         break;
+//                     }
+//                     else
+//                     {
+//                         operands +=  lifo_operators.top();
+//                         lifo_operators.pop();
+//                     }  
+//                     if (lifo_operators.size() ==0)
+//                         lifo_operators.push(str.substr(i, 1).c_str());   
+//                 }
+//             }         
+//         }
+//     }
+//     for (size_t j = 0; j <= lifo_operators.size(); j++)
+//     {
+//         operands += lifo_operators.top();    
+//         lifo_operators.pop();
+//     }
+//  }
 
  
 int main(int argc , char **argv)
@@ -91,18 +89,10 @@ int main(int argc , char **argv)
         std::cout << "OPERATION ERROR!" << std::endl;
         return (1);
     }
-    fill_stack(operands, lifo_operators ,str);  
+    // fill_stack(operands, lifo_operators ,str);  
 
-    printf("\t[%s]", operands.c_str());
-    // std::size_t index;
-    // while (( index = str.find_first_of("0987654321")) != std::string::npos)
-    //     {
-    //         str.erase(index , 1);
-    //     }
-    // str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
-    // // printf("\t\t\t>>>>%s]", str.c_str());
-    // rpn rpn;
-    // rpn.rpnn(lifo, str);
+    rpn rpn;
+    rpn.rpnn(str);
     
     
 
