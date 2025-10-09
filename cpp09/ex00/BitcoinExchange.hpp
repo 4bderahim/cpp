@@ -17,11 +17,11 @@ class BitcoinExchange
     public:
         BitcoinExchange()
         {
-            std::cout << "BitcoinExchange constructed " << std::endl;
+            // std::cout << "BitcoinExchange constructed " << std::endl;
         }
         ~BitcoinExchange()
         {
-            std::cout << "BitcoinExchange destructed " << std::endl;
+            // std::cout << "BitcoinExchange destructed " << std::endl;
         }
         BitcoinExchange(const BitcoinExchange &btc)
         {
@@ -46,7 +46,7 @@ class BitcoinExchange
         {
             std::string value, date;
             std::string tmp = str;
-            printf("\t[%s]", str.c_str());
+            // printf("\t[%s]", str.c_str());
             if (std::count(str.begin(), str.end(), '|') !=1)
                 return (0);
             tmp = str.substr(0, str.find('|'));
@@ -63,15 +63,27 @@ class BitcoinExchange
             tmp =  str;
             tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
             tmp =  tmp.substr(tmp.find('-')+1,  tmp.find('|')) ;
-            if (std::atoi(tmp.substr(0,  tmp.find('-')).c_str()) > 12)
+            if (std::atoi(tmp.substr(0,  tmp.find('-')).c_str()) > 12 || std::atoi(tmp.substr(0,  tmp.find('-')).c_str()) <= 0)
                 return (that_error("[-] month number error "+str));
-            if (std::atoi(tmp.substr(tmp.find('-')+1,  tmp.find('|')).c_str()) > 31)
+            if (std::atoi(tmp.substr(tmp.find('-')+1,  tmp.find('|')).c_str()) > 31 || std::atoi(tmp.substr(tmp.find('-')+1,  tmp.find('|')).c_str()) <= 0)
                 return (that_error("[-] day error "+str));
             tmp = tmp.substr(tmp.find('|')+1,  tmp.length()-1);
             if (std::atoi(tmp.c_str()) > 1000 || std::atoi(tmp.c_str()) < 0)
                 return (that_error("[-] value error "+str));
             if (map.find(date) == map.end())
-                return 29;
+                {
+                    // printf("\t~~~~~~~~~~~%s~~%s~",map.key_comp,  date.c_str());
+                    // for (size_t i = 0; i < map.size(); i++)
+                    // {
+                    //     /* code */
+                    // }
+                    
+                    // if ()
+                    // {
+
+                    // }
+                    return 29;
+                }
             value = tmp ;
             std::cout << date << "=>" << value << "=>" << map[date]*(std::atof(value.c_str())) << std::endl;
             
