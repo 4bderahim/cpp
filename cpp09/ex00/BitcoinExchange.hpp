@@ -67,6 +67,8 @@ class BitcoinExchange
                 return (that_error("[-] month number error "+str));
             if (std::atoi(tmp.substr(tmp.find('-')+1,  tmp.find('|')).c_str()) > 31 || std::atoi(tmp.substr(tmp.find('-')+1,  tmp.find('|')).c_str()) <= 0)
                 return (that_error("[-] day error "+str));
+            if (std::atoi(tmp.substr(0,  tmp.find('-')).c_str()) == 2 &&  std::atoi(tmp.substr(tmp.find('-')+1,  tmp.find('|')).c_str()) > 29)
+                return (that_error("[-] day error "+str));
             tmp = tmp.substr(tmp.find('|')+1,  tmp.length()-1);
             if (std::atoi(tmp.c_str()) > 1000 || std::atoi(tmp.c_str()) < 0)
                 return (that_error("[-] value error "+str));
