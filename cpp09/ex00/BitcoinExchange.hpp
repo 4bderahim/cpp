@@ -70,9 +70,9 @@ class BitcoinExchange
             tmp = tmp.substr(tmp.find('|')+1,  tmp.length()-1);
             if (std::atoi(tmp.c_str()) > 1000 || std::atoi(tmp.c_str()) < 0)
                 return (that_error("[-] value error "+str));
-            
             if (map.find(date) == map.end())
                 {
+                    // printf("\t\t\t\t++%s++\n", date.c_str());
                     int l = 300000000;
                     std::string date_to_use;
                     std::map<std::string, double>::const_iterator prv;
@@ -93,12 +93,12 @@ class BitcoinExchange
                                         date_to_use = it->first;
                                     }
                             }
-                        // prv = it;
                     }
                     if (l == 300000000)
                         return (29);
                 }
                 date = date_to_use;
+                // std::cout << "\t\t[---" << date << "---]"  << std::endl;
                 }
             value = tmp ;
             std::cout << date << "=>" << value << "=>" << map[date]*(std::atof(value.c_str())) << std::endl;
