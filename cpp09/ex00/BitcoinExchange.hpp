@@ -83,7 +83,7 @@ class BitcoinExchange
                         int date_ = std::atoi(date.c_str());
 
                         std::string s = it->first;
-                        s.erase(std::remove(it->first.begin(),it->first.end(), '-'), it->first.end());
+                        s.erase(std::remove(s.begin(),s.end(), '-'), s.end());
                         int d = std::atoi(s.c_str());
                         if (d < date_)
                             { 
@@ -98,7 +98,6 @@ class BitcoinExchange
                     if (l == 300000000)
                         return (29);
                 }
-                std::cout << date_to_use << "__" << date << std::endl;
                 date = date_to_use;
                 }
             value = tmp ;
