@@ -65,6 +65,7 @@
         "__tree": "cpp",
         "fstream": "cpp",
         "iomanip": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "filesystem": "cpp"
     }
 }

@@ -37,7 +37,6 @@ int main(int argc , char **argv)
         return (this_error("args error"));
     }
 
-
     mergeme m;
     std::vector<unsigned int> vecc;
     std::deque<unsigned int> deqq;

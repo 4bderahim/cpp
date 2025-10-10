@@ -70,19 +70,36 @@ class BitcoinExchange
             tmp = tmp.substr(tmp.find('|')+1,  tmp.length()-1);
             if (std::atoi(tmp.c_str()) > 1000 || std::atoi(tmp.c_str()) < 0)
                 return (that_error("[-] value error "+str));
+            
             if (map.find(date) == map.end())
                 {
-                    // printf("\t~~~~~~~~~~~%s~~%s~",map.key_comp,  date.c_str());
-                    // for (size_t i = 0; i < map.size(); i++)
-                    // {
-                    //     /* code */
-                    // }
-                    
-                    // if ()
-                    // {
+                    int l = 300000000;
+                    std::string date_to_use;
+                    std::map<std::string, double>::const_iterator prv;
+                     for (std::map<std::string, double>::const_iterator it = map.begin(); it != map.end(); ++it) {
+                    {
 
-                    // }
-                    return 29;
+                        date.erase(std::remove(date.begin(),date.end(), '-'), date.end());
+                        int date_ = std::atoi(date.c_str());
+
+                        std::string s = it->first;
+                        s.erase(std::remove(it->first.begin(),it->first.end(), '-'), it->first.end());
+                        int d = std::atoi(s.c_str());
+                        if (d < date_)
+                            { 
+                                if(l > date_ - d) 
+                                    {
+                                        l = date_ - d;
+                                        date_to_use = it->first;
+                                    }
+                            }
+                        // prv = it;
+                    }
+                    if (l == 300000000)
+                        return (29);
+                }
+                std::cout << date_to_use << "__" << date << std::endl;
+                date = date_to_use;
                 }
             value = tmp ;
             std::cout << date << "=>" << value << "=>" << map[date]*(std::atof(value.c_str())) << std::endl;
