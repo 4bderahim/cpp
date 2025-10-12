@@ -50,26 +50,31 @@ class BitcoinExchange
             
             if (tmp.find_first_of("0987654321-|") == std::string::npos)
                 return 0;
-            if (std::count(str.begin(), str.end(), '|') !=1 || std::count(str.begin(), str.end(), '.') !=1)
+            if (std::count(str.begin(), str.end(), '|') !=1 || std::count(str.begin(), str.end(), '.') > 1)
                 {
                     return (that_error( "[-] BAD input >>"+str));
-                    return (0);
                 }
+            std::string sss(str.c_str()+str.find('|')+1);
+            if (sss.find_first_not_of(" 0123456789.") != std::string::npos)
+                    return (that_error( "[-] BAD input >>"+str));
+            std::string numss = "0123456789";
+            size_t beg = sss.find_first_of(numss);
+            size_t endd = sss.find_last_of(numss);
+            for (size_t i = beg; i < endd; i++)
+            {
+                if (sss[i] == ' ')
+                    return (that_error( "[-] BAD input >>"+str));
+            }
+            sss.erase(std::remove(sss.begin(), sss.end(), ' '), sss.end());
+            if(numss.find_first_of(sss[0]) == std::string::npos || numss.find_first_of(sss[sss.size()-1]) == std::string::npos)
+                return (that_error( "[-] BAD input >>"+str));
             tmp = str.substr(0, str.find('|'));
             if (std::count(tmp.begin(), tmp.end(), '-') !=2)
                 {
                     return (that_error( "[-] BAD input >>"+str));
                     return (0);
                 }
-            
-            
             tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
-
-
-
-
-
-            
             size_t i= tmp.find('-');
             i++;
             std::string s = tmp.substr(i, 2);
@@ -79,7 +84,6 @@ class BitcoinExchange
                 }
             if(tmp.substr(tmp.find_last_of("-")+1 ,2).size() == 1)
                 tmp.insert(tmp.find_last_of("-")+1,1, '0');
-
             date = tmp;
             tmp.erase(std::remove(tmp.begin(), tmp.end(), '-'), tmp.end());
             if (tmp.find_last_not_of("0987654321") != std::string::npos)
@@ -122,20 +126,13 @@ class BitcoinExchange
                             }
                     }
                     if (l == 300000000)
-                        {
-                            printf("\t\t#####%s######\n", str.c_str());
                         return (29);
-                        }
                 }
                 date = date_to_use;
                 }
             value = tmp ;
             std::cout << date << "=>" << std::atof(value.c_str()) << "=>" << map[date]*(std::atof(value.c_str())) << std::endl;
-            
             return (1);
         }
-
-
-
 
 };
